@@ -1,0 +1,11 @@
+{ 
+  "name": "@listingslab/firebase-ts",
+  "version": "20.1.0",
+  "scripts": {
+    "test": "clear && echo \"Status: No wuckin furries\" && exit 0",
+    "start": "clear && cd ./functions && npm run serve",
+    "watch": "clear && cd ./functions && npm run watch",
+    "lint": "clear && cd ./functions && npm run lint",
+    "deploy": "clear && cd ./functions && npm run deploy"
+  }
+}
