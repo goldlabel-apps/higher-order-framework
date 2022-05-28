@@ -5,7 +5,7 @@ import {
   Social,
   Post,
   Navigator,
-  Content,
+  Home,
 } from "./listingslab-shared";
 
 export default function App() {
@@ -20,7 +20,7 @@ export default function App() {
           </Grid>
           <Grid sm={8} xs={12} item>
             <Box sx={{ ml: 1 }}>
-              <Content />
+              <Home />
             </Box>
           </Grid>
           <Grid sm={4} xs={12} item>

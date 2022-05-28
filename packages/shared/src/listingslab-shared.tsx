@@ -10,7 +10,7 @@ import Renderer from "./Renderer";
 import App from "./App";
 
 import MaxiButton from "./components/MaxiButton";
-import Content from "./components/Content";
+import Home from "./components/Home";
 import Navigator from "./components/Navigator";
 import MiniButton from "./components/MiniButton";
 import FeaturedImage from "./components/FeaturedImage";
@@ -139,7 +139,6 @@ export {
   getById,
   App,
   Navigator,
-  Content,
   FeaturedImage,
   MetaButton,
   MiniButton,
@@ -150,4 +149,5 @@ export {
   selectCore,
   setCore,
   DialogSignin,
+  Home,
 };

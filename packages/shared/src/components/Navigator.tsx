@@ -1,5 +1,5 @@
-import * as React from "react";
-import { useTheme, useMediaQuery, Box } from "@mui/material";
+import * as React from "react"
+import { useTheme, useMediaQuery, Box } from "@mui/material"
 import {
   useAppDispatch,
   useAppSelector,
@@ -9,38 +9,50 @@ import {
   setCore,
   selectPersona,
   unsignIn,
-} from "../listingslab-shared";
+} from "../listingslab-shared"
 
 export default function Navigator() {
-  const theme = useTheme();
-  const dispatch = useAppDispatch();
-  const persona = useAppSelector(selectPersona);
-  let isSignedIn = false;
-  let isReady = true;
+  const theme = useTheme()
+  const dispatch = useAppDispatch()
+  const persona = useAppSelector(selectPersona)
+  let isSignedIn = false
+  let isReady = true
   // if (persona.data.user.firstCheck) isReady = true
-  if (persona.data.user.uid) isSignedIn = true;
-  let mode = "mini";
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  if (!isMobile) mode = "maxi";
-  if (mode === "hidden") return null;
+  if (persona.data.user.uid) isSignedIn = true
+  let mode = "mini"
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
+  if (!isMobile) mode = "maxi"
+  if (mode === "hidden") return null
+
+  const homeBtnData = {
+    icon: "home",
+    label: "Home",
+    tooltip: "Home",
+    variant: "text",
+    onClick: () => {
+      dispatch(routeTo({ pathname: `/` }))
+    },
+  }
 
   const signinBtnData = {
     icon: "arrowr",
     label: "Sign in",
+    tooltip: "Sign in",
     variant: "text",
     onClick: () => {
-      dispatch(setCore({ key: `dialogSigninOpen`, value: true }));
+      dispatch(setCore({ key: `dialogSigninOpen`, value: true }))
     },
-  };
+  }
 
   const signoutBtnData = {
     icon: "exit",
     label: "Sign out",
+    tooltip: "Sign out",
     variant: "text",
     onClick: () => {
-      dispatch(unsignIn());
+      dispatch(unsignIn())
     },
-  };
+  }
 
   const menuItems = [
     {
@@ -49,7 +61,7 @@ export default function Navigator() {
       tooltip: "Work",
       color: "primary",
       onClick: () => {
-        dispatch(routeTo({ pathname: `/work` }));
+        dispatch(routeTo({ pathname: `/work` }))
       },
     },
     {
@@ -58,7 +70,7 @@ export default function Navigator() {
       tooltip: "Life",
       color: "primary",
       onClick: () => {
-        dispatch(routeTo({ pathname: `/life` }));
+        dispatch(routeTo({ pathname: `/life` }))
       },
     },
     {
@@ -67,37 +79,29 @@ export default function Navigator() {
       tooltip: "Balance",
       color: "primary",
       onClick: () => {
-        dispatch(routeTo({ pathname: `/balance` }));
+        dispatch(routeTo({ pathname: `/balance` }))
       },
     },
-  ];
+  ]
 
   return (
     <Box sx={{ m: 1, display: "flex" }}>
-      <MaxiButton
-        data={{
-          icon: "home",
-          color: "primary",
-          label: "Home",
-          onClick: () => {
-            dispatch(routeTo({ pathname: `/` }));
-          },
-        }}
-      />
+
+      { isMobile ? <MiniButton data={homeBtnData} /> : <MaxiButton data={homeBtnData} /> }
+
+      
       {menuItems.map((item, i) => {
-        if (isMobile) return <MiniButton key={`menuItem_${i}`} data={item} />;
-        return <MaxiButton key={`menuItem_${i}`} data={item} />;
+        if (isMobile) return <MiniButton key={`menuItem_${i}`} data={item} />
+        return <MaxiButton key={`menuItem_${i}`} data={item} />
       })}
 
       <Box sx={{ flexGrow: 1 }} />
 
-      {isReady ? (
-        <MaxiButton data={isSignedIn ? signoutBtnData : signinBtnData} />
-      ) : null}
+      {isReady ? (<React.Fragment>
+        { isMobile ? <MiniButton data={isSignedIn ? signoutBtnData : signinBtnData} /> 
+          : <MaxiButton data={isSignedIn ? signoutBtnData : signinBtnData} /> }
+        
+        </React.Fragment>) : null}
     </Box>
-  );
+  )
 }
-
-/*
-    
-*/
