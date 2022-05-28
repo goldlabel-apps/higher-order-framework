@@ -1,0 +1,11 @@
+#!/bin/bash
+# If you get permissions error, run this
+# chmod ug+x check
+clear
+echo 'Lerna bootstraps, formats with prettify, lints all packages'
+
+# If running this is green screen, we may deploy
+npx lerna bootstrap
+npx lerna run format
+npx lerna run lint
+npx lerna run test
