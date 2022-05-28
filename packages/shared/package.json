@@ -1,6 +1,6 @@
 {
   "name": "@listingslab/shared",
-  "version": "20.1.0",
+  "version": "21.0.0",
   "scripts": {
     "start": "webpack serve --port 1945",
     "start:standalone": "webpack serve --env standalone --port 1945",
@@ -12,7 +12,6 @@
     "check-format": "prettier --check .",
     "test": "cross-env BABEL_ENV=test jest",
     "watch-tests": "cross-env BABEL_ENV=test jest --watch",
-    "prepare": "husky install",
     "coverage": "cross-env BABEL_ENV=test jest --coverage",
     "build:types": "tsc"
   },
