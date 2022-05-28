@@ -9,13 +9,14 @@ import {
   selectPersona,
   useAppSelector,
   Admin,
+  Map,
 } from "./listingslab-shared";
 
 export default function App() {
   const id = "app";
   const persona = useAppSelector(selectPersona);
-  const { uid } = persona.data.user
-  
+  const { uid } = persona.data.user;
+
   return (
     <Box id={id}>
       <Blocked />
@@ -27,12 +28,12 @@ export default function App() {
           </Grid>
           <Grid sm={4} xs={12} item>
             <Box sx={{ ml: 1 }}>
+              {uid ? <Admin defaultExpanded={true} /> : <Map />}
               <Social defaultExpanded={true} />
             </Box>
           </Grid>
           <Grid sm={8} xs={12} item>
             <Box sx={{ ml: 1 }}>
-              { uid ? <Admin defaultExpanded={true} /> : null }
               <Home />
             </Box>
           </Grid>

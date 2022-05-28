@@ -14,10 +14,7 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import { 
-  Icon,
-  Map,
-} from "../listingslab-shared";
+import { Icon } from "../listingslab-shared";
 
 export default function Social(props) {
   const title = "Find us";
@@ -35,9 +32,6 @@ export default function Social(props) {
       </AccordionSummary>
 
       <AccordionDetails sx={{ p: 0, background: "white" }}>
-
-        <Map />
-
         <List dense>
           {social.length ? (
             <React.Fragment>
@@ -75,7 +69,6 @@ export default function Social(props) {
             </React.Fragment>
           ) : null}
         </List>
-        
       </AccordionDetails>
     </Accordion>
   );

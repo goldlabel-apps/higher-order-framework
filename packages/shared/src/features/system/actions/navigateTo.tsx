@@ -10,7 +10,7 @@ export const navigateTo =
   (route: RouteShape): AppThunk =>
   async (dispatch: any) => {
     try {
-      console.warn("navigateTo", route);
+      // console.warn("navigateTo", route);
       let proceed = true;
       const { pathname, target } = route;
       // @ts-ignore

@@ -5,11 +5,14 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  CardContent,
   Typography,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
 } from "@mui/material";
-import { 
-  Icon,
-} from "../../listingslab-shared";
+import { Icon } from "../../listingslab-shared";
 
 export default function Admin(props) {
   const title = "Admin";
@@ -24,10 +27,23 @@ export default function Admin(props) {
       </AccordionSummary>
 
       <AccordionDetails sx={{ p: 0, background: "white" }}>
+        <CardContent>
+          <List dense>
+            <ListItem button>
+              <ListItemIcon>
+                <Icon icon="doc" />
+              </ListItemIcon>
+              <ListItemText primary="Content" />
+            </ListItem>
 
-
-        Admin
-        
+            <ListItem button>
+              <ListItemIcon>
+                <Icon icon="settings" />
+              </ListItemIcon>
+              <ListItemText primary="Settings" />
+            </ListItem>
+          </List>
+        </CardContent>
       </AccordionDetails>
     </Accordion>
   );

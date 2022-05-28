@@ -7,7 +7,6 @@ export interface AdminShape {
 const initialState: AdminShape = {
   data: {
     shape: "AdminShape",
-    
   },
 };
 

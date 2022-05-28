@@ -11,12 +11,10 @@ export default function Home() {
 
   return (
     <React.Fragment>
-      <Box>
-      </Box>
+      <Box></Box>
     </React.Fragment>
   );
 }
-
 
 /*
 <pre>{JSON.stringify(content, null, 2)}</pre>
