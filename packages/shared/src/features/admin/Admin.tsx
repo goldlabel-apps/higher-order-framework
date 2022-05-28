@@ -1,6 +1,4 @@
 import * as React from "react";
-// import { useAppSelector, useAppDispatch } from "../app/hooks";
-// import { selectSocial, navigateTo, routeTo } from "../features/system";
 import {
   Accordion,
   AccordionSummary,
@@ -12,11 +10,22 @@ import {
   ListItemText,
   ListItemIcon,
 } from "@mui/material";
-import { Icon } from "../../listingslab-shared";
+import { 
+  Icon,
+  CMS,
+  setAdmin,
+  useAppSelector,
+  useAppDispatch,
+} from "../../listingslab-shared";
 
 export default function Admin(props) {
   const title = "Admin";
   const { defaultExpanded } = props;
+  const dispatch = useAppDispatch()
+
+  const onCmsClick = () => {
+    dispatch(setAdmin({ key:"cmsIsOpen", value: true }))
+  }
 
   return (
     <Accordion sx={{ boxShadow: "none" }} defaultExpanded={defaultExpanded}>
@@ -28,19 +37,15 @@ export default function Admin(props) {
 
       <AccordionDetails sx={{ p: 0, background: "white" }}>
         <CardContent>
+          <CMS />
           <List dense>
-            <ListItem button>
+            <ListItem button onClick={ onCmsClick }>
               <ListItemIcon>
                 <Icon icon="doc" />
               </ListItemIcon>
-              <ListItemText primary="Content" />
-            </ListItem>
-
-            <ListItem button>
-              <ListItemIcon>
-                <Icon icon="settings" />
-              </ListItemIcon>
-              <ListItemText primary="Settings" />
+              <ListItemText 
+                primary="CMS"
+                secondary="Content Management System" />
             </ListItem>
           </List>
         </CardContent>

@@ -31,7 +31,12 @@ import {
 
 import { selectContent, setContent } from "./features/content";
 
-import { Admin } from "./features/admin";
+import { 
+  Admin,
+  CMS,
+  selectAdmin,
+  setAdmin,
+} from "./features/admin";
 
 import {
   Persona,
@@ -155,4 +160,7 @@ export {
   Home,
   Blocked,
   Admin,
+  CMS,
+  selectAdmin,
+  setAdmin,
 };
