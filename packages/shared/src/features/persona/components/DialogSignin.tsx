@@ -16,12 +16,14 @@ import {
   styled,
   useTheme,
   useMediaQuery,
+  Typography,
 } from "@mui/material";
 import {
   useAppSelector,
   useAppDispatch,
   selectCore,
   selectPersona,
+  selectPJSON,
   Icon,
   setCore,
   signIn,
@@ -57,6 +59,8 @@ const NiceText = styled((props: TextFieldProps) => (
 export default function DialogSignin() {
   const id = "dialogSignin";
   const core = useAppSelector(selectCore);
+  const pJSON = useAppSelector(selectPJSON);
+  const { version } = pJSON;
   const { dialogSigninOpen } = core.data;
   const persona = useAppSelector(selectPersona);
   // // error
@@ -122,6 +126,11 @@ export default function DialogSignin() {
             <Box sx={{ mt: 1, mr: 2 }}>
               <Icon icon="malteaser" />
             </Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="body2" sx={{ mt: 1.25 }}>
+              {version}
+            </Typography>
           </Grid>
           <Grid item sx={{ flexGrow: 1 }} />
           <Grid item>

@@ -7,6 +7,7 @@ importScripts(
 workbox.setConfig({
   debug: true,
   maxAgeSeconds: 0,
+  maxAge: 0,
 });
 
 workbox.core.setCacheNameDetails({

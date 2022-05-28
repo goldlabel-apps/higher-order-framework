@@ -1,5 +1,5 @@
-import * as React from "react"
-import { useTheme, useMediaQuery, Box } from "@mui/material"
+import * as React from "react";
+import { useTheme, useMediaQuery, Box } from "@mui/material";
 import {
   useAppDispatch,
   useAppSelector,
@@ -7,22 +7,27 @@ import {
   MaxiButton,
   routeTo,
   setCore,
+  selectCore,
   selectPersona,
   unsignIn,
-} from "../listingslab-shared"
+} from "../listingslab-shared";
 
 export default function Navigator() {
-  const theme = useTheme()
-  const dispatch = useAppDispatch()
-  const persona = useAppSelector(selectPersona)
-  let isSignedIn = false
-  let isReady = true
-  // if (persona.data.user.firstCheck) isReady = true
-  if (persona.data.user.uid) isSignedIn = true
-  let mode = "mini"
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
-  if (!isMobile) mode = "maxi"
-  if (mode === "hidden") return null
+  const theme = useTheme();
+  const dispatch = useAppDispatch();
+  const persona = useAppSelector(selectPersona);
+
+  const core = useAppSelector(selectCore);
+  // console.warn("authReady", core.data.authReady)
+
+  let isSignedIn = false;
+  let isReady = false;
+  if (core.data.authReady) isReady = true;
+  if (persona.data.user.uid) isSignedIn = true;
+  let mode = "mini";
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  if (!isMobile) mode = "maxi";
+  if (mode === "hidden") return null;
 
   const homeBtnData = {
     icon: "home",
@@ -30,9 +35,9 @@ export default function Navigator() {
     tooltip: "Home",
     variant: "text",
     onClick: () => {
-      dispatch(routeTo({ pathname: `/` }))
+      dispatch(routeTo({ pathname: `/` }));
     },
-  }
+  };
 
   const signinBtnData = {
     icon: "arrowr",
@@ -40,9 +45,9 @@ export default function Navigator() {
     tooltip: "Sign in",
     variant: "text",
     onClick: () => {
-      dispatch(setCore({ key: `dialogSigninOpen`, value: true }))
+      dispatch(setCore({ key: `dialogSigninOpen`, value: true }));
     },
-  }
+  };
 
   const signoutBtnData = {
     icon: "exit",
@@ -50,9 +55,9 @@ export default function Navigator() {
     tooltip: "Sign out",
     variant: "text",
     onClick: () => {
-      dispatch(unsignIn())
+      dispatch(unsignIn());
     },
-  }
+  };
 
   const menuItems = [
     {
@@ -61,7 +66,7 @@ export default function Navigator() {
       tooltip: "Work",
       color: "primary",
       onClick: () => {
-        dispatch(routeTo({ pathname: `/work` }))
+        dispatch(routeTo({ pathname: `/work` }));
       },
     },
     {
@@ -70,7 +75,7 @@ export default function Navigator() {
       tooltip: "Life",
       color: "primary",
       onClick: () => {
-        dispatch(routeTo({ pathname: `/life` }))
+        dispatch(routeTo({ pathname: `/life` }));
       },
     },
     {
@@ -79,29 +84,35 @@ export default function Navigator() {
       tooltip: "Balance",
       color: "primary",
       onClick: () => {
-        dispatch(routeTo({ pathname: `/balance` }))
+        dispatch(routeTo({ pathname: `/balance` }));
       },
     },
-  ]
+  ];
 
   return (
     <Box sx={{ m: 1, display: "flex" }}>
+      {isMobile ? (
+        <MiniButton data={homeBtnData} />
+      ) : (
+        <MaxiButton data={homeBtnData} />
+      )}
 
-      { isMobile ? <MiniButton data={homeBtnData} /> : <MaxiButton data={homeBtnData} /> }
-
-      
       {menuItems.map((item, i) => {
-        if (isMobile) return <MiniButton key={`menuItem_${i}`} data={item} />
-        return <MaxiButton key={`menuItem_${i}`} data={item} />
+        if (isMobile) return <MiniButton key={`menuItem_${i}`} data={item} />;
+        return <MaxiButton key={`menuItem_${i}`} data={item} />;
       })}
 
       <Box sx={{ flexGrow: 1 }} />
 
-      {isReady ? (<React.Fragment>
-        { isMobile ? <MiniButton data={isSignedIn ? signoutBtnData : signinBtnData} /> 
-          : <MaxiButton data={isSignedIn ? signoutBtnData : signinBtnData} /> }
-        
-        </React.Fragment>) : null}
+      {isReady ? (
+        <React.Fragment>
+          {isMobile ? (
+            <MiniButton data={isSignedIn ? signoutBtnData : signinBtnData} />
+          ) : (
+            <MaxiButton data={isSignedIn ? signoutBtnData : signinBtnData} />
+          )}
+        </React.Fragment>
+      ) : null}
     </Box>
-  )
+  );
 }

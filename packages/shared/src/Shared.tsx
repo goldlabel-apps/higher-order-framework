@@ -14,6 +14,7 @@ import {
   Renderer,
   Notification,
   setPersona,
+  setCore,
 } from "./listingslab-shared";
 
 export const app = initializeApp(firebaseConfig);
@@ -23,12 +24,13 @@ export const history = createBrowserHistory();
 
 onAuthStateChanged(auth, (user) => {
   const dispatch = store.dispatch;
+  dispatch(setCore({ key: "authReady", value: true }));
   if (user) {
     const uid = user.uid;
-    const newUser = { uid, firstCheck: true };
+    const newUser = { uid };
     dispatch(setPersona({ key: "user", value: newUser }));
   } else {
-    const newUser = { uid: null, firstCheck: true };
+    const newUser = { uid: null };
     dispatch(setPersona({ key: "user", value: newUser }));
   }
 });

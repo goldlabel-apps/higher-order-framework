@@ -7,8 +7,6 @@ import { tick } from "./tick";
 import { updateLayout } from "./updateLayout";
 import { urlCommand } from "./urlCommand";
 import { toggleAdmin } from "./toggleAdmin";
-
-import { signOut } from "./signOut";
 import { updateAuth } from "./updateAuth";
 import { getIpgeolocation } from "./getIpgeolocation";
 import { getPersona } from "./getPersona";
@@ -25,6 +23,5 @@ export {
   updateLayout,
   urlCommand,
   toggleAdmin,
-  signOut,
   updateAuth,
 };

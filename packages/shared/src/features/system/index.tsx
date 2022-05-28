@@ -24,7 +24,6 @@ import {
   updateLayout,
   urlCommand,
   getIpgeolocation,
-  signOut,
   getPersona,
 } from "./actions";
 
@@ -51,7 +50,6 @@ export {
   updatePersona,
   tick,
   updateLayout,
-  signOut,
 };
 
 export const selectPJSON = (state: RootState) => state.system.pJSON;

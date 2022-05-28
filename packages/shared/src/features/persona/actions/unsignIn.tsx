@@ -4,9 +4,11 @@ import { setSystemError, setPersona } from "../../../listingslab-shared";
 
 export const unsignIn = (): AppThunk => async (dispatch: any) => {
   try {
+    dispatch(setPersona({ key: "blocked", value: true }));
     const auth = getAuth();
     signOut(auth)
       .then(() => {
+        dispatch(setPersona({ key: "blocked", value: false }));
         dispatch(
           setPersona({
             key: "user",
@@ -17,6 +19,7 @@ export const unsignIn = (): AppThunk => async (dispatch: any) => {
         );
       })
       .catch((error) => {
+        dispatch(setPersona({ key: "blocked", value: false }));
         dispatch(setSystemError(error));
       });
   } catch (error) {

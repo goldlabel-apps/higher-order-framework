@@ -7,8 +7,10 @@ import Map from "./Map";
 import Social from "./Social";
 import MetaButton from "./MetaButton";
 import Post from "./Post";
+import Blocked from "./Blocked";
 
 export {
+  Blocked,
   NaviCrumb,
   HideShow,
   Map,

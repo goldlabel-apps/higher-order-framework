@@ -16,6 +16,7 @@ import MiniButton from "./components/MiniButton";
 import FeaturedImage from "./components/FeaturedImage";
 import {
   Social,
+  Blocked,
   InputPassword,
   InputText,
   InputSubmit,
@@ -29,6 +30,8 @@ import {
 } from "./components";
 
 import { selectContent, setContent } from "./features/content";
+
+import { Admin } from "./features/admin";
 
 import {
   Persona,
@@ -150,4 +153,6 @@ export {
   setCore,
   DialogSignin,
   Home,
+  Blocked,
+  Admin,
 };
