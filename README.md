@@ -1,2 +1,8 @@
-# higher-order-framework
-Higher Order Framework with React, Single SPA, TypeScript, Firebase
+# Higher Order Framework
+
+![featured](https://listingslab.com/svg/featured/home.svg)
+
+- Single SPA
+    - TypeScript
+    - React
+    - Node
