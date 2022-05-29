@@ -9,6 +9,7 @@ if (winSSR) ssr = winSSR
 
 export interface SystemShape {
     pJSON: any
+    data: any
     systemError: any
     appState: any
     layout: any
@@ -29,7 +30,7 @@ export interface SystemShape {
 const initialState: SystemShape = {
     pJSON,
     systemError: null,
-
+    data: null,
     fingerprint: {
         data: null,
         ipgeolocationLoading: false,

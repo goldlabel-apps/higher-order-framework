@@ -63,6 +63,7 @@ export const selectTicking = (state: RootState) => state.system.ticking
 export const selectClips = (state: RootState) => state.system.clips
 export const selectLayout = (state: RootState) => state.system.layout
 export const selectPersona = (state: RootState) => state.system.persona
+export const selectSystem = (state: RootState) => state.system
 
 export const selectNotification = (state: RootState) =>
     state.system.notification

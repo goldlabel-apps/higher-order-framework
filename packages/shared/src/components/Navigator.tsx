@@ -36,7 +36,11 @@ export default function Navigator() {
         tooltip: 'Home',
         variant: 'text',
         onClick: () => {
-            dispatch(routeTo({ pathname: `/` }))
+            dispatch(
+                routeTo({
+                    pathname: `/`,
+                })
+            )
         },
     }
     const signinBtnData = {
