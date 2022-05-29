@@ -21,21 +21,19 @@ export default function App() {
           <Grid item xs={12}>
             <Navigator />
           </Grid>
-
+          <Grid sm={4} xs={12} item>
+            <Box sx={{ ml: 1 }}>
+              <Social defaultExpanded={true} />
+            </Box>
+          </Grid>
           <Grid sm={8} xs={12} item>
             <Box sx={{ ml: 1, mt: 4 }}>
               <CardMedia
                 alt="listingslab"
                 component="img"
-                height="216"
+                height="325"
                 image="https://listingslab.com/svg/featured/team.svg"
               />
-            </Box>
-          </Grid>
-
-          <Grid sm={4} xs={12} item>
-            <Box sx={{ ml: 1 }}>
-              <Social defaultExpanded={true} />
             </Box>
           </Grid>
         </Grid>
