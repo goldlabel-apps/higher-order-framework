@@ -37,7 +37,7 @@ export default function Map() {
             }}
         >
             <Box
-                sx={{ height: 300, m: 1 }}
+                sx={{ height: 550, m: 1 }}
                 ref={mapContainer}
                 className="map-container"
             />
