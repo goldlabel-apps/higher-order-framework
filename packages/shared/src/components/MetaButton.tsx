@@ -23,7 +23,7 @@ export default function MetaButton(props: any) {
     >
       {icon ? (
         <Box>
-          <Icon icon={icon} color="secondary" />
+          <Icon icon={icon} />
         </Box>
       ) : null}
       <Typography variant="body1" sx={{ ml: 2 }}>

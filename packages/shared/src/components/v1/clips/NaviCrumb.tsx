@@ -22,7 +22,6 @@ export default function NaviCrumb() {
       id={id}
       sx={{
         opacity: 0,
-        zIndex: 400,
         position: "absolute",
         width: colWidth,
       }}

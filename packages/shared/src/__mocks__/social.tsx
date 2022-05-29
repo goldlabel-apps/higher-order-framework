@@ -29,17 +29,18 @@ export const social = [
     url: "https://www.youtube.com/channel/UCI26fo5NE7RdB1MysoCr66A",
   },
   {
-    label: "Instagram",
-    icon: "instagram",
-    title: "Photos",
-    url: "https://www.instagram.com/listingslab.photos/",
-  },
-  {
     label: "Vimeo",
     icon: "vimeo",
     title: "Videos",
     url: "https://vimeo.com/listingslab",
   },
+  {
+    label: "Instagram",
+    icon: "instagram",
+    title: "Photos",
+    url: "https://www.instagram.com/listingslab.photos/",
+  },
+
   {
     label: "Flickr",
     icon: "flickr",

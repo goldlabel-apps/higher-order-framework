@@ -1,14 +1,21 @@
 import { getAuth, signOut } from "firebase/auth";
 import { AppThunk } from "../../../app/store";
-import { setSystemError, setPersona } from "../../../listingslab-shared";
+import {
+  setSystemError,
+  setPersona,
+  setCore,
+} from "../../../listingslab-shared";
 
 export const unsignIn = (): AppThunk => async (dispatch: any) => {
   try {
-    dispatch(setPersona({ key: "blocked", value: true }));
+    dispatch(setCore({ key: "blocked", value: true }));
+
     const auth = getAuth();
+    // setTimeout(() => {
+
     signOut(auth)
       .then(() => {
-        dispatch(setPersona({ key: "blocked", value: false }));
+        dispatch(setCore({ key: "blocked", value: false }));
         dispatch(
           setPersona({
             key: "user",
@@ -19,9 +26,11 @@ export const unsignIn = (): AppThunk => async (dispatch: any) => {
         );
       })
       .catch((error) => {
-        dispatch(setPersona({ key: "blocked", value: false }));
+        dispatch(setCore({ key: "blocked", value: false }));
         dispatch(setSystemError(error));
       });
+
+    // }, 2000)
   } catch (error) {
     dispatch(setSystemError(error));
   }

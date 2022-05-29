@@ -12,7 +12,7 @@ export const signIn =
     try {
       const auth = getAuth();
       dispatch(setPersona({ key: "user", value: { uid: null } }));
-      dispatch(setPersona({ key: "blocked", value: true }));
+      dispatch(setCore({ key: "blocked", value: true }));
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const newUser = {
@@ -20,11 +20,11 @@ export const signIn =
           };
           dispatch(setPersona({ key: "user", value: newUser }));
           dispatch(setCore({ key: "dialogSigninOpen", value: false }));
-          dispatch(setPersona({ key: "blocked", value: false }));
+          dispatch(setCore({ key: "blocked", value: false }));
         })
         .catch((error) => {
           dispatch(setSystemError(error));
-          dispatch(setPersona({ key: "blocked", value: false }));
+          dispatch(setCore({ key: "blocked", value: false }));
         });
     } catch (error) {
       dispatch(setSystemError(error));

@@ -13,7 +13,7 @@ import {
   BalanceIcon,
 } from "../theme";
 import DefaultIcon from "@mui/icons-material/DisabledByDefault";
-import HomeIcon from "@mui/icons-material/Home";
+import HomeIcon from "@mui/icons-material/HomeOutlined";
 import CMSIcon from "@mui/icons-material/DocumentScanner";
 import FlyIcon from "@mui/icons-material/LocalAirportRounded";
 import MapIcon from "@mui/icons-material/LocationDisabled";
@@ -67,7 +67,7 @@ import PatientsIcon from "@mui/icons-material/People";
 import FilterIcon from "@mui/icons-material/Sort";
 import ClinicalIcon from "@mui/icons-material/AccountBox";
 import ClericalIcon from "@mui/icons-material/AirlineSeatLegroomNormal";
-import AdminIcon from "@mui/icons-material/AdminPanelSettings";
+import AdminIcon from "@mui/icons-material/Settings";
 import DeveloperIcon from "@mui/icons-material/ToysOutlined";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -123,11 +123,10 @@ export default function Icon(props: any) {
     case "map":
       iconFragment = <MapIcon color={color} />;
       break;
-    
-      case "cms":
-        iconFragment = <CMSIcon color={color} />;
-        break;
-      
+
+    case "cms":
+      iconFragment = <CMSIcon color={color} />;
+      break;
 
     case "youtube":
       iconFragment = <YouTubeIcon color={color} />;

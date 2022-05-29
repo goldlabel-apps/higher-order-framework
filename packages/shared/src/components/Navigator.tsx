@@ -81,15 +81,17 @@ export default function Navigator() {
   return (
     <Box sx={{ m: 1, display: "flex" }}>
       <Box sx={{ flexGrow: 1 }} />
-      
-      
-      { menuItems.map((item, i) => {
+
+      {menuItems.map((item, i) => {
         return <MiniButton key={`menuItem_${i}`} data={item} />;
       })}
-{ isReady ? <React.Fragment>
-        { isSignedIn ? <AdminMenu /> : <MiniButton data={ signinBtnData } /> }
-        </React.Fragment> : null }
-<MiniButton data={homeBtnData} />
+      {isReady ? (
+        <React.Fragment>
+          {isSignedIn ? <AdminMenu /> : <MiniButton data={signinBtnData} />}
+        </React.Fragment>
+      ) : null}
+
+      <MiniButton data={homeBtnData} />
 
       <Box sx={{ flexGrow: 1 }} />
     </Box>

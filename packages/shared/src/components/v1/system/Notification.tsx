@@ -30,19 +30,18 @@ export default function Notification() {
     reason?: string
   ) => {
     if (reason === "clickaway") return;
-    console.warn("dispatch close notification");
+    // console.warn("dispatch close notification");
     dispatch(notify(null));
   };
 
   return (
     <Snackbar
       open
-      sx={{ zIndex: 12345678 }}
       anchorOrigin={{
         vertical: "bottom",
         horizontal: "center",
       }}
-      autoHideDuration={5000}
+      autoHideDuration={6000}
       onClose={handleClose}
     >
       <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>

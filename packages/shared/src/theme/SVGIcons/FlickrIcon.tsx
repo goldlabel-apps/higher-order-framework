@@ -1,8 +1,10 @@
 import * as React from "react";
-import { SvgIcon } from "@mui/material";
+import { useTheme, SvgIcon } from "@mui/material";
 
 export default function FlickrIcon(props) {
-  let color1 = "#035f64";
+  let mainColor = "red";
+  const theme = useTheme();
+  mainColor = theme.palette.primary.main;
 
   return (
     <SvgIcon {...props}>
@@ -26,7 +28,7 @@ export default function FlickrIcon(props) {
           <g
             id="SVGIcon"
             transform="translate(-2.000000, -1.000000)"
-            fill={color1}
+            fill={mainColor}
             fill-rule="nonzero"
           >
             <g id="flickr" transform="translate(2.000000, 1.000000)">

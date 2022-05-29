@@ -1,9 +1,5 @@
 import React from "react";
-import { 
-  Box, 
-  Grid,
-  CardMedia,
-} from "@mui/material";
+import { Box, Grid, CardMedia } from "@mui/material";
 import {
   DialogSignin,
   Social,
@@ -22,11 +18,11 @@ export default function App() {
       <DialogSignin />
       <Box sx={{ width: "98vw" }}>
         <Grid container spacing={1}>
-          <Grid item xs={ 12 }>
+          <Grid item xs={12}>
             <Navigator />
           </Grid>
-          
-          <Grid sm={ 8 } xs={12} item>
+
+          <Grid sm={8} xs={12} item>
             <Box sx={{ ml: 1, mt: 4 }}>
               <CardMedia
                 alt="listingslab"
@@ -37,7 +33,7 @@ export default function App() {
             </Box>
           </Grid>
 
-          <Grid sm={ 4 } xs={ 12 } item>
+          <Grid sm={4} xs={12} item>
             <Box sx={{ ml: 1 }}>
               <Social defaultExpanded={true} />
             </Box>

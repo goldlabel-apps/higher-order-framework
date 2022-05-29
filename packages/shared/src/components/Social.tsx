@@ -17,7 +17,7 @@ import {
 import { Icon } from "../listingslab-shared";
 
 export default function Social(props) {
-  const title = "Find us";
+  const title = "On the social";
   const { defaultExpanded } = props;
   const dispatch = useAppDispatch();
   const theme = useTheme();
@@ -50,16 +50,14 @@ export default function Social(props) {
                     >
                       <ListItemIcon>
                         <Tooltip title={label}>
-                          <IconButton sx={{ mr: 1 }} color="primary">
+                          <IconButton color="primary" sx={{ mr: 1 }}>
                             <Icon icon={icon} />
                           </IconButton>
                         </Tooltip>
                       </ListItemIcon>
                       <ListItemText
                         primary={
-                          <Typography sx={{ color: "#333" }}>
-                            {label}
-                          </Typography>
+                          <Typography variant="body2">{label}</Typography>
                         }
                       />
                     </ListItem>

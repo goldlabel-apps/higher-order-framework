@@ -1,11 +1,19 @@
 import { PaletteMode } from "@mui/material";
+
+/*
+
+
+"rgba(232, 12, 12, 1)", "#e80c0c", bright red
+"rgba(76, 151, 156, 1)", // "#4c979c", light teal
+"rgba(19, 68, 72, 1)", //"#134448", dark teal
+*/
+
 const theme = {
-  text: "#333",
-  primary: "#035f64",
-  secondary: "#05e8f4",
+  primary: "rgba(19, 68, 72, 1)", //"#134448", dark teal
+  secondary: "rgba(76, 151, 156, 1)", //"#134448", light teal
 };
 
-const { primary, text, secondary } = theme;
+const { primary, secondary } = theme;
 
 export const getDesignTokens = (mode: PaletteMode) => ({
   palette: {

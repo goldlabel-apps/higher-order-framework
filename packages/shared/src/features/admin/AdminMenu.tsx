@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   Divider,
   IconButton,
@@ -8,58 +8,65 @@ import {
   ListItemText,
   ListItemIcon,
   Typography,
-} from "@mui/material"
+  Tooltip,
+} from "@mui/material";
 import {
   useAppDispatch,
   unsignIn,
   setAdmin,
   Icon,
-} from "../../listingslab-shared"
+  CMS,
+} from "../../listingslab-shared";
 
 export default function AdminMenu() {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
   const adminMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const adminMenuClose = () => {
     setAnchorEl(null);
   };
 
   const onSignoutClick = () => {
     dispatch(unsignIn());
-  }
+    adminMenuClose();
+  };
 
   const onCmsClick = () => {
-    dispatch(setAdmin({ key:"cmsIsOpen", value: true }))
-  }
+    dispatch(setAdmin({ key: "cmsIsOpen", value: true }));
+    adminMenuClose();
+  };
 
   return (
     <React.Fragment>
-
-      <IconButton
-        id="admin-button"
-        aria-controls={open ? 'admin-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={ adminMenuOpen }>
-        <Icon icon="admin" />
-      </IconButton>
-    
+      <CMS />
+      <Tooltip title="Admin Menu">
+        <IconButton
+          color="primary"
+          id="admin-button"
+          aria-controls={open ? "admin-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={adminMenuOpen}
+        >
+          <Icon icon="admin" />
+        </IconButton>
+      </Tooltip>
       <Menu
         id="admin-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={adminMenuClose}
         MenuListProps={{
-          'aria-labelledby': 'admin-button',
-        }}>
-
-        <MenuList sx={{ width: 200, maxWidth: "100%"} }>
-          
-          <MenuItem color="secondary" onClick={ onCmsClick }>
+          "aria-labelledby": "admin-button",
+        }}
+      >
+        <MenuList sx={{ width: 200, maxWidth: "100%" }}>
+          <MenuItem onClick={onCmsClick}>
             <ListItemIcon>
               <Icon icon="cms" />
             </ListItemIcon>
@@ -70,18 +77,14 @@ export default function AdminMenu() {
           </MenuItem>
 
           <Divider />
-          
+
           <MenuItem onClick={onSignoutClick}>
             <ListItemIcon>
               <Icon icon="exit" />
             </ListItemIcon>
-            <ListItemText>
-              Sign out
-            </ListItemText>
+            <ListItemText>Sign out</ListItemText>
           </MenuItem>
-
         </MenuList>
-        
       </Menu>
     </React.Fragment>
   );

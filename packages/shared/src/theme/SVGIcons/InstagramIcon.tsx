@@ -1,8 +1,11 @@
 import * as React from "react";
-import { SvgIcon } from "@mui/material";
+import { useTheme, SvgIcon } from "@mui/material";
 
 export default function InstagramIcon(props) {
-  let color1 = "#035f64";
+  let mainColor = "red";
+  const theme = useTheme();
+  // console.warn("InstagramIcon", theme.palette.secondary.main)
+  mainColor = theme.palette.primary.main;
 
   return (
     <SvgIcon {...props}>
@@ -26,7 +29,7 @@ export default function InstagramIcon(props) {
           <g
             id="SVGIcon"
             transform="translate(-2.000000, -1.000000)"
-            fill={color1}
+            fill={mainColor}
             fill-rule="nonzero"
           >
             <g id="instagram" transform="translate(2.000000, 1.000000)">

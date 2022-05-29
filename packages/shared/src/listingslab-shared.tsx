@@ -31,12 +31,7 @@ import {
 
 import { selectContent, setContent } from "./features/content";
 
-import {
-  AdminMenu,
-  CMS,
-  selectAdmin,
-  setAdmin,
-} from "./features/admin";
+import { AdminMenu, CMS, selectAdmin, setAdmin } from "./features/admin";
 
 import {
   Persona,
