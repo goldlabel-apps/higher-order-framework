@@ -1,17 +1,21 @@
 import * as React from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useAppSelector, selectContent } from "../listingslab-shared";
 
-export default function Home() {
+export default function Landing() {
   const content = useAppSelector(selectContent);
 
   React.useEffect(() => {
-    // console.warn("Home useEffect")
+    // console.warn("Landing useEffect")
   }, [content]);
 
   return (
     <React.Fragment>
-      <Box></Box>
+      <Box>
+        <Typography>
+          Landing
+          </Typography>
+      </Box>
     </React.Fragment>
   );
 }

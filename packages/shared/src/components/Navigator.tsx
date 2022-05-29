@@ -30,7 +30,7 @@ export default function Navigator() {
   if (mode === "hidden") return null;
 
   // TODO move all these vars into redux
-  const homeBtnData = {
+  const LandingBtnData = {
     icon: "home",
     label: "Home",
     tooltip: "Home",
@@ -91,7 +91,7 @@ export default function Navigator() {
         </React.Fragment>
       ) : null}
 
-      <MiniButton data={homeBtnData} />
+      <MiniButton data={LandingBtnData} />
 
       <Box sx={{ flexGrow: 1 }} />
     </Box>

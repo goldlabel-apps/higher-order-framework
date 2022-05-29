@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="987px" height="586px" viewBox="0 0 987 586" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>home</title>
+    <title>Landing</title>
     <defs>
         <radialGradient cx="49.999%" cy="49.9995%" fx="49.999%" fy="49.9995%" r="176.094617%" gradientTransform="translate(0.499990,0.499995),scale(0.394044,1.000000),rotate(180.000000),translate(-0.499990,-0.499995)" id="radialGradient-1">
             <stop stop-color="#DAEFF3" offset="0%"></stop>
@@ -8,7 +8,7 @@
         </radialGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="home" transform="translate(0.262750, 0.577601)" fill-rule="nonzero">
+        <g id="Landing" transform="translate(0.262750, 0.577601)" fill-rule="nonzero">
             <polygon id="BluSky" fill="url(#radialGradient-1)" points="53.8364672 535.422399 926.836467 533.126581 907.956191 191.422399 66.8464892 191.422399"></polygon>
             <g id="Group">
                 <path d="M920.83725,278.477399 L796.44725,278.477399 C796.44725,278.477399 824.29225,276.304899 858.64225,276.304899 C892.98975,276.304899 920.83725,278.477399 920.83725,278.477399" id="Fill-9" fill="#A6D4D1"></path>

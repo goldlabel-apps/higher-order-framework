@@ -10,7 +10,7 @@ import Renderer from "./Renderer";
 import App from "./App";
 
 import MaxiButton from "./components/MaxiButton";
-import Home from "./components/Home";
+import Landing from "./components/Landing";
 import Navigator from "./components/Navigator";
 import MiniButton from "./components/MiniButton";
 import FeaturedImage from "./components/FeaturedImage";
@@ -152,7 +152,7 @@ export {
   selectCore,
   setCore,
   DialogSignin,
-  Home,
+  Landing,
   Blocked,
   CMS,
   selectAdmin,

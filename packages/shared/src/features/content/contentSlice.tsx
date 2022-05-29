@@ -13,9 +13,9 @@ const initialState: ContentShape = {
         id: "3ENT4CLcjYU7",
         slug: "welcome",
         pathname: "/",
-        title: `Home`,
+        title: `Landing`,
         excerpt: `Welcome to Listingslab Software`,
-        image: `http://listingslab.com/svg/featured/home.svg`,
+        image: `http://listingslab.com/svg/featured/Landing.svg`,
         order: 1,
         body: `
         

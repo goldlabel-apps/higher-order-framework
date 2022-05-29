@@ -95,7 +95,7 @@ export default function NaviCrumb() {
         <pre>{JSON.stringify(baseURLParts2, null, 2)}</pre>
       </Box>
 <Typography>
-  <Link href="/">Home</Link> >&nbsp;
+  <Link href="/">Landing</Link> >&nbsp;
   <Link href="/category-name">Category</Link> >&nbsp;
   Post Title
 </Typography>

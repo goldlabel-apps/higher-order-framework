@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, CardMedia } from "@mui/material";
 import {
+  Landing,
   DialogSignin,
   Social,
   Navigator,
@@ -34,6 +35,7 @@ export default function App() {
                 height="325"
                 image="https://listingslab.com/svg/featured/team.svg"
               />
+              <Landing />
             </Box>
           </Grid>
         </Grid>
