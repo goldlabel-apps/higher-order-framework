@@ -28,7 +28,7 @@ export default function App() {
           </Grid>
           <Grid sm={4} xs={12} item>
             <Box sx={{ ml: 1 }}>
-              {uid ? <Admin defaultExpanded={true} /> : <Map />}
+              {uid ? <Admin defaultExpanded={true} /> : null }
               <Social defaultExpanded={true} />
             </Box>
           </Grid>

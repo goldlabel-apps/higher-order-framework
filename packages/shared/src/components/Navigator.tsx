@@ -29,6 +29,7 @@ export default function Navigator() {
   if (!isMobile) mode = "maxi";
   if (mode === "hidden") return null;
 
+  // TODO move all these vars into redux
   const homeBtnData = {
     icon: "home",
     label: "Home",
@@ -91,28 +92,13 @@ export default function Navigator() {
 
   return (
     <Box sx={{ m: 1, display: "flex" }}>
-      {isMobile ? (
-        <MiniButton data={homeBtnData} />
-      ) : (
-        <MaxiButton data={homeBtnData} />
-      )}
-
-      {menuItems.map((item, i) => {
-        if (isMobile) return <MiniButton key={`menuItem_${i}`} data={item} />;
-        return <MaxiButton key={`menuItem_${i}`} data={item} />;
-      })}
-
       <Box sx={{ flexGrow: 1 }} />
-
-      {isReady ? (
-        <React.Fragment>
-          {isMobile ? (
-            <MiniButton data={isSignedIn ? signoutBtnData : signinBtnData} />
-          ) : (
-            <MaxiButton data={isSignedIn ? signoutBtnData : signinBtnData} />
-          )}
-        </React.Fragment>
-      ) : null}
+      <MiniButton data={homeBtnData} />
+      {menuItems.map((item, i) => {
+        return <MiniButton key={`menuItem_${i}`} data={item} />;
+      })}
+      {isReady ? <MiniButton data={isSignedIn ? signoutBtnData : signinBtnData} /> : null}
+      <Box sx={{ flexGrow: 1 }} />
     </Box>
   );
 }
