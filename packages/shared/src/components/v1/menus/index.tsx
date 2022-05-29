@@ -1,3 +1,3 @@
-import Thumb from "./Thumb";
+import Thumb from './Thumb'
 
-export { Thumb };
+export { Thumb }

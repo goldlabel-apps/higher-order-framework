@@ -1,3 +1,3 @@
-import NaviCrumb from "./NaviCrumb";
+import NaviCrumb from './NaviCrumb'
 
-export { NaviCrumb };
+export { NaviCrumb }

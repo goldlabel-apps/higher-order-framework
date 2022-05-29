@@ -1,56 +1,56 @@
-import * as React from "react";
+import * as React from 'react'
 import {
-  useTheme,
-  Box,
-  // CardContent,
-  CardHeader,
-  Typography,
-} from "@mui/material";
+    useTheme,
+    Box,
+    // CardContent,
+    CardHeader,
+    Typography,
+} from '@mui/material'
 import {
-  useAppSelector,
-  selectContent,
-  FeaturedImage,
-} from "../listingslab-shared";
+    useAppSelector,
+    selectContent,
+    FeaturedImage,
+} from '../listingslab-shared'
 
 export default function Post() {
-  const content = useAppSelector(selectContent);
-  const theme = useTheme();
-  const currentContent = content.data.list[0];
-  const { title, excerpt, body, image } = currentContent;
-  const showImage = true;
-  const showBody = false;
+    const content = useAppSelector(selectContent)
+    const theme = useTheme()
+    const currentContent = content.data.list[0]
+    const { title, excerpt, body, image } = currentContent
+    const showImage = true
+    const showBody = false
 
-  React.useEffect(() => {
-    // console.warn("effect for MainContent");
-  }, [content]);
+    React.useEffect(() => {
+        // console.warn("effect for MainContent");
+    }, [content])
 
-  return (
-    <React.Fragment>
-      <Box>
-        <CardHeader
-          title={
-            <Typography variant="h6" sx={{ fontWeight: "lighter" }}>
-              {title}
-            </Typography>
-          }
-          subheader={
-            <Typography variant="body2" sx={{}}>
-              {excerpt}
-            </Typography>
-          }
-        />
+    return (
+        <React.Fragment>
+            <Box>
+                <CardHeader
+                    title={
+                        <Typography variant="h6" sx={{ fontWeight: 'lighter' }}>
+                            {title}
+                        </Typography>
+                    }
+                    subheader={
+                        <Typography variant="body2" sx={{}}>
+                            {excerpt}
+                        </Typography>
+                    }
+                />
 
-        {image && showImage ? (
-          <FeaturedImage data={{ src: image, alt: excerpt }} />
-        ) : null}
-        {showBody ? (
-          <Typography variant="body2" sx={{ mt: 3 }}>
-            {body}
-          </Typography>
-        ) : null}
-      </Box>
-    </React.Fragment>
-  );
+                {image && showImage ? (
+                    <FeaturedImage data={{ src: image, alt: excerpt }} />
+                ) : null}
+                {showBody ? (
+                    <Typography variant="body2" sx={{ mt: 3 }}>
+                        {body}
+                    </Typography>
+                ) : null}
+            </Box>
+        </React.Fragment>
+    )
 }
 
 /* 
