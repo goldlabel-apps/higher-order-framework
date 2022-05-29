@@ -14,6 +14,7 @@ import {
 } from "../theme";
 import DefaultIcon from "@mui/icons-material/DisabledByDefault";
 import HomeIcon from "@mui/icons-material/Home";
+import CMSIcon from "@mui/icons-material/DocumentScanner";
 import FlyIcon from "@mui/icons-material/LocalAirportRounded";
 import MapIcon from "@mui/icons-material/LocationDisabled";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -122,6 +123,11 @@ export default function Icon(props: any) {
     case "map":
       iconFragment = <MapIcon color={color} />;
       break;
+    
+      case "cms":
+        iconFragment = <CMSIcon color={color} />;
+        break;
+      
 
     case "youtube":
       iconFragment = <YouTubeIcon color={color} />;

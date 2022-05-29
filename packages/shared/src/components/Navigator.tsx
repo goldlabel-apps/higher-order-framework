@@ -4,7 +4,7 @@ import {
   useAppDispatch,
   useAppSelector,
   MiniButton,
-  MaxiButton,
+  AdminMenu,
   routeTo,
   setCore,
   selectCore,
@@ -21,8 +21,8 @@ export default function Navigator() {
   // console.warn("authReady", core.data.authReady)
 
   let isSignedIn = false;
-  let isReady = false;
-  if (core.data.authReady) isReady = true;
+  let isReady = true;
+  // if (core.data.authReady) isReady = true;
   if (persona.data.user.uid) isSignedIn = true;
   let mode = "mini";
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -39,7 +39,6 @@ export default function Navigator() {
       dispatch(routeTo({ pathname: `/` }));
     },
   };
-
   const signinBtnData = {
     icon: "arrowr",
     label: "Sign in",
@@ -49,17 +48,6 @@ export default function Navigator() {
       dispatch(setCore({ key: `dialogSigninOpen`, value: true }));
     },
   };
-
-  const signoutBtnData = {
-    icon: "exit",
-    label: "Sign out",
-    tooltip: "Sign out",
-    variant: "text",
-    onClick: () => {
-      dispatch(unsignIn());
-    },
-  };
-
   const menuItems = [
     {
       icon: "work",
@@ -93,11 +81,16 @@ export default function Navigator() {
   return (
     <Box sx={{ m: 1, display: "flex" }}>
       <Box sx={{ flexGrow: 1 }} />
-      <MiniButton data={homeBtnData} />
-      {menuItems.map((item, i) => {
+      
+      
+      { menuItems.map((item, i) => {
         return <MiniButton key={`menuItem_${i}`} data={item} />;
       })}
-      {isReady ? <MiniButton data={isSignedIn ? signoutBtnData : signinBtnData} /> : null}
+{ isReady ? <React.Fragment>
+        { isSignedIn ? <AdminMenu /> : <MiniButton data={ signinBtnData } /> }
+        </React.Fragment> : null }
+<MiniButton data={homeBtnData} />
+
       <Box sx={{ flexGrow: 1 }} />
     </Box>
   );

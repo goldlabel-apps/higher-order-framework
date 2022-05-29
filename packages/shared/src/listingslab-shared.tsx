@@ -31,8 +31,8 @@ import {
 
 import { selectContent, setContent } from "./features/content";
 
-import { 
-  Admin,
+import {
+  AdminMenu,
   CMS,
   selectAdmin,
   setAdmin,
@@ -159,8 +159,8 @@ export {
   DialogSignin,
   Home,
   Blocked,
-  Admin,
   CMS,
   selectAdmin,
   setAdmin,
+  AdminMenu,
 };

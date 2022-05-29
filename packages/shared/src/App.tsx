@@ -1,21 +1,20 @@
 import React from "react";
-import { Box, Grid } from "@mui/material";
+import { 
+  Box, 
+  Grid,
+  CardMedia,
+} from "@mui/material";
 import {
   DialogSignin,
   Social,
   Navigator,
-  Home,
   Blocked,
   selectPersona,
   useAppSelector,
-  Admin,
-  Map,
 } from "./listingslab-shared";
 
 export default function App() {
   const id = "app";
-  const persona = useAppSelector(selectPersona);
-  const { uid } = persona.data.user;
 
   return (
     <Box id={id}>
@@ -23,18 +22,24 @@ export default function App() {
       <DialogSignin />
       <Box sx={{ width: "98vw" }}>
         <Grid container spacing={1}>
-          <Grid item xs={12}>
+          <Grid item xs={ 12 }>
             <Navigator />
           </Grid>
-          <Grid sm={4} xs={12} item>
-            <Box sx={{ ml: 1 }}>
-              {uid ? <Admin defaultExpanded={true} /> : null }
-              <Social defaultExpanded={true} />
+          
+          <Grid sm={ 8 } xs={12} item>
+            <Box sx={{ ml: 1, mt: 4 }}>
+              <CardMedia
+                alt="listingslab"
+                component="img"
+                height="216"
+                image="https://listingslab.com/svg/featured/team.svg"
+              />
             </Box>
           </Grid>
-          <Grid sm={8} xs={12} item>
+
+          <Grid sm={ 4 } xs={ 12 } item>
             <Box sx={{ ml: 1 }}>
-              <Home />
+              <Social defaultExpanded={true} />
             </Box>
           </Grid>
         </Grid>
