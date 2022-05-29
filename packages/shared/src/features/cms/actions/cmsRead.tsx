@@ -1,11 +1,11 @@
 import { AppThunk } from '../../../app/store'
 
-export const adminAction =
+export const cmsRead =
     (payload: any): AppThunk =>
     async (dispatch: any, getState: any) => {
         try {
-            console.warn('adminAction', payload)
+            console.warn('cmsRead', payload)
         } catch (error) {
-            console.warn('adminAction error', error)
+            console.warn('cmsRead error', error)
         }
     }

@@ -1,4 +1,4 @@
-import Loading from "./Loading";
-import Notification from "./Notification";
+import Loading from './Loading'
+import Notification from './Notification'
 
-export { Loading, Notification };
+export { Loading, Notification }

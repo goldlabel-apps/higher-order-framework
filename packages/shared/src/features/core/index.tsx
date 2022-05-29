@@ -1,5 +1,5 @@
-import { RootState } from "../../app/store";
-import { setCore } from "./coreSlice";
+import { RootState } from '../../app/store'
+import { setCore } from './coreSlice'
 
-export const selectCore = (state: RootState) => state.core;
-export { setCore };
+export const selectCore = (state: RootState) => state.core
+export { setCore }

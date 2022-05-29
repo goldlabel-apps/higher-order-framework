@@ -1,23 +1,23 @@
 export const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
-};
+    apiKey: '',
+    authDomain: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: '',
+}
 
 export const fingerprintJSConfig = {
-  url: "https://fingerprintjs.com",
-  apiKey: "",
-};
+    url: 'https://fingerprintjs.com',
+    apiKey: '',
+}
 
 export const ipgeolocationConfig = {
-  apiKey: "",
-};
+    apiKey: '',
+}
 
 export const mapboxConfig = {
-  name: "",
-  accessToken: "",
-  styleLight: "",
-};
+    name: '',
+    accessToken: '',
+    styleLight: '',
+}

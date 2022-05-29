@@ -1,32 +1,32 @@
 {
-  "short_name": "listingslab",
-  "name": "listingslab",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#FFFFFF",
-  "theme_color": "#FFFFFF",
+    "short_name": "listingslab",
+    "name": "listingslab",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFFFFF",
 
-  "icons": [
-    {
-      "src": "https://listingslab.com/favicon.ico",
-      "sizes": "16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "https://listingslab.com/logo32.png",
-      "type": "image/png",
-      "sizes": "32x32"
-    },
-    {
-      "src": "https://listingslab.com/logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "https://listingslab.com/logo512.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
-    }
-  ]
+    "icons": [
+        {
+            "src": "https://listingslab.com/favicon.ico",
+            "sizes": "16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "https://listingslab.com/logo32.png",
+            "type": "image/png",
+            "sizes": "32x32"
+        },
+        {
+            "src": "https://listingslab.com/logo192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "https://listingslab.com/logo512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ]
 }

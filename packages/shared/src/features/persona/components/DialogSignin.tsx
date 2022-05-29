@@ -1,188 +1,192 @@
-import * as React from "react";
+import * as React from 'react'
 import {
-  Alert,
-  Box,
-  Button,
-  Dialog,
-  DialogTitle,
-  DialogActions,
-  DialogContent,
-  Grid,
-  IconButton,
-  OutlinedInputProps,
-  TextFieldProps,
-  TextField,
-  alpha,
-  styled,
-  useTheme,
-  useMediaQuery,
-  Typography,
-} from "@mui/material";
+    Alert,
+    Box,
+    Button,
+    Dialog,
+    DialogTitle,
+    DialogActions,
+    DialogContent,
+    Grid,
+    IconButton,
+    OutlinedInputProps,
+    TextFieldProps,
+    TextField,
+    alpha,
+    styled,
+    useTheme,
+    useMediaQuery,
+    Typography,
+} from '@mui/material'
 import {
-  useAppSelector,
-  useAppDispatch,
-  selectCore,
-  selectPersona,
-  selectPJSON,
-  Icon,
-  setCore,
-  signIn,
-} from "../../../listingslab-shared";
+    useAppSelector,
+    useAppDispatch,
+    selectCore,
+    selectPersona,
+    selectPJSON,
+    Icon,
+    setCore,
+    signIn,
+} from '../../../listingslab-shared'
 
 const NiceText = styled((props: TextFieldProps) => (
-  <TextField
-    InputProps={{ disableUnderline: true } as Partial<OutlinedInputProps>}
-    {...props}
-  />
+    <TextField
+        InputProps={{ disableUnderline: true } as Partial<OutlinedInputProps>}
+        {...props}
+    />
 ))(({ theme }) => ({
-  "& .MuiFilledInput-root": {
-    border: "1px solid #e2e2e1",
-    overflow: "hidden",
-    borderRadius: 4,
-    backgroundColor: theme.palette.mode === "light" ? "#fff" : "#000",
-    transition: theme.transitions.create([
-      "border-color",
-      "background-color",
-      "box-shadow",
-    ]),
-    "&:hover": {
-      backgroundColor: "transparent",
+    '& .MuiFilledInput-root': {
+        border: '1px solid #e2e2e1',
+        overflow: 'hidden',
+        borderRadius: 4,
+        backgroundColor: theme.palette.mode === 'light' ? '#fff' : '#000',
+        transition: theme.transitions.create([
+            'border-color',
+            'background-color',
+            'box-shadow',
+        ]),
+        '&:hover': {
+            backgroundColor: 'transparent',
+        },
+        '&.Mui-focused': {
+            backgroundColor: 'transparent',
+            boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 2px`,
+            borderColor: theme.palette.primary.main,
+        },
     },
-    "&.Mui-focused": {
-      backgroundColor: "transparent",
-      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 2px`,
-      borderColor: theme.palette.primary.main,
-    },
-  },
-}));
+}))
 
 export default function DialogSignin() {
-  const id = "dialogSignin";
-  const core = useAppSelector(selectCore);
-  const pJSON = useAppSelector(selectPJSON);
-  const { version } = pJSON;
-  const { dialogSigninOpen } = core.data;
-  const persona = useAppSelector(selectPersona);
-  // // error
-  // let isSignedIn = false
-  // console.warn("persona", persona.data.user.uid)
-  // if (persona.data.user.uid) isSignedIn = true
+    const id = 'dialogSignin'
+    const core = useAppSelector(selectCore)
+    const pJSON = useAppSelector(selectPJSON)
+    const { version } = pJSON
+    const { dialogSigninOpen } = core.data
+    const persona = useAppSelector(selectPersona)
+    // // error
+    // let isSignedIn = false
+    // console.warn("persona", persona.data.user.uid)
+    // if (persona.data.user.uid) isSignedIn = true
 
-  const { error } = persona.data.user;
-  let alertObj = null;
-  if (error) {
-    alertObj = { severity: "warning", message: error };
-  }
-  const dispatch = useAppDispatch();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
-  const [passwordHelper, setPasswordHelper] = React.useState(null);
-  const [passwordValid, setPasswordValid] = React.useState(true);
-  const [emailHelper, setEmailHelper] = React.useState(null);
-  const [emailValid, setEmailValid] = React.useState(true);
-
-  const handleClose = () => {
-    dispatch(setCore({ key: "dialogSigninOpen", value: false }));
-  };
-
-  const handleSignin = () => {
-    // @ts-ignore
-    const email = document.getElementById("email").value;
-    // @ts-ignore
-    const password = document.getElementById("password").value;
-
-    if (email.length < 5) {
-      setEmailValid(false);
-      setEmailHelper("Email is not valid");
-    } else {
-      setEmailValid(true);
-      setEmailHelper(null);
+    const { error } = persona.data.user
+    let alertObj = null
+    if (error) {
+        alertObj = { severity: 'warning', message: error }
     }
-    if (password.length < 4) {
-      setPasswordValid(false);
-      setPasswordHelper("Password must be more than 4 characters");
-    } else {
-      setPasswordValid(true);
-      setPasswordHelper(null);
-    }
-    if (setEmailValid && setPasswordValid) {
-      dispatch(signIn(email, password));
-    }
-  };
+    const dispatch = useAppDispatch()
+    const theme = useTheme()
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
-  return (
-    <Dialog
-      open={dialogSigninOpen}
-      id={id}
-      fullScreen={isMobile}
-      onClose={handleClose}
-      fullWidth
-      maxWidth="xs"
-    >
-      <DialogTitle>
-        <Grid container>
-          <Grid item>
-            <Box sx={{ mt: 1, mr: 2 }}>
-              <Icon icon="malteaser" />
-            </Box>
-          </Grid>
-          <Grid item>
-            <Typography variant="body2" sx={{ mt: 1.25 }}>
-              {version}
-            </Typography>
-          </Grid>
-          <Grid item sx={{ flexGrow: 1 }} />
-          <Grid item>
-            <IconButton onClick={handleClose}>
-              <Icon icon="close" />
-            </IconButton>
-          </Grid>
-        </Grid>
-      </DialogTitle>
+    const [passwordHelper, setPasswordHelper] = React.useState(null)
+    const [passwordValid, setPasswordValid] = React.useState(true)
+    const [emailHelper, setEmailHelper] = React.useState(null)
+    const [emailValid, setEmailValid] = React.useState(true)
 
-      <DialogContent>
-        {
-          // @ts-ignore
-          alertObj ? (
-            <Alert severity={alertObj.severity}>{alertObj.message}</Alert>
-          ) : null
+    const handleClose = () => {
+        dispatch(setCore({ key: 'dialogSigninOpen', value: false }))
+    }
+
+    const handleSignin = () => {
+        // @ts-ignore
+        const email = document.getElementById('email').value
+        // @ts-ignore
+        const password = document.getElementById('password').value
+
+        if (email.length < 5) {
+            setEmailValid(false)
+            setEmailHelper('Email is not valid')
+        } else {
+            setEmailValid(true)
+            setEmailHelper(null)
         }
+        if (password.length < 4) {
+            setPasswordValid(false)
+            setPasswordHelper('Password must be more than 4 characters')
+        } else {
+            setPasswordValid(true)
+            setPasswordHelper(null)
+        }
+        if (setEmailValid && setPasswordValid) {
+            dispatch(signIn(email, password))
+        }
+    }
 
-        <NiceText
-          id="email"
-          label="Email"
-          fullWidth
-          error={!emailValid}
-          helperText={emailHelper}
-          variant="filled"
-          style={{ marginTop: 11 }}
-        />
-
-        <NiceText
-          id="password"
-          type="password"
-          label="Password"
-          error={!passwordValid}
-          helperText={passwordHelper}
-          fullWidth
-          variant="filled"
-          style={{ marginTop: 11 }}
-        />
-      </DialogContent>
-
-      <DialogActions>
-        <Button
-          sx={{ mb: 1, mr: 2 }}
-          variant="contained"
-          onClick={handleSignin}
+    return (
+        <Dialog
+            open={dialogSigninOpen}
+            id={id}
+            fullScreen={isMobile}
+            onClose={handleClose}
+            fullWidth
+            maxWidth="xs"
         >
-          <span style={{ marginRight: 4, marginLeft: 4 }}>Sign in</span>
-          <Icon icon="arrowr" />
-        </Button>
-      </DialogActions>
-    </Dialog>
-  );
+            <DialogTitle>
+                <Grid container>
+                    <Grid item>
+                        <Box sx={{ mt: 1, mr: 2 }}>
+                            <Icon icon="malteaser" />
+                        </Box>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body2" sx={{ mt: 1.25 }}>
+                            {version}
+                        </Typography>
+                    </Grid>
+                    <Grid item sx={{ flexGrow: 1 }} />
+                    <Grid item>
+                        <IconButton onClick={handleClose}>
+                            <Icon icon="close" />
+                        </IconButton>
+                    </Grid>
+                </Grid>
+            </DialogTitle>
+
+            <DialogContent>
+                {
+                    // @ts-ignore
+                    alertObj ? (
+                        <Alert severity={alertObj.severity}>
+                            {alertObj.message}
+                        </Alert>
+                    ) : null
+                }
+
+                <NiceText
+                    id="email"
+                    label="Email"
+                    fullWidth
+                    error={!emailValid}
+                    helperText={emailHelper}
+                    variant="filled"
+                    style={{ marginTop: 11 }}
+                />
+
+                <NiceText
+                    id="password"
+                    type="password"
+                    label="Password"
+                    error={!passwordValid}
+                    helperText={passwordHelper}
+                    fullWidth
+                    variant="filled"
+                    style={{ marginTop: 11 }}
+                />
+            </DialogContent>
+
+            <DialogActions>
+                <Button
+                    sx={{ mb: 1, mr: 2 }}
+                    variant="contained"
+                    onClick={handleSignin}
+                >
+                    <span style={{ marginRight: 4, marginLeft: 4 }}>
+                        Sign in
+                    </span>
+                    <Icon icon="arrowr" />
+                </Button>
+            </DialogActions>
+        </Dialog>
+    )
 }
 
 /*

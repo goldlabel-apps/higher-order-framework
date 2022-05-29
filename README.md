@@ -1,5 +1,5 @@
 # Higher Order Framework
 
-![featured](https://listingslab.com/svg/featured/team.svg)
+## Meet the team
 
-https://listingslab.com/logo.svg
+![featured](https://listingslab.com/svg/featured/team.svg)

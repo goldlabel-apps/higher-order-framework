@@ -1,4 +1,4 @@
-import { PaletteMode } from "@mui/material";
+import { PaletteMode } from '@mui/material'
 
 /*
 
@@ -9,23 +9,23 @@ import { PaletteMode } from "@mui/material";
 */
 
 const theme = {
-  primary: "rgba(19, 68, 72, 1)", //"#134448", dark teal
-  secondary: "rgba(76, 151, 156, 1)", //"#134448", light teal
-};
+    primary: 'rgba(19, 68, 72, 1)', //"#134448", dark teal
+    secondary: 'rgba(76, 151, 156, 1)', //"#134448", light teal
+}
 
-const { primary, secondary } = theme;
+const { primary, secondary } = theme
 
 export const getDesignTokens = (mode: PaletteMode) => ({
-  palette: {
-    mode,
-    primary: {
-      main: primary,
+    palette: {
+        mode,
+        primary: {
+            main: primary,
+        },
+        secondary: {
+            main: secondary,
+        },
     },
-    secondary: {
-      main: secondary,
-    },
-  },
-});
+})
 
 /*
     text: {
