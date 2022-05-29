@@ -2,14 +2,14 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import adminReducer from '../features/admin/adminSlice'
 import coreReducer from '../features/core/coreSlice'
 import personaReducer from '../features/persona/personaSlice'
-import contentReducer from '../features/content/contentSlice'
+import cmsReducer from '../features/cms/cmsSlice'
 import systemReducer from '../features/system/systemSlice'
 
 export const store = configureStore({
     reducer: {
         admin: adminReducer,
         core: coreReducer,
-        content: contentReducer,
+        cms: cmsReducer,
         persona: personaReducer,
         system: systemReducer,
     },

@@ -22,16 +22,15 @@ import {
     InputSubmit,
     Notification,
     NaviCrumb,
-    Post,
     Map,
     HideShow,
     Thumb,
     MetaButton,
 } from './components'
 
-import { selectContent, setContent } from './features/content'
-
 import { AdminMenu, CMS, selectAdmin, setAdmin } from './features/admin'
+import { selectCms, setCms } from './features/cms'
+
 
 import {
     Persona,
@@ -91,11 +90,8 @@ const lifecycles = singleSpaReact({
 export const { bootstrap, mount, unmount } = lifecycles
 
 export {
-    selectContent,
-    setContent,
     Renderer,
     Map,
-    Post,
     store,
     useAppDispatch,
     useAppSelector,
@@ -158,4 +154,6 @@ export {
     selectAdmin,
     setAdmin,
     AdminMenu,
+    selectCms,
+    setCms,
 }

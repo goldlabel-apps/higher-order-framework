@@ -1,19 +1,26 @@
 import * as React from 'react'
 import { Box, Typography } from '@mui/material'
-import { useAppSelector, selectContent } from '../listingslab-shared'
+import { useAppSelector, selectCms } from '../listingslab-shared'
 
 export default function Landing() {
-    const content = useAppSelector(selectContent)
+    const cms = useAppSelector(selectCms)
+    let title = 'What title shall we show?'
+
 
     React.useEffect(() => {
-        // console.warn("Landing useEffect")
-    }, [content])
+        console.warn("render title", title)
+    }, [title])
 
     return (
         <React.Fragment>
             <Box>
-                <Typography>Landing</Typography>
+                <Typography
+                    variant="h6"
+                    sx={{ fontWeight: "lighter" }}>
+                    { title }
+                </Typography>
             </Box>
+            <pre>{JSON.stringify(cms, null, 2)}</pre>
         </React.Fragment>
     )
 }

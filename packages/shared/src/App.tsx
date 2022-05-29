@@ -6,8 +6,6 @@ import {
     Social,
     Navigator,
     Blocked,
-    selectPersona,
-    useAppSelector,
 } from './listingslab-shared'
 
 export default function App() {
@@ -29,13 +27,14 @@ export default function App() {
                     </Grid>
                     <Grid sm={8} xs={12} item>
                         <Box sx={{ ml: 1, mt: 4 }}>
+                            <Landing /> 
                             <CardMedia
                                 alt="listingslab"
                                 component="img"
                                 height="325"
                                 image="https://listingslab.com/svg/featured/team.svg"
                             />
-                            <Landing />
+                            
                         </Box>
                     </Grid>
                 </Grid>
