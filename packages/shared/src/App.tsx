@@ -4,6 +4,7 @@ import {
     Landing,
     DialogSignin,
     Social,
+    Map,
     Navigator,
     Blocked,
     useAppSelector,
@@ -35,24 +36,32 @@ export default function App() {
                         <Navigator />
                     </Grid>
 
-                    <Grid sm={8} xs={12} item>
+                    <Grid sm={ 3 } xs={ 12 } item>
+                        <Box sx={{ ml: 1 }}>
+                            <Social defaultExpanded={true} />
+                        </Box>
+                    </Grid>
+
+                    <Grid sm={ 6 } xs={ 12 } item>
                         <Box sx={{ ml: 1, mt: 1 }}>
                             <Landing />
                             <CardMedia
                                 sx={{ mt: 2 }}
                                 alt="listingslab"
                                 component="img"
-                                height="325"
+                                height="512"
                                 image={image}
                             />
                         </Box>
                     </Grid>
 
-                    <Grid sm={4} xs={12} item>
-                        <Box sx={{ ml: 1 }}>
-                            <Social defaultExpanded={true} />
+                    <Grid sm={ 3 } xs={12} item>
+                        <Box sx={{ ml: 1, mt: 1 }}>
+                            <Map />
                         </Box>
                     </Grid>
+
+                    
                 </Grid>
             </Box>
         </Box>

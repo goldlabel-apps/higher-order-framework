@@ -24,15 +24,11 @@ export default function Landing() {
         const realhref = window.location.href
         const { baseURL } = system.ssr[0].data
         const nicePath = `${realhref.replace(baseURL, '')}`
-
-        let title = 'Home'
+        let title = 'hello'
         if (nicePath !== '/') title = nicePath.replace('/', '')
-
         setContent({
             title,
         })
-        // console.warn("setContent")
-
         if (!location) {
             dispatch(routeTo({ pathname: nicePath }))
         }
@@ -43,7 +39,7 @@ export default function Landing() {
     return (
         <React.Fragment>
             <Box>
-                <Typography variant="h5" sx={{ fontWeight: 'lighter' }}>
+                <Typography variant="h5" sx={{ textAlign:"center", fontWeight: 'lighter' }}>
                     {title}
                 </Typography>
             </Box>
