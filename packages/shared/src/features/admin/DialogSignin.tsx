@@ -27,7 +27,7 @@ import {
     Icon,
     setCore,
     signIn,
-} from '../../../listingslab-shared'
+} from '../../listingslab-shared'
 
 const NiceText = styled((props: TextFieldProps) => (
     <TextField
@@ -124,12 +124,12 @@ export default function DialogSignin() {
                 <Grid container>
                     <Grid item>
                         <Box sx={{ mt: 1, mr: 2 }}>
-                            <Icon icon="malteaser" />
+                            <Icon icon="admin" />
                         </Box>
                     </Grid>
                     <Grid item>
                         <Typography variant="body2" sx={{ mt: 1.25 }}>
-                            {version}
+                            hof {version}
                         </Typography>
                     </Grid>
                     <Grid item sx={{ flexGrow: 1 }} />

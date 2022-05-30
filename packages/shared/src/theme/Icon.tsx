@@ -68,7 +68,8 @@ import PatientsIcon from '@mui/icons-material/People'
 import FilterIcon from '@mui/icons-material/Sort'
 import ClinicalIcon from '@mui/icons-material/AccountBox'
 import ClericalIcon from '@mui/icons-material/AirlineSeatLegroomNormal'
-import AdminIcon from '@mui/icons-material/Settings'
+import AdminIcon from '@mui/icons-material/Build'
+import AdminOffIcon from '@mui/icons-material/BuildOutlined'
 import DeveloperIcon from '@mui/icons-material/ToysOutlined'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
@@ -152,7 +153,10 @@ export default function Icon(props: any) {
         case 'clerical':
             iconFragment = <ClericalIcon color={color} />
             break
-        case 'admin':
+            case 'adminOff':
+                iconFragment = <AdminOffIcon color={color} />
+                break
+            case 'admin':
             iconFragment = <AdminIcon color={color} />
             break
         case 'developer':

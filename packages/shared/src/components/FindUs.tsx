@@ -16,8 +16,8 @@ import {
 } from '@mui/material'
 import { Icon } from '../listingslab-shared'
 
-export default function Social(props) {
-    const title = 'Find us on the social'
+export default function FindUs(props) {
+    const title = 'Find Us'
     const { defaultExpanded } = props
     const dispatch = useAppDispatch()
     const theme = useTheme()

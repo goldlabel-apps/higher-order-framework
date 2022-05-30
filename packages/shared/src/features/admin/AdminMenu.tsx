@@ -45,7 +45,7 @@ export default function AdminMenu() {
     return (
         <React.Fragment>
             <CMS />
-            <Tooltip title="Admin Menu">
+            <Tooltip title="Admin Menu" color="primary">
                 <IconButton
                     color="primary"
                     id="admin-button"
@@ -67,28 +67,6 @@ export default function AdminMenu() {
                 }}
             >
                 <MenuList sx={{ width: 200, maxWidth: '100%' }}>
-                    
-                    
-
-                    <MenuItem
-                        onClick={() => {
-                            dispatch(
-                                navigateTo({
-                                    pathname:
-                                        'https://github.com/listingslab-software/higher-order-framework',
-                                    target: '_blank',
-                                })
-                            )
-                        }}
-                    >
-                        <ListItemIcon>
-                            <Icon icon="github" />
-                        </ListItemIcon>
-                        <ListItemText>Repository</ListItemText>
-                        <Typography variant="body2" color="text.secondary">
-                            ⌘G
-                        </Typography>
-                    </MenuItem>
 
                     <MenuItem
                         onClick={() => {
@@ -109,6 +87,49 @@ export default function AdminMenu() {
                             {null}
                         </Typography>
                     </MenuItem>
+
+                    
+                    <MenuItem
+                        onClick={() => {
+                            dispatch(
+                                navigateTo({
+                                    pathname:
+                                        'https://github.com/listingslab-software/.github/issues/new/choose',
+                                    target: '_blank',
+                                })
+                            )
+                        }}
+                    >
+                        <ListItemIcon>
+                            <Icon icon="github" />
+                        </ListItemIcon>
+                        <ListItemText>New Issue</ListItemText>
+                        <Typography variant="body2" color="text.secondary">
+                            { null }
+                        </Typography>
+                    </MenuItem>
+
+                    <MenuItem
+                        onClick={() => {
+                            dispatch(
+                                navigateTo({
+                                    pathname:
+                                        'https://github.com/listingslab-software/higher-order-framework',
+                                    target: '_blank',
+                                })
+                            )
+                        }}
+                    >
+                        <ListItemIcon>
+                            <Icon icon="github" />
+                        </ListItemIcon>
+                        <ListItemText>Repository</ListItemText>
+                        <Typography variant="body2" color="text.secondary">
+                            {null}
+                        </Typography>
+                    </MenuItem>
+
+                    
                     
                     <Divider />
 

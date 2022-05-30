@@ -3,7 +3,7 @@ import { Box, Grid, CardMedia } from '@mui/material'
 import {
     Landing,
     DialogSignin,
-    Social,
+    FindUs,
     Map,
     Navigator,
     Blocked,
@@ -38,7 +38,7 @@ export default function App() {
 
                     <Grid sm={3} xs={12} item>
                         <Box sx={{ ml: 1 }}>
-                            <Social defaultExpanded={true} />
+                            <FindUs defaultExpanded={ false } />
                         </Box>
                     </Grid>
 
