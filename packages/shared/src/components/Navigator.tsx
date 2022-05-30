@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useTheme, useMediaQuery, Box } from '@mui/material'
+import { useTheme, useMediaQuery, Box, Grid, Typography } from '@mui/material'
 import {
     useAppDispatch,
     useAppSelector,
@@ -8,17 +8,18 @@ import {
     routeTo,
     setCore,
     selectCore,
+    selectSSR,
     selectPersona,
-    unsignIn,
 } from '../listingslab-shared'
 
 export default function Navigator() {
     const theme = useTheme()
     const dispatch = useAppDispatch()
     const persona = useAppSelector(selectPersona)
+    const ssr = useAppSelector(selectSSR)
 
     const core = useAppSelector(selectCore)
-    // console.warn("authReady", core.data.authReady)
+    const siteName = ssr[0].data.name
 
     let isSignedIn = false
     let isReady = true
@@ -83,25 +84,35 @@ export default function Navigator() {
     ]
 
     return (
-        <Box sx={{ m: 1, display: 'flex' }}>
-            <Box sx={{ flexGrow: 1 }} />
+        <Grid container sx={{ textAlign: 'center' }}>
+            <Grid item xs={12}>
+                <Typography variant="h5" sx={{ mt: 2, fontWeight: 'lighter' }}>
+                    {siteName}
+                </Typography>
+            </Grid>
 
-            {menuItems.map((item, i) => {
-                return <MiniButton key={`menuItem_${i}`} data={item} />
-            })}
-            {isReady ? (
-                <React.Fragment>
-                    {isSignedIn ? (
-                        <AdminMenu />
-                    ) : (
-                        <MiniButton data={signinBtnData} />
-                    )}
-                </React.Fragment>
-            ) : null}
+            <Grid item xs={12}>
+                <Box sx={{ m: 1, display: 'flex' }}>
+                    <Box sx={{ flexGrow: 1 }} />
+                    <MiniButton data={LandingBtnData} />
 
-            <MiniButton data={LandingBtnData} />
+                    {isReady ? (
+                        <React.Fragment>
+                            {isSignedIn ? (
+                                <AdminMenu />
+                            ) : (
+                                <MiniButton data={signinBtnData} />
+                            )}
+                        </React.Fragment>
+                    ) : null}
 
-            <Box sx={{ flexGrow: 1 }} />
-        </Box>
+                    {menuItems.map((item, i) => {
+                        return <MiniButton key={`menuItem_${i}`} data={item} />
+                    })}
+
+                    <Box sx={{ flexGrow: 1 }} />
+                </Box>
+            </Grid>
+        </Grid>
     )
 }

@@ -7,35 +7,63 @@ import {
     selectCms,
     selectSystem,
     routeTo,
+    cmsRead,
 } from '../listingslab-shared'
 
+const getPostBySlug = (posts: any, slug: string) => {
+    for (let i = 0; i < posts.length; i++) {
+        const { data } = posts[i]
+        if (slug === data.slug) return posts[i]
+    }
+    return false
+}
+
 export default function Landing() {
+    const dispatch = useAppDispatch()
     const cms = useAppSelector(selectCms)
     const system = useAppSelector(selectSystem)
-    const dispatch = useAppDispatch()
-
-    const [content, setContent] = React.useState({
-        title: document.title,
+    const { baseURL } = system.ssr[0].data
+    let url = window.location.href
+    let pathname = `${url.replace(baseURL, '')}`
+    const { posts, fetched } = cms.data
+    const [cmsDoc, setcmsDoc] = React.useState({
+        slug: pathname,
+        url: 'http',
+        title: 'Default',
     })
 
     React.useEffect(() => {
-        const { refresh, location } = cms.data
+        const { refresh, location, fetching, fetched } = cms.data
+        if (!fetching && !fetched) {
+            dispatch(cmsRead({ where: 'where? all please.' }))
+        }
         if (refresh) dispatch(setCms({ key: 'refresh', value: false }))
-        const realhref = window.location.href
+
+        const url = window.location.href
         const { baseURL } = system.ssr[0].data
-        const nicePath = `${realhref.replace(baseURL, '')}`
-        let title = 'hello'
-        if (nicePath !== '/') title = nicePath.replace('/', '')
-        setContent({
-            title,
+        const pathname = `${url.replace(baseURL, '')}`
+        setcmsDoc({
+            slug: pathname,
+            url,
+            title: 'not default',
         })
         if (!location) {
-            dispatch(routeTo({ pathname: nicePath }))
+            dispatch(routeTo({ pathname }))
         }
     }, [cms, system, dispatch])
+    if (!fetched) return null
 
-    const { title } = content
-
+    let post = false
+    if (posts) {
+        post = getPostBySlug(posts, pathname)
+        // setcmsDoc({
+        //     title:"blahblah",
+        //     url: "",
+        //     slug:"",
+        // })
+    }
+    let title = ''
+    if (post) console.warn('post', post)
     return (
         <React.Fragment>
             <Box>
@@ -46,11 +74,14 @@ export default function Landing() {
                     {title}
                 </Typography>
             </Box>
+            title
         </React.Fragment>
     )
 }
 
 /*
-    <pre>{JSON.stringify(cms, null, 2)}</pre>
-    <pre>{JSON.stringify(content, null, 2)}</pre>
+<Box>cmsDoc<pre>{JSON.stringify( cmsDoc || null, null, 2)}</pre></Box>
+            <Box>post<pre>{JSON.stringify( post || null, null, 2)}</pre></Box>
+    <Box>fetched<pre>{JSON.stringify( fetched || null, null, 2)}</pre></Box>
+    <Box>posts<pre>{JSON.stringify( posts || null, null, 2)}</pre></Box>
 */
