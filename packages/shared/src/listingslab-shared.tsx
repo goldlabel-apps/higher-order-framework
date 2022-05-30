@@ -26,14 +26,17 @@ import {
     HideShow,
     Thumb,
     MetaButton,
+    FindUs,
 } from './components'
 
-import { AdminMenu, CMS, selectAdmin, setAdmin } from './features/admin'
+import { DialogSignin, AdminMenu, CMS, selectAdmin, setAdmin } from './features/admin'
+
+
+
 import { selectCms, setCms } from './features/cms'
 
 import {
     Persona,
-    DialogSignin,
     selectPersona,
     setPersona,
     signIn,
@@ -157,4 +160,5 @@ export {
     selectCms,
     setCms,
     selectSystem,
+    FindUs,
 }

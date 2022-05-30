@@ -1,6 +1,5 @@
 import { RootState } from '../../app/store'
 import Persona from './Persona'
-import DialogSignin from './components/DialogSignin'
 
 import { setPersona } from './personaSlice'
 import { getFingerprint } from './actions/getFingerprint'
@@ -12,7 +11,6 @@ import { unsignIn } from './actions/unsignIn'
 export const selectPersona = (state: RootState) => state.persona
 export {
     Persona,
-    DialogSignin,
     setPersona,
     getFingerprint,
     getLocation,

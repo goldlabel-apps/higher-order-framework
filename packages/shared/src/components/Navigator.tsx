@@ -44,7 +44,7 @@ export default function Navigator() {
         },
     }
     const signinBtnData = {
-        icon: 'arrowr',
+        icon: 'adminOff',
         label: 'Sign in',
         tooltip: 'Sign in',
         variant: 'text',
