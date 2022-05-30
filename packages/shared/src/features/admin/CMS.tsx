@@ -46,7 +46,7 @@ export default function CMS() {
             </DialogTitle>
 
             <DialogContent>
-                list the items in the content collection
+                <Typography>list the items in the `cms` collection.</Typography>
             </DialogContent>
 
             <DialogActions>
