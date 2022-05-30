@@ -16,6 +16,7 @@ import DefaultIcon from '@mui/icons-material/DisabledByDefault'
 import HomeIcon from '@mui/icons-material/HomeOutlined'
 import CMSIcon from '@mui/icons-material/DocumentScanner'
 import FlyIcon from '@mui/icons-material/LocalAirportRounded'
+import DatabaseIcon from '@mui/icons-material/DataObject'
 import MapIcon from '@mui/icons-material/LocationDisabled'
 import MenuIcon from '@mui/icons-material/Menu'
 import TrashIcon from '@mui/icons-material/DeleteOutlined'
@@ -97,6 +98,15 @@ export default function Icon(props: any) {
         case 'balance':
             iconFragment = <BalanceIcon color={color} />
             break
+
+        case 'firestore':
+            iconFragment = <DatabaseIcon color={color} />
+            break
+
+        case 'database':
+            iconFragment = <DatabaseIcon color={color} />
+            break
+            
         case 'life':
             iconFragment = <LifeIcon color={color} />
             break

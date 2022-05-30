@@ -36,13 +36,21 @@ export default function App() {
                         <Navigator />
                     </Grid>
 
-                    <Grid sm={ 3 } xs={ 12 } item>
+                    <Grid sm={3} xs={12} item>
                         <Box sx={{ ml: 1 }}>
                             <Social defaultExpanded={true} />
                         </Box>
                     </Grid>
 
-                    <Grid sm={ 6 } xs={ 12 } item>
+                    
+                </Grid>
+            </Box>
+        </Box>
+    )
+}
+/*
+<Persona defaultExpanded={true} />
+<Grid sm={6} xs={12} item>
                         <Box sx={{ ml: 1, mt: 1 }}>
                             <Landing />
                             <CardMedia
@@ -55,18 +63,4 @@ export default function App() {
                         </Box>
                     </Grid>
 
-                    <Grid sm={ 3 } xs={12} item>
-                        <Box sx={{ ml: 1, mt: 1 }}>
-                            <Map />
-                        </Box>
-                    </Grid>
-
-                    
-                </Grid>
-            </Box>
-        </Box>
-    )
-}
-/*
-<Persona defaultExpanded={true} />
 */

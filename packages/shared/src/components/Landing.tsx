@@ -39,7 +39,10 @@ export default function Landing() {
     return (
         <React.Fragment>
             <Box>
-                <Typography variant="h5" sx={{ textAlign:"center", fontWeight: 'lighter' }}>
+                <Typography
+                    variant="h5"
+                    sx={{ textAlign: 'center', fontWeight: 'lighter' }}
+                >
                     {title}
                 </Typography>
             </Box>
