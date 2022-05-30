@@ -35,7 +35,7 @@ export default function Thumb() {
                     textAlign: 'center',
                 }}
             >
-                <Tooltip title="See us socially">
+                <Tooltip title="See us socially" color="primary">
                     <IconButton
                         color="primary"
                         onClick={handleClick}

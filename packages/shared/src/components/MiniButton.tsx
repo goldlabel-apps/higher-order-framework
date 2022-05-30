@@ -14,7 +14,7 @@ export default function MiniButton(props: any) {
     if (data.onClick) onClick = data.onClick
 
     return (
-        <Tooltip title={tooltip}>
+        <Tooltip title={tooltip} color="primary">
             <IconButton color="primary" onClick={onClick}>
                 <Icon icon={icon} />
             </IconButton>

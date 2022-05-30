@@ -38,7 +38,7 @@ export default function App() {
 
                     <Grid sm={3} xs={12} item>
                         <Box sx={{ ml: 1 }}>
-                            <Social defaultExpanded={true} />
+                            <Social defaultExpanded={ false } />
                         </Box>
                     </Grid>
 
