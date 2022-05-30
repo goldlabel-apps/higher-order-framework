@@ -29,11 +29,15 @@ import {
     FindUs,
 } from './components'
 
-import { DialogSignin, AdminMenu, CMS, selectAdmin, setAdmin } from './features/admin'
+import {
+    DialogSignin,
+    AdminMenu,
+    CMS,
+    selectAdmin,
+    setAdmin,
+} from './features/admin'
 
-
-
-import { selectCms, setCms } from './features/cms'
+import { selectCms, setCms, cmsRead } from './features/cms'
 
 import {
     Persona,
@@ -161,4 +165,5 @@ export {
     setCms,
     selectSystem,
     FindUs,
+    cmsRead,
 }

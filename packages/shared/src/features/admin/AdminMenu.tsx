@@ -67,7 +67,6 @@ export default function AdminMenu() {
                 }}
             >
                 <MenuList sx={{ width: 200, maxWidth: '100%' }}>
-
                     <MenuItem
                         onClick={() => {
                             dispatch(
@@ -88,7 +87,6 @@ export default function AdminMenu() {
                         </Typography>
                     </MenuItem>
 
-                    
                     <MenuItem
                         onClick={() => {
                             dispatch(
@@ -105,7 +103,7 @@ export default function AdminMenu() {
                         </ListItemIcon>
                         <ListItemText>New Issue</ListItemText>
                         <Typography variant="body2" color="text.secondary">
-                            { null }
+                            {null}
                         </Typography>
                     </MenuItem>
 
@@ -129,8 +127,6 @@ export default function AdminMenu() {
                         </Typography>
                     </MenuItem>
 
-                    
-                    
                     <Divider />
 
                     <MenuItem onClick={onCmsClick}>

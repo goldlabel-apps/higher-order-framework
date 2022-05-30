@@ -55,7 +55,10 @@ export default function Social(props) {
                                             }}
                                         >
                                             <ListItemIcon>
-                                                <Tooltip color="primary" title={label}>
+                                                <Tooltip
+                                                    color="primary"
+                                                    title={label}
+                                                >
                                                     <IconButton
                                                         color="primary"
                                                         sx={{ mr: 1 }}

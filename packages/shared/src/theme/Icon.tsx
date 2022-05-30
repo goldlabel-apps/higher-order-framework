@@ -107,7 +107,7 @@ export default function Icon(props: any) {
         case 'database':
             iconFragment = <DatabaseIcon color={color} />
             break
-            
+
         case 'life':
             iconFragment = <LifeIcon color={color} />
             break
@@ -153,10 +153,10 @@ export default function Icon(props: any) {
         case 'clerical':
             iconFragment = <ClericalIcon color={color} />
             break
-            case 'adminOff':
-                iconFragment = <AdminOffIcon color={color} />
-                break
-            case 'admin':
+        case 'adminOff':
+            iconFragment = <AdminOffIcon color={color} />
+            break
+        case 'admin':
             iconFragment = <AdminIcon color={color} />
             break
         case 'developer':

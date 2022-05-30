@@ -38,11 +38,19 @@ export default function App() {
 
                     <Grid sm={3} xs={12} item>
                         <Box sx={{ ml: 1 }}>
-                            <FindUs defaultExpanded={ false } />
+                            <FindUs defaultExpanded={false} />
                         </Box>
                     </Grid>
 
-                    
+                    <Grid sm={6} xs={12} item>
+                        <Box sx={{ ml: 1, mt: 1 }}>
+                            <Landing />
+                        </Box>
+                    </Grid>
+
+                    <Grid sm={3} xs={12} item>
+                        <Box sx={{ ml: 1 }}></Box>
+                    </Grid>
                 </Grid>
             </Box>
         </Box>
@@ -50,17 +58,12 @@ export default function App() {
 }
 /*
 <Persona defaultExpanded={true} />
-<Grid sm={6} xs={12} item>
-                        <Box sx={{ ml: 1, mt: 1 }}>
-                            <Landing />
-                            <CardMedia
-                                sx={{ mt: 2 }}
-                                alt="listingslab"
-                                component="img"
-                                height="512"
-                                image={image}
-                            />
-                        </Box>
-                    </Grid>
+<CardMedia
+    sx={{ mt: 2 }}
+    alt="listingslab"
+    component="img"
+    height="512"
+    image={image}
+/>
 
 */
