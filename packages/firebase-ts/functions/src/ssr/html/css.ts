@@ -50,10 +50,32 @@ export const css = () => {
         .ssr h1 { font-size: 1.75rem; }
         .ssr h2 { font-size: 1rem; }
         .pad-top-1{ padding-top: 8px; }
+
         .ssr .links {
           text-align: left;
-          padding: 16px;
         }
+
+        .ssr .cmsList {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .ssr .nav ul, .ssr .nav li {
+          display: inline;
+          margin: 4px;
+          padding: 4px;
+        }
+
+        .ssr .cmsListItemImage {
+          width: 320px;
+        }
+
+        .ssr .cmsListItem {
+          width: 320px;
+          padding: 16px;
+          margin: 8px;
+        }
+
         .ssr .avatar {
           width: 50px;
           height: 50px;

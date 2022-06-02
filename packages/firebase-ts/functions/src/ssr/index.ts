@@ -2,6 +2,7 @@ import {render} from "./render";
 import {getSiteinfo} from "./db/getSiteinfo";
 import {getRoutes} from "./db/getRoutes";
 import {getLinks} from "./db/getLinks";
+import {getCms} from "./db/getCms";
 import {headstart} from "./html/headstart";
 import {headfinish} from "./html/headfinish";
 import {finish} from "./html/finish";
@@ -15,6 +16,7 @@ export {
   render,
   getSiteinfo,
   getRoutes,
+  getCms,
   getLinks,
   headstart,
   headfinish,
