@@ -7,7 +7,7 @@ import {
   meta,
   scripts,
   getSiteinfo,
-  // getRoutes,
+  getCms,
   getLinks,
   serviceWorker,
 } from "./";
@@ -15,26 +15,55 @@ import {
 export const render = async (request): Promise<string> => {
   const {version} = pJSON;
   const {hostname} = request;
+  const url = request.params[0];
   const siteinfo = await getSiteinfo(hostname);
   // @ts-ignore
   const {name, baseURL, tagline, avatar} = siteinfo[0].data;
+  let windowTitle = `${name}. ${tagline}`;
   const links = await getLinks();
+  const cms = await getCms();
+
+  let navHTML = "<nav class='nav'><ul>";
+  for (let j = 0; j < cms.length; j++) {
+    // @ts-ignore
+    const {title, slug} = cms[j].data;
+    if (slug == "/") windowTitle = title;
+    if (slug !== "/") {
+      navHTML += `<li>
+        <a href="${baseURL}${slug}">
+          ${title}
+        </a>
+      </li>`;
+    }
+  }
+  navHTML += "</ul></nav>";
+
+  let cmsHTML = "<div class='cmsList'>";
+  for (let i = 0; i < cms.length; i++) {
+    // @ts-ignore
+    const {title, image, slug} = cms[i].data;
+    if (slug === url) {
+      cmsHTML += `<div class='cmsListItem'>
+                      <img alt="${title}" src="${image}" class="cmsListItemImage"/>
+                  </div>`;
+    }
+  }
+  cmsHTML += "</div>";
+
   let linksHTML = "";
   for (let i = 0; i < links.length; i++) {
     const {data} = links[i];
     const {label, url, target} = data;
     linksHTML += `<a href="${url}" class="link" target="${target}">
-        ${label}
-      </a>&nbsp;`;
+                    ${label}
+                  </a>&nbsp;`;
   }
-
-  const pagetTitle = `${name}. ${tagline}`;
 
   return `${headstart()}
   
     ${meta(siteinfo)}
 
-    <title>${ pagetTitle }</title>
+    <title>${ windowTitle }</title>
 
     ${css()}
 
@@ -59,10 +88,23 @@ export const render = async (request): Promise<string> => {
             </a>
           </div>
         </div>
-      
-        <div class="links">
-          ${linksHTML}
+        <div>
+
+        
+        ${ navHTML }
+        
+        
         </div>
+
+
+
+        <div class="links">
+          ${ cmsHTML }
+        </div>
+        <div class="links">
+          ${ linksHTML }
+        </div>
+
 
       </div>
       

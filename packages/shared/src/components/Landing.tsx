@@ -54,8 +54,9 @@ export default function Landing() {
     if (!fetched) return null
 
     let post = false
+    // console.warn("slug", `/${pathname}`)
     if (posts) {
-        post = getPostBySlug(posts, pathname)
+        post = getPostBySlug(posts, `/${pathname}`)
         // setcmsDoc({
         //     title:"blahblah",
         //     url: "",
@@ -63,10 +64,19 @@ export default function Landing() {
         // })
     }
     let title = ''
-    if (post) console.warn('post', post)
+    // if (post) console.warn('post', post)
     return (
         <React.Fragment>
             <Box>
+                post<pre>{JSON.stringify(post || null, null, 2)}</pre>
+            </Box>
+        </React.Fragment>
+    )
+}
+
+/*
+
+<Box>
                 <Typography
                     variant="h5"
                     sx={{ textAlign: 'center', fontWeight: 'lighter' }}
@@ -74,14 +84,9 @@ export default function Landing() {
                     {title}
                 </Typography>
             </Box>
-            title
-        </React.Fragment>
-    )
-}
 
-/*
-<Box>cmsDoc<pre>{JSON.stringify( cmsDoc || null, null, 2)}</pre></Box>
-            <Box>post<pre>{JSON.stringify( post || null, null, 2)}</pre></Box>
+    <Box>cmsDoc<pre>{JSON.stringify( cmsDoc || null, null, 2)}</pre></Box>
+    
     <Box>fetched<pre>{JSON.stringify( fetched || null, null, 2)}</pre></Box>
     <Box>posts<pre>{JSON.stringify( posts || null, null, 2)}</pre></Box>
 */
