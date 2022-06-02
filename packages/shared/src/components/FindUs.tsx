@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useAppSelector, useAppDispatch } from '../app/hooks'
-import { selectSocial, navigateTo, routeTo } from '../features/system'
+import { navigateTo, routeTo } from '../features/system'
 import {
     useTheme,
     Accordion,
@@ -14,7 +14,10 @@ import {
     Tooltip,
     Typography,
 } from '@mui/material'
-import { Icon } from '../listingslab-shared'
+import { 
+    Icon,
+    selectSocial,
+ } from '../listingslab-shared'
 
 export default function FindUs(props) {
     const title = 'Find Us'

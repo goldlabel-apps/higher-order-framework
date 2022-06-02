@@ -1,5 +1,5 @@
 import { AppThunk } from '../../../app/store'
-import { setSystemError } from '../'
+// import { setSystemError } from '../'
 
 export interface RouteShape {
     pathname: string
@@ -23,6 +23,6 @@ export const navigateTo =
             if (!pathname) proceed = false
             if (proceed) window.open(pathnameStr, target)
         } catch (error) {
-            dispatch(setSystemError(error))
+            // dispatch(setSystemError(error))
         }
     }

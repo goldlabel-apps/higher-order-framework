@@ -1,5 +1,6 @@
 import { AppThunk } from '../../../app/store'
-import { setSystemError, setNotification } from '../'
+// import { 
+//     setSystemError, setNotification } from '../'
 
 export interface NotificationShape {
     code?: string
@@ -12,18 +13,18 @@ export const notify =
     async (dispatch: any) => {
         try {
             if (!notification) {
-                dispatch(setNotification(null))
+                // dispatch(setNotification(null))
                 return
             }
             const { code, message, severity } = notification
-            dispatch(
-                setNotification({
-                    code,
-                    message,
-                    severity,
-                })
-            )
+            // dispatch(
+            //     setNotification({
+            //         code,
+            //         message,
+            //         severity,
+            //     })
+            // )
         } catch (error) {
-            dispatch(setSystemError(error))
+            // dispatch(setSystemError(error))
         }
     }

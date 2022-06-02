@@ -8,8 +8,6 @@ import { Sky, getSizes } from './'
 export default function Stage() {
     // const { useAppSelector, selectAppState } = shared;
     // const appState = useAppSelector(selectAppState);
-    // const ticking = useAppSelector(selectTicking);
-    // console.warn("ticking", ticking);
     // const { flash } = appState;
 
     const stage = getSizes('flashStage')

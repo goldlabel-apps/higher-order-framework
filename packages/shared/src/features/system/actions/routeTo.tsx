@@ -1,6 +1,6 @@
 import { history } from '../../../Shared'
 import { AppThunk } from '../../../app/store'
-import { setSystemError, setCms } from '../../../listingslab-shared'
+import { setCms } from '../../../listingslab-shared'
 
 export interface RouteShape {
     pathname: string
@@ -31,6 +31,6 @@ export const routeTo =
             dispatch(setCms({ key: 'refresh', value: true }))
             history.push(url)
         } catch (error) {
-            dispatch(setSystemError(error))
+            // dispatch(setSystemError(error))
         }
     }

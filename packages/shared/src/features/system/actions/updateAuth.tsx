@@ -1,5 +1,5 @@
 import { AppThunk } from '../../../app/store'
-import { setSystemError } from '../'
+// import { setSystemError } from '../'
 
 export const updateAuth =
     (key: string, value: any): AppThunk =>
@@ -12,6 +12,6 @@ export const updateAuth =
             //   })
             // );
         } catch (error) {
-            dispatch(setSystemError(error))
+            // dispatch(setSystemError(error))
         }
     }
