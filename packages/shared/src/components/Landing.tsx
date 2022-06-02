@@ -35,7 +35,7 @@ export default function Landing() {
     React.useEffect(() => {
         const { refresh, location, fetching, fetched } = cms.data
         if (!fetching && !fetched) {
-            dispatch(cmsRead({ where: 'where? all please.' }))
+            dispatch(cmsRead({}))
         }
         if (refresh) dispatch(setCms({ key: 'refresh', value: false }))
 
