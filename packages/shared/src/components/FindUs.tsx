@@ -13,9 +13,7 @@ import {
     Tooltip,
     Typography,
 } from '@mui/material'
-import { 
-    Icon,
- } from '../listingslab-shared'
+import { Icon } from '../listingslab-shared'
 
 export default function FindUs(props) {
     const title = 'Find Us'

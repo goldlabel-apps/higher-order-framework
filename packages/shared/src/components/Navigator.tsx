@@ -4,9 +4,7 @@ import {
     useAppDispatch,
     useAppSelector,
     MiniButton,
-    AdminMenu,
     setCore,
-    selectCore,
     selectPersona,
 } from '../listingslab-shared'
 
@@ -14,12 +12,7 @@ export default function Navigator() {
     const theme = useTheme()
     const dispatch = useAppDispatch()
     const persona = useAppSelector(selectPersona)
-    const core = useAppSelector(selectCore)
-    const siteName = "ssr[0].data.name"
-
     let isSignedIn = false
-    let isReady = true
-    // if (core.data.authReady) isReady = true;
     if (persona.data.user.uid) isSignedIn = true
     let mode = 'mini'
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
@@ -80,32 +73,14 @@ export default function Navigator() {
     ]
 
     return (
-        <Grid container sx={{ textAlign: 'center' }}>
-            <Grid item xs={12}>
-                <Typography variant="h5" sx={{ mt: 2, fontWeight: 'lighter' }}>
-                    {siteName}
-                </Typography>
-            </Grid>
-
+        <Grid container>
             <Grid item xs={12}>
                 <Box sx={{ m: 1, display: 'flex' }}>
                     <Box sx={{ flexGrow: 1 }} />
                     <MiniButton data={LandingBtnData} />
-
-                    {isReady ? (
-                        <React.Fragment>
-                            {isSignedIn ? (
-                                <AdminMenu />
-                            ) : (
-                                <MiniButton data={signinBtnData} />
-                            )}
-                        </React.Fragment>
-                    ) : null}
-
                     {menuItems.map((item, i) => {
                         return <MiniButton key={`menuItem_${i}`} data={item} />
                     })}
-
                     <Box sx={{ flexGrow: 1 }} />
                 </Box>
             </Grid>

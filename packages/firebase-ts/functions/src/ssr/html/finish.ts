@@ -8,7 +8,7 @@ export const finish = (version: string) => {
               //     el.classList.remove("fallback-off")
               //     el.classList.add("fallback-on")
               //   }
-              // }, 1000)
+              // }, 10)
             </script>
     </body>
   </html>`;

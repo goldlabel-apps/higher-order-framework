@@ -13,13 +13,7 @@ import Landing from './components/Landing'
 import Navigator from './components/Navigator'
 import MiniButton from './components/MiniButton'
 import FeaturedImage from './components/FeaturedImage'
-import {
-    Social,
-    Blocked,
-    Map,
-    MetaButton,
-    FindUs,
-} from './components'
+import { Social, Blocked, Map, MetaButton, FindUs } from './components'
 import {
     DialogSignin,
     AdminMenu,
@@ -27,11 +21,7 @@ import {
     selectAdmin,
     setAdmin,
 } from './features/admin'
-import { 
-    selectCms, 
-    setCms, 
-    cmsRead, 
-} from './features/cms'
+import { selectCms, setCms, cmsRead } from './features/cms'
 import {
     Persona,
     selectPersona,

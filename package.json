@@ -5,6 +5,7 @@
   "scripts": {
     "start": "$PWD/.scripts/start",
     "test":  "clear && npx jest",
+    "lint": "cd ./packages/firebase-ts/functions && npm run lint",
     "check": "$PWD/.scripts/check",
     "build": "clear && npx lerna run build",
     "dist": "$PWD/.scripts/dist 21.0.6",

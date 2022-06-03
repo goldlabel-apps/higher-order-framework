@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { adminMenuData } from './adminMenuData'
 
 export interface AdminShape {
     data: any
@@ -7,7 +8,9 @@ export interface AdminShape {
 const initialState: AdminShape = {
     data: {
         shape: 'AdminShape',
-        cmsIsOpen: true,
+        menu: adminMenuData,
+        cmsOpen: false,
+        dialogSigninOpen: false,
     },
 }
 
