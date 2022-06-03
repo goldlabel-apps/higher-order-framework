@@ -1,4 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { navigator } from './navigator'
+
+// @ts-ignore
+const winSSR = window.ssr
+let ssr = null
+if (winSSR) ssr = winSSR
 
 export interface CoreShape {
     slug: string
@@ -8,7 +14,9 @@ export interface CoreShape {
 const initialState: CoreShape = {
     slug: 'coreSlice',
     data: {
-        dialogSigninOpen: false,
+        ssr,
+
+        navigator,
     },
 }
 

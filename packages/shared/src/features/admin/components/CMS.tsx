@@ -1,6 +1,11 @@
 import * as React from 'react'
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { selectAdmin, setAdmin, Icon } from '../../listingslab-shared'
+import {
+    useAppSelector,
+    useAppDispatch,
+    selectAdmin,
+    setAdmin,
+    Icon,
+} from '../../../listingslab-shared'
 import {
     Button,
     Dialog,

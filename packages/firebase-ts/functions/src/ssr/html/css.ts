@@ -7,7 +7,10 @@ export const css = () => {
             border: 0; margin: 0; padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", sans-serif;
         }
-        .ssr {}
+        .ssr {
+          max-width: 800px;
+          margin: auto;
+        }
         .fallback-on { display: visible; }
         .fallback-off { display: none; }
         .ssr .header {
@@ -39,7 +42,7 @@ export const css = () => {
           margin-right: 18px;
         }
         .ssr a {
-          color: ${primaryColor};
+          color: ${ primaryColor };
           text-decoration: none;
         }
         .ssr h1, .ssr h2, .ssr h3, .ssr h4 {
@@ -66,11 +69,11 @@ export const css = () => {
           padding: 4px;
         }
 
-        .ssr .cmsListItemImage {
-          width: 320px;
+        .ssr .postImage {
+          width: 100%;
         }
 
-        .ssr .cmsListItem {
+        .ssr .post {
           width: 320px;
           padding: 16px;
           margin: 8px;
@@ -80,18 +83,8 @@ export const css = () => {
           width: 50px;
           height: 50px;
           margin-top: -16px;
-          /* border: 1px solid purple; */
         }
     </style>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
     `;
 };
-
-/*
-// const {
-  //   // primary,
-  //   // secondary,
-  //   text,
-  // } = siteinfo[0].data.theme;
-  // return "";
-*/

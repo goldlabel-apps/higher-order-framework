@@ -13,7 +13,7 @@ import {
     BalanceIcon,
 } from '../theme'
 import DefaultIcon from '@mui/icons-material/DisabledByDefault'
-import HomeIcon from '@mui/icons-material/HomeOutlined'
+import HomeIcon from '@mui/icons-material/AddToHomeScreen'
 import CMSIcon from '@mui/icons-material/DocumentScanner'
 import FlyIcon from '@mui/icons-material/LocalAirportRounded'
 import DatabaseIcon from '@mui/icons-material/DataObject'

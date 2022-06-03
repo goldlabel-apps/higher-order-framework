@@ -1,10 +1,9 @@
 import React from 'react'
-import { Box, Grid, CardMedia } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import {
     Landing,
     DialogSignin,
-    FindUs,
-    Map,
+    AdminMenu,
     Navigator,
     Blocked,
     useAppSelector,
@@ -33,23 +32,15 @@ export default function App() {
             <Box sx={{ width: '98vw' }}>
                 <Grid container spacing={1}>
                     <Grid item xs={12}>
-                        <Navigator />
-                    </Grid>
-
-                    <Grid sm={3} xs={12} item>
-                        <Box sx={{ ml: 1 }}>
-                            <FindUs defaultExpanded={false} />
+                        <Box sx={{ ml: 1, mt: 1 }}>
+                            <Navigator />
                         </Box>
                     </Grid>
 
-                    <Grid sm={6} xs={12} item>
+                    <Grid item xs={12}>
                         <Box sx={{ ml: 1, mt: 1 }}>
                             <Landing />
                         </Box>
-                    </Grid>
-
-                    <Grid sm={3} xs={12} item>
-                        <Box sx={{ ml: 1 }}></Box>
                     </Grid>
                 </Grid>
             </Box>

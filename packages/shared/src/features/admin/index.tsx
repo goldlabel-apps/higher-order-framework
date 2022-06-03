@@ -1,6 +1,6 @@
-import AdminMenu from './AdminMenu'
-import CMS from './CMS'
-import DialogSignin from './DialogSignin'
+import AdminMenu from './components/AdminMenu'
+import CMS from './components/CMS'
+import DialogSignin from './components/DialogSignin'
 
 import { RootState } from '../../app/store'
 import { setAdmin } from './adminSlice'

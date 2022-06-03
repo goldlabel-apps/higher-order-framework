@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useAppSelector, useAppDispatch } from '../app/hooks'
-import { selectSocial, navigateTo, routeTo } from '../features/system'
 import {
     useTheme,
     Accordion,
@@ -22,7 +21,7 @@ export default function FindUs(props) {
     const dispatch = useAppDispatch()
     const theme = useTheme()
 
-    const social = useAppSelector(selectSocial)
+    const social = []
     return (
         <Accordion sx={{ boxShadow: 'none' }} defaultExpanded={defaultExpanded}>
             <AccordionSummary
@@ -46,12 +45,12 @@ export default function FindUs(props) {
                                             button
                                             onClick={(e) => {
                                                 e.preventDefault()
-                                                dispatch(
-                                                    navigateTo({
-                                                        pathname: url,
-                                                        target: '_blank',
-                                                    })
-                                                )
+                                                // dispatch(
+                                                //     navigateTo({
+                                                //         pathname: url,
+                                                //         target: '_blank',
+                                                //     })
+                                                // )
                                             }}
                                         >
                                             <ListItemIcon>

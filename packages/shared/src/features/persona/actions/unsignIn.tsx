@@ -1,7 +1,7 @@
 import { getAuth, signOut } from 'firebase/auth'
 import { AppThunk } from '../../../app/store'
 import {
-    setSystemError,
+    // setSystemError,
     setPersona,
     setCore,
 } from '../../../listingslab-shared'
@@ -27,11 +27,11 @@ export const unsignIn = (): AppThunk => async (dispatch: any) => {
             })
             .catch((error) => {
                 dispatch(setCore({ key: 'blocked', value: false }))
-                dispatch(setSystemError(error))
+                // dispatch(setSystemError(error))
             })
 
         // }, 2000)
     } catch (error) {
-        dispatch(setSystemError(error))
+        // dispatch(setSystemError(error))
     }
 }

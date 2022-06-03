@@ -12,7 +12,6 @@ import {
     getDesignTokens,
     App,
     Renderer,
-    Notification,
     setPersona,
     setCore,
 } from './listingslab-shared'
@@ -43,7 +42,6 @@ export default function Shared() {
             <Provider store={store}>
                 <ThemeProvider theme={themeMode}>
                     <Renderer />
-                    <Notification />
                     <App />
                 </ThemeProvider>
             </Provider>

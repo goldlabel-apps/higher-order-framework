@@ -15,7 +15,7 @@ import {
 export const render = async (request): Promise<string> => {
   const {version} = pJSON;
   const {hostname} = request;
-  const url = request.params[0];
+  // const url = request.params[0];
   const siteinfo = await getSiteinfo(hostname);
   // @ts-ignore
   const {name, baseURL, tagline, avatar} = siteinfo[0].data;
@@ -38,17 +38,15 @@ export const render = async (request): Promise<string> => {
   }
   navHTML += "</ul></nav>";
 
-  let cmsHTML = "<div class='cmsList'>";
+  let postsHTML = "<div class='posts'>";
   for (let i = 0; i < cms.length; i++) {
     // @ts-ignore
-    const {title, image, slug} = cms[i].data;
-    if (slug === url) {
-      cmsHTML += `<div class='cmsListItem'>
-                      <img alt="${title}" src="${image}" class="cmsListItemImage"/>
+    const {title, image} = cms[i].data;
+    postsHTML += `<div class='post'>
+                    <img alt="${title}" src="${image}" class="postImage" />
                   </div>`;
-    }
   }
-  cmsHTML += "</div>";
+  postsHTML += "</div>";
 
   let linksHTML = "";
   for (let i = 0; i < links.length; i++) {
@@ -96,11 +94,8 @@ export const render = async (request): Promise<string> => {
         
         </div>
 
-
-
-        <div class="links">
-          ${ cmsHTML }
-        </div>
+        ${ postsHTML }
+        
         <div class="links">
           ${ linksHTML }
         </div>

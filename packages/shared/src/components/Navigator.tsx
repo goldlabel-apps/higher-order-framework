@@ -4,11 +4,7 @@ import {
     useAppDispatch,
     useAppSelector,
     MiniButton,
-    AdminMenu,
-    routeTo,
     setCore,
-    selectCore,
-    selectSSR,
     selectPersona,
 } from '../listingslab-shared'
 
@@ -16,14 +12,7 @@ export default function Navigator() {
     const theme = useTheme()
     const dispatch = useAppDispatch()
     const persona = useAppSelector(selectPersona)
-    const ssr = useAppSelector(selectSSR)
-
-    const core = useAppSelector(selectCore)
-    const siteName = ssr[0].data.name
-
     let isSignedIn = false
-    let isReady = true
-    // if (core.data.authReady) isReady = true;
     if (persona.data.user.uid) isSignedIn = true
     let mode = 'mini'
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
@@ -36,13 +25,13 @@ export default function Navigator() {
         label: 'Home',
         tooltip: 'Home',
         variant: 'text',
-        onClick: () => {
-            dispatch(
-                routeTo({
-                    pathname: `/`,
-                })
-            )
-        },
+        // onClick: () => {
+        //     dispatch(
+        //         routeTo({
+        //             pathname: `/`,
+        //         })
+        //     )
+        // },
     }
     const signinBtnData = {
         icon: 'adminOff',
@@ -60,7 +49,7 @@ export default function Navigator() {
             tooltip: 'Work',
             color: 'primary',
             onClick: () => {
-                dispatch(routeTo({ pathname: `/work` }))
+                // dispatch(routeTo({ pathname: `/work` }))
             },
         },
         {
@@ -69,7 +58,7 @@ export default function Navigator() {
             tooltip: 'Life',
             color: 'primary',
             onClick: () => {
-                dispatch(routeTo({ pathname: `/life` }))
+                // dispatch(routeTo({ pathname: `/life` }))
             },
         },
         {
@@ -78,38 +67,20 @@ export default function Navigator() {
             tooltip: 'Balance',
             color: 'primary',
             onClick: () => {
-                dispatch(routeTo({ pathname: `/balance` }))
+                // dispatch(routeTo({ pathname: `/balance` }))
             },
         },
     ]
 
     return (
-        <Grid container sx={{ textAlign: 'center' }}>
-            <Grid item xs={12}>
-                <Typography variant="h5" sx={{ mt: 2, fontWeight: 'lighter' }}>
-                    {siteName}
-                </Typography>
-            </Grid>
-
+        <Grid container>
             <Grid item xs={12}>
                 <Box sx={{ m: 1, display: 'flex' }}>
                     <Box sx={{ flexGrow: 1 }} />
                     <MiniButton data={LandingBtnData} />
-
-                    {isReady ? (
-                        <React.Fragment>
-                            {isSignedIn ? (
-                                <AdminMenu />
-                            ) : (
-                                <MiniButton data={signinBtnData} />
-                            )}
-                        </React.Fragment>
-                    ) : null}
-
                     {menuItems.map((item, i) => {
                         return <MiniButton key={`menuItem_${i}`} data={item} />
                     })}
-
                     <Box sx={{ flexGrow: 1 }} />
                 </Box>
             </Grid>
