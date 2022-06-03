@@ -16,7 +16,6 @@ import {
     setAdmin,
     Icon,
     CMS,
-    navigateTo,
 } from '../../listingslab-shared'
 
 export default function AdminMenu() {
@@ -67,67 +66,7 @@ export default function AdminMenu() {
                 }}
             >
                 <MenuList sx={{ width: 200, maxWidth: '100%' }}>
-                    <MenuItem
-                        onClick={() => {
-                            dispatch(
-                                navigateTo({
-                                    pathname:
-                                        'https://console.firebase.google.com/u/0/project/listingslab-app/firestore/data/',
-                                    target: '_blank',
-                                })
-                            )
-                        }}
-                    >
-                        <ListItemIcon>
-                            <Icon icon="firestore" />
-                        </ListItemIcon>
-                        <ListItemText>Firestore</ListItemText>
-                        <Typography variant="body2" color="text.secondary">
-                            {null}
-                        </Typography>
-                    </MenuItem>
-
-                    <MenuItem
-                        onClick={() => {
-                            dispatch(
-                                navigateTo({
-                                    pathname:
-                                        'https://github.com/listingslab-software/.github/issues/new/choose',
-                                    target: '_blank',
-                                })
-                            )
-                        }}
-                    >
-                        <ListItemIcon>
-                            <Icon icon="github" />
-                        </ListItemIcon>
-                        <ListItemText>New Issue</ListItemText>
-                        <Typography variant="body2" color="text.secondary">
-                            {null}
-                        </Typography>
-                    </MenuItem>
-
-                    <MenuItem
-                        onClick={() => {
-                            dispatch(
-                                navigateTo({
-                                    pathname:
-                                        'https://github.com/listingslab-software/higher-order-framework',
-                                    target: '_blank',
-                                })
-                            )
-                        }}
-                    >
-                        <ListItemIcon>
-                            <Icon icon="github" />
-                        </ListItemIcon>
-                        <ListItemText>Repository</ListItemText>
-                        <Typography variant="body2" color="text.secondary">
-                            {null}
-                        </Typography>
-                    </MenuItem>
-
-                    <Divider />
+        
 
                     <MenuItem onClick={onCmsClick}>
                         <ListItemIcon>

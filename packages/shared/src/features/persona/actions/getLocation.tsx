@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { AppThunk } from '../../../app/store'
-import { setSystemError, setPersona } from '../../../listingslab-shared'
+import { setPersona } from '../../../listingslab-shared'
 import { ipgeolocationConfig } from '../../../env'
 
 export const getLocation = (): AppThunk => async (dispatch: any) => {
@@ -22,6 +22,6 @@ export const getLocation = (): AppThunk => async (dispatch: any) => {
                 return true
             })
     } catch (error) {
-        dispatch(setSystemError(error))
+        // dispatch(setSystemError(error))
     }
 }

@@ -1,7 +1,7 @@
 import FingerprintJS from '@fingerprintjs/fingerprintjs-pro'
 import { AppThunk } from '../../../app/store'
 import { fingerprintJSConfig } from '../../../env'
-import { setSystemError, setPersona } from '../../../listingslab-shared'
+import { setPersona } from '../../../listingslab-shared'
 
 export const getFingerprint = (): AppThunk => async (dispatch: any) => {
     try {

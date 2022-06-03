@@ -2,12 +2,9 @@
 // 14.443941, 35.891377 Malta
 // const defaltCenter = [153.433123, -28.026887];
 import React, { useRef, useEffect, useState } from 'react'
-import { useAppSelector } from '../app/hooks'
-import { selectFingerprint } from '../features/system'
 import mapboxgl from 'mapbox-gl'
 import { mapboxConfig } from '../env'
 import { Box, Button, Typography } from '@mui/material'
-import { Icon } from '../listingslab-shared'
 const { accessToken, styleLight } = mapboxConfig
 mapboxgl.accessToken = accessToken
 

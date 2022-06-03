@@ -5,10 +5,8 @@ import {
     useAppSelector,
     MiniButton,
     AdminMenu,
-    routeTo,
     setCore,
     selectCore,
-    selectSSR,
     selectPersona,
 } from '../listingslab-shared'
 
@@ -16,10 +14,8 @@ export default function Navigator() {
     const theme = useTheme()
     const dispatch = useAppDispatch()
     const persona = useAppSelector(selectPersona)
-    const ssr = useAppSelector(selectSSR)
-
     const core = useAppSelector(selectCore)
-    const siteName = ssr[0].data.name
+    const siteName = "ssr[0].data.name"
 
     let isSignedIn = false
     let isReady = true
@@ -36,13 +32,13 @@ export default function Navigator() {
         label: 'Home',
         tooltip: 'Home',
         variant: 'text',
-        onClick: () => {
-            dispatch(
-                routeTo({
-                    pathname: `/`,
-                })
-            )
-        },
+        // onClick: () => {
+        //     dispatch(
+        //         routeTo({
+        //             pathname: `/`,
+        //         })
+        //     )
+        // },
     }
     const signinBtnData = {
         icon: 'adminOff',
@@ -60,7 +56,7 @@ export default function Navigator() {
             tooltip: 'Work',
             color: 'primary',
             onClick: () => {
-                dispatch(routeTo({ pathname: `/work` }))
+                // dispatch(routeTo({ pathname: `/work` }))
             },
         },
         {
@@ -69,7 +65,7 @@ export default function Navigator() {
             tooltip: 'Life',
             color: 'primary',
             onClick: () => {
-                dispatch(routeTo({ pathname: `/life` }))
+                // dispatch(routeTo({ pathname: `/life` }))
             },
         },
         {
@@ -78,7 +74,7 @@ export default function Navigator() {
             tooltip: 'Balance',
             color: 'primary',
             onClick: () => {
-                dispatch(routeTo({ pathname: `/balance` }))
+                // dispatch(routeTo({ pathname: `/balance` }))
             },
         },
     ]

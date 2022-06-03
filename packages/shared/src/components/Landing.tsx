@@ -5,8 +5,6 @@ import {
     useAppDispatch,
     setCms,
     selectCms,
-    selectSystem,
-    routeTo,
     cmsRead,
 } from '../listingslab-shared'
 
@@ -21,8 +19,7 @@ const getPostBySlug = (posts: any, slug: string) => {
 export default function Landing() {
     const dispatch = useAppDispatch()
     const cms = useAppSelector(selectCms)
-    const system = useAppSelector(selectSystem)
-    const { baseURL } = system.ssr[0].data
+    const baseURL = "system.ssr[0].data"
     let url = window.location.href
     let pathname = `${url.replace(baseURL, '')}`
     const { posts, fetched } = cms.data
@@ -40,7 +37,7 @@ export default function Landing() {
         if (refresh) dispatch(setCms({ key: 'refresh', value: false }))
 
         const url = window.location.href
-        const { baseURL } = system.ssr[0].data
+        const baseURL = "system.ssr[0].data"
         const pathname = `${url.replace(baseURL, '')}`
         setcmsDoc({
             slug: pathname,
@@ -48,9 +45,9 @@ export default function Landing() {
             title: 'not default',
         })
         if (!location) {
-            dispatch(routeTo({ pathname }))
+            // dispatch(routeTo({ pathname }))
         }
-    }, [cms, system, dispatch])
+    }, [cms, dispatch])
     if (!fetched) return null
 
     let post = false

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { AppThunk } from '../../../app/store'
 import UAParser from 'ua-parser-js'
-import { setSystemError, setPersona } from '../../../listingslab-shared'
+import { setPersona } from '../../../listingslab-shared'
 
 export const getDevice = (): AppThunk => async (dispatch: any) => {
     try {
@@ -15,6 +15,6 @@ export const getDevice = (): AppThunk => async (dispatch: any) => {
         }
         dispatch(setPersona({ key: 'device', value: device }))
     } catch (error) {
-        dispatch(setSystemError(error))
+        // dispatch(setSystemError(error))
     }
 }

@@ -1,7 +1,7 @@
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { AppThunk } from '../../../app/store'
 import {
-    setSystemError,
+    // setSystemError,
     setCore,
     setPersona,
 } from '../../../listingslab-shared'
@@ -23,10 +23,10 @@ export const signIn =
                     dispatch(setCore({ key: 'blocked', value: false }))
                 })
                 .catch((error) => {
-                    dispatch(setSystemError(error))
+                    // dispatch(setSystemError(error))
                     dispatch(setCore({ key: 'blocked', value: false }))
                 })
         } catch (error) {
-            dispatch(setSystemError(error))
+            // dispatch(setSystemError(error))
         }
     }

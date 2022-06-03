@@ -23,7 +23,6 @@ import {
     useAppDispatch,
     selectCore,
     selectPersona,
-    selectPJSON,
     Icon,
     setCore,
     signIn,
@@ -59,8 +58,6 @@ const NiceText = styled((props: TextFieldProps) => (
 export default function DialogSignin() {
     const id = 'dialogSignin'
     const core = useAppSelector(selectCore)
-    const pJSON = useAppSelector(selectPJSON)
-    const { version } = pJSON
     const { dialogSigninOpen } = core.data
     const persona = useAppSelector(selectPersona)
     // // error
@@ -129,7 +126,7 @@ export default function DialogSignin() {
                     </Grid>
                     <Grid item>
                         <Typography variant="body2" sx={{ mt: 1.25 }}>
-                            hof {version}
+                            higher-order-framework
                         </Typography>
                     </Grid>
                     <Grid item sx={{ flexGrow: 1 }} />
