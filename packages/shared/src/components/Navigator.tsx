@@ -20,18 +20,14 @@ export default function Navigator() {
     if (mode === 'hidden') return null
 
     // TODO move all these vars into redux
-    const LandingBtnData = {
+    const HomeBtnData = {
         icon: 'home',
         label: 'Home',
-        tooltip: 'Home',
+        tooltip: 'Add to home screen',
         variant: 'text',
-        // onClick: () => {
-        //     dispatch(
-        //         routeTo({
-        //             pathname: `/`,
-        //         })
-        //     )
-        // },
+        onClick: () => {
+            console.warn("Vanilla JS. do it.")
+        },
     }
     const signinBtnData = {
         icon: 'adminOff',
@@ -77,7 +73,7 @@ export default function Navigator() {
             <Grid item xs={12}>
                 <Box sx={{ m: 1, display: 'flex' }}>
                     <Box sx={{ flexGrow: 1 }} />
-                    <MiniButton data={LandingBtnData} />
+                    <MiniButton data={HomeBtnData} />
                     {menuItems.map((item, i) => {
                         return <MiniButton key={`menuItem_${i}`} data={item} />
                     })}
