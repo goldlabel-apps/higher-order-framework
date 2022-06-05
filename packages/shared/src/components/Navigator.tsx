@@ -20,18 +20,15 @@ export default function Navigator() {
     if (mode === 'hidden') return null
 
     // TODO move all these vars into redux
-    const LandingBtnData = {
+    const HomeBtnData = {
         icon: 'home',
         label: 'Home',
-        tooltip: 'Home',
+        tooltip: 'Add to home screen',
         variant: 'text',
-        // onClick: () => {
-        //     dispatch(
-        //         routeTo({
-        //             pathname: `/`,
-        //         })
-        //     )
-        // },
+        onClick: () => {
+            console.warn(`Vanilla JS Add to Home Screen 
+            https://stackoverflow.com/questions/57595523/add-to-home-screen-menu-link`)
+        },
     }
     const signinBtnData = {
         icon: 'adminOff',
@@ -48,27 +45,21 @@ export default function Navigator() {
             label: 'Work',
             tooltip: 'Work',
             color: 'primary',
-            onClick: () => {
-                // dispatch(routeTo({ pathname: `/work` }))
-            },
+            onClick: () => {},
         },
         {
             icon: 'life',
             label: 'Life',
             tooltip: 'Life',
             color: 'primary',
-            onClick: () => {
-                // dispatch(routeTo({ pathname: `/life` }))
-            },
+            onClick: () => {},
         },
         {
             icon: 'balance',
             label: 'Balance',
             tooltip: 'Balance',
             color: 'primary',
-            onClick: () => {
-                // dispatch(routeTo({ pathname: `/balance` }))
-            },
+            onClick: () => {},
         },
     ]
 
@@ -77,7 +68,9 @@ export default function Navigator() {
             <Grid item xs={12}>
                 <Box sx={{ m: 1, display: 'flex' }}>
                     <Box sx={{ flexGrow: 1 }} />
-                    <MiniButton data={LandingBtnData} />
+
+                    <MiniButton data={HomeBtnData} />
+
                     {menuItems.map((item, i) => {
                         return <MiniButton key={`menuItem_${i}`} data={item} />
                     })}

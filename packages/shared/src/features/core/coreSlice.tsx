@@ -15,7 +15,6 @@ const initialState: CoreShape = {
     slug: 'coreSlice',
     data: {
         ssr,
-
         navigator,
     },
 }

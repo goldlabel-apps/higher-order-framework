@@ -13,6 +13,8 @@ import Landing from './components/Landing'
 import Navigator from './components/Navigator'
 import MiniButton from './components/MiniButton'
 import FeaturedImage from './components/FeaturedImage'
+import OnTheMap from './components/OnTheMap'
+
 import { Social, Blocked, Map, MetaButton, FindUs } from './components'
 import {
     DialogSignin,
@@ -80,4 +82,5 @@ export {
     setCms,
     FindUs,
     cmsRead,
+    OnTheMap,
 }
