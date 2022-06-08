@@ -16,10 +16,8 @@ import {
 import { Icon } from '../listingslab-shared'
 
 export default function FindUs(props) {
-    const title = 'on the social'
+    const title = 'Find us on the social'
     const { defaultExpanded } = props
-    // const dispatch = useAppDispatch()
-    // const theme = useTheme()
 
     const social = [
         {

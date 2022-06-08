@@ -7,21 +7,21 @@ export default function MaxiButton(props: any) {
     let icon = null
     let label = null
     let variant = 'text'
+    let action = 'onEvent'
 
     if (data.icon) icon = data.icon
     if (data.label) label = data.label
     if (data.variant) variant = data.variant
+    if (data.action) action = data.action
 
-    let onClick = (e) => {
-        e.preventDefault()
-        console.warn('MaxiButton onClick')
+    let onClick = () => { 
+        console.warn('dipatch', action) 
     }
-    if (data.onClick) onClick = data.onClick
 
     return (
         <Button
             // @ts-ignore
-            variant={variant}
+            variant={variant}   
             onClick={onClick}
         >
             {icon ? <Icon icon={icon} /> : null}

@@ -5,18 +5,16 @@ import { Icon } from '../theme'
 
 export default function MiniButton(props: any) {
     const { data } = props
-    const { icon, label, tooltip } = data
-
-    let onClick = (e) => {
-        e.preventDefault()
-        console.warn('MaxiButton onClick')
-    }
-    if (data.onClick) onClick = data.onClick
+    const { icon, color, tooltip } = data
 
     return (
-        <Tooltip title={tooltip} color="primary">
-            <IconButton color="primary" onClick={onClick}>
-                <Icon icon={icon} />
+        <Tooltip title={tooltip} color={color}>
+            <IconButton 
+                sx={{ m: 1 }}
+                size="large"
+                color={color}
+            >
+                    <Icon icon={icon} />
             </IconButton>
         </Tooltip>
     )

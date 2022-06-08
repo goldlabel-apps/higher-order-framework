@@ -1,39 +1,53 @@
 import * as React from 'react'
 import { useTheme, useMediaQuery, Box, Grid, Typography } from '@mui/material'
 import {
-    useAppDispatch,
+    // useAppDispatch,
     useAppSelector,
-    MiniButton,
-    setCore,
-    selectPersona,
+    MaxiButton,
+    // setCore,
+    // selectPersona,
+    selectCore,
 } from '../listingslab-shared'
 
 export default function Navigator() {
-    const theme = useTheme()
-    const dispatch = useAppDispatch()
-    const persona = useAppSelector(selectPersona)
-    let isSignedIn = false
-    if (persona.data.user.uid) isSignedIn = true
     let mode = 'mini'
+    const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
     if (!isMobile) mode = 'maxi'
     if (mode === 'hidden') return null
+    const core = useAppSelector(selectCore)
+    
+    const { menuItems } = core.data.navigator
+    // console.warn("menuItems", menuItems)
 
-    // TODO move all these vars into redux
-    const HomeBtnData = {
-        icon: 'home',
-        label: 'Home',
-        tooltip: 'Add to home screen',
-        variant: 'text',
-        onClick: () => {
-            // console.warn(`Vanilla JS Add to Home Screen 
-            // https://stackoverflow.com/questions/57595523/add-to-home-screen-menu-link`)
-            let person = prompt("Please enter your name", "Harry Potter");
-            if (person != null) {
-                console.warn("Hello " + person + "! How are you today?")
-            }
-        },
+    const onMenuItemClick = (action) => {
+        // dispatch action here
+        console.warn("dispatch action here", action)
     }
+
+    // const dispatch = useAppDispatch()
+    // const persona = useAppSelector(selectPersona)
+    // let isSignedIn = false
+    // if (persona.data.user.uid) isSignedIn = true
+    
+    return <Box sx={{ position: "absolute", bottom: 1, right: 1 }}>
+                {menuItems.map((item, i) => {
+                    const { action } = item
+                    return <MaxiButton 
+                                key={`menuItem_${i}`}
+                                data={item}
+                                onClick={ onMenuItemClick }
+                            />
+                })}
+            </Box>
+}
+
+
+/*
+
+<MiniButton data={ HomeBtnData } />
+
+
     const signinBtnData = {
         icon: 'adminOff',
         label: 'Sign in',
@@ -43,44 +57,4 @@ export default function Navigator() {
             dispatch(setCore({ key: `dialogSigninOpen`, value: true }))
         },
     }
-    const menuItems = [
-        {
-            icon: 'work',
-            label: 'Work',
-            tooltip: 'Work',
-            color: 'primary',
-            onClick: () => {},
-        },
-        {
-            icon: 'life',
-            label: 'Life',
-            tooltip: 'Life',
-            color: 'primary',
-            onClick: () => {},
-        },
-        {
-            icon: 'balance',
-            label: 'Balance',
-            tooltip: 'Balance',
-            color: 'primary',
-            onClick: () => {},
-        },
-    ]
-
-    return (
-        <Grid container>
-            <Grid item xs={12}>
-                <Box sx={{ m: 1, display: 'flex' }}>
-                    <Box sx={{ flexGrow: 1 }} />
-
-                    <MiniButton data={HomeBtnData} />
-
-                    {menuItems.map((item, i) => {
-                        return <MiniButton key={`menuItem_${i}`} data={item} />
-                    })}
-                    <Box sx={{ flexGrow: 1 }} />
-                </Box>
-            </Grid>
-        </Grid>
-    )
-}
+*/
