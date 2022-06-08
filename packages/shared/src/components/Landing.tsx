@@ -14,13 +14,17 @@ export default function Landing() {
             >
                 {title}
             </Typography>
-            <CardMedia
+            
+        </React.Fragment>
+    )
+}
+
+/*
+<CardMedia
                 sx={{ mt: 4 }}
                 component="img"
                 height="175"
                 image={imageSrc}
                 alt={title}
             />
-        </React.Fragment>
-    )
-}
+*/

@@ -24,7 +24,15 @@ export default function Navigator() {
     const core = useAppSelector(selectCore)
     const { menuItems } = core.data.navigator
     
-    return <Box sx={{ position: "absolute", bottom: 1, right: 1 }}>
+    return <Box 
+            id="navigator"    
+            sx={{ 
+                opacity: 0.5,
+                position: "absolute", 
+                bottom: 50, 
+                right: 50,
+                border: "1px solid green", 
+            }}>
                 {menuItems.map((item, i) => {
                     return <NavButton key={`menuItem_${i}`} data={item} />
                 })}

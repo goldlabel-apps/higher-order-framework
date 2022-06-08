@@ -12,7 +12,7 @@ import {
 } from './listingslab-shared'
 
 export default function App() {
-    const id = 'app'
+    const id = 'flashStage'
     const cms = useAppSelector(selectCms)
     const { refresh } = cms.data
     const images = ['work', 'life', 'balance', 'team', 'spade-js']
@@ -40,7 +40,7 @@ export default function App() {
                     <Grid item xs={12}>
                         <Box sx={{ display: 'flex' }}>
                             <Box sx={{ flexGrow: 1 }} />
-                            <Box sx={{ ml: 1, mt: 1, width: 225 }}>
+                            <Box sx={{ ml: 1.5, mt: 1, width: 215 }}>
                                 <FindUs />
                             </Box>
                             <Box sx={{ flexGrow: 1 }} />

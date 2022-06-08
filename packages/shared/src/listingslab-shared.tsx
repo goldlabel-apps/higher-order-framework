@@ -15,6 +15,8 @@ import MiniButton from './components/MiniButton'
 import FeaturedImage from './components/FeaturedImage'
 import OnTheMap from './components/OnTheMap'
 
+import { Flash, initFlash, setFlash, selectFlash, getDisplay } from "./Flash"
+
 import { Social, Blocked, Map, MetaButton, FindUs } from './components'
 import {
     DialogSignin,
@@ -95,4 +97,9 @@ export {
     cmsRead,
     OnTheMap,
     navClick,
+    selectFlash,
+    setFlash,
+    initFlash,
+    getDisplay,
+    Flash,
 }

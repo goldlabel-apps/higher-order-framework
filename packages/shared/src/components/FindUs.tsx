@@ -82,7 +82,7 @@ export default function FindUs(props) {
             </AccordionSummary>
 
             <AccordionDetails>
-                <List>
+                <List dense>
                     {social.length ? (
                         <React.Fragment>
                             {social.map((item, i) => {

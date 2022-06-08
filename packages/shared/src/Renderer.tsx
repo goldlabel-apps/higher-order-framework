@@ -3,24 +3,28 @@ import * as React from 'react'
 import {
     useAppDispatch,
     useAppSelector,
-    selectPersona,
+    selectFlash,
+    setFlash,
+    initFlash,
 } from './listingslab-shared'
 
 export default function Renderer() {
     const dispatch = useAppDispatch()
-    const persona = useAppSelector(selectPersona)
+    const flash = useAppSelector(selectFlash)
 
     React.useEffect(() => {
-        const { ready } = persona.data
-        // console.warn("ready", ready);
+        // const { ready } = persona.data
+        // console.warn("flash", flash);
+        const { initted, ready } = flash.data;
+        if (!initted && !ready) {
+            initFlash()
+            // dispatch(initFlash())
+            dispatch(setFlash({ key: "ready", value: false }))
+            dispatch(setFlash({ key: "initted", value: true}))
+        }
+    }, [flash, dispatch])
 
-        // const { loaded, loading } = fingerprint;
-        // if (!started && !loading && !loaded) {
-        //   dispatch(getFingerprint());
-        //   dispatch(getLocation());
-        //   dispatch(getDevice());
-        // }
-    }, [persona, dispatch])
-
-    return null
+    return <React.Fragment>
+        <pre>{ JSON.stringify(flash.data, null, 2 ) }</pre>
+    </React.Fragment>
 }
