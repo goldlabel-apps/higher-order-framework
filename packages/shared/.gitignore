@@ -74,7 +74,5 @@ dist
 .DS_Store
 
 public/version.json
-
 public/config.json
-
 public/files/files.html

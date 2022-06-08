@@ -26,8 +26,12 @@ export default function Navigator() {
         tooltip: 'Add to home screen',
         variant: 'text',
         onClick: () => {
-            console.warn(`Vanilla JS Add to Home Screen 
-            https://stackoverflow.com/questions/57595523/add-to-home-screen-menu-link`)
+            // console.warn(`Vanilla JS Add to Home Screen 
+            // https://stackoverflow.com/questions/57595523/add-to-home-screen-menu-link`)
+            let person = prompt("Please enter your name", "Harry Potter");
+            if (person != null) {
+                console.warn("Hello " + person + "! How are you today?")
+            }
         },
     }
     const signinBtnData = {
