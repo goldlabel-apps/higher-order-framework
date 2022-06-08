@@ -1,21 +1,37 @@
 import * as React from 'react'
-// import { useAppSelector } from "../app/hooks";
-import { IconButton, Box, Tooltip, Badge } from '@mui/material'
-import { Icon } from '../theme'
+import { IconButton, Tooltip, } from '@mui/material'
+import {
+    useAppDispatch,
+    navClick,
+    Icon,
+} from "../listingslab-shared"
 
 export default function MiniButton(props: any) {
     const { data } = props
-    const { icon, color, tooltip } = data
+    const dispatch = useAppDispatch()
+    let icon = null
+    let tooltip = null
+    let color = 'primary'
+    let variant = 'text'
+    let action = 'onEvent'
 
+    if (data.icon) icon = data.icon
+    if (data.color) color = data.color
+    if (data.tooltip) tooltip = data.tooltip
+    if (data.variant) variant = data.variant
+    if (data.action) action = data.action
+
+    let onClick = () => {
+        dispatch(navClick(data))
+    }
+ 
     return (
-        <Tooltip title={tooltip} color={color}>
-            <IconButton 
-                sx={{ m: 1 }}
-                size="large"
-                color={color}
-            >
+        <Tooltip title={tooltip} color={ color }>
+            <IconButton
+                onClick={onClick} >
                     <Icon icon={icon} />
             </IconButton>
         </Tooltip>
     )
 }
+

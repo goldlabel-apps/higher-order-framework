@@ -1,13 +1,19 @@
 import * as React from 'react'
-import { useTheme, useMediaQuery, Box, Grid, Typography } from '@mui/material'
+import { useTheme, useMediaQuery, Box } from '@mui/material'
 import {
-    // useAppDispatch,
+    useAppDispatch,
     useAppSelector,
+    MiniButton,
     MaxiButton,
-    // setCore,
-    // selectPersona,
     selectCore,
+    navClick,
 } from '../listingslab-shared'
+
+const NavButton = (item) => {
+    const { type } = item.data
+    if (type === "maxi") return <MaxiButton data={ item.data } />
+    return <MiniButton data={ item.data } />
+}
 
 export default function Navigator() {
     let mode = 'mini'
@@ -16,45 +22,11 @@ export default function Navigator() {
     if (!isMobile) mode = 'maxi'
     if (mode === 'hidden') return null
     const core = useAppSelector(selectCore)
-    
     const { menuItems } = core.data.navigator
-    // console.warn("menuItems", menuItems)
-
-    const onMenuItemClick = (action) => {
-        // dispatch action here
-        console.warn("dispatch action here", action)
-    }
-
-    // const dispatch = useAppDispatch()
-    // const persona = useAppSelector(selectPersona)
-    // let isSignedIn = false
-    // if (persona.data.user.uid) isSignedIn = true
     
     return <Box sx={{ position: "absolute", bottom: 1, right: 1 }}>
                 {menuItems.map((item, i) => {
-                    const { action } = item
-                    return <MaxiButton 
-                                key={`menuItem_${i}`}
-                                data={item}
-                                onClick={ onMenuItemClick }
-                            />
+                    return <NavButton key={`menuItem_${i}`} data={item} />
                 })}
             </Box>
 }
-
-
-/*
-
-<MiniButton data={ HomeBtnData } />
-
-
-    const signinBtnData = {
-        icon: 'adminOff',
-        label: 'Sign in',
-        tooltip: 'Sign in',
-        variant: 'text',
-        onClick: () => {
-            dispatch(setCore({ key: `dialogSigninOpen`, value: true }))
-        },
-    }
-*/

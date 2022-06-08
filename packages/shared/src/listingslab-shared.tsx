@@ -31,7 +31,18 @@ import {
     signIn,
     unsignIn,
 } from './features/persona'
-import { selectCore, setCore } from './features/core'
+
+import { 
+    selectCore, 
+    setCore,
+    navClick,
+
+
+} from './features/core'
+
+
+
+
 import { Icon, getDesignTokens } from './theme'
 
 console.warn('hof', PJSON.version)
@@ -83,4 +94,5 @@ export {
     FindUs,
     cmsRead,
     OnTheMap,
+    navClick,
 }
