@@ -17,14 +17,18 @@ export default function Renderer() {
         // console.warn("flash", flash);
         const { initted, ready } = flash.data;
         if (!initted && !ready) {
-            initFlash()
+            // initFlash()
             // dispatch(initFlash())
             dispatch(setFlash({ key: "ready", value: false }))
             dispatch(setFlash({ key: "initted", value: true}))
         }
     }, [flash, dispatch])
 
-    return <React.Fragment>
+    return null
+}
+
+/*
+<React.Fragment>
         <pre>{ JSON.stringify(flash.data, null, 2 ) }</pre>
     </React.Fragment>
-}
+*/

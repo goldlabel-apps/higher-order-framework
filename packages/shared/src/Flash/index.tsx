@@ -1,5 +1,6 @@
 import { selectFlash, setFlash } from "./flashSlice"
 import Flash from "./Flash"
+import MovieClip from "./MovieClip"
 import {
     initFlash, 
     onWindowResize,
@@ -15,6 +16,8 @@ import {
 } from './ActionScript'
 export {
     Flash,
+    MovieClip,
+
     getDisplay,
     initFlash,
     selectFlash,
