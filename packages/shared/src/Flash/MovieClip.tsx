@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Mumma, Pingpongball } from "./"
 import { getNextHighestDepth } from "./"
+import { Navigator } from "../listingslab-shared"
 import {
   Box,
 } from '@mui/material'
@@ -11,8 +12,10 @@ const getComponent = (component) => {
         return <Mumma />
         break
       case 'Pingpongball':
-        console.warn("Pingpongball", component)
         return <Pingpongball />
+        break
+      case 'Navigator':
+        return <Navigator />
         break
       default:
         return null
@@ -38,6 +41,7 @@ export default function MovieClip(props: any) {
     width: mcWidth,
     height: mcHeight,
     zIndex: mcDepth,
+    position: "absolute",
     opacity: 0,
   }  
 

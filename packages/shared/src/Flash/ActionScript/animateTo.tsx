@@ -6,6 +6,7 @@ const duration = 0.66
 
 export const animateTo = (divId, position, offset) => {
     try {
+        console.warn('animateTo', divId, position, offset )
         const el = getElement(divId)
         if (!el) {
             console.error('No element named ', divId)

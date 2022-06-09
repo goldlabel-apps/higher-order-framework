@@ -1,24 +1,24 @@
 import * as React from "react"
+import debounce from "debounce"
 import {
   useAppDispatch,
   useAppSelector,
   setFlash,
   getDisplay,
 } from "../listingslab-shared"
-import { 
-  MovieClip, 
-  initFlash, 
+import {
+  onWindowResize,
+  initFlash,
   selectFlash,
 } from "./"
-import {
-  Box,
-  IconButton,
-} from "@mui/material"
 
 export default function Flash(props) {
   const { movieClips, children } = props
   const dispatch = useAppDispatch()
   const flash = useAppSelector(selectFlash)
+
+  window.addEventListener('resize', debounce(onWindowResize, 333))
+  onWindowResize()
   
   React.useEffect(() => {
     const { started, display } = flash.data
@@ -38,8 +38,8 @@ export default function Flash(props) {
   if (!display) return null  
   const { displayW, displayH } = display
   const stageStyle = {
-    border: "1px solid rgba(0,0,0,0.5)",
-    background: "rgba(0,0,0,0.023)",
+    // border: "1px solid rgba(0,0,0,0.5)",
+    // background: "rgba(0,0,0,0.023)",
     width: displayW - 4,
     height: displayH - 4,
     overflow: "hidden",
@@ -47,7 +47,7 @@ export default function Flash(props) {
     postition: "relative",
   }
 
-  return <Box id="stage" sx={ stageStyle }>
+  return <div id="stage" style={ stageStyle }>
             { children }
-          </Box>
+          </div>
 }
