@@ -3,7 +3,7 @@ import { Typography, CardMedia } from '@mui/material'
 
 export default function Landing() {
     const title = 'Listingslab Software'
-    const imageSrc = 'https://listingslab.com/svg/featured/team.svg'
+    const imageSrc = 'https://listingslab.com/svg/featured/work.svg'
 
     return (
         <React.Fragment>
@@ -14,13 +14,17 @@ export default function Landing() {
             >
                 {title}
             </Typography>
-            <CardMedia
+            
+        </React.Fragment>
+    )
+}
+
+/*
+<CardMedia
                 sx={{ mt: 4 }}
                 component="img"
                 height="175"
                 image={imageSrc}
                 alt={title}
             />
-        </React.Fragment>
-    )
-}
+*/

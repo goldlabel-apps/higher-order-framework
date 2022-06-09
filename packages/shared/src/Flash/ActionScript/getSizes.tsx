@@ -2,7 +2,7 @@ import { getElement } from './'
 
 export const getSizes = (divId) => {
     try {
-        const stage = getElement('flashStage')
+        const stage = getElement('stage')
         if (!stage) {
             console.error('No stage')
             return false

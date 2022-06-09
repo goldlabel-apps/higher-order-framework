@@ -3,6 +3,7 @@ import adminReducer from '../features/admin/adminSlice'
 import coreReducer from '../features/core/coreSlice'
 import personaReducer from '../features/persona/personaSlice'
 import cmsReducer from '../features/cms/cmsSlice'
+import flashReducer from '../Flash/flashSlice'
 
 export const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
         core: coreReducer,
         cms: cmsReducer,
         persona: personaReducer,
+        flash: flashReducer,
     },
 })
 

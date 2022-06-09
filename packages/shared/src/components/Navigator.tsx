@@ -1,82 +1,40 @@
 import * as React from 'react'
-import { useTheme, useMediaQuery, Box, Grid, Typography } from '@mui/material'
+import { useTheme, useMediaQuery, Box } from '@mui/material'
 import {
     useAppDispatch,
     useAppSelector,
     MiniButton,
-    setCore,
-    selectPersona,
+    MaxiButton,
+    selectCore,
+    navClick,
 } from '../listingslab-shared'
 
+const NavButton = (item) => {
+    const { type } = item.data
+    if (type === "maxi") return <MaxiButton data={ item.data } />
+    return <MiniButton data={ item.data } />
+}
+
 export default function Navigator() {
-    const theme = useTheme()
-    const dispatch = useAppDispatch()
-    const persona = useAppSelector(selectPersona)
-    let isSignedIn = false
-    if (persona.data.user.uid) isSignedIn = true
     let mode = 'mini'
+    const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
     if (!isMobile) mode = 'maxi'
     if (mode === 'hidden') return null
-
-    // TODO move all these vars into redux
-    const HomeBtnData = {
-        icon: 'home',
-        label: 'Home',
-        tooltip: 'Add to home screen',
-        variant: 'text',
-        onClick: () => {
-            console.warn(`Vanilla JS Add to Home Screen 
-            https://stackoverflow.com/questions/57595523/add-to-home-screen-menu-link`)
-        },
-    }
-    const signinBtnData = {
-        icon: 'adminOff',
-        label: 'Sign in',
-        tooltip: 'Sign in',
-        variant: 'text',
-        onClick: () => {
-            dispatch(setCore({ key: `dialogSigninOpen`, value: true }))
-        },
-    }
-    const menuItems = [
-        {
-            icon: 'work',
-            label: 'Work',
-            tooltip: 'Work',
-            color: 'primary',
-            onClick: () => {},
-        },
-        {
-            icon: 'life',
-            label: 'Life',
-            tooltip: 'Life',
-            color: 'primary',
-            onClick: () => {},
-        },
-        {
-            icon: 'balance',
-            label: 'Balance',
-            tooltip: 'Balance',
-            color: 'primary',
-            onClick: () => {},
-        },
-    ]
-
-    return (
-        <Grid container>
-            <Grid item xs={12}>
-                <Box sx={{ m: 1, display: 'flex' }}>
-                    <Box sx={{ flexGrow: 1 }} />
-
-                    <MiniButton data={HomeBtnData} />
-
-                    {menuItems.map((item, i) => {
-                        return <MiniButton key={`menuItem_${i}`} data={item} />
-                    })}
-                    <Box sx={{ flexGrow: 1 }} />
-                </Box>
-            </Grid>
-        </Grid>
-    )
+    const core = useAppSelector(selectCore)
+    const { menuItems } = core.data.navigator
+    
+    return <Box 
+            id="navigator"    
+            sx={{ 
+                opacity: 0.5,
+                position: "absolute", 
+                bottom: 50, 
+                right: 50,
+                border: "1px solid green", 
+            }}>
+                {menuItems.map((item, i) => {
+                    return <NavButton key={`menuItem_${i}`} data={item} />
+                })}
+            </Box>
 }

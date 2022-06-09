@@ -1,15 +1,15 @@
-import React, { useDebugValue } from 'react'
+import React from 'react'
 // @ts-ignore
 import { IconButton, useTheme } from '@mui/material'
-// import { useAppSelector, useAppDispatch } from "../../../app/hooks";
+// import { useAppSelector, useAppDispatch } from "../../../_app/hooks";
 // import { navigateTo } from "../../system";
 // import { useDispatch } from "react-redux";
 
-const PinpongballClip = (props: any) => {
+const Pinpongball = (props: any) => {
     // const dispatch = useDispatch();
     const theme = useTheme()
-    const ballColor = theme.palette.secondary.main
-    const smileColor = theme.palette.primary.main
+    const ballColor = theme.palette.primary.main
+    const smileColor = "white"
 
     return (
         <IconButton
@@ -36,4 +36,4 @@ const PinpongballClip = (props: any) => {
     )
 }
 
-export default PinpongballClip
+export default Pinpongball

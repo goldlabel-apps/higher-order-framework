@@ -1,23 +1,7 @@
-import Stage from './Stage'
-import { initFlash, onWindowResize } from './events'
-import { PinpongballClip, Sky } from './MovieClips'
+import { selectFlash, setFlash } from "./flashSlice"
+import Flash from "./Flash"
 import {
-    animateTo,
-    getSizes,
-    getElement,
-    getStage,
-    setPosition,
-    layout,
-    fadeIn,
-    fadeOut,
-    remove,
-} from './ActionScript'
-
-export {
-    initFlash,
-    Stage,
-    PinpongballClip,
-    Sky,
+    initFlash, 
     onWindowResize,
     animateTo,
     getSizes,
@@ -27,5 +11,22 @@ export {
     fadeIn,
     fadeOut,
     remove,
-    layout,
+    getDisplay,
+} from './ActionScript'
+export {
+    Flash,
+    getDisplay,
+    initFlash,
+    selectFlash,
+    setFlash,
+    onWindowResize,
+    animateTo,
+    getSizes,
+    getElement,
+    getStage,
+    setPosition,
+    fadeIn,
+    fadeOut,
+    remove,
+
 }

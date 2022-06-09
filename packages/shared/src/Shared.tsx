@@ -10,11 +10,12 @@ import { firebaseConfig } from './env'
 import {
     store,
     getDesignTokens,
-    App,
+    
     Renderer,
     setPersona,
     setCore,
 } from './listingslab-shared'
+import FlashApp from "./FlashApp"
 
 export const app = initializeApp(firebaseConfig)
 export const db = getFirestore(app)
@@ -42,7 +43,7 @@ export default function Shared() {
             <Provider store={store}>
                 <ThemeProvider theme={themeMode}>
                     <Renderer />
-                    <App />
+                    <FlashApp />
                 </ThemeProvider>
             </Provider>
         </BrowserRouter>

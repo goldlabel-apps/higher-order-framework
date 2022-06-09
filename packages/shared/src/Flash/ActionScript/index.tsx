@@ -6,7 +6,9 @@ import { fadeIn } from './fadeIn'
 import { getElement } from './getElement'
 import { setPosition } from './setPosition'
 import { getStage } from './getStage'
-import { layout } from './layout'
+import { initFlash } from './initFlash'
+import { onWindowResize } from './onWindowResize'
+import { getDisplay } from './getDisplay'
 
 export {
     getElement,
@@ -17,5 +19,7 @@ export {
     animateTo,
     remove,
     getStage,
-    layout,
+    initFlash,
+    onWindowResize,
+    getDisplay,
 }

@@ -15,6 +15,8 @@ import MiniButton from './components/MiniButton'
 import FeaturedImage from './components/FeaturedImage'
 import OnTheMap from './components/OnTheMap'
 
+import { Flash, initFlash, setFlash, selectFlash, getDisplay } from "./Flash"
+
 import { Social, Blocked, Map, MetaButton, FindUs } from './components'
 import {
     DialogSignin,
@@ -31,7 +33,18 @@ import {
     signIn,
     unsignIn,
 } from './features/persona'
-import { selectCore, setCore } from './features/core'
+
+import { 
+    selectCore, 
+    setCore,
+    navClick,
+
+
+} from './features/core'
+
+
+
+
 import { Icon, getDesignTokens } from './theme'
 
 console.warn('hof', PJSON.version)
@@ -83,4 +96,10 @@ export {
     FindUs,
     cmsRead,
     OnTheMap,
+    navClick,
+    selectFlash,
+    setFlash,
+    initFlash,
+    getDisplay,
+    Flash,
 }
