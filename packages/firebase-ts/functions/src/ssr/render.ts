@@ -19,7 +19,7 @@ export const render = async (request): Promise<string> => {
   const siteinfo = await getSiteinfo(hostname);
   // @ts-ignore
   const {name, baseURL, tagline, avatar} = siteinfo[0].data;
-  let windowTitle = `${name}. ${tagline}`;
+  const windowTitle = `${name}. ${tagline}`;
   const links = await getLinks();
   const cms = await getCms();
 

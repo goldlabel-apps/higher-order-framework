@@ -1,10 +1,6 @@
 import * as React from 'react'
-import { IconButton, Tooltip, } from '@mui/material'
-import {
-    useAppDispatch,
-    navClick,
-    Icon,
-} from "../listingslab-shared"
+import { IconButton, Tooltip } from '@mui/material'
+import { useAppDispatch, navClick, Icon } from '../listingslab-shared'
 
 export default function MiniButton(props: any) {
     const { data } = props
@@ -24,14 +20,12 @@ export default function MiniButton(props: any) {
     let onClick = () => {
         dispatch(navClick(data))
     }
- 
+
     return (
-        <Tooltip title={tooltip} color={ color }>
-            <IconButton
-                onClick={onClick} >
-                    <Icon icon={icon} />
+        <Tooltip title={tooltip} color={color}>
+            <IconButton onClick={onClick}>
+                <Icon icon={icon} />
             </IconButton>
         </Tooltip>
     )
 }
-

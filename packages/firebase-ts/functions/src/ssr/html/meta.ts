@@ -7,9 +7,9 @@ export const meta = (siteinfo: any) => {
     avatar,
     manifest,
     // icon,
-    baseURL,
-    image,
-    author,
+    // baseURL,
+    // image,
+    // author,
   } = siteinfo[0].data;
 
   const {placename, region, position, ICBM} = location;
@@ -35,17 +35,20 @@ export const meta = (siteinfo: any) => {
     <meta name="geo.position" content="${position}" />
     <meta name="ICBM" content="${ICBM}" />
 
+
+    <meta name="importmap-type" content="systemjs-importmap" />`;
+};
+
+
+/*
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${baseURL}" />
     <meta property="og:title" content="${name}" />
     <meta property="og:description" content="${tagline}" />
     <meta property="og:image" content="${image}" />
-    
     <meta name="twitter:site" content="${baseURL}" />
     <meta name="twitter:title" content="${name}" />
     <meta name="twitter:description" content="${tagline}"/>
     <meta name="twitter:creator" content="${author}" />
     <meta name="twitter:image" content="${image}" />
- 
-    <meta name="importmap-type" content="systemjs-importmap" />`;
-};
+*/

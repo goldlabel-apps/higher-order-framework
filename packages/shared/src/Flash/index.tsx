@@ -1,14 +1,14 @@
 // Flash.
 
-import { selectFlash, setFlash } from "./flashSlice"
-import Flash from "./Flash"
-import MovieClip from "./MovieClip"
-import Mumma from "./MovieClips/Mumma"
-import Pingpongball from "./MovieClips/Pingpongball"
-import Timemachine from "./MovieClips/Timemachine"
+import { selectFlash, setFlash } from './flashSlice'
+import Flash from './Flash'
+import MovieClip from './MovieClip'
+import Mumma from './MovieClips/Mumma'
+import Pingpongball from './MovieClips/Pingpongball'
+import Timemachine from './MovieClips/Timemachine'
 
 import {
-    initFlash, 
+    initFlash,
     onWindowResize,
     animateTo,
     getSizes,

@@ -2,50 +2,46 @@ export interface NavigatorShape {
     menuItems: any
 }
 export const navigator: NavigatorShape = {
-    menuItems: [        
+    menuItems: [
         {
-            label: "Work",
-            type: "maxi",
-            icon: "work",
-            tooltip: "Work",
-            color: "secondary",
-            action: "onWorkClick",
-            pathname: "/work",
+            label: 'Work',
+            type: 'maxi',
+            icon: 'work',
+            tooltip: 'Work',
+            color: 'secondary',
+            action: 'onWorkClick',
+            pathname: '/work',
         },
         {
-            label: "Life",
-            type: "maxi",
-            icon: "life",
-            tooltip: "Life",
-            color: "primary",
-            action: "onLifeClick",
-            pathname: "/life",
+            label: 'Life',
+            type: 'maxi',
+            icon: 'life',
+            tooltip: 'Life',
+            color: 'primary',
+            action: 'onLifeClick',
+            pathname: '/life',
         },
         {
-            label: "Balance",
-            type: "maxi",
-            icon: "balance",
-            tooltip: "Balance",
-            color: "primary",
-            action: "onBalanceClick",
-            pathname: "/balance",
+            label: 'Balance',
+            type: 'maxi',
+            icon: 'balance',
+            tooltip: 'Balance',
+            color: 'primary',
+            action: 'onBalanceClick',
+            pathname: '/balance',
         },
 
         {
-            label: "Home",
-            type: "mini",
-            icon: "home",
-            color: "primary",
-            tooltip: "Add to home screen",
-            action: "onHomeClick",
-            pathname: "/add-to-home",
+            label: 'Home',
+            type: 'mini',
+            icon: 'home',
+            color: 'primary',
+            tooltip: 'Add to home screen',
+            action: 'onHomeClick',
+            pathname: '/add-to-home',
         },
-    ]
+    ],
 }
-
-
-
-
 
 /*
     onClick: () => {

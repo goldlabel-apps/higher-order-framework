@@ -1,23 +1,29 @@
 import React from 'react'
-import {    
-    Flash,
-    MovieClip,
-} from './listingslab-shared'
+import { Flash, MovieClip } from './listingslab-shared'
 const movieClips = [
     {
-        id: "navigator",
-        component: "Navigator",
-        initialPosition: "bottommiddle",
-        offset: { top: 0, left: 0 },
+        id: 'titleMovie',
+        component: 'TitleMovie',
+        initialPosition: 'topmiddle',
+        offset: { top: 24, left: 0 },
         width: 350,
         height: 50,
+        zIndex: 123,
+    },
+    {
+        id: 'navigator',
+        component: 'Navigator',
+        initialPosition: 'bottommiddle',
+        offset: { top: 0, left: 0 },
+        width: 350,
+        height: 40,
         zIndex: 1234,
     },
     {
-        id: "mumma",
-        component: "Mumma",
+        id: 'mumma',
+        component: 'Mumma',
         offset: { top: 0, left: 0 },
-        initialPosition: "centered",
+        initialPosition: 'centered',
         width: 100,
         height: 200,
         zIndex: 200,
@@ -25,18 +31,14 @@ const movieClips = [
 ]
 
 export default function FlashApp() {
-    return <Flash movieClips={ movieClips }>
-                { movieClips.map((item,i) => {
-                    return <MovieClip 
-                                key={`mc_${i}`} 
-                                data={ item }
-                            />
-                })}
-            </Flash>
+    return (
+        <Flash movieClips={movieClips}>
+            {movieClips.map((item, i) => {
+                return <MovieClip key={`mc_${i}`} data={item} />
+            })}
+        </Flash>
+    )
 }
-
-
-
 
 /*
     // const depth = getNextHighestDepth()

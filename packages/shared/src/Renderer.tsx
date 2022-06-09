@@ -9,8 +9,6 @@ import {
 } from './listingslab-shared'
 
 export default function Renderer() {
-    
-
     return null
 }
 

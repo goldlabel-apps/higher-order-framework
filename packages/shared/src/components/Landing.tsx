@@ -14,7 +14,6 @@ export default function Landing() {
             >
                 {title}
             </Typography>
-            
         </React.Fragment>
     )
 }

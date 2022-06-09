@@ -1,10 +1,6 @@
 import * as React from 'react'
 import { Button } from '@mui/material'
-import {
-    useAppDispatch,
-    navClick,
-    Icon,
-} from "../listingslab-shared"
+import { useAppDispatch, navClick, Icon } from '../listingslab-shared'
 export default function MaxiButton(props: any) {
     const { data } = props
     const dispatch = useAppDispatch()
@@ -24,8 +20,9 @@ export default function MaxiButton(props: any) {
     return (
         <Button
             // @ts-ignore
-            variant={variant}   
-            onClick={onClick}>
+            variant={variant}
+            onClick={onClick}
+        >
             {icon ? <Icon icon={icon} /> : null}
             {label ? (
                 <span style={{ marginRight: 8, marginLeft: 8 }}>{label}</span>

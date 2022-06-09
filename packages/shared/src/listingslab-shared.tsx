@@ -13,24 +13,19 @@ import Navigator from './components/Navigator'
 import MiniButton from './components/MiniButton'
 import FeaturedImage from './components/FeaturedImage'
 import OnTheMap from './components/OnTheMap'
+import TitleMovie from './components/TitleMovie'
 
-import { 
-    Flash, 
+import {
+    Flash,
     MovieClip,
-    initFlash, 
-    setFlash, 
-    selectFlash, 
-    getDisplay, 
+    initFlash,
+    setFlash,
+    selectFlash,
+    getDisplay,
     getNextHighestDepth,
-} from "./Flash"
+} from './Flash'
 
-import { 
-    Social, 
-    Blocked, 
-    Map, 
-    MetaButton, 
-    FindUs, 
-} from './components'
+import { Social, Blocked, Map, MetaButton, FindUs } from './components'
 
 import {
     DialogSignin,
@@ -40,11 +35,7 @@ import {
     setAdmin,
 } from './features/admin'
 
-import { 
-    selectCms, 
-    setCms, 
-    cmsRead,
-} from './features/cms'
+import { selectCms, setCms, cmsRead } from './features/cms'
 
 import {
     Persona,
@@ -54,16 +45,9 @@ import {
     unsignIn,
 } from './features/persona'
 
-import { 
-    selectCore, 
-    setCore,
-    navClick,
-} from './features/core'
+import { selectCore, setCore, navClick, navigateTo } from './features/core'
 
-import { 
-    Icon, 
-    getDesignTokens 
-} from './theme'
+import { Icon, getDesignTokens } from './theme'
 
 console.warn('hof', PJSON.version)
 
@@ -99,21 +83,27 @@ export {
     Persona,
     setPersona,
     selectPersona,
-    selectCore,
-    setCore,
     DialogSignin,
-    Landing,
-    Blocked,
     CMS,
     selectAdmin,
     setAdmin,
     AdminMenu,
+    // Components
+    FindUs,
+    OnTheMap,
+    Landing,
+    TitleMovie,
+    Blocked,
+    // Cms
+    cmsRead,
     selectCms,
     setCms,
-    FindUs,
-    cmsRead,
-    OnTheMap,
+    // Core
     navClick,
+    navigateTo,
+    selectCore,
+    setCore,
+    // Flash
     selectFlash,
     setFlash,
     initFlash,
