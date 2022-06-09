@@ -2,15 +2,27 @@ import React from 'react'
 import { Box, Grid, Typography } from '@mui/material'
 import {    
     Flash,
-    Navigator,
+    MovieClip,
+    // getNextHighestDepth,
 } from './listingslab-shared'
 
+import { Mumma } from "./Flash"
+
 export default function FlashApp() {
+
+    // const depth = getNextHighestDepth()
+
     return <Flash>
-                <Box 
-                    id="navigator" 
-                    sx={{border:"1px solid green"}}>
-                    <Navigator />
-                </Box>
+                <MovieClip data={{
+                    width: 100,
+                    height: 200,
+                    zIndex: 22,
+                }}>
+                    <Mumma />
+                </MovieClip>
             </Flash>
 }
+
+/*
+
+*/

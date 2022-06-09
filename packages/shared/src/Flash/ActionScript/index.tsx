@@ -9,6 +9,7 @@ import { getStage } from './getStage'
 import { initFlash } from './initFlash'
 import { onWindowResize } from './onWindowResize'
 import { getDisplay } from './getDisplay'
+import { getNextHighestDepth } from './getNextHighestDepth'
 
 export {
     getElement,
@@ -22,4 +23,5 @@ export {
     initFlash,
     onWindowResize,
     getDisplay,
+    getNextHighestDepth,
 }

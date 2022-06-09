@@ -6,7 +6,9 @@ export interface FlashShape {
 }
 
 const initialState: FlashShape = {
-    data: {},
+    data: {
+        nextHighestDepth: 1,
+    },
 }
 
 export const flashSlice = createSlice({

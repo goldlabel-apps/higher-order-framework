@@ -7,7 +7,6 @@ import { useAppSelector, useAppDispatch } from './app/hooks'
 import { getById } from './app/utils'
 import Shared from './Shared'
 import Renderer from './Renderer'
-import App from './App'
 import MaxiButton from './components/MaxiButton'
 import Landing from './components/Landing'
 import Navigator from './components/Navigator'
@@ -15,9 +14,24 @@ import MiniButton from './components/MiniButton'
 import FeaturedImage from './components/FeaturedImage'
 import OnTheMap from './components/OnTheMap'
 
-import { Flash, initFlash, setFlash, selectFlash, getDisplay } from "./Flash"
+import { 
+    Flash, 
+    MovieClip,
+    initFlash, 
+    setFlash, 
+    selectFlash, 
+    getDisplay, 
+    getNextHighestDepth,
+} from "./Flash"
 
-import { Social, Blocked, Map, MetaButton, FindUs } from './components'
+import { 
+    Social, 
+    Blocked, 
+    Map, 
+    MetaButton, 
+    FindUs, 
+} from './components'
+
 import {
     DialogSignin,
     AdminMenu,
@@ -25,7 +39,13 @@ import {
     selectAdmin,
     setAdmin,
 } from './features/admin'
-import { selectCms, setCms, cmsRead } from './features/cms'
+
+import { 
+    selectCms, 
+    setCms, 
+    cmsRead,
+} from './features/cms'
+
 import {
     Persona,
     selectPersona,
@@ -38,14 +58,12 @@ import {
     selectCore, 
     setCore,
     navClick,
-
-
 } from './features/core'
 
-
-
-
-import { Icon, getDesignTokens } from './theme'
+import { 
+    Icon, 
+    getDesignTokens 
+} from './theme'
 
 console.warn('hof', PJSON.version)
 
@@ -73,7 +91,6 @@ export {
     signIn,
     unsignIn,
     getById,
-    App,
     Navigator,
     FeaturedImage,
     MetaButton,
@@ -102,4 +119,6 @@ export {
     initFlash,
     getDisplay,
     Flash,
+    MovieClip,
+    getNextHighestDepth,
 }

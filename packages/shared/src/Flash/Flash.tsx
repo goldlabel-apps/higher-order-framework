@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { 
+import {
+  MovieClip, 
   Icon,
   useAppDispatch,
   useAppSelector,
   selectFlash,
-  initFlash,
+  // initFlash,
   setFlash,
   getDisplay,
 } from '../listingslab-shared'
@@ -25,8 +26,9 @@ export default function Flash(props) {
     }
     if (!started){
       setTimeout(() => {
-        initFlash()
-        // dispatch(setFlash({key: "started", value: true }))
+        dispatch(setFlash({key: "started", value: true }))
+        // initFlash()
+        // 
       }, 333)
     }
   }, [flash, dispatch])
@@ -34,15 +36,25 @@ export default function Flash(props) {
   const { displayW, displayH } = display
   
   const stageStyle = {
-    width: displayW,
-    height: displayH,
+    // border: "1px solid rgba(0,0,0,0.5)",
+    background: "rgba(0,0,0,0.023)",
+    width: displayW - 4,
+    height: displayH - 4,
+    overflow: "hidden",
     zIndex: 1,
     postition: "relative",
   }
 
   return <Box id="stage" sx={ stageStyle }>
+            { children }
+          </Box>
+}
 
-              <Box id="text" sx={{
+
+
+/*
+
+<Box id="text" sx={{
                 position: "absolute",
                 zIndex:100, 
                 width: 350, 
@@ -51,13 +63,7 @@ export default function Flash(props) {
 
                 3l2i3 397h93h4947hd974
               </Box>
-          {children}
-            
-          </Box>
-}
 
-
-/*
 { showPrevNext ? <React.Fragment>
                               <Box id="prev" sx={{ 
                                 opacity: 1, 
