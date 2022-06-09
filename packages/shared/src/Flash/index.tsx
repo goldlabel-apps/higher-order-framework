@@ -4,7 +4,7 @@ import { selectFlash, setFlash } from "./flashSlice"
 import Flash from "./Flash"
 import MovieClip from "./MovieClip"
 import Mumma from "./MovieClips/Mumma"
-import Pinpongball from "./MovieClips/Pinpongball"
+import Pingpongball from "./MovieClips/Pingpongball"
 import Timemachine from "./MovieClips/Timemachine"
 
 import {
@@ -26,9 +26,8 @@ export {
     Flash,
     MovieClip,
     Mumma,
-    Pinpongball,
+    Pingpongball,
     Timemachine,
-
     getDisplay,
     initFlash,
     selectFlash,
