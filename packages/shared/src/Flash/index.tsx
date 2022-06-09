@@ -1,3 +1,5 @@
+// Flash.
+
 import { selectFlash, setFlash } from "./flashSlice"
 import Flash from "./Flash"
 import MovieClip from "./MovieClip"
