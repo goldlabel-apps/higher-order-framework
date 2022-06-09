@@ -27,7 +27,7 @@ export const render = async (request): Promise<string> => {
   for (let j = 0; j < cms.length; j++) {
     // @ts-ignore
     const {title, slug} = cms[j].data;
-    if (slug == "/") windowTitle = title;
+    // if (slug == "/") windowTitle = title;
     if (slug !== "/") {
       navHTML += `<li>
         <a href="${baseURL}${slug}">

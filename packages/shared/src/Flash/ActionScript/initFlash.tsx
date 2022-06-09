@@ -1,10 +1,12 @@
-import { getElement, setPosition } from './'
+import { store } from "../../listingslab-shared"
+import { getElement, setPosition, fadeIn } from './'
 
 export const initFlash = () => {
-
-    const navigator = getElement("navigator")
-    if (!navigator) return console.warn('#navigator not found')
-    console.warn("center the Navigator")
-    setPosition("navigator", "centered", { top:0, left:0 } )
+    const { movieClips } = store.getState().flash.data
+    for (let i = 0; i < movieClips.length; i++ ){
+        const { id, initialPosition } = movieClips[i]
+        setPosition(id, initialPosition, { top: 0, left: 0 } )
+        fadeIn(id)
+    }
     return true
 }
