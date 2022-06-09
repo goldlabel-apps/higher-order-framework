@@ -26,8 +26,9 @@ export default function Flash(props) {
     }
     if (!started){
       setTimeout(() => {
+        dispatch(setFlash({key: "started", value: true }))
         // initFlash()
-        // dispatch(setFlash({key: "started", value: true }))
+        // 
       }, 333)
     }
   }, [flash, dispatch])
@@ -35,10 +36,10 @@ export default function Flash(props) {
   const { displayW, displayH } = display
   
   const stageStyle = {
-    border: "1px solid rgba(0,0,0,0.5)",
+    // border: "1px solid rgba(0,0,0,0.5)",
     background: "rgba(0,0,0,0.023)",
-    width: displayW - 8,
-    height: displayH - 8,
+    width: displayW - 4,
+    height: displayH - 4,
     overflow: "hidden",
     zIndex: 1,
     postition: "relative",

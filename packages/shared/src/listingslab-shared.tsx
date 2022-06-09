@@ -21,6 +21,7 @@ import {
     setFlash, 
     selectFlash, 
     getDisplay, 
+    getNextHighestDepth,
 } from "./Flash"
 
 import { 
@@ -119,4 +120,5 @@ export {
     getDisplay,
     Flash,
     MovieClip,
+    getNextHighestDepth,
 }
