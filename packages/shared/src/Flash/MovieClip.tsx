@@ -1,11 +1,14 @@
 import * as React from 'react'
 import { Mumma, Pingpongball, Macromedia } from './'
 import { getNextHighestDepth } from './'
-import { Navigator, TitleMovie } from '../listingslab-shared'
+import { Navigator, TitleMovie, RouteEngine } from '../listingslab-shared'
 import { Box } from '@mui/material'
 
 const getComponent = (component) => {
     switch (component) {
+        case 'RouteEngine':
+            return <RouteEngine />
+            break
         case 'TitleMovie':
             return <TitleMovie />
             break

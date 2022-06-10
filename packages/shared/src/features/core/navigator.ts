@@ -30,8 +30,13 @@ export const navigator: NavigatorShape = {
             action: 'onBalanceClick',
             pathname: '/balance',
         },
+    ],
+}
 
-        {
+/*
+
+
+{
             label: 'Home',
             type: 'mini',
             icon: 'home',
@@ -40,10 +45,9 @@ export const navigator: NavigatorShape = {
             action: 'onHomeClick',
             pathname: '/add-to-home',
         },
-    ],
-}
 
-/*
+
+
     onClick: () => {
         console.warn("Vanilla JS Add to Home Screen")
         // https://stackoverflow.com/questions/57595523/add-to-home-screen-menu-link`)

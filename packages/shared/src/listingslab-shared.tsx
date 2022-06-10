@@ -6,8 +6,7 @@ import { store } from './app/store'
 import { useAppSelector, useAppDispatch } from './app/hooks'
 import { getById } from './app/utils'
 import Shared from './Shared'
-import RouteDisplay from './RouteDisplay'
-import Renderer from './Renderer'
+import RouteEngine from './RouteEngine'
 import MaxiButton from './components/MaxiButton'
 import Landing from './components/Landing'
 import Navigator from './components/Navigator'
@@ -45,7 +44,14 @@ import {
     unsignIn,
 } from './features/persona'
 
-import { selectCore, setCore, navClick, navigateTo } from './features/core'
+import { 
+    selectRoute,
+    selectSSR,
+    selectCore, 
+    setCore, 
+    navClick, 
+    navigateTo,
+} from './features/core'
 
 import { Icon, getDesignTokens } from './theme'
 
@@ -65,8 +71,9 @@ export const { bootstrap, mount, unmount } = lifecycles
 
 export {
     // Core
-    RouteDisplay,
-    Renderer,
+    RouteEngine,
+    selectRoute,
+    selectSSR,
     Map,
     store,
     useAppDispatch,

@@ -14,16 +14,25 @@ export default function Flash(props) {
     const flash = useAppSelector(selectFlash)
 
     window.addEventListener('resize', debounce(onWindowResize, 333))
-    onWindowResize()
 
     React.useEffect(() => {
-        const { started, display } = flash.data
+        const { started, display, refresh } = flash.data
+
+        // console.warn('refresh', refresh)
+
         if (!display) {
             dispatch(setFlash({ key: 'display', value: getDisplay() }))
             dispatch(setFlash({ key: 'movieClips', value: movieClips }))
         }
         if (!started) {
             dispatch(setFlash({ key: 'started', value: true }))
+            setTimeout(() => {
+                initFlash()
+            }, 333)
+        }
+
+        if (refresh) {
+            dispatch(setFlash({ key: 'refresh', value: false }))
             setTimeout(() => {
                 initFlash()
             }, 333)

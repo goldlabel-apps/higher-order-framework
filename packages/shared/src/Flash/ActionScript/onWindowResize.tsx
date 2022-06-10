@@ -1,17 +1,11 @@
-import { store } from '../../listingslab-shared'
-import { getElement, animateTo } from './'
+import { store, setFlash } from '../../listingslab-shared'
+import { initFlash } from './'
 
 export const onWindowResize = () => {
     try {
-        const { movieClips } = store.getState().flash.data
-        // console.warn('onWindowResize' )
-        for (let i = 0; i < movieClips.length; i++) {
-            const { id, initialPosition, offset } = movieClips[i]
-            const el = getElement(id)
-            // if (el) animateTo(id, initialPosition, offset)
-        }
-        return true
+        store.dispatch(setFlash({ key: 'refresh', value: true }))
     } catch (error) {
+        console.warn('onWindowResize error', error)
         return false
     }
 }
