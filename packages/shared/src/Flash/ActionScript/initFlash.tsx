@@ -1,36 +1,47 @@
 import { store } from '../../listingslab-shared'
-import { setPosition, animateTo } from './'
+import { setPosition, fadeIn } from './'
 
 export const initFlash = () => {
+    const { movieClips } = store.getState().flash.data
+    for (let i = 0; i < movieClips.length; i++) {
+        const { id, initialPosition, options } = movieClips[i]
+        setPosition(id, initialPosition, options)
+        fadeIn(id, () => {
+            // if (id==="logo"){
+            //     console.warn("logo done")
+            // }
+        })
+    }
+    return true
+}
 
-    setPosition("logo", "centered", { 
-        top: 0, 
-        left: 0, 
-        rotation: 90,
+/*
+animateTo, fadeOut, 
+
+setPosition("logo", "centered", { 
+        top: -55, 
+        left: -25, 
+        rotation: 180,
         opacity: 0,
-        scale: 0.5,
+        scale: 0,
     })
-
     animateTo("logo", "centered", { 
         top: 0, 
         left: 0, 
         rotation: 0,
         opacity: 1,
-        scale: 1,
+        scale: 0.8,
     }, () => {
-        console.warn("logo animation done")
+
+        fadeOut("logo")
+        // animateTo("logo", "centered", { 
+        //     top: 0, 
+        //     left: -200, 
+        //     rotation: 0,
+        //     opacity: 1,
+        //     scale: 0.8,
+        // }, () => {
+        // })
     })
 
-    // fadeIn("logo", () => {
-    //     console.warn("logo faded in")
-    // })
-
-    // const { movieClips } = store.getState().flash.data
-    // for (let i = 0; i < movieClips.length; i++) {
-    //     const { id, initialPosition, offset } = movieClips[i]
-    //     setPosition(id, initialPosition, offset)
-    //     fadeIn(id)
-    // }
-
-    return true
-}
+    */

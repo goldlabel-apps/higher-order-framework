@@ -64,10 +64,8 @@ const lifecycles = singleSpaReact({
 export const { bootstrap, mount, unmount } = lifecycles
 
 export {
-
     // Core
     RouteDisplay,
-
     Renderer,
     Map,
     store,

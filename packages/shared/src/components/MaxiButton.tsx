@@ -23,7 +23,13 @@ export default function MaxiButton(props: any) {
         >
             {icon ? <Icon icon={icon} /> : null}
             {label ? (
-                <span style={{ marginRight: 4, marginLeft: 4, textTransform:"none" }}>
+                <span
+                    style={{
+                        marginRight: 4,
+                        marginLeft: 4,
+                        textTransform: 'none',
+                    }}
+                >
                     {label}
                 </span>
             ) : (

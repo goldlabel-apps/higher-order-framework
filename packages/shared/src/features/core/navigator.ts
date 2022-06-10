@@ -3,7 +3,6 @@ export interface NavigatorShape {
 }
 export const navigator: NavigatorShape = {
     menuItems: [
-        
         {
             label: 'Work',
             type: 'maxi',
