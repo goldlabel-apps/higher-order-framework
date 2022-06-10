@@ -7,11 +7,9 @@ export default function MaxiButton(props: any) {
     let icon = null
     let label = null
     let variant = 'text'
-    let action = 'onEvent'
     if (data.icon) icon = data.icon
     if (data.label) label = data.label
     if (data.variant) variant = data.variant
-    if (data.action) action = data.action
 
     let onClick = () => {
         dispatch(navClick(data))
@@ -25,7 +23,9 @@ export default function MaxiButton(props: any) {
         >
             {icon ? <Icon icon={icon} /> : null}
             {label ? (
-                <span style={{ marginRight: 8, marginLeft: 8 }}>{label}</span>
+                <span style={{ marginRight: 4, marginLeft: 4, textTransform:"none" }}>
+                    {label}
+                </span>
             ) : (
                 <span style={{}}>{label}</span>
             )}

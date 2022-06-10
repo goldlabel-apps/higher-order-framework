@@ -2,32 +2,33 @@ import React from 'react'
 import { Flash, MovieClip } from './listingslab-shared'
 const movieClips = [
     {
-        id: 'titleMovie',
-        component: 'TitleMovie',
-        initialPosition: 'topmiddle',
-        offset: { top: 24, left: 0 },
-        width: 350,
-        height: 50,
-        zIndex: 123,
-    },
-    {
-        id: 'navigator',
-        component: 'Navigator',
-        initialPosition: 'bottommiddle',
-        offset: { top: 0, left: 0 },
-        width: 350,
-        height: 40,
-        zIndex: 1234,
-    },
-    {
-        id: 'mumma',
-        component: 'Mumma',
+        id: 'logo',
+        component: 'Macromedia',
         offset: { top: 0, left: 0 },
         initialPosition: 'centered',
         width: 100,
         height: 200,
         zIndex: 200,
     },
+    {
+        id: 'navigator',
+        component: 'Navigator',
+        initialPosition: 'bottommiddle',
+        offset: { top: 0, left: 0 },
+        width: 300,
+        height: 40,
+        zIndex: 1234,
+    },
+    // {
+    //     id: 'titleMovie',
+    //     component: 'TitleMovie',
+    //     initialPosition: 'centered',
+    //     offset: { top: 10, left: 140 },
+    //     width: 300,
+    //     height: 100,
+    //     zIndex: 123,
+    // },
+
 ]
 
 export default function FlashApp() {

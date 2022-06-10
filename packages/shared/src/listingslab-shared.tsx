@@ -6,6 +6,7 @@ import { store } from './app/store'
 import { useAppSelector, useAppDispatch } from './app/hooks'
 import { getById } from './app/utils'
 import Shared from './Shared'
+import RouteDisplay from './RouteDisplay'
 import Renderer from './Renderer'
 import MaxiButton from './components/MaxiButton'
 import Landing from './components/Landing'
@@ -14,7 +15,6 @@ import MiniButton from './components/MiniButton'
 import FeaturedImage from './components/FeaturedImage'
 import OnTheMap from './components/OnTheMap'
 import TitleMovie from './components/TitleMovie'
-
 import {
     Flash,
     MovieClip,
@@ -64,6 +64,10 @@ const lifecycles = singleSpaReact({
 export const { bootstrap, mount, unmount } = lifecycles
 
 export {
+
+    // Core
+    RouteDisplay,
+
     Renderer,
     Map,
     store,

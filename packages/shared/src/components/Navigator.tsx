@@ -24,11 +24,11 @@ export default function Navigator() {
     const core = useAppSelector(selectCore)
     const { menuItems } = core.data.navigator
 
-    return (
-        <Box>
+    return <Box sx={{ display: "flex" }}>
+            <Box sx={{ flexGrow:1}} />
             {menuItems.map((item, i) => {
-                return <NavButton key={`menuItem_${i}`} data={item} />
+                return <Box key={`menuItem_${i}`}><NavButton  data={item} /></Box>
             })}
+            <Box sx={{ flexGrow:1}} />
         </Box>
-    )
 }

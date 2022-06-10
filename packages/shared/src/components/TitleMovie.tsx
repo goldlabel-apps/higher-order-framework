@@ -8,14 +8,14 @@ export default function TitleMovie() {
     return (
         <Box>
             <Typography
-                variant="h4"
-                sx={{ fontWeight: 'lighter', textAlign: 'center' }}
+                variant="h5"
+                sx={{ fontWeight: 'lighter' }}
             >
                 {title}
             </Typography>
             <Typography
                 variant="h6"
-                sx={{ fontWeight: 'lighter', textAlign: 'center' }}
+                sx={{ fontWeight: 'lighter' }}
             >
                 {subheader}
             </Typography>

@@ -5,6 +5,8 @@ import Flash from './Flash'
 import MovieClip from './MovieClip'
 import Mumma from './MovieClips/Mumma'
 import Pingpongball from './MovieClips/Pingpongball'
+import Macromedia from './MovieClips/Macromedia'
+
 import Timemachine from './MovieClips/Timemachine'
 
 import {
@@ -28,6 +30,7 @@ export {
     Mumma,
     Pingpongball,
     Timemachine,
+    Macromedia,
     getDisplay,
     initFlash,
     selectFlash,

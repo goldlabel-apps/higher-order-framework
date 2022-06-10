@@ -8,7 +8,7 @@ export const onWindowResize = () => {
         for (let i = 0; i < movieClips.length; i++) {
             const { id, initialPosition, offset } = movieClips[i]
             const el = getElement(id)
-            if (el) animateTo(id, initialPosition, offset)
+            // if (el) animateTo(id, initialPosition, offset)
         }
         return true
     } catch (error) {
