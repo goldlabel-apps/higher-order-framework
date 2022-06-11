@@ -2,15 +2,15 @@ export const movieClips = [
     {
         id: 'routeEngine',
         component: 'RouteEngine',
-        initialPosition: 'topmiddle',
+        initialPosition: 'centered',
         options: {
             top: 8,
             left: 0,
             rotation: 0,
             scale: 1,
         },
-        width: 600,
-        height: 100,
+        width: "75%",
+        height: 500,
         zIndex: 1000,
     },
     {

@@ -1,13 +1,15 @@
 import * as React from 'react'
-import { Box, Typography } from '@mui/material'
+import { CardMedia, Box, Typography } from '@mui/material'
 import {
     useAppSelector,
     useAppDispatch,
     selectRoute,
     setCore,
+    setCms,
     selectSSR,
     selectRefresh,
     selectCms,
+    cmsRead,
 } from './listingslab-shared'
 
 export default function RouteEngine() {
@@ -16,59 +18,80 @@ export default function RouteEngine() {
     const ssr = useAppSelector(selectSSR)
     const refresh = useAppSelector(selectRefresh)
     const cms = useAppSelector(selectCms)
-    // console.warn("cms", cms.data)
 
-    const getContentBySlug = (slug: string) => {
-        // console.warn("getContentBySlug", slug)
-        return {
-            title: 'Lorem ipsum dolor sit amet',
-            body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed orci eu tortor luctus aliquam. Fusce elementum, leo vitae euismod vestibulum, turpis sapien iaculis metus, fermentum eleifend elit libero at lacus. Nulla pharetra orci tincidunt, vestibulum quam ac, rutrum ligula. Duis convallis, dui vitae mollis euismod, felis ipsum tincidunt arcu, et fermentum magna risus porttitor ipsum. Maecenas vitae purus hendrerit diam pulvinar imperdiet. Praesent dictum ex sit amet erat imperdiet rutrum. Sed non efficitur ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu dignissim metus, eget vehicula lorem. Sed nec laoreet ipsum. Aenean rhoncus ultricies urna, a pulvinar lacus dapibus in. Donec viverra consequat iaculis. Pellentesque pharetra tortor sed lobortis vulputate.',
-            slug,
+    const getContentBySlug = (slug: string, posts: any) => {
+        for( let i = 0; i < posts.length; i++ ){
+            if (posts[i].data.slug === slug){
+                return posts[i].data
+            }
         }
+        return false
     }
+
+    React.useEffect(() => {
+        const { loading, loaded } = cms.data
+        if (!loading && !loaded){
+            dispatch(cmsRead())
+            dispatch(setCms({ key: "loading", value: true }))
+            dispatch(setCms({ key: "loaded", value: false }))
+        }
+
+    }, [cms, dispatch])
 
     React.useEffect(() => {
         dispatch(setCore({ key: 'refresh', value: false }))
         const windowLocation = window.location
         const url = windowLocation.href
-        let slug = `${url.replace(ssr[0].data.baseURL, '')}`
-        if (slug === '') slug = '/'
+        let thatSlug = `${url.replace(ssr[0].data.baseURL, '')}`
+        if (thatSlug === '') thatSlug = '/'
         if (!route) {
-            dispatch(setCore({ key: 'route', value: { slug, url } }))
+            dispatch(setCore({ key: 'route', value: { slug:thatSlug, url } }))
             dispatch(setCore({ key: 'refresh', value: true }))
         }
         if (route) {
-            if (route.slug !== slug) {
-                dispatch(setCore({ key: 'route', value: { slug, url } }))
-                // console.warn("Route Change")
+            if (route.slug !== thatSlug) {
+                dispatch(setCore({ key: 'route', value: { slug:thatSlug, url } }))
             }
         }
     }, [refresh, route, dispatch])
 
-    let content = getContentBySlug('/')
-    console.warn('content', content)
-
-    const { title, slug, body } = content
-    // border: "1px solid gold"
+    const { posts } = cms.data
+    if (!posts) return null
+    const thisUrl = window.location.href
+    let thisSlug = `${thisUrl.replace(ssr[0].data.baseURL, '')}`
+    if (thisSlug === '') thisSlug = '/'
+    let content = getContentBySlug( thisSlug, posts )
+    const { 
+        title, 
+        slug, 
+        image,
+        body, 
+    } = content
+    
     return (
-        <Box sx={{}}>
+        <Box sx={{mt:2}}>
+            
             <Typography
                 gutterBottom
                 variant="h6"
-                sx={{ fontWeight: 'lighter' }}
+                sx={{ mb:2, fontWeight: 'lighter', textAlign: "center" }}
             >
                 {title}
             </Typography>
-            <Typography gutterBottom variant="body2">
-                slug {slug}
-            </Typography>
+            
+            <CardMedia component="img" image={image} alt={title} />
+            
             <Typography gutterBottom variant="body1">
-                body {body}
+                {body}
             </Typography>
         </Box>
     )
 }
 
 /*
-    saved slug <pre>{ JSON.stringify( slug, null, 2)}</pre>
+<Typography gutterBottom variant="body2">
+                {slug}
+            </Typography>
+
+cms <pre>{ JSON.stringify( cms, null, 2)}</pre>
 */
