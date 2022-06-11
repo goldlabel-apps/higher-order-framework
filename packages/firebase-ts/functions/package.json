@@ -1,6 +1,6 @@
 {
   "name": "@listingslab/firebase-ts",
-  "version": "21.0.8",
+  "version": "22.0.0",
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",

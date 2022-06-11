@@ -20,8 +20,8 @@ export default function RouteEngine() {
     const cms = useAppSelector(selectCms)
 
     const getContentBySlug = (slug: string, posts: any) => {
-        for( let i = 0; i < posts.length; i++ ){
-            if (posts[i].data.slug === slug){
+        for (let i = 0; i < posts.length; i++) {
+            if (posts[i].data.slug === slug) {
                 return posts[i].data
             }
         }
@@ -30,12 +30,11 @@ export default function RouteEngine() {
 
     React.useEffect(() => {
         const { loading, loaded } = cms.data
-        if (!loading && !loaded){
+        if (!loading && !loaded) {
             dispatch(cmsRead())
-            dispatch(setCms({ key: "loading", value: true }))
-            dispatch(setCms({ key: "loaded", value: false }))
+            dispatch(setCms({ key: 'loading', value: true }))
+            dispatch(setCms({ key: 'loaded', value: false }))
         }
-
     }, [cms, dispatch])
 
     React.useEffect(() => {
@@ -45,12 +44,14 @@ export default function RouteEngine() {
         let thatSlug = `${url.replace(ssr[0].data.baseURL, '')}`
         if (thatSlug === '') thatSlug = '/'
         if (!route) {
-            dispatch(setCore({ key: 'route', value: { slug:thatSlug, url } }))
+            dispatch(setCore({ key: 'route', value: { slug: thatSlug, url } }))
             dispatch(setCore({ key: 'refresh', value: true }))
         }
         if (route) {
             if (route.slug !== thatSlug) {
-                dispatch(setCore({ key: 'route', value: { slug:thatSlug, url } }))
+                dispatch(
+                    setCore({ key: 'route', value: { slug: thatSlug, url } })
+                )
             }
         }
     }, [refresh, route, dispatch])
@@ -60,27 +61,21 @@ export default function RouteEngine() {
     const thisUrl = window.location.href
     let thisSlug = `${thisUrl.replace(ssr[0].data.baseURL, '')}`
     if (thisSlug === '') thisSlug = '/'
-    let content = getContentBySlug( thisSlug, posts )
-    const { 
-        title, 
-        slug, 
-        image,
-        body, 
-    } = content
-    
+    let content = getContentBySlug(thisSlug, posts)
+    const { title, slug, image, body } = content
+
     return (
-        <Box sx={{mt:2}}>
-            
+        <Box sx={{ mt: 2 }}>
             <Typography
                 gutterBottom
                 variant="h6"
-                sx={{ mb:2, fontWeight: 'lighter', textAlign: "center" }}
+                sx={{ mb: 2, fontWeight: 'lighter', textAlign: 'center' }}
             >
                 {title}
             </Typography>
-            
+
             <CardMedia component="img" image={image} alt={title} />
-            
+
             <Typography gutterBottom variant="body1">
                 {body}
             </Typography>
