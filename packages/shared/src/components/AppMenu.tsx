@@ -16,7 +16,7 @@ import {
     navigateTo,
     useAppDispatch,
     useAppSelector,
-    selectPersona,
+    selectCore,
     unsignIn,
     setCore,
 } from '../listingslab-shared'
@@ -25,10 +25,10 @@ export default function AppMenu() {
     const dispatch = useAppDispatch()
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
     const open = Boolean(anchorEl)
-    const persona = useAppSelector(selectPersona)
+    const core = useAppSelector(selectCore)
 
     let signedIn = false
-    if (persona.data.user.uid) signedIn = true
+    if (core.data.user.uid) signedIn = true
 
     const onItemClick = (item: string) => {
         switch (item) {

@@ -10,7 +10,6 @@ import { firebaseConfig } from './env'
 import {
     store,
     getDesignTokens,
-    setPersona,
     setCore,
 } from './listingslab-shared'
 import FlashApp from './FlashApp'
@@ -26,10 +25,10 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         const uid = user.uid
         const newUser = { uid }
-        dispatch(setPersona({ key: 'user', value: newUser }))
+        dispatch(setCore({ key: 'user', value: newUser }))
     } else {
         const newUser = { uid: null }
-        dispatch(setPersona({ key: 'user', value: newUser }))
+        dispatch(setCore({ key: 'user', value: newUser }))
     }
 })
 

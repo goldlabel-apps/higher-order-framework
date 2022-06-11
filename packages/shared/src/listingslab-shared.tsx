@@ -4,8 +4,10 @@ import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
 import { store } from './app/store'
 import { useAppSelector, useAppDispatch } from './app/hooks'
-import { getById } from './app/utils'
+
 import Shared from './Shared'
+import { Icon, getDesignTokens } from './theme'
+
 import RouteEngine from './RouteEngine'
 import MaxiButton from './components/MaxiButton'
 import Landing from './components/Landing'
@@ -22,6 +24,8 @@ import MetaButton from './components/MetaButton'
 import FindUs from './components/FindUs'
 import CMS from './components/admin/CMS'
 
+import { getById } from './app/utils'
+
 import {
     Flash,
     MovieClip,
@@ -36,14 +40,6 @@ import {
 import { selectCms, setCms, cmsRead } from './features/cms'
 
 import {
-    Persona,
-    selectPersona,
-    setPersona,
-    signIn,
-    unsignIn,
-} from './features/persona'
-
-import {
     selectRoute,
     selectRefresh,
     selectSSR,
@@ -51,9 +47,9 @@ import {
     setCore,
     navClick,
     navigateTo,
+    signIn,
+    unsignIn,
 } from './features/core'
-
-import { Icon, getDesignTokens } from './theme'
 
 console.warn('hof', PJSON.version)
 
@@ -84,15 +80,12 @@ export {
     Social,
     signIn,
     unsignIn,
-    getById,
+    
+    // Components
     Navigator,
     MetaButton,
     MiniButton,
     MaxiButton,
-    Persona,
-    setPersona,
-    selectPersona,
-    // Components
     AppMenu,
     FindUs,
     OnTheMap,
@@ -119,4 +112,6 @@ export {
     Flash,
     MovieClip,
     getNextHighestDepth,
+    // Utils
+    getById,
 }

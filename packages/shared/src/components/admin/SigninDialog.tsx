@@ -22,7 +22,6 @@ import {
     useAppSelector,
     useAppDispatch,
     selectCore,
-    selectPersona,
     Icon,
     setCore,
     signIn,
@@ -59,8 +58,7 @@ export default function SigninDialog() {
     const id = 'dialogSignin'
     const core = useAppSelector(selectCore)
     const { dialogSigninOpen } = core.data
-    const persona = useAppSelector(selectPersona)
-    const { error } = persona.data.user
+    const { error } = core.data.user
     let alertObj = null
     if (error) {
         alertObj = { severity: 'warning', message: error }

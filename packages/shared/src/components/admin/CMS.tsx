@@ -46,15 +46,11 @@ export default function CMS() {
             <DialogTitle>
                 <Grid container>
                     <Grid item>
-                        <IconButton sx={{ mt: 1, mr: 2 }}>
+                        <IconButton sx={{ mt: 1, ml: 1 }}>
                             <Icon icon="cms" />
                         </IconButton>
                     </Grid>
-                    <Grid item>
-                        <Typography variant="body2" sx={{ mt: 1.25 }}>
-                            CMS
-                        </Typography>
-                    </Grid>
+                    
                     <Grid item sx={{ flexGrow: 1 }} />
                     <Grid item>
                         <IconButton onClick={cmsClose}>
@@ -70,7 +66,7 @@ export default function CMS() {
                         <List dense>
                             {posts.map((item, i) => {
                                 const { id } = item
-                                const { title, slug } = item.data
+                                const { title, order } = item.data
                                 return (
                                     <ListItem
                                         key={`post_${i}`}
@@ -79,7 +75,10 @@ export default function CMS() {
                                             onPostClick(id)
                                         }}
                                     >
-                                        <ListItemText primary={title} />
+                                        <ListItemText 
+                                            primary={ title } 
+                                            secondary={ order } 
+                                        />
                                     </ListItem>
                                 )
                             })}
