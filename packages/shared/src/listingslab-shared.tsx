@@ -15,6 +15,7 @@ import FeaturedImage from './components/FeaturedImage'
 import OnTheMap from './components/OnTheMap'
 import TitleMovie from './components/TitleMovie'
 import AppMenu from './components/AppMenu'
+import DialogSignin from './components/DialogSignin'
 
 import {
     Flash,
@@ -29,13 +30,7 @@ import {
 
 import { Social, Blocked, Map, MetaButton, FindUs } from './components'
 
-import {
-    DialogSignin,
-    AdminMenu,
-    CMS,
-    selectAdmin,
-    setAdmin,
-} from './features/admin'
+import { selectAdmin, setAdmin } from './features/admin'
 
 import { selectCms, setCms, cmsRead } from './features/cms'
 
@@ -97,11 +92,8 @@ export {
     Persona,
     setPersona,
     selectPersona,
-    DialogSignin,
-    CMS,
     selectAdmin,
     setAdmin,
-    AdminMenu,
     // Components
     AppMenu,
     FindUs,
@@ -109,6 +101,7 @@ export {
     Landing,
     TitleMovie,
     Blocked,
+    DialogSignin,
     // Cms
     cmsRead,
     selectCms,

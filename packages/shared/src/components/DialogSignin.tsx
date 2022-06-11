@@ -26,7 +26,7 @@ import {
     Icon,
     setCore,
     signIn,
-} from '../../../listingslab-shared'
+} from '../listingslab-shared'
 
 const NiceText = styled((props: TextFieldProps) => (
     <TextField
@@ -60,11 +60,6 @@ export default function DialogSignin() {
     const core = useAppSelector(selectCore)
     const { dialogSigninOpen } = core.data
     const persona = useAppSelector(selectPersona)
-    // // error
-    // let isSignedIn = false
-    // console.warn("persona", persona.data.user.uid)
-    // if (persona.data.user.uid) isSignedIn = true
-
     const { error } = persona.data.user
     let alertObj = null
     if (error) {
@@ -73,7 +68,6 @@ export default function DialogSignin() {
     const dispatch = useAppDispatch()
     const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-
     const [passwordHelper, setPasswordHelper] = React.useState(null)
     const [passwordValid, setPasswordValid] = React.useState(true)
     const [emailHelper, setEmailHelper] = React.useState(null)
@@ -121,12 +115,12 @@ export default function DialogSignin() {
                 <Grid container>
                     <Grid item>
                         <Box sx={{ mt: 1, mr: 2 }}>
-                            <Icon icon="admin" />
+                            <Icon icon="adminOff" />
                         </Box>
                     </Grid>
                     <Grid item>
                         <Typography variant="body2" sx={{ mt: 1.25 }}>
-                            higher-order-framework
+                            Admin Only
                         </Typography>
                     </Grid>
                     <Grid item sx={{ flexGrow: 1 }} />
@@ -175,6 +169,7 @@ export default function DialogSignin() {
                     sx={{ mb: 1, mr: 2 }}
                     variant="contained"
                     onClick={handleSignin}
+                    color="secondary"
                 >
                     <span style={{ marginRight: 4, marginLeft: 4 }}>
                         Sign in

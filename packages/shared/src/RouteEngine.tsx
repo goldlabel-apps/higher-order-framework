@@ -63,16 +63,22 @@ export default function RouteEngine() {
     if (thisSlug === '') thisSlug = '/'
     let content = getContentBySlug(thisSlug, posts)
     const { title, image, body } = content
-    
+
     return (
         <Box sx={{ mt: 2 }}>
+            <CardMedia component="img" image={image} alt={title} />
             <Typography
                 gutterBottom
                 variant="h6"
-                sx={{ mb: 2, fontWeight: 'lighter', textAlign: 'center' }}>
+                sx={{
+                    mb: 2,
+                    mt: 2,
+                    fontWeight: 'lighter',
+                    textAlign: 'center',
+                }}
+            >
                 {title}
             </Typography>
-            <CardMedia component="img" image={image} alt={title} />
             <Typography gutterBottom variant="body1">
                 {body}
             </Typography>

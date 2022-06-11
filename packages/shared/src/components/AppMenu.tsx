@@ -11,23 +11,22 @@ import {
     Tooltip,
     Divider,
 } from '@mui/material'
-import { 
-    Icon, 
-    navigateTo, 
-    useAppDispatch, 
-    useAppSelector, 
+import {
+    Icon,
+    navigateTo,
+    useAppDispatch,
+    useAppSelector,
     selectPersona,
     unsignIn,
+    setCore,
 } from '../listingslab-shared'
 
 export default function AppMenu() {
-
-
     const dispatch = useAppDispatch()
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
     const open = Boolean(anchorEl)
     const persona = useAppSelector(selectPersona)
-    
+
     let signedIn = false
     if (persona.data.user.uid) signedIn = true
 
@@ -40,8 +39,7 @@ export default function AppMenu() {
                 dispatch(unsignIn())
                 break
             case 'signin':
-                console.warn("open signin dialog")
-                // dispatch(navigateTo({ pathname: '/life' }))
+                dispatch(setCore({ key: 'dialogSigninOpen', value: true }))
                 break
             default:
         }
@@ -85,8 +83,11 @@ export default function AppMenu() {
                     }}
                 >
                     <MenuList sx={{ width: 250 }} dense>
-
-                        <MenuItem onClick={()=>{onItemClick("home")}}>
+                        <MenuItem
+                            onClick={() => {
+                                onItemClick('home')
+                            }}
+                        >
                             <ListItemIcon>
                                 <IconButton sx={{ mr: 1 }} color="secondary">
                                     <Icon icon="home" />
@@ -98,24 +99,41 @@ export default function AppMenu() {
 
                         <Divider />
 
-                        { signedIn ? <MenuItem onClick={()=>{onItemClick("signout")}}>
-                            <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="secondary">
-                                    <Icon icon="exit" />
-                                </IconButton>
-                            </ListItemIcon>
-                            <ListItemText>Sign out</ListItemText>
-                            <Typography variant="body2"></Typography>
-                        </MenuItem> : <MenuItem onClick={()=>{onItemClick("signin")}}>
-                            <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="secondary">
-                                    <Icon icon="exit" />
-                                </IconButton>
-                            </ListItemIcon>
-                            <ListItemText>Sign in</ListItemText>
-                            <Typography variant="body2"></Typography>
-                        </MenuItem> }
-
+                        {signedIn ? (
+                            <MenuItem
+                                onClick={() => {
+                                    onItemClick('signout')
+                                }}
+                            >
+                                <ListItemIcon>
+                                    <IconButton
+                                        sx={{ mr: 1 }}
+                                        color="secondary"
+                                    >
+                                        <Icon icon="exit" />
+                                    </IconButton>
+                                </ListItemIcon>
+                                <ListItemText>Sign out</ListItemText>
+                                <Typography variant="body2"></Typography>
+                            </MenuItem>
+                        ) : (
+                            <MenuItem
+                                onClick={() => {
+                                    onItemClick('signin')
+                                }}
+                            >
+                                <ListItemIcon>
+                                    <IconButton
+                                        sx={{ mr: 1 }}
+                                        color="secondary"
+                                    >
+                                        <Icon icon="exit" />
+                                    </IconButton>
+                                </ListItemIcon>
+                                <ListItemText>Sign in</ListItemText>
+                                <Typography variant="body2"></Typography>
+                            </MenuItem>
+                        )}
                     </MenuList>
                 </Menu>
             </Box>

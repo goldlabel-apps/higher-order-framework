@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { adminMenuData } from './adminMenuData'
 
 export interface AdminShape {
     data: any

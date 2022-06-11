@@ -16,6 +16,7 @@ const initialState: CoreShape = {
     data: {
         ssr,
         navigator,
+        // dialogSigninOpen: true,
     },
 }
 
