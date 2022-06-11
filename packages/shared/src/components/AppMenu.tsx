@@ -41,6 +41,9 @@ export default function AppMenu() {
             case 'signin':
                 dispatch(setCore({ key: 'dialogSigninOpen', value: true }))
                 break
+            case 'cms':
+                dispatch(setCore({ key: 'cmsIsOpen', value: true }))
+                break
             default:
         }
         appMenuClose()
@@ -97,6 +100,27 @@ export default function AppMenu() {
                             <Typography variant="body2">⌘H</Typography>
                         </MenuItem>
 
+                        {signedIn ? (
+                            <React.Fragment>
+                                <MenuItem
+                                    onClick={() => {
+                                        onItemClick('cms')
+                                    }}
+                                >
+                                    <ListItemIcon>
+                                        <IconButton
+                                            sx={{ mr: 1 }}
+                                            color="secondary"
+                                        >
+                                            <Icon icon="cms" />
+                                        </IconButton>
+                                    </ListItemIcon>
+                                    <ListItemText>CMS</ListItemText>
+                                    <Typography variant="body2">⌘C</Typography>
+                                </MenuItem>
+                            </React.Fragment>
+                        ) : null}
+
                         <Divider />
 
                         {signedIn ? (
@@ -117,22 +141,24 @@ export default function AppMenu() {
                                 <Typography variant="body2"></Typography>
                             </MenuItem>
                         ) : (
-                            <MenuItem
-                                onClick={() => {
-                                    onItemClick('signin')
-                                }}
-                            >
-                                <ListItemIcon>
-                                    <IconButton
-                                        sx={{ mr: 1 }}
-                                        color="secondary"
-                                    >
-                                        <Icon icon="exit" />
-                                    </IconButton>
-                                </ListItemIcon>
-                                <ListItemText>Sign in</ListItemText>
-                                <Typography variant="body2"></Typography>
-                            </MenuItem>
+                            <React.Fragment>
+                                <MenuItem
+                                    onClick={() => {
+                                        onItemClick('signin')
+                                    }}
+                                >
+                                    <ListItemIcon>
+                                        <IconButton
+                                            sx={{ mr: 1 }}
+                                            color="secondary"
+                                        >
+                                            <Icon icon="exit" />
+                                        </IconButton>
+                                    </ListItemIcon>
+                                    <ListItemText>Sign in</ListItemText>
+                                    <Typography variant="body2"></Typography>
+                                </MenuItem>
+                            </React.Fragment>
                         )}
                     </MenuList>
                 </Menu>

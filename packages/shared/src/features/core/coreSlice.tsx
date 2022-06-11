@@ -17,6 +17,7 @@ const initialState: CoreShape = {
         ssr,
         navigator,
         // dialogSigninOpen: true,
+        // cmsIsOpen: true,
     },
 }
 

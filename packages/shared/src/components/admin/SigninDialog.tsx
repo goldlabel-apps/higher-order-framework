@@ -26,7 +26,7 @@ import {
     Icon,
     setCore,
     signIn,
-} from '../listingslab-shared'
+} from '../../listingslab-shared'
 
 const NiceText = styled((props: TextFieldProps) => (
     <TextField
@@ -55,7 +55,7 @@ const NiceText = styled((props: TextFieldProps) => (
     },
 }))
 
-export default function DialogSignin() {
+export default function SigninDialog() {
     const id = 'dialogSignin'
     const core = useAppSelector(selectCore)
     const { dialogSigninOpen } = core.data
@@ -115,12 +115,12 @@ export default function DialogSignin() {
                 <Grid container>
                     <Grid item>
                         <Box sx={{ mt: 1, mr: 2 }}>
-                            <Icon icon="adminOff" />
+                            <Icon icon="cms" />
                         </Box>
                     </Grid>
                     <Grid item>
                         <Typography variant="body2" sx={{ mt: 1.25 }}>
-                            Admin Only
+                            Content Management System
                         </Typography>
                     </Grid>
                     <Grid item sx={{ flexGrow: 1 }} />

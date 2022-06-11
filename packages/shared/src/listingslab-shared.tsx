@@ -11,11 +11,16 @@ import MaxiButton from './components/MaxiButton'
 import Landing from './components/Landing'
 import Navigator from './components/Navigator'
 import MiniButton from './components/MiniButton'
-import FeaturedImage from './components/FeaturedImage'
 import OnTheMap from './components/OnTheMap'
 import TitleMovie from './components/TitleMovie'
 import AppMenu from './components/AppMenu'
-import DialogSignin from './components/DialogSignin'
+import SigninDialog from './components/admin/SigninDialog'
+import Social from './components/Social'
+import Blocked from './components/Blocked'
+import Map from './components/Map'
+import MetaButton from './components/MetaButton'
+import FindUs from './components/FindUs'
+import CMS from './components/admin/CMS'
 
 import {
     Flash,
@@ -27,10 +32,6 @@ import {
     getDisplay,
     getNextHighestDepth,
 } from './Flash'
-
-import { Social, Blocked, Map, MetaButton, FindUs } from './components'
-
-import { selectAdmin, setAdmin } from './features/admin'
 
 import { selectCms, setCms, cmsRead } from './features/cms'
 
@@ -85,15 +86,12 @@ export {
     unsignIn,
     getById,
     Navigator,
-    FeaturedImage,
     MetaButton,
     MiniButton,
     MaxiButton,
     Persona,
     setPersona,
     selectPersona,
-    selectAdmin,
-    setAdmin,
     // Components
     AppMenu,
     FindUs,
@@ -101,7 +99,8 @@ export {
     Landing,
     TitleMovie,
     Blocked,
-    DialogSignin,
+    SigninDialog,
+    CMS,
     // Cms
     cmsRead,
     selectCms,
