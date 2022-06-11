@@ -46,9 +46,9 @@ export default function CMS() {
             <DialogTitle>
                 <Grid container>
                     <Grid item>
-                        <Box sx={{ mt: 1, mr: 2 }}>
+                        <IconButton sx={{ mt: 1, mr: 2 }}>
                             <Icon icon="cms" />
-                        </Box>
+                        </IconButton>
                     </Grid>
                     <Grid item>
                         <Typography variant="body2" sx={{ mt: 1.25 }}>
@@ -65,42 +65,45 @@ export default function CMS() {
             </DialogTitle>
 
             <DialogContent>
-                    <Grid container>
-                        <Grid item xs={ 12 } md={ 4 }>  
-                            <List dense>
-                                { posts.map((item, i) => {
-                                    const { id } = item
-                                    const { title, slug } = item.data
-                                    return <ListItem
-                                                key={`post_${i}`}
-                                                button
-                                                onClick={() => {
-                                                    onPostClick(id)
-                                                }}>
-                                                <ListItemText 
-                                                    primary={ title }
-                                                />
-                                            </ListItem>
-                                })}
-                            </List>
-                        </Grid>
-                        { editing ? <Grid item xs={ 12 } md={ 8 }> 
-                            editing<pre>{ JSON.stringify( editing, null, 2 ) }</pre>
-                            
-                        </Grid> : null }
-                        
+                <Grid container>
+                    <Grid item xs={12} md={4}>
+                        <List dense>
+                            {posts.map((item, i) => {
+                                const { id } = item
+                                const { title, slug } = item.data
+                                return (
+                                    <ListItem
+                                        key={`post_${i}`}
+                                        button
+                                        onClick={() => {
+                                            onPostClick(id)
+                                        }}
+                                    >
+                                        <ListItemText primary={title} />
+                                    </ListItem>
+                                )
+                            })}
+                        </List>
                     </Grid>
+                    {editing ? (
+                        <Grid item xs={12} md={8}>
+                            editing<pre>{JSON.stringify(editing, null, 2)}</pre>
+                        </Grid>
+                    ) : null}
+                </Grid>
             </DialogContent>
 
-            <DialogActions>
-                <Button variant="contained" onClick={cmsClose}>
-                    Done
-                </Button>
-            </DialogActions>
+            
         </Dialog>
     )
 }
 
 /*
 <pre>{ JSON.stringify( posts, null, 2 ) }</pre>
+
+<DialogActions>
+                <Button variant="contained" onClick={cmsClose}>
+                    Done
+                </Button>
+            </DialogActions>
 */

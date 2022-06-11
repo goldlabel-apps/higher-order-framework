@@ -7,7 +7,6 @@ export interface Cms {
 const initialState: Cms = {
     data: {
         shape: 'Cms',
-        
     },
 }
 

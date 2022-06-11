@@ -1,14 +1,14 @@
 {
   "name": "higher-order-framework",
   "description": "JavaScript framework with React, Single SPA, TypeScript, Firebase",
-  "version": "22.0.1",
+  "version": "22.0.2",
   "scripts": {
     "start": "$PWD/.scripts/start",
     "test":  "clear && npx jest",
     "lint": "cd ./packages/firebase-ts/functions && npm run lint",
     "check": "$PWD/.scripts/check",
     "build": "clear && npx lerna run build",
-    "dist": "$PWD/.scripts/dist 22.0.1",
+    "dist": "$PWD/.scripts/dist 22.0.2",
     "deploy": "clear && npm run check && npm run build && npm run dist && firebase deploy",
     "single-spa": "clear && npx create-single-spa"
   },
