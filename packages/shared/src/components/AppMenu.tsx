@@ -1,8 +1,6 @@
 import * as React from 'react'
 import {
     Box,
-    Fab,
-    Divider,
     IconButton,
     Menu,
     MenuList,
@@ -11,99 +9,116 @@ import {
     ListItemIcon,
     Typography,
     Tooltip,
+    Divider,
 } from '@mui/material'
-import {
-    useAppSelector,
-    useAppDispatch,
+import { 
+    Icon, 
+    navigateTo, 
+    useAppDispatch, 
+    useAppSelector, 
+    selectPersona,
     unsignIn,
-    setAdmin,
-    Icon,
-    CMS,
-    selectAdmin,
 } from '../listingslab-shared'
 
 export default function AppMenu() {
+
+
     const dispatch = useAppDispatch()
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
     const open = Boolean(anchorEl)
-    const admin = useAppSelector(selectAdmin)
-    const { buttons } = admin.data.menu.data
-    // console.warn("buttons", buttons)
+    const persona = useAppSelector(selectPersona)
+    
+    let signedIn = false
+    if (persona.data.user.uid) signedIn = true
+
+    const onItemClick = (item: string) => {
+        switch (item) {
+            case 'home':
+                dispatch(navigateTo({ pathname: '/' }))
+                break
+            case 'signout':
+                dispatch(unsignIn())
+                break
+            case 'signin':
+                console.warn("open signin dialog")
+                // dispatch(navigateTo({ pathname: '/life' }))
+                break
+            default:
+        }
+        appMenuClose()
+    }
 
     const appMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget)
     }
 
-    const adminMenuClose = () => {
+    const appMenuClose = () => {
         setAnchorEl(null)
-    }
-
-    const onSignoutClick = () => {
-        dispatch(unsignIn())
-        adminMenuClose()
-    }
-
-    const onCmsClick = () => {
-        dispatch(setAdmin({ key: 'cmsIsOpen', value: true }))
-        adminMenuClose()
     }
 
     return (
         <React.Fragment>
-            <Tooltip title="Admin Menu" color="primary">
-                <Fab
-                    color="secondary"
-                    id="admin-button"
-                    aria-controls={open ? 'admin-menu' : undefined}
+            <Tooltip title="Open App Menu" color="secondary">
+                <IconButton
+                    color="primary"
+                    id="app-button"
+                    aria-controls={open ? 'app-menu' : undefined}
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                     onClick={appMenuOpen}
                 >
                     <Icon icon="menu" />
-                </Fab>
+                </IconButton>
             </Tooltip>
+            <Box sx={{ ml: 3 }}>
+                <Menu
+                    id="app-menu"
+                    anchorEl={anchorEl}
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'center',
+                    }}
+                    open={open}
+                    onClose={appMenuClose}
+                    MenuListProps={{
+                        'aria-labelledby': 'app-button',
+                    }}
+                >
+                    <MenuList sx={{ width: 250 }} dense>
 
-            <Menu
-                id="admin-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={adminMenuClose}
-                MenuListProps={{
-                    'aria-labelledby': 'admin-button',
-                }}
-            >
-                <Box>
-                    <pre>{JSON.stringify(buttons, null, 2)}</pre>
-                </Box>
+                        <MenuItem onClick={()=>{onItemClick("home")}}>
+                            <ListItemIcon>
+                                <IconButton sx={{ mr: 1 }} color="secondary">
+                                    <Icon icon="home" />
+                                </IconButton>
+                            </ListItemIcon>
+                            <ListItemText>Home</ListItemText>
+                            <Typography variant="body2">⌘H</Typography>
+                        </MenuItem>
 
-                <MenuList sx={{ width: 200, maxWidth: '100%' }}>
-                    <MenuItem onClick={onCmsClick}>
-                        <ListItemIcon>
-                            <Icon icon="cms" />
-                        </ListItemIcon>
-                        <ListItemText>CMS</ListItemText>
-                        <Typography variant="body2" color="text.secondary">
-                            ⌘C
-                        </Typography>
-                    </MenuItem>
+                        <Divider />
 
-                    <Divider />
+                        { signedIn ? <MenuItem onClick={()=>{onItemClick("signout")}}>
+                            <ListItemIcon>
+                                <IconButton sx={{ mr: 1 }} color="secondary">
+                                    <Icon icon="exit" />
+                                </IconButton>
+                            </ListItemIcon>
+                            <ListItemText>Sign out</ListItemText>
+                            <Typography variant="body2"></Typography>
+                        </MenuItem> : <MenuItem onClick={()=>{onItemClick("signin")}}>
+                            <ListItemIcon>
+                                <IconButton sx={{ mr: 1 }} color="secondary">
+                                    <Icon icon="exit" />
+                                </IconButton>
+                            </ListItemIcon>
+                            <ListItemText>Sign in</ListItemText>
+                            <Typography variant="body2"></Typography>
+                        </MenuItem> }
 
-                    <MenuItem onClick={onSignoutClick}>
-                        <ListItemIcon>
-                            <Icon icon="exit" />
-                        </ListItemIcon>
-                        <ListItemText>Sign out</ListItemText>
-                    </MenuItem>
-                </MenuList>
-            </Menu>
+                    </MenuList>
+                </Menu>
+            </Box>
         </React.Fragment>
     )
 }
-/*
-
-
-<CMS />
-
-
-            */

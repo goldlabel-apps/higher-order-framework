@@ -13,12 +13,14 @@ import {
     BalanceIcon,
 } from '../theme'
 import DefaultIcon from '@mui/icons-material/DisabledByDefault'
-import HomeIcon from '@mui/icons-material/AddToHomeScreen'
+// import HomeIcon from '@mui/icons-material/AddToHomeScreen'
+import HomeIcon from '@mui/icons-material/Home'
 import CMSIcon from '@mui/icons-material/DocumentScanner'
 import FlyIcon from '@mui/icons-material/LocalAirportRounded'
 import DatabaseIcon from '@mui/icons-material/DataObject'
 import MapIcon from '@mui/icons-material/LocationDisabled'
-import MenuIcon from '@mui/icons-material/Menu'
+import MenuIcon from '@mui/icons-material/MoreVert'
+
 import TrashIcon from '@mui/icons-material/DeleteOutlined'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import ExitIcon from '@mui/icons-material/ExitToAppRounded'

@@ -8,9 +8,6 @@ export interface AdminShape {
 const initialState: AdminShape = {
     data: {
         shape: 'AdminShape',
-        menu: adminMenuData,
-        cmsOpen: false,
-        dialogSigninOpen: false,
     },
 }
 
