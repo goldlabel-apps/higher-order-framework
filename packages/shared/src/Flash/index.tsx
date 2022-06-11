@@ -1,6 +1,6 @@
 // Flash.
-
-import { selectFlash, setFlash } from './flashSlice'
+import { selectFlash, selectMovieClips, setFlash } from './flashSlice'
+import { movieClips } from "./movieClips"
 import Flash from './Flash'
 import MovieClip from './MovieClip'
 import Mumma from './MovieClips/Mumma'
@@ -34,6 +34,7 @@ export {
     getDisplay,
     initFlash,
     selectFlash,
+    selectMovieClips,
     setFlash,
     onWindowResize,
     animateTo,
@@ -45,4 +46,5 @@ export {
     fadeOut,
     remove,
     getNextHighestDepth,
+    movieClips,
 }

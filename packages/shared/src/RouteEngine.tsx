@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Box } from '@mui/material'
 import {
     useAppSelector,
     useAppDispatch,
@@ -24,9 +25,9 @@ export default function RouteEngine() {
     }, [route, dispatch])
     
     return (
-        <div>
+        <Box sx={{ border: "1px solid gold" }}>
             route <pre>{ JSON.stringify(route, null, 2)}</pre>
-        </div>
+        </Box>
     )
 }
 

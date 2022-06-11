@@ -25,7 +25,7 @@ export default function Navigator() {
     const { menuItems } = core.data.navigator
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', border: "1px solid gold" }}>
             <Box sx={{ flexGrow: 1 }} />
             {menuItems.map((item, i) => {
                 return (

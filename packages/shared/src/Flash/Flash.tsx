@@ -9,7 +9,7 @@ import {
 import { onWindowResize, initFlash, selectFlash } from './'
 
 export default function Flash(props) {
-    const { movieClips, children } = props
+    const { children } = props
     const dispatch = useAppDispatch()
     const flash = useAppSelector(selectFlash)
 
@@ -17,12 +17,9 @@ export default function Flash(props) {
 
     React.useEffect(() => {
         const { started, display, refresh } = flash.data
-
         // console.warn('refresh', refresh)
-
         if (!display) {
             dispatch(setFlash({ key: 'display', value: getDisplay() }))
-            dispatch(setFlash({ key: 'movieClips', value: movieClips }))
         }
         if (!started) {
             dispatch(setFlash({ key: 'started', value: true }))

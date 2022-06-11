@@ -20,6 +20,7 @@ import {
     initFlash,
     setFlash,
     selectFlash,
+    selectMovieClips,
     getDisplay,
     getNextHighestDepth,
 } from './Flash'
@@ -114,6 +115,7 @@ export {
     setCore,
     // Flash
     selectFlash,
+    selectMovieClips,
     setFlash,
     initFlash,
     getDisplay,
