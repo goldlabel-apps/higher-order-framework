@@ -1,6 +1,6 @@
 // Flash.
 import { selectFlash, selectMovieClips, setFlash } from './flashSlice'
-import { movieClips } from "./movieClips"
+import { movieClips } from './movieClips'
 import Flash from './Flash'
 import MovieClip from './MovieClip'
 import Mumma from './MovieClips/Mumma'

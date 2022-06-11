@@ -23,9 +23,9 @@ export default function Navigator() {
     if (mode === 'hidden') return null
     const core = useAppSelector(selectCore)
     const { menuItems } = core.data.navigator
-
+    //, border: "1px solid gold"
     return (
-        <Box sx={{ display: 'flex', border: "1px solid gold" }}>
+        <Box sx={{ display: 'flex' }}>
             <Box sx={{ flexGrow: 1 }} />
             {menuItems.map((item, i) => {
                 return (

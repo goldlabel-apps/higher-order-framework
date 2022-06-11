@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../app/store'
-import { movieClips } from "./"
+import { movieClips } from './'
 
 export interface FlashShape {
     data: any
@@ -25,7 +25,7 @@ export const flashSlice = createSlice({
 
 export const { setFlash } = flashSlice.actions
 export const selectFlash = (state: RootState) => state.flash
-export const selectMovieClips = (state: RootState) => state.flash.data.movieClips
-
+export const selectMovieClips = (state: RootState) =>
+    state.flash.data.movieClips
 
 export default flashSlice.reducer

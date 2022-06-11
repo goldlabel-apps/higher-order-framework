@@ -14,6 +14,8 @@ import MiniButton from './components/MiniButton'
 import FeaturedImage from './components/FeaturedImage'
 import OnTheMap from './components/OnTheMap'
 import TitleMovie from './components/TitleMovie'
+import AppMenu from './components/AppMenu'
+
 import {
     Flash,
     MovieClip,
@@ -45,12 +47,13 @@ import {
     unsignIn,
 } from './features/persona'
 
-import { 
+import {
     selectRoute,
+    selectRefresh,
     selectSSR,
-    selectCore, 
-    setCore, 
-    navClick, 
+    selectCore,
+    setCore,
+    navClick,
     navigateTo,
 } from './features/core'
 
@@ -74,6 +77,7 @@ export {
     // Core
     RouteEngine,
     selectRoute,
+    selectRefresh,
     selectSSR,
     Map,
     store,
@@ -99,6 +103,7 @@ export {
     setAdmin,
     AdminMenu,
     // Components
+    AppMenu,
     FindUs,
     OnTheMap,
     Landing,

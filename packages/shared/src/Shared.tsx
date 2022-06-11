@@ -36,8 +36,8 @@ onAuthStateChanged(auth, (user) => {
 export default function Shared() {
     return (
         <BrowserRouter>
-            <Provider store={ store }>
-                <ThemeProvider theme={ createTheme(getDesignTokens("light")) }>
+            <Provider store={store}>
+                <ThemeProvider theme={createTheme(getDesignTokens('light'))}>
                     <FlashApp />
                 </ThemeProvider>
             </Provider>

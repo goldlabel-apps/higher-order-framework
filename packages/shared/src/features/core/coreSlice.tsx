@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { navigator } from './navigator'
+import { navigator } from './data/navigator'
 
 // @ts-ignore
 const winSSR = window.ssr
