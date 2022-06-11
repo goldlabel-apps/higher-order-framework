@@ -1,11 +1,12 @@
 // @ts-ignore
-import { gsap, Bounce } from 'gsap'
+import { gsap, Power1 } from 'gsap'
 import { getElement, getSizes } from './'
 
 const duration = 0.66
 
-export const animateTo = (divId, position, offset) => {
+export const animateTo = (divId, position, options, onComplete) => {
     try {
+        // console.warn('animateTo', divId, position, options)
         const el = getElement(divId)
         if (!el) {
             console.error('No element named ', divId)
@@ -52,13 +53,14 @@ export const animateTo = (divId, position, offset) => {
             }
         const { x, y } = pos
         gsap.to(`#${divId}`, {
-            x: x + offset.left,
-            y: y + offset.top,
+            x: x + options.left,
+            y: y + options.top,
+            rotation: options.rotation,
+            scale: options.scale,
+            opacity: options.opacity,
             duration,
-            // ease: Bounce.easeOut,
-            onComplete: () => {
-                // console.warn(`animate ${divId} to ${position} complete`);
-            },
+            ease: Power1.easeOut,
+            onComplete,
         })
     } catch (error) {
         return false

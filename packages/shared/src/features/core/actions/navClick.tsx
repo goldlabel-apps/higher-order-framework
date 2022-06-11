@@ -1,37 +1,35 @@
 import { AppThunk } from '../../../app/store'
+import { navigateTo } from '../../../listingslab-shared'
 
-export const navClick = (item: any): AppThunk =>
+export const navClick =
+    (item: any): AppThunk =>
     async (dispatch: any, getState: any) => {
         try {
-
-            let gotoPathname = "/"
+            let gotoPathname = '/'
             const { action, pathname } = item
             if (pathname) gotoPathname = pathname
 
             // console.warn ("item", item)
-            
-            switch ( action ) {
 
+            switch (action) {
                 case 'onHomeClick':
-                    // console.warn('Go Home')
-                    // gotoPathname = "home"
+                    dispatch(navigateTo({ pathname: '/' }))
                     break
 
                 case 'onWorkClick':
-                    // console.warn('WORK')
+                    dispatch(navigateTo({ pathname: '/work' }))
                     break
-                    
+
                 case 'onLifeClick':
-                    // console.warn('LIFE')
+                    dispatch(navigateTo({ pathname: '/life' }))
                     break
-                    
+
                 case 'onBalanceClick':
-                    // console.warn('BALANCE')
+                    dispatch(navigateTo({ pathname: '/balance' }))
                     break
 
                 default:
             }
-            console.warn("gotoPathname: ", gotoPathname)
             return true
         } catch (error) {
             console.warn('navClick error', error)

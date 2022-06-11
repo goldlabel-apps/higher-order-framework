@@ -6,31 +6,28 @@ import { store } from './app/store'
 import { useAppSelector, useAppDispatch } from './app/hooks'
 import { getById } from './app/utils'
 import Shared from './Shared'
-import Renderer from './Renderer'
+import RouteEngine from './RouteEngine'
 import MaxiButton from './components/MaxiButton'
 import Landing from './components/Landing'
 import Navigator from './components/Navigator'
 import MiniButton from './components/MiniButton'
 import FeaturedImage from './components/FeaturedImage'
 import OnTheMap from './components/OnTheMap'
+import TitleMovie from './components/TitleMovie'
+import AppMenu from './components/AppMenu'
 
-import { 
-    Flash, 
+import {
+    Flash,
     MovieClip,
-    initFlash, 
-    setFlash, 
-    selectFlash, 
-    getDisplay, 
+    initFlash,
+    setFlash,
+    selectFlash,
+    selectMovieClips,
+    getDisplay,
     getNextHighestDepth,
-} from "./Flash"
+} from './Flash'
 
-import { 
-    Social, 
-    Blocked, 
-    Map, 
-    MetaButton, 
-    FindUs, 
-} from './components'
+import { Social, Blocked, Map, MetaButton, FindUs } from './components'
 
 import {
     DialogSignin,
@@ -40,11 +37,7 @@ import {
     setAdmin,
 } from './features/admin'
 
-import { 
-    selectCms, 
-    setCms, 
-    cmsRead,
-} from './features/cms'
+import { selectCms, setCms, cmsRead } from './features/cms'
 
 import {
     Persona,
@@ -54,16 +47,17 @@ import {
     unsignIn,
 } from './features/persona'
 
-import { 
-    selectCore, 
+import {
+    selectRoute,
+    selectRefresh,
+    selectSSR,
+    selectCore,
     setCore,
     navClick,
+    navigateTo,
 } from './features/core'
 
-import { 
-    Icon, 
-    getDesignTokens 
-} from './theme'
+import { Icon, getDesignTokens } from './theme'
 
 console.warn('hof', PJSON.version)
 
@@ -80,7 +74,11 @@ const lifecycles = singleSpaReact({
 export const { bootstrap, mount, unmount } = lifecycles
 
 export {
-    Renderer,
+    // Core
+    RouteEngine,
+    selectRoute,
+    selectRefresh,
+    selectSSR,
     Map,
     store,
     useAppDispatch,
@@ -99,22 +97,30 @@ export {
     Persona,
     setPersona,
     selectPersona,
-    selectCore,
-    setCore,
     DialogSignin,
-    Landing,
-    Blocked,
     CMS,
     selectAdmin,
     setAdmin,
     AdminMenu,
+    // Components
+    AppMenu,
+    FindUs,
+    OnTheMap,
+    Landing,
+    TitleMovie,
+    Blocked,
+    // Cms
+    cmsRead,
     selectCms,
     setCms,
-    FindUs,
-    cmsRead,
-    OnTheMap,
+    // Core
     navClick,
+    navigateTo,
+    selectCore,
+    setCore,
+    // Flash
     selectFlash,
+    selectMovieClips,
     setFlash,
     initFlash,
     getDisplay,

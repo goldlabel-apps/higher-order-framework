@@ -9,7 +9,7 @@ const Pingpongball = (props: any) => {
     // const dispatch = useDispatch();
     const theme = useTheme()
     const ballColor = theme.palette.primary.main
-    const smileColor = "white"
+    const smileColor = 'white'
 
     return (
         <IconButton

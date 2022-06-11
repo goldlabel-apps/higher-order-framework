@@ -10,12 +10,10 @@ import { firebaseConfig } from './env'
 import {
     store,
     getDesignTokens,
-    
-    Renderer,
     setPersona,
     setCore,
 } from './listingslab-shared'
-import FlashApp from "./FlashApp"
+import FlashApp from './FlashApp'
 
 export const app = initializeApp(firebaseConfig)
 export const db = getFirestore(app)
@@ -36,13 +34,10 @@ onAuthStateChanged(auth, (user) => {
 })
 
 export default function Shared() {
-    const darkLight = 'light'
-    const themeMode = createTheme(getDesignTokens(darkLight))
     return (
         <BrowserRouter>
             <Provider store={store}>
-                <ThemeProvider theme={themeMode}>
-                    <Renderer />
+                <ThemeProvider theme={createTheme(getDesignTokens('light'))}>
                     <FlashApp />
                 </ThemeProvider>
             </Provider>

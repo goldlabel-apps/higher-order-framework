@@ -4,7 +4,7 @@ import { getElement } from './'
 
 const duration = 1.66
 
-export const fadeIn = (divId: string) => {
+export const fadeIn = (divId: string, onComplete: any) => {
     try {
         const el = getElement(divId)
         if (!el) {
@@ -15,9 +15,7 @@ export const fadeIn = (divId: string) => {
             opacity: 1,
             ease: Power1.easeOut,
             duration,
-            onComplete: () => {
-                return true
-            },
+            onComplete,
         })
     } catch (error) {
         return false

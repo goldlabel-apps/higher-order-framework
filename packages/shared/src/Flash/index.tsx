@@ -1,14 +1,16 @@
 // Flash.
+import { selectFlash, selectMovieClips, setFlash } from './flashSlice'
+import { movieClips } from './movieClips'
+import Flash from './Flash'
+import MovieClip from './MovieClip'
+import Mumma from './MovieClips/Mumma'
+import Pingpongball from './MovieClips/Pingpongball'
+import Macromedia from './MovieClips/Macromedia'
 
-import { selectFlash, setFlash } from "./flashSlice"
-import Flash from "./Flash"
-import MovieClip from "./MovieClip"
-import Mumma from "./MovieClips/Mumma"
-import Pingpongball from "./MovieClips/Pingpongball"
-import Timemachine from "./MovieClips/Timemachine"
+import Timemachine from './MovieClips/Timemachine'
 
 import {
-    initFlash, 
+    initFlash,
     onWindowResize,
     animateTo,
     getSizes,
@@ -28,9 +30,11 @@ export {
     Mumma,
     Pingpongball,
     Timemachine,
+    Macromedia,
     getDisplay,
     initFlash,
     selectFlash,
+    selectMovieClips,
     setFlash,
     onWindowResize,
     animateTo,
@@ -42,4 +46,5 @@ export {
     fadeOut,
     remove,
     getNextHighestDepth,
+    movieClips,
 }

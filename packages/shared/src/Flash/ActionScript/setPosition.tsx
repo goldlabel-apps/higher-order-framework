@@ -6,7 +6,7 @@ import { getElement, getSizes } from './'
 
 const duration = 1.66
 
-export const setPosition = (divId, position, offset) => {
+export const setPosition = (divId, position, options) => {
     try {
         const el = getElement(divId)
         if (!el) {
@@ -54,8 +54,11 @@ export const setPosition = (divId, position, offset) => {
             }
         const { x, y } = pos
         gsap.set(`#${divId}`, {
-            x: x + offset.left,
-            y: y + offset.top,
+            x: x + options.left,
+            y: y + options.top,
+            rotation: options.rotation,
+            scale: options.scale,
+            opacity: options.opacity,
         })
     } catch (error) {
         return false

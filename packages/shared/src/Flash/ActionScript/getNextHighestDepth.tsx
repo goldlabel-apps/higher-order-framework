@@ -1,4 +1,4 @@
-import { store, setFlash } from "../../listingslab-shared"
+import { store, setFlash } from '../../listingslab-shared'
 
 export const getNextHighestDepth = () => {
     try {
@@ -8,7 +8,7 @@ export const getNextHighestDepth = () => {
         // store.dispatch(setFlash({ key: "nextHighestDepth", value: newNextHighestDepth }))
         return newNextHighestDepth
     } catch (error) {
-        console.warn("getNextHighestDepth error", error)
+        console.warn('getNextHighestDepth error', error)
         return false
     }
 }

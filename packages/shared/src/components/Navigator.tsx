@@ -11,8 +11,8 @@ import {
 
 const NavButton = (item) => {
     const { type } = item.data
-    if (type === "maxi") return <MaxiButton data={ item.data } />
-    return <MiniButton data={ item.data } />
+    if (type === 'maxi') return <MaxiButton data={item.data} />
+    return <MiniButton data={item.data} />
 }
 
 export default function Navigator() {
@@ -23,18 +23,18 @@ export default function Navigator() {
     if (mode === 'hidden') return null
     const core = useAppSelector(selectCore)
     const { menuItems } = core.data.navigator
-    
-    return <Box 
-            id="navigator"    
-            sx={{ 
-                opacity: 0.5,
-                position: "absolute", 
-                bottom: 50, 
-                right: 50,
-                border: "1px solid green", 
-            }}>
-                {menuItems.map((item, i) => {
-                    return <NavButton key={`menuItem_${i}`} data={item} />
-                })}
-            </Box>
+    //, border: "1px solid gold"
+    return (
+        <Box sx={{ display: 'flex' }}>
+            <Box sx={{ flexGrow: 1 }} />
+            {menuItems.map((item, i) => {
+                return (
+                    <Box key={`menuItem_${i}`}>
+                        <NavButton data={item} />
+                    </Box>
+                )
+            })}
+            <Box sx={{ flexGrow: 1 }} />
+        </Box>
+    )
 }
