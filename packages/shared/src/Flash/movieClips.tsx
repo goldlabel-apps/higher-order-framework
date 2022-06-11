@@ -9,8 +9,8 @@ export const movieClips = [
             rotation: 0,
             scale: 1,
         },
-        width: '75%',
-        height: 500,
+        width: 300,
+        height: 300,
         zIndex: 1000,
     },
     {
