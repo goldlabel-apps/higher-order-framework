@@ -1,7 +1,8 @@
 import { RootState } from '../../app/store'
-import { setCms } from './cmsSlice'
+import { setCms, setNewBus } from './cmsSlice'
 import { cmsRead } from './actions/cmsRead'
 
 export const selectCms = (state: RootState) => state.cms
+export const selectBus = (state: RootState) => state.cms.bus
 
-export { setCms, cmsRead }
+export { setCms, setNewBus, cmsRead }

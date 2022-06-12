@@ -7,9 +7,11 @@ import {
     setCore,
     Icon,
     Nav,
-    ListItems,
+    Collection,
+    FullScreenToggle,
 } from '../../listingslab-shared'
 import {
+    Button,
     Dialog,
     DialogContent,
     Typography,
@@ -30,68 +32,42 @@ export default function CMS() {
     const closeDialog = () => {
         dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
     }
-
-    let dialogTitle = "CMS"
-    if (collection){
+    let rightCol = false
+    let dialogTitle = 'CMS'
+    if (collection) {
+        rightCol = true
         dialogTitle = collection
     }
 
-    const rightCol = false
-
     return (
-        <Dialog 
+        <Dialog
             fullWidth
             maxWidth="md"
-            open={ cmsDialogOpen && uid } 
-            fullScreen={ fullScreen } 
-            onClose={ closeDialog }
-        >
-
-            <DialogTitle>
+            open={cmsDialogOpen && uid}
+            fullScreen={fullScreen}
+            onClose={ closeDialog }>
                 <Grid container>
-                    <Grid item>
-                        <Box sx={{ display: "flex" }}>
-                            
-                            <Box sx={{ ml:2, mt:1.5}}>
-                                <Typography variant="h6" sx={{ fontWeight: "lighter" }}>
-                                    { dialogTitle }
-                                </Typography>
-                            </Box>
-                        </Box>
-                    </Grid>
-                    
                     <Grid item sx={{ flexGrow: 1 }} />
                     <Grid item>
-                        <Box sx={{ mt:1 }}>
-                            { fullScreen ? <IconButton onClick={()=>{
-                                dispatch(setCore({ key: 'fullScreen', value: false }))
-                            }}>
-                                <Icon icon="exitfullscreen" />
-                            </IconButton> : <IconButton onClick={()=>{
-                                dispatch(setCore({ key: 'fullScreen', value: true }))
-                            }}>
-                                <Icon icon="fullscreen" />
-                            </IconButton> }
-
+                        <Box sx={{ mt: 1, mr: 1 }}>
+                            <FullScreenToggle /> 
                             <IconButton onClick={closeDialog}>
                                 <Icon icon="close" />
                             </IconButton>
                         </Box>
                     </Grid>
                 </Grid>
-            </DialogTitle>
-
-            <DialogContent>
                 <Grid container>
-                    <Grid item xs={12} md={ rightCol ? 4 : 12 }>
+                    <Grid item xs={12} md={rightCol ? 4 : 12}>
                         <Nav />
                     </Grid>
-                    { rightCol ? <Grid item xs={12} md={ 8 }>
-                        <ListItems />
-                    </Grid> : null }
-                    
+                    {rightCol ? (
+                        <Grid item xs={12} md={8}>
+                            <Collection />
+                        </Grid>
+                    ) : null}
                 </Grid>
-            </DialogContent>            
+                
         </Dialog>
     )
 }

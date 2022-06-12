@@ -1,11 +1,7 @@
 import * as React from 'react'
 import { Mumma, Pingpongball, Macromedia } from './'
 import { getNextHighestDepth } from './'
-import {
-    Navigator,
-    RouteEngine,
-    AppMenu,
-} from '../listingslab-shared'
+import { Navigator, RouteEngine, AppMenu } from '../listingslab-shared'
 import { Box } from '@mui/material'
 
 const getComponent = (component) => {

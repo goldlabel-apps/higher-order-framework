@@ -1,8 +1,6 @@
 import { getAuth, signOut } from 'firebase/auth'
 import { AppThunk } from '../../../app/store'
-import {
-    setCore,
-} from '../../../listingslab-shared'
+import { setCore } from '../../../listingslab-shared'
 
 export const unsignIn = (): AppThunk => async (dispatch: any) => {
     try {

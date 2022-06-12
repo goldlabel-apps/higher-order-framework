@@ -19,4 +19,3 @@ export const sortByAttribute = (list: any, attribute: string) => {
     // console.warn("sortByAttribute", attribute)
     return false
 }
-

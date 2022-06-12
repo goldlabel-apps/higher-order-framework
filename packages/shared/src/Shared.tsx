@@ -7,11 +7,7 @@ import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { firebaseConfig } from './env'
-import {
-    store,
-    getDesignTokens,
-    setCore,
-} from './listingslab-shared'
+import { store, getDesignTokens, setCore } from './listingslab-shared'
 import FlashApp from './FlashApp'
 
 export const app = initializeApp(firebaseConfig)

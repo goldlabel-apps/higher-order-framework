@@ -60,16 +60,16 @@ export default function AppMenu() {
 
     return (
         <React.Fragment>
+            <MaxiButton
+                data={{
+                    label: 'Menu',
+                    type: 'maxi',
+                    icon: 'menu',
+                    color: 'secondary',
+                    onClick: appMenuOpen,
+                }}
+            />
 
-            <MaxiButton data={{
-                label: 'Menu',
-                type: 'maxi',
-                icon: 'menu',
-                color: 'secondary',
-                onClick: appMenuOpen,
-            }} />
-
-            
             <Box sx={{ ml: 3 }}>
                 <Menu
                     id="app-menu"
