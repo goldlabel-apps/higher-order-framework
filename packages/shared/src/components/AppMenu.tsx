@@ -19,6 +19,7 @@ import {
     selectCore,
     unsignIn,
     setCore,
+    MaxiButton,
 } from '../listingslab-shared'
 
 export default function AppMenu() {
@@ -59,18 +60,16 @@ export default function AppMenu() {
 
     return (
         <React.Fragment>
-            <Tooltip title="Open App Menu" color="secondary">
-                <IconButton
-                    color="primary"
-                    id="app-button"
-                    aria-controls={open ? 'app-menu' : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                    onClick={appMenuOpen}
-                >
-                    <Icon icon="menu" />
-                </IconButton>
-            </Tooltip>
+
+            <MaxiButton data={{
+                label: 'Menu',
+                type: 'maxi',
+                icon: 'menu',
+                color: 'secondary',
+                onClick: appMenuOpen,
+            }} />
+
+            
             <Box sx={{ ml: 3 }}>
                 <Menu
                     id="app-menu"
@@ -166,3 +165,18 @@ export default function AppMenu() {
         </React.Fragment>
     )
 }
+
+/*
+<Tooltip title="Open App Menu" color="secondary">
+                <IconButton
+                    color="primary"
+                    id="app-button"
+                    aria-controls={open ? 'app-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    onClick={appMenuOpen}
+                >
+                    <Icon icon="menu" />
+                </IconButton>
+            </Tooltip>
+*/

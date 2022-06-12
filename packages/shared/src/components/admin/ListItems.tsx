@@ -8,25 +8,18 @@ import {
 } from '../../listingslab-shared'
 import {
     Grid,
-    IconButton,
+    Card,
 } from '@mui/material'
 
 export default function ListItems() {
 
-    return (
+    return (<Card sx={{ minHeight: 250, m:1, p:1 }}>
                 <Grid container>
-                    <Grid item>
-                        <IconButton sx={{ mt: 1, ml: 1 }}>
-                            <Icon icon="list" />
-                        </IconButton>
-                    </Grid>
-                    
-                    <Grid item sx={{ flexGrow: 1 }} />
                     <Grid item>
                         ListItems
                     </Grid>
                 </Grid>
-
+            </Card>
     )
 }
 

@@ -10,22 +10,20 @@ import { Icon, getDesignTokens } from './theme'
 
 import RouteEngine from './RouteEngine'
 import MaxiButton from './components/MaxiButton'
-import Landing from './components/Landing'
 import Navigator from './components/Navigator'
 import MiniButton from './components/MiniButton'
 import OnTheMap from './components/OnTheMap'
-import TitleMovie from './components/TitleMovie'
 import AppMenu from './components/AppMenu'
 import SigninDialog from './components/admin/SigninDialog'
 import Social from './components/Social'
 import Blocked from './components/Blocked'
 import Map from './components/Map'
-import MetaButton from './components/MetaButton'
 import FindUs from './components/FindUs'
 
 import CMS from './components/admin/CMS'
 import Editor from './components/admin/Editor'
-
+import Nav from './components/admin/Nav'
+import ListItems from './components/admin/ListItems'
 
 import { 
     getById,
@@ -93,14 +91,11 @@ export {
 
     // Components
     Navigator,
-    MetaButton,
     MiniButton,
     MaxiButton,
     AppMenu,
     FindUs,
     OnTheMap,
-    Landing,
-    TitleMovie,
     Blocked,
     Map,
     Social,
@@ -109,6 +104,8 @@ export {
     SigninDialog,
     CMS,
     Editor,
+    Nav,
+    ListItems,
 
     // Cms
     cmsRead,

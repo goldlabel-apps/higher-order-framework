@@ -7,13 +7,14 @@ import {
     Icon,
 } from '../../listingslab-shared'
 import {
+    Card,
     Grid,
     IconButton,
 } from '@mui/material'
 
 export default function Editor() {
 
-    return (
+    return (<Card sx={{ minHeight: 250, m:1, p:1 }}>
                 <Grid container>
                     <Grid item>
                         <IconButton sx={{ mt: 1, ml: 1 }}>
@@ -26,6 +27,6 @@ export default function Editor() {
                         Editor
                     </Grid>
                 </Grid>
-
+            </Card>
     )
 }

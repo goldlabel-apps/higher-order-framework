@@ -5,9 +5,9 @@ import {
     selectCore,
     selectCms,
     setCore,
-    setCms,
     Icon,
-    Editor,
+    Nav,
+    ListItems,
 } from '../../listingslab-shared'
 import {
     Dialog,
@@ -17,9 +17,6 @@ import {
     Grid,
     Box,
     IconButton,
-    List,
-    ListItem,
-    ListItemText,
 } from '@mui/material'
 
 export default function CMS() {
@@ -27,13 +24,19 @@ export default function CMS() {
     const core = useAppSelector(selectCore)
     const { cmsDialogOpen, fullScreen, uid } = core.data
     const cms = useAppSelector(selectCms)
-    const { editing } = cms.data
-    const { posts } = cms.data
+    const { posts, collection } = cms.data
     if (!posts) return null
 
     const closeDialog = () => {
         dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
     }
+
+    let dialogTitle = "CMS"
+    if (collection){
+        dialogTitle = collection
+    }
+
+    const rightCol = false
 
     return (
         <Dialog 
@@ -48,12 +51,10 @@ export default function CMS() {
                 <Grid container>
                     <Grid item>
                         <Box sx={{ display: "flex" }}>
-                            <Box sx={{ mt: 2, ml: 2 }}>
-                                <Icon icon="cms" />
-                            </Box>
+                            
                             <Box sx={{ ml:2, mt:1.5}}>
                                 <Typography variant="h6" sx={{ fontWeight: "lighter" }}>
-                                    Content Management System
+                                    { dialogTitle }
                                 </Typography>
                             </Box>
                         </Box>
@@ -82,37 +83,15 @@ export default function CMS() {
 
             <DialogContent>
                 <Grid container>
-                    <Grid item xs={12} md={4}>
-                        left
+                    <Grid item xs={12} md={ rightCol ? 4 : 12 }>
+                        <Nav />
                     </Grid>
-                    {editing ? (
-                        <Grid item xs={12} md={8}>
-                            <Editor />
-                            
-                        </Grid>
-                    ) : null}
+                    { rightCol ? <Grid item xs={12} md={ 8 }>
+                        <ListItems />
+                    </Grid> : null }
+                    
                 </Grid>
             </DialogContent>            
         </Dialog>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-<pre>{ JSON.stringify( posts, null, 2 ) }</pre>
-editing<pre>{JSON.stringify(editing, null, 2)}</pre>
-<DialogActions>
-                <Button variant="contained" onClick={closeDialog}>
-                    Done
-                </Button>
-            </DialogActions>
-*/

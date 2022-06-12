@@ -165,10 +165,7 @@ export default function SigninDialog() {
             <DialogActions>
                 <Button
                     sx={{ mb: 1, mr: 2 }}
-                    variant="contained"
-                    onClick={handleSignin}
-                    color="secondary"
-                >
+                    onClick={ handleSignin }>
                     <span style={{ marginRight: 4, marginLeft: 4 }}>
                         Sign in
                     </span>

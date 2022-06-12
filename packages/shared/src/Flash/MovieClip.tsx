@@ -3,7 +3,6 @@ import { Mumma, Pingpongball, Macromedia } from './'
 import { getNextHighestDepth } from './'
 import {
     Navigator,
-    TitleMovie,
     RouteEngine,
     AppMenu,
 } from '../listingslab-shared'
@@ -16,9 +15,6 @@ const getComponent = (component) => {
             break
         case 'RouteEngine':
             return <RouteEngine />
-            break
-        case 'TitleMovie':
-            return <TitleMovie />
             break
         case 'Macromedia':
             return <Macromedia />
