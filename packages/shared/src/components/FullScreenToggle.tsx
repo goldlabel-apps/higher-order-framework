@@ -1,0 +1,29 @@
+import * as React from 'react'
+import { Typography, CardMedia } from '@mui/material'
+
+export default function FullScreenToggle() {
+    const title = 'Listingslab Software'
+    const imageSrc = 'https://listingslab.com/svg/featured/work.svg'
+
+    return (
+        <React.Fragment>
+            <Typography
+                gutterBottom
+                variant="h6"
+                sx={{ fontWeight: 'lighter', textAlign: 'center' }}
+            >
+                {title}
+            </Typography>
+        </React.Fragment>
+    )
+}
+
+/*
+<CardMedia
+                sx={{ mt: 4 }}
+                component="img"
+                height="175"
+                image={imageSrc}
+                alt={title}
+            />
+*/

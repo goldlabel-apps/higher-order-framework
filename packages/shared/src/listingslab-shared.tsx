@@ -4,17 +4,33 @@ import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
 import { store } from './app/store'
 import { useAppSelector, useAppDispatch } from './app/hooks'
-import { getById } from './app/utils'
+
 import Shared from './Shared'
+import { Icon, getDesignTokens } from './theme'
+
 import RouteEngine from './RouteEngine'
 import MaxiButton from './components/MaxiButton'
 import Landing from './components/Landing'
 import Navigator from './components/Navigator'
 import MiniButton from './components/MiniButton'
-import FeaturedImage from './components/FeaturedImage'
 import OnTheMap from './components/OnTheMap'
 import TitleMovie from './components/TitleMovie'
 import AppMenu from './components/AppMenu'
+import SigninDialog from './components/admin/SigninDialog'
+import Social from './components/Social'
+import Blocked from './components/Blocked'
+import Map from './components/Map'
+import MetaButton from './components/MetaButton'
+import FindUs from './components/FindUs'
+
+import CMS from './components/admin/CMS'
+import Editor from './components/admin/Editor'
+
+
+import { 
+    getById,
+    sortByAttribute,
+} from './app/utils'
 
 import {
     Flash,
@@ -27,25 +43,7 @@ import {
     getNextHighestDepth,
 } from './Flash'
 
-import { Social, Blocked, Map, MetaButton, FindUs } from './components'
-
-import {
-    DialogSignin,
-    AdminMenu,
-    CMS,
-    selectAdmin,
-    setAdmin,
-} from './features/admin'
-
 import { selectCms, setCms, cmsRead } from './features/cms'
-
-import {
-    Persona,
-    selectPersona,
-    setPersona,
-    signIn,
-    unsignIn,
-} from './features/persona'
 
 import {
     selectRoute,
@@ -55,9 +53,9 @@ import {
     setCore,
     navClick,
     navigateTo,
+    signIn,
+    unsignIn,
 } from './features/core'
-
-import { Icon, getDesignTokens } from './theme'
 
 console.warn('hof', PJSON.version)
 
@@ -75,49 +73,50 @@ export const { bootstrap, mount, unmount } = lifecycles
 
 export {
     // Core
+    store,
+    useAppDispatch,
+    useAppSelector,
     RouteEngine,
     selectRoute,
     selectRefresh,
     selectSSR,
-    Map,
-    store,
-    useAppDispatch,
-    useAppSelector,
-    getDesignTokens,
-    Icon,
-    Social,
     signIn,
     unsignIn,
-    getById,
+    navClick,
+    navigateTo,
+    selectCore,
+    setCore,
+
+    // Theme
+    getDesignTokens,
+    Icon,
+
+    // Components
     Navigator,
-    FeaturedImage,
     MetaButton,
     MiniButton,
     MaxiButton,
-    Persona,
-    setPersona,
-    selectPersona,
-    DialogSignin,
-    CMS,
-    selectAdmin,
-    setAdmin,
-    AdminMenu,
-    // Components
     AppMenu,
     FindUs,
     OnTheMap,
     Landing,
     TitleMovie,
     Blocked,
+    Map,
+    Social,
+
+    // Admin
+    SigninDialog,
+    CMS,
+    Editor,
+
     // Cms
     cmsRead,
     selectCms,
     setCms,
-    // Core
-    navClick,
-    navigateTo,
-    selectCore,
-    setCore,
+
+
+
     // Flash
     selectFlash,
     selectMovieClips,
@@ -127,4 +126,8 @@ export {
     Flash,
     MovieClip,
     getNextHighestDepth,
+    
+    // Utils
+    getById,
+    sortByAttribute,
 }

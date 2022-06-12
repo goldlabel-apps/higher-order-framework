@@ -13,12 +13,14 @@ import {
     BalanceIcon,
 } from '../theme'
 import DefaultIcon from '@mui/icons-material/DisabledByDefault'
-import HomeIcon from '@mui/icons-material/AddToHomeScreen'
+// import HomeIcon from '@mui/icons-material/AddToHomeScreen'
+import HomeIcon from '@mui/icons-material/Home'
 import CMSIcon from '@mui/icons-material/DocumentScanner'
 import FlyIcon from '@mui/icons-material/LocalAirportRounded'
 import DatabaseIcon from '@mui/icons-material/DataObject'
 import MapIcon from '@mui/icons-material/LocationDisabled'
-import MenuIcon from '@mui/icons-material/Menu'
+import MenuIcon from '@mui/icons-material/MoreVert'
+
 import TrashIcon from '@mui/icons-material/DeleteOutlined'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import ExitIcon from '@mui/icons-material/ExitToAppRounded'
@@ -76,6 +78,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import FullscreenIcon from '@mui/icons-material/Fullscreen'
+import FullscreenExitIcon from '@mui/icons-material/FullscreenExit'
 import AccExpandIcon from '@mui/icons-material/ExpandMore'
 
 export default function Icon(props: any) {
@@ -121,6 +124,10 @@ export default function Icon(props: any) {
 
         case 'fullscreen':
             iconFragment = <FullscreenIcon color={color} />
+            break
+
+        case 'exitfullscreen':
+            iconFragment = <FullscreenExitIcon color={color} />
             break
 
         case 'twitter':
