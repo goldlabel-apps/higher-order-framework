@@ -39,7 +39,7 @@ import {
     getNextHighestDepth,
 } from './Flash'
 
-import { selectCms, setCms, setDataBus, cmsRead, newCollectionBus } from './features/cms'
+import { selectCms, setCms, setDataBus, cmsRead, newCollectionBus, updateDataBus } from './features/cms'
 
 import {
     selectRoute,
@@ -108,6 +108,7 @@ export {
     selectCms,
     setCms,
     setDataBus,
+    updateDataBus,
     // Flash
     selectFlash,
     selectMovieClips,
