@@ -24,11 +24,7 @@ export default function CMS() {
     const cms = useAppSelector(selectCms)
     const { collection } = cms.data
     let rightCol = false
-    let dialogTitle = 'CMS'
-    if (collection) {
-        rightCol = true
-        dialogTitle = collection
-    }
+    if (collection) rightCol = true
     const closeDialog = () => dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
     
     return (
@@ -50,11 +46,11 @@ export default function CMS() {
                     </Grid>
                 </Grid>
                 <Grid container>
-                    <Grid item xs={12} md={rightCol ? 4 : 12}>
+                    <Grid item xs={12} md={rightCol ? 3 : 12}>
                         <Nav />
                     </Grid>
                     {rightCol ? (
-                        <Grid item xs={12} md={8}>
+                        <Grid item xs={12} md={9}>
                             <Collection />
                         </Grid>
                     ) : null}

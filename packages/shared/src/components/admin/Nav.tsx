@@ -10,11 +10,8 @@ import { List, ListItem, ListItemText, Card, ListItemIcon, Divider } from '@mui/
 
 export default function Nav() {
     const dispatch = useAppDispatch()
-    const cms = useAppSelector(selectCms)
-    // console.warn(cms.data.collection)
 
     const onCollectionClick = (collection: string) => {
-        // console.warn("onCollectionClick", collection)
         dispatch(setCms({ key: 'collection', value: collection }))
         return true
     }

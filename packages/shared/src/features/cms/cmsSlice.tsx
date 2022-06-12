@@ -7,7 +7,7 @@ export interface Cms {
 
 const initialState: Cms = {
     data: {
-        // collection: "posts",
+        collection: "posts",
     },
     bus: {},
 }
@@ -26,8 +26,6 @@ export const cmsSlice = createSlice({
         },
         updateDataBus: (state, action: PayloadAction<any>) => {
             const { collectionName, key, value } = action.payload
-            // console.warn ('updateDataBus', collectionName, key, value)
-            // console.warn ('state.bus[key]', state.bus[key])
             state.bus[collectionName] = { ...state.bus[collectionName], [key]: value }
         },
     },
