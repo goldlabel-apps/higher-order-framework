@@ -28,7 +28,7 @@ export default function AppMenu() {
     const core = useAppSelector(selectCore)
 
     let signedIn = false
-    if (core.data.user.uid) signedIn = true
+    if (core.data.uid) signedIn = true
 
     const onItemClick = (item: string) => {
         switch (item) {
@@ -42,7 +42,7 @@ export default function AppMenu() {
                 dispatch(setCore({ key: 'dialogSigninOpen', value: true }))
                 break
             case 'cms':
-                dispatch(setCore({ key: 'cmsIsOpen', value: true }))
+                dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
                 break
             default:
         }

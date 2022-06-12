@@ -9,13 +9,10 @@ export const signIn =
     async (dispatch: any) => {
         try {
             const auth = getAuth()
-            dispatch(setCore({ key: 'user', value: { uid: null } }))
+            dispatch(setCore({ key: 'uid', value: null }))
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
-                    const newUser = {
-                        uid: userCredential.user.uid,
-                    }
-                    dispatch(setCore({ key: 'user', value: newUser }))
+                    dispatch(setCore({ key: 'uid', value: userCredential.user.uid }))
                     dispatch(setCore({ key: 'dialogSigninOpen', value: false }))
                 })
                 .catch((error) => {

@@ -58,7 +58,7 @@ export default function SigninDialog() {
     const id = 'dialogSignin'
     const core = useAppSelector(selectCore)
     const { dialogSigninOpen } = core.data
-    const { error } = core.data.user
+    const { error } = core.data
     let alertObj = null
     if (error) {
         alertObj = { severity: 'warning', message: error }

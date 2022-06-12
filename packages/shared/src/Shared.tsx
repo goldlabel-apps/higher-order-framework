@@ -23,12 +23,9 @@ onAuthStateChanged(auth, (user) => {
     const dispatch = store.dispatch
     dispatch(setCore({ key: 'authReady', value: true }))
     if (user) {
-        const uid = user.uid
-        const newUser = { uid }
-        dispatch(setCore({ key: 'user', value: newUser }))
+        dispatch(setCore({ key: 'uid', value: user.uid }))
     } else {
-        const newUser = { uid: null }
-        dispatch(setCore({ key: 'user', value: newUser }))
+        dispatch(setCore({ key: 'uid', value: null }))
     }
 })
 

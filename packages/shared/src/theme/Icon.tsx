@@ -78,6 +78,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import FullscreenIcon from '@mui/icons-material/Fullscreen'
+import FullscreenExitIcon from '@mui/icons-material/FullscreenExit'
 import AccExpandIcon from '@mui/icons-material/ExpandMore'
 
 export default function Icon(props: any) {
@@ -123,6 +124,10 @@ export default function Icon(props: any) {
 
         case 'fullscreen':
             iconFragment = <FullscreenIcon color={color} />
+            break
+
+        case 'exitfullscreen':
+            iconFragment = <FullscreenExitIcon color={color} />
             break
 
         case 'twitter':
