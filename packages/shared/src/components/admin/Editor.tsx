@@ -24,7 +24,7 @@ import {
     ListItemText,
 } from '@mui/material'
 
-export default function CMS() {
+export default function Editor() {
     const dispatch = useAppDispatch()
     const core = useAppSelector(selectCore)
     const { cmsIsOpen } = core.data

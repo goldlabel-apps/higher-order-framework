@@ -11,7 +11,12 @@ export const getById = (id: string, list: any) => {
     return false
 }
 
+export const sortByAttribute = (list: any, attribute: string) => {
+    // if (!list.length) return false
+    // for (let i = 0; i < list.length; i++) {
+    //     if (list[i].id === id) return list[i]
+    // }
+    // console.warn("sortByAttribute", attribute)
+    return false
+}
 
-
-
-// sortArray, filterArray, getSlug, etc

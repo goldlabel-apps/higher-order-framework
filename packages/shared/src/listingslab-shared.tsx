@@ -22,9 +22,15 @@ import Blocked from './components/Blocked'
 import Map from './components/Map'
 import MetaButton from './components/MetaButton'
 import FindUs from './components/FindUs'
-import CMS from './components/admin/CMS'
 
-import { getById } from './app/utils'
+import CMS from './components/admin/CMS'
+import Editor from './components/admin/Editor'
+
+
+import { 
+    getById,
+    sortByAttribute,
+} from './app/utils'
 
 import {
     Flash,
@@ -67,20 +73,24 @@ export const { bootstrap, mount, unmount } = lifecycles
 
 export {
     // Core
+    store,
+    useAppDispatch,
+    useAppSelector,
     RouteEngine,
     selectRoute,
     selectRefresh,
     selectSSR,
-    Map,
-    store,
-    useAppDispatch,
-    useAppSelector,
-    getDesignTokens,
-    Icon,
-    Social,
     signIn,
     unsignIn,
-    
+    navClick,
+    navigateTo,
+    selectCore,
+    setCore,
+
+    // Theme
+    getDesignTokens,
+    Icon,
+
     // Components
     Navigator,
     MetaButton,
@@ -92,17 +102,21 @@ export {
     Landing,
     TitleMovie,
     Blocked,
+    Map,
+    Social,
+
+    // Admin
     SigninDialog,
     CMS,
+    Editor,
+
     // Cms
     cmsRead,
     selectCms,
     setCms,
-    // Core
-    navClick,
-    navigateTo,
-    selectCore,
-    setCore,
+
+
+
     // Flash
     selectFlash,
     selectMovieClips,
@@ -112,6 +126,8 @@ export {
     Flash,
     MovieClip,
     getNextHighestDepth,
+    
     // Utils
     getById,
+    sortByAttribute,
 }
