@@ -3,7 +3,7 @@ import {
     useAppSelector, 
     useAppDispatch,
     selectCms,
-    setNewBus,
+    newCollectionBus,
 } from '../../listingslab-shared'
 import { Card } from '@mui/material'
 import { ContactSupportSharp } from '@mui/icons-material'
@@ -18,13 +18,9 @@ export default function Collection() {
     // const data = bus[collection]
     React.useEffect(() => {
         if (!bus[collection]){
-            dispatch(setNewBus({key: collection , value: {
-                name: collection,
-                updated: Date.now(),
-            }}))
+            dispatch(newCollectionBus( collection ))
         }
     }, [bus, collection, dispatch])
-
 
     return (
         <Card sx={{ m: 1, p: 1, boxShadow: 'none' }}>

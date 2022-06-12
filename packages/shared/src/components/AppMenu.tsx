@@ -85,19 +85,7 @@ export default function AppMenu() {
                     }}
                 >
                     <MenuList sx={{ width: 250 }} dense>
-                        <MenuItem
-                            onClick={() => {
-                                onItemClick('home')
-                            }}
-                        >
-                            <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="secondary">
-                                    <Icon icon="home" />
-                                </IconButton>
-                            </ListItemIcon>
-                            <ListItemText>Home</ListItemText>
-                            <Typography variant="body2">⌘H</Typography>
-                        </MenuItem>
+                        
 
                         {signedIn ? (
                             <React.Fragment>
@@ -167,16 +155,17 @@ export default function AppMenu() {
 }
 
 /*
-<Tooltip title="Open App Menu" color="secondary">
-                <IconButton
-                    color="primary"
-                    id="app-button"
-                    aria-controls={open ? 'app-menu' : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                    onClick={appMenuOpen}
-                >
-                    <Icon icon="menu" />
-                </IconButton>
-            </Tooltip>
+<MenuItem
+    onClick={() => {
+        onItemClick('home')
+    }}
+>
+    <ListItemIcon>
+        <IconButton sx={{ mr: 1 }} color="secondary">
+            <Icon icon="home" />
+        </IconButton>
+    </ListItemIcon>
+    <ListItemText>Home</ListItemText>
+    <Typography variant="body2">⌘H</Typography>
+</MenuItem>
 */

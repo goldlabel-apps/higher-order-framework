@@ -21,12 +21,12 @@ export const cmsSlice = createSlice({
             const { key, value } = action.payload
             state.data = { ...state.data, [key]: value }
         },
-        setNewBus: (state, action: PayloadAction<any>) => {
+        setDataBus: (state, action: PayloadAction<any>) => {
             const { key, value } = action.payload
             state.bus = { ...state.data, [key]: value }
         },
     },
 })
 
-export const { setCms, setNewBus } = cmsSlice.actions
+export const { setCms, setDataBus } = cmsSlice.actions
 export default cmsSlice.reducer

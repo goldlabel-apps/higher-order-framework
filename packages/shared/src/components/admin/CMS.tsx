@@ -11,11 +11,7 @@ import {
     FullScreenToggle,
 } from '../../listingslab-shared'
 import {
-    Button,
     Dialog,
-    DialogContent,
-    Typography,
-    DialogTitle,
     Grid,
     Box,
     IconButton,
@@ -26,19 +22,15 @@ export default function CMS() {
     const core = useAppSelector(selectCore)
     const { cmsDialogOpen, fullScreen, uid } = core.data
     const cms = useAppSelector(selectCms)
-    const { posts, collection } = cms.data
-    if (!posts) return null
-
-    const closeDialog = () => {
-        dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
-    }
+    const { collection } = cms.data
     let rightCol = false
     let dialogTitle = 'CMS'
     if (collection) {
         rightCol = true
         dialogTitle = collection
     }
-
+    const closeDialog = () => dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
+    
     return (
         <Dialog
             fullWidth

@@ -19,3 +19,13 @@ export const sortByAttribute = (list: any, attribute: string) => {
     // console.warn("sortByAttribute", attribute)
     return false
 }
+
+
+const getContentBySlug = (slug: string, posts: any) => {
+    for (let i = 0; i < posts.length; i++) {
+        if (posts[i].data.slug === slug) {
+            return posts[i].data
+        }
+    }
+    return false
+}

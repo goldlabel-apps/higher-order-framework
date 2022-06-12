@@ -5,11 +5,9 @@ import {
     useAppDispatch,
     selectRoute,
     setCore,
-    setCms,
     selectSSR,
     selectRefresh,
     selectCms,
-    cmsRead,
 } from './listingslab-shared'
 
 export default function RouteEngine() {
@@ -18,25 +16,6 @@ export default function RouteEngine() {
     const ssr = useAppSelector(selectSSR)
     const refresh = useAppSelector(selectRefresh)
     const cms = useAppSelector(selectCms)
-
-    const getContentBySlug = (slug: string, posts: any) => {
-        for (let i = 0; i < posts.length; i++) {
-            if (posts[i].data.slug === slug) {
-                return posts[i].data
-            }
-        }
-        return false
-    }
-    
-
-    React.useEffect(() => {
-        const { loading, loaded } = cms.data
-        if (!loading && !loaded) {
-            dispatch(cmsRead())
-            dispatch(setCms({ key: 'loading', value: true }))
-            dispatch(setCms({ key: 'loaded', value: false }))
-        }
-    }, [cms, dispatch])
 
     React.useEffect(() => {
         dispatch(setCore({ key: 'refresh', value: false }))
@@ -57,13 +36,17 @@ export default function RouteEngine() {
         }
     }, [refresh, route, dispatch])
 
-    const { posts } = cms.data
-    if (!posts) return null
-    const thisUrl = window.location.href
-    let thisSlug = `${thisUrl.replace(ssr[0].data.baseURL, '')}`
-    if (thisSlug === '') thisSlug = '/'
-    let content = getContentBySlug(thisSlug, posts)
-    const { title, image, body } = content
+    // const { posts } = cms.data
+    // if (!posts) return null
+    // const thisUrl = window.location.href
+    // let thisSlug = `${thisUrl.replace(ssr[0].data.baseURL, '')}`
+    // if (thisSlug === '') thisSlug = '/'
+    // let content = getContentBySlug(thisSlug, posts)
+    // const { title, image, body } = content
+
+    const title = "Time Machine"
+    const image = "https://listingslab.com/svg/featured/timemachine.svg"
+    const body = "lorem ipsum"
 
     return (
         <Box sx={{ mt: 2 }}>
