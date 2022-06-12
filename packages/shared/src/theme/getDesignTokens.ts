@@ -8,7 +8,7 @@ import { PaletteMode } from '@mui/material'
 
 const theme = {
     primary: 'rgba(19, 68, 72, 1)', //"#134448", dark teal
-    secondary: 'rgba(76, 151, 156, 1)', //"#134448", light teal
+    secondary: 'rgba(76, 151, 156, 1)', //"#4c979c", light teal
 }
 
 const { primary, secondary } = theme
