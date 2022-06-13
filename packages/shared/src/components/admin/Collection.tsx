@@ -4,6 +4,7 @@ import {
     useAppDispatch,
     selectCms,
     newCollectionBus,
+    Shape,
 } from '../../listingslab-shared'
 import { Card, LinearProgress } from '@mui/material'
 
@@ -14,10 +15,12 @@ export default function Collection() {
     const { bus } = cms
     const data = bus[collection]
     let loading = false
+    let loaded = false
     let list = []
     let shape = {}
     if (data){
         loading = data.loading
+        loaded = data.loaded
         list = data.list
         shape = data.shape
     }
@@ -31,14 +34,20 @@ export default function Collection() {
 
     return (
         <Card sx={{ m: 1, p: 1, boxShadow: 'none' }}>
-            { loading ? <LinearProgress sx={{m:1}} color="secondary" /> : 
-            <React.Fragment>
-                <pre>shape { JSON.stringify( shape, null, 2 ) }</pre>
-            <pre>list { JSON.stringify( list, null, 2 ) }</pre>
-            </React.Fragment> }
+            { loading ? <LinearProgress sx={{m:1}} color="secondary" /> : null }
+            { !loading && loaded ? <React.Fragment>
+                <Shape />
+
+            </React.Fragment> : null}
         </Card>
     )
 }
 
 /*
+
+<React.Fragment>
+                <pre>shape { JSON.stringify( shape, null, 2 ) }</pre>
+            <pre>list { JSON.stringify( list, null, 2 ) }</pre>
+            </React.Fragment>
+
 */

@@ -6,7 +6,7 @@ import {
     setCms,
     Icon,
 } from '../../listingslab-shared'
-import { List, ListItem, ListItemText, Card, ListItemIcon, Divider } from '@mui/material'
+import { List, ListItem, ListItemText, Card, ListItemIcon } from '@mui/material'
 
 export default function Nav() {
     const dispatch = useAppDispatch()
@@ -17,9 +17,8 @@ export default function Nav() {
     }
 
     return (
-        <Card sx={{ m: 1, p: 1, boxShadow: 'none' }}>
+        <Card sx={{ m: 2, p: 1 }}>
             <List dense>
-                <Divider />
                 <ListItem
                     button
                     onClick={() => {
@@ -31,7 +30,7 @@ export default function Nav() {
                     </ListItemIcon>
                     <ListItemText primary="posts" />
                 </ListItem>
-                <Divider />
+                
                 <ListItem
                     button
                     onClick={() => {
@@ -43,7 +42,7 @@ export default function Nav() {
                     </ListItemIcon>
                     <ListItemText primary="cms" />
                 </ListItem>
-                <Divider />
+                
                 <ListItem
                     button
                     onClick={() => {
@@ -55,7 +54,7 @@ export default function Nav() {
                     </ListItemIcon>
                     <ListItemText primary="links" />
                 </ListItem>
-                <Divider />
+                
                 <ListItem
                     button
                     onClick={() => {
@@ -67,7 +66,6 @@ export default function Nav() {
                     </ListItemIcon>
                     <ListItemText primary="siteinfo" />
                 </ListItem>
-                <Divider />
             </List>
         </Card>
     )

@@ -25,6 +25,7 @@ import CMS from './components/admin/CMS'
 import Editor from './components/admin/Editor'
 import Nav from './components/admin/Nav'
 import Collection from './components/admin/Collection'
+import Shape from './components/admin/Shape'
 
 import { getById, sortByAttribute } from './app/utils'
 
@@ -102,6 +103,7 @@ export {
     Editor,
     Nav,
     Collection,
+    Shape,
     // Cms
     cmsRead,
     newCollectionBus,
