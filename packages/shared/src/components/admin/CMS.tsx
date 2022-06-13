@@ -23,6 +23,7 @@ import {
     IconButton,
     Typography,
 } from '@mui/material'
+import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 
 export default function CMS() {
     const dispatch = useAppDispatch()
@@ -40,7 +41,7 @@ export default function CMS() {
         leftCol = false
     }
 
-    let cmsTitle = "Manage collections on Firebase Cloud"
+    let cmsTitle = "Manage collections"
     if (collection) cmsTitle = `Managing ${collection}`
 
     const closeDialog = () => dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
@@ -74,10 +75,20 @@ export default function CMS() {
                 <Grid container>
 
                     <Grid item xs={ 12 }>
-                        <Typography variant="h6" color="primary" 
-                            sx={{ fontWeight: "lighter", ml: 2 }}>
-                            { cmsTitle }
-                        </Typography>
+                        <Box sx={{ display: "flex" }}>
+                            { collection ? <Box sx={{  }}>
+                                <IconButton onClick={ onBackClick }>
+                                    <Icon icon="arrowl" />
+                                </IconButton>
+                            </Box> : null }
+                            
+                            <Box sx={{}}>
+                                <Typography variant="h6" color="primary" 
+                                    sx={{ fontWeight: "lighter", ml: 2 }}>
+                                    { cmsTitle }
+                                </Typography>
+                            </Box>
+                        </Box>
                     </Grid>
 
                     { leftCol ? <Grid item xs={12} md={rightCol ? 3 : 12}>
@@ -103,7 +114,7 @@ export default function CMS() {
 <Button
                     variant="contained"
                     color="secondary"
-                    onClick={ onBackClick }
+                    
                 >
                     Back
                 </Button>
