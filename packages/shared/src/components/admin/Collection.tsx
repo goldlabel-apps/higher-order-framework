@@ -28,8 +28,6 @@ export default function Collection() {
         type = data.type
     }
 
-    // console.warn("loading", loading)
-
     React.useEffect(() => {
         if (!bus[collection]) dispatch(newCollectionBus(collection))
     }, [bus, collection, dispatch])
@@ -41,7 +39,8 @@ export default function Collection() {
             ) : null}
             {!loading && loaded ? (
                 <React.Fragment>
-                    <pre>type {JSON.stringify(type, null, 2)}</pre>
+                    <pre>shape {JSON.stringify(shape, null, 2)}</pre>
+                    <pre>isMobile {JSON.stringify(isMobile, null, 2)}</pre>
                 </React.Fragment>
             ) : null}
         </Card>

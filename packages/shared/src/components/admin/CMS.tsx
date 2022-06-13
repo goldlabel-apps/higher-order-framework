@@ -12,8 +12,8 @@ import {
     setCms,
 } from '../../listingslab-shared'
 import {
-    // useTheme,
-    // useMediaQuery,
+    useTheme,
+    useMediaQuery,
     Dialog,
     DialogContent,
     DialogActions,
@@ -26,9 +26,12 @@ import {
 export default function CMS() {
     const dispatch = useAppDispatch()
     const core = useAppSelector(selectCore)
-    // const theme = useTheme()
-    // const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+    const theme = useTheme()
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'))
     const { cmsDialogOpen, fullScreen, uid } = core.data
+    let isFullScreen = false
+    if ( fullScreen ) isFullScreen = true
+    if ( isMobile ) isFullScreen = true
     const cms = useAppSelector(selectCms)
     const { collection, mode, posts } = cms.data
     let leftCol = true
@@ -37,13 +40,7 @@ export default function CMS() {
         rightCol = true
         leftCol = false
     }
-    if (posts) {
-        for (let i = 0; i < posts.length; i++) {
-            if (posts[i].id === '_shape') {
-                // dispatch(setCms({ key:"shape", value: posts[i].data}))
-            }
-        }
-    }
+    
     let cmsTitle = 'Manage collections'
     if (collection) {
         cmsTitle = `Managing ${collection}`
@@ -51,7 +48,6 @@ export default function CMS() {
             cmsTitle = `New ${collection}`
         }
     }
-
     const closeDialog = () =>
         dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
     const onBackClick = () =>
@@ -62,7 +58,7 @@ export default function CMS() {
             fullWidth
             maxWidth="md"
             open={cmsDialogOpen && uid}
-            fullScreen={fullScreen}
+            fullScreen={isFullScreen}
             onClose={closeDialog}
         >
             <DialogContent>
@@ -128,4 +124,12 @@ export default function CMS() {
                 >
                     Back
                 </Button>
-*/
+
+
+// if (posts) {
+    //     for (let i = 0; i < posts.length; i++) {
+    //         if (posts[i].id === '_shape') {
+    //             // dispatch(setCms({ key:"shape", value: posts[i].data}))
+    //         }
+    //     }
+    // }                */

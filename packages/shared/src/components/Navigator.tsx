@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useTheme, useMediaQuery, Box } from '@mui/material'
 import {
-    useAppDispatch,
     useAppSelector,
     MiniButton,
     MaxiButton,
@@ -19,9 +18,9 @@ export default function Navigator() {
     let mode = 'mini'
     const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+    const core = useAppSelector(selectCore)
     if (!isMobile) mode = 'maxi'
     if (mode === 'hidden') return null
-    const core = useAppSelector(selectCore)
     const { menuItems } = core.data.navigator
     //, border: "1px solid gold"
     return (

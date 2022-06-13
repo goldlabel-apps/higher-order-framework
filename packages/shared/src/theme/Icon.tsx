@@ -58,7 +58,6 @@ import ReduxIcon from '@mui/icons-material/Storage'
 import LinkIcon from '@mui/icons-material/Link'
 import RouterIcon from '@mui/icons-material/DynamicForm'
 import NewsIcon from '@mui/icons-material/Newspaper'
-import NewIcon from '@mui/icons-material/Add'
 import FeaturesIcon from '@mui/icons-material/RocketLaunch'
 import AuthIcon from '@mui/icons-material/Security'
 import QuitIcon from '@mui/icons-material/ExitToApp'
@@ -240,7 +239,7 @@ export default function Icon(props: any) {
             break
 
         case 'new':
-            iconFragment = <NewIcon color={color} />
+            iconFragment = <CreateIcon color={color} />
             break
 
         case 'link':

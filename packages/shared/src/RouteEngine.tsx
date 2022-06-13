@@ -49,7 +49,7 @@ export default function RouteEngine() {
                 )
             }
         }
-    }, [refresh, route, dispatch])
+    }, [refresh, route, ssr, dispatch])
 
     const { posts } = cms.data
     if (!posts) {
