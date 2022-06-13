@@ -24,6 +24,7 @@ import {
     Icon,
 } from './listingslab-shared'
 
+
 export default function RouteEngine() {
     const dispatch = useAppDispatch()
     const route = useAppSelector(selectRoute)
@@ -31,7 +32,6 @@ export default function RouteEngine() {
     const core = useAppSelector(selectCore)
     const refresh = useAppSelector(selectRefresh)
     const cms = useAppSelector(selectCms)
-    // const [currentPost, setCurrentPost] = React.useState( false )
 
     React.useEffect(() => {
         dispatch(setCore({ key: 'refresh', value: false }))
@@ -70,6 +70,13 @@ export default function RouteEngine() {
 
     // console.warn('signedIn', signedIn)
 
+    const onUpdateClick = () => {
+        dispatch( setCore({ key:"cmsDialogOpen", value: true}))
+        dispatch( setCms({ key:"collection", value: "posts"}))
+        dispatch( setCms({ key:"mode", value: "update"}))
+        return true
+    }
+
     const onCreateClick = () => {
         dispatch( setCore({ key:"cmsDialogOpen", value: true}))
         dispatch( setCms({ key:"collection", value: "posts"}))
@@ -82,9 +89,9 @@ export default function RouteEngine() {
         return true
     }
 
-    let title = null
-    let excerpt = null
-    let avatar = null
+    let title = `404. ${thisSlug}`
+    let excerpt = "Not found"
+    let avatar = "https://listingslab.com/svg/avatars/chix.svg"
 
     if (post){
         title = post.title
@@ -99,31 +106,19 @@ export default function RouteEngine() {
                     title={title}
                     subheader={excerpt}
                     avatar={<Avatar src={avatar}/>}
-                    action={<IconButton>
-                                <Icon icon="edit" />
-                            </IconButton>}
-                />
-            { !post ? <Alert 
-                            severity="warning"
-                            action={<React.Fragment>
-                                        { signedIn ? <Button 
-                                            onClick={onCreateClick}
-                                            color="inherit" 
-                                            size="small">
-                                            Create
-                                        </Button> : <Button 
-                                            onClick={onHomeClick}
-                                            color="inherit" 
-                                            size="small">
-                                            Home
-                                        </Button> }
-                                    </React.Fragment>
-                            }
-                        >
-                        { thisSlug } is a 404, brah
-                    </Alert> : null }
-
-            
+                    action={ signedIn ? <React.Fragment>
+                                { !post ? <IconButton onClick={onCreateClick}>
+                                    <Icon icon="create" />
+                                </IconButton> : <IconButton onClick={onUpdateClick}>
+                                    <Icon icon="edit" />
+                                </IconButton>  }    
+                            </React.Fragment> : <React.Fragment>
+                                { !post ? <IconButton onClick={onHomeClick}>
+                                    <Icon icon="home" />
+                                </IconButton> : null }
+                                
+                            </React.Fragment> }
+                />       
             </Card>
         </Box>
     )
