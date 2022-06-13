@@ -13,14 +13,14 @@ import {
     BalanceIcon,
 } from '../theme'
 import DefaultIcon from '@mui/icons-material/DisabledByDefault'
-// import HomeIcon from '@mui/icons-material/AddToHomeScreen'
+import AddToHomeScreenIcon from '@mui/icons-material/AddToHomeScreen'
 import HomeIcon from '@mui/icons-material/Home'
 import CMSIcon from '@mui/icons-material/DocumentScanner'
 import FlyIcon from '@mui/icons-material/LocalAirportRounded'
 import DatabaseIcon from '@mui/icons-material/DataObject'
 import MapIcon from '@mui/icons-material/LocationDisabled'
 import MenuIcon from '@mui/icons-material/MoreVert'
-
+import EditIcon from '@mui/icons-material/Edit'
 import TrashIcon from '@mui/icons-material/DeleteOutlined'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import ExitIcon from '@mui/icons-material/ExitToAppRounded'
@@ -378,6 +378,10 @@ export default function Icon(props: any) {
 
         case 'vimeo':
             iconFragment = <VimeoIcon color={color} />
+            break
+
+        case 'edit':
+            iconFragment = <EditIcon color={color} />
             break
 
         case 'shared':

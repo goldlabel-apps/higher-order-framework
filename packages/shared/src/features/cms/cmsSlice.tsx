@@ -9,6 +9,7 @@ const initialState: CmsShape = {
     bus: {},
     data: {
         // collection: "posts",
+        // mode: "manange",
     },
 }
 

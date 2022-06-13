@@ -28,7 +28,7 @@ import Collection from './components/admin/Collection'
 import Shape from './components/admin/Shape'
 import Data from './components/admin/Data'
 
-import { getById, sortByAttribute } from './app/utils'
+import { getById, sortByAttribute, getPostBySlug } from './app/utils'
 
 import {
     Flash,
@@ -125,4 +125,5 @@ export {
     // Utils
     getById,
     sortByAttribute,
+    getPostBySlug,
 }

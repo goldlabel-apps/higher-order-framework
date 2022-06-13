@@ -85,6 +85,19 @@ export default function AppMenu() {
                     }}
                 >
                     <MenuList sx={{ width: 250 }} dense>
+
+                    <MenuItem
+                        onClick={() => {
+                            onItemClick('home')
+                        }}>
+                        <ListItemIcon>
+                            <IconButton sx={{ mr: 1 }} color="secondary">
+                                <Icon icon="home" />
+                            </IconButton>
+                        </ListItemIcon>
+                        <ListItemText>Home</ListItemText>
+                        <Typography variant="body2">⌘H</Typography>
+                    </MenuItem>
                         
 
                         {signedIn ? (
@@ -155,17 +168,5 @@ export default function AppMenu() {
 }
 
 /*
-<MenuItem
-    onClick={() => {
-        onItemClick('home')
-    }}
->
-    <ListItemIcon>
-        <IconButton sx={{ mr: 1 }} color="secondary">
-            <Icon icon="home" />
-        </IconButton>
-    </ListItemIcon>
-    <ListItemText>Home</ListItemText>
-    <Typography variant="body2">⌘H</Typography>
-</MenuItem>
+
 */
