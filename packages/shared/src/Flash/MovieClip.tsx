@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Mumma, Pingpongball, Macromedia } from './'
-import { getNextHighestDepth } from './'
 import { Navigator, RouteEngine, AppMenu } from '../listingslab-shared'
 import { Box } from '@mui/material'
 
@@ -8,22 +7,22 @@ const getComponent = (component) => {
     switch (component) {
         case 'AppMenu':
             return <AppMenu />
-            break
+
         case 'RouteEngine':
             return <RouteEngine />
-            break
+
         case 'Macromedia':
             return <Macromedia />
-            break
+
         case 'Mumma':
             return <Mumma />
-            break
+
         case 'Pingpongball':
             return <Pingpongball />
-            break
+
         case 'Navigator':
             return <Navigator />
-            break
+
         default:
             return null
     }
@@ -39,7 +38,7 @@ export default function MovieClip(props: any) {
     if (data.width) mcWidth = data.width
     if (data.height) mcHeight = data.height
     if (data.depth) mcDepth = data.depth
-    if (!mcDepth) mcDepth = getNextHighestDepth()
+    if (!mcDepth) mcDepth = 1234
 
     const movieclipStyle = {
         // border: "1px solid green",
