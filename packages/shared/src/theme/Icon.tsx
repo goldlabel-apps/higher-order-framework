@@ -108,11 +108,9 @@ export default function Icon(props: any) {
             iconFragment = <CreateIcon color={color} />
             break
 
-            case 'firestore':
+        case 'firestore':
             iconFragment = <DatabaseIcon color={color} />
             break
-
-            
 
         case 'database':
             iconFragment = <DatabaseIcon color={color} />

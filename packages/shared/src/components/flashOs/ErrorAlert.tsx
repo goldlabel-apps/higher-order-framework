@@ -40,18 +40,18 @@ export default function ErrorAlert() {
     )
 }
 
-// const errorAlert = () => 
-//     return <Alert 
+// const errorAlert = () =>
+//     return <Alert
 //                 severity="warning"
 //                 action={<React.Fragment>
-//                             { signedIn ? <Button 
+//                             { signedIn ? <Button
 //                                 onClick={onCreateClick}
-//                                 color="inherit" 
+//                                 color="inherit"
 //                                 size="small">
 //                                 Create
-//                             </Button> : <Button 
+//                             </Button> : <Button
 //                                 onClick={onHomeClick}
-//                                 color="inherit" 
+//                                 color="inherit"
 //                                 size="small">
 //                                 Home
 //                             </Button> }

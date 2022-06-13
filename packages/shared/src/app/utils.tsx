@@ -8,7 +8,6 @@ export const getPostBySlug = (slug: string, posts: any) => {
     return false
 }
 
-
 export const getById = (id: string, list: any) => {
     /* 
         If you have a list of objects which have id 
@@ -30,6 +29,3 @@ export const sortByAttribute = (list: any, attribute: string) => {
     // console.warn("sortByAttribute", attribute)
     return false
 }
-
-
-

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { 
-    useAppSelector, 
+import {
+    useAppSelector,
     useAppDispatch,
     selectCms,
     newCollectionBus,
@@ -19,8 +19,8 @@ export default function Collection() {
     let loaded = false
     let list = []
     let shape = {}
-    let type = ""
-    if (data){
+    let type = ''
+    if (data) {
         loading = data.loading
         loaded = data.loaded
         list = data.list
@@ -28,23 +28,22 @@ export default function Collection() {
         type = data.type
     }
 
-    
     // console.warn("loading", loading)
 
     React.useEffect(() => {
-        if (!bus[collection]) dispatch(newCollectionBus( collection ))
+        if (!bus[collection]) dispatch(newCollectionBus(collection))
     }, [bus, collection, dispatch])
-    
 
     return (
         <Card sx={{ m: 1, p: 1, boxShadow: 'none' }}>
-            { loading ? <LinearProgress sx={{m:1}} color="secondary" /> : null }
-            { !loading && loaded ? <React.Fragment>
-
-
-                <pre>type { JSON.stringify( type, null, 2 ) }</pre>
-
-            </React.Fragment> : null}
+            {loading ? (
+                <LinearProgress sx={{ m: 1 }} color="secondary" />
+            ) : null}
+            {!loading && loaded ? (
+                <React.Fragment>
+                    <pre>type {JSON.stringify(type, null, 2)}</pre>
+                </React.Fragment>
+            ) : null}
         </Card>
     )
 }

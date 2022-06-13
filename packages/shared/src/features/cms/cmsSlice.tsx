@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface CmsShape {
     data: any
@@ -14,7 +14,7 @@ const initialState: CmsShape = {
 }
 
 export const cmsSlice = createSlice({
-    name: "cms",
+    name: 'cms',
     initialState,
     reducers: {
         setCms: (state, action: PayloadAction<any>) => {
@@ -27,10 +27,13 @@ export const cmsSlice = createSlice({
         },
         updateDataBus: (state, action: PayloadAction<any>) => {
             const { collectionName, key, value } = action.payload
-            state.bus[collectionName] = { ...state.bus[collectionName], [key]: value }
+            state.bus[collectionName] = {
+                ...state.bus[collectionName],
+                [key]: value,
+            }
         },
     },
-})  
+})
 
 export const { setCms, setDataBus, updateDataBus } = cmsSlice.actions
 export default cmsSlice.reducer

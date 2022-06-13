@@ -6,7 +6,7 @@ import {
     selectCms,
     Icon,
 } from '../../listingslab-shared'
-import { 
+import {
     Accordion,
     AccordionDetails,
     AccordionSummary,
@@ -14,7 +14,6 @@ import {
 } from '@mui/material'
 
 export default function Form() {
-
     const cms = useAppSelector(selectCms)
     const { collection } = cms.data
     const { bus } = cms
@@ -24,14 +23,12 @@ export default function Form() {
     let defaultExpanded = true
     defaultExpanded = false
 
-
-    
-
     return (
-        <Accordion defaultExpanded={ defaultExpanded }>
+        <Accordion defaultExpanded={defaultExpanded}>
             <AccordionSummary
                 id="formAccordion"
-                expandIcon={<Icon icon="acc" />}>
+                expandIcon={<Icon icon="acc" />}
+            >
                 <Typography variant="body2" color="secondary" sx={{}}>
                     Form
                 </Typography>
@@ -40,7 +37,6 @@ export default function Form() {
             <AccordionDetails>
                 A Form. Dynamically made from the shape
             </AccordionDetails>
-
         </Accordion>
     )
 }

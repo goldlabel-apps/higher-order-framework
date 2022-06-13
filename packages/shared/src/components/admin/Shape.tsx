@@ -6,7 +6,7 @@ import {
     selectCms,
     Icon,
 } from '../../listingslab-shared'
-import { 
+import {
     Accordion,
     AccordionDetails,
     AccordionSummary,
@@ -14,7 +14,6 @@ import {
 } from '@mui/material'
 
 export default function Shape() {
-
     const cms = useAppSelector(selectCms)
     const { collection } = cms.data
     const { bus } = cms
@@ -24,7 +23,7 @@ export default function Shape() {
     let defaultExpanded = true
     defaultExpanded = false
     return (
-        <Accordion defaultExpanded={ defaultExpanded }>
+        <Accordion defaultExpanded={defaultExpanded}>
             <AccordionSummary
                 id="socialAccordion"
                 expandIcon={<Icon icon="acc" />}
@@ -32,10 +31,9 @@ export default function Shape() {
                 <Typography variant="body2" color="secondary" sx={{}}>
                     Shape
                 </Typography>
-                
             </AccordionSummary>
             <AccordionDetails>
-                <pre>shape { JSON.stringify( shape, null, 2 ) }</pre>
+                <pre>shape {JSON.stringify(shape, null, 2)}</pre>
             </AccordionDetails>
         </Accordion>
     )

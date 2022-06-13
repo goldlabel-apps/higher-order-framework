@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { 
-    Alert, 
-    Button, 
-    Box, 
+import {
+    Alert,
+    Button,
+    Box,
     Card,
     CardHeader,
     Avatar,
@@ -23,7 +23,6 @@ import {
     navigateTo,
     Icon,
 } from './listingslab-shared'
-
 
 export default function RouteEngine() {
     const dispatch = useAppDispatch()
@@ -54,7 +53,7 @@ export default function RouteEngine() {
 
     const { posts } = cms.data
     if (!posts) {
-        dispatch( cmsRead() )
+        dispatch(cmsRead())
         return null
     }
 
@@ -62,38 +61,37 @@ export default function RouteEngine() {
     let thisSlug = `${thisUrl.replace(ssr[0].data.baseURL, '')}`
     if (thisSlug === '') thisSlug = '/'
 
-    const post = getPostBySlug( thisSlug, posts )
+    const post = getPostBySlug(thisSlug, posts)
 
     let signedIn = false
     if (core.data.uid) signedIn = true
 
-
     // console.warn('signedIn', signedIn)
 
     const onUpdateClick = () => {
-        dispatch( setCore({ key:"cmsDialogOpen", value: true}))
-        dispatch( setCms({ key:"collection", value: "posts"}))
-        dispatch( setCms({ key:"mode", value: "update"}))
+        dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
+        dispatch(setCms({ key: 'collection', value: 'posts' }))
+        dispatch(setCms({ key: 'mode', value: 'update' }))
         return true
     }
 
     const onCreateClick = () => {
-        dispatch( setCore({ key:"cmsDialogOpen", value: true}))
-        dispatch( setCms({ key:"collection", value: "posts"}))
-        dispatch( setCms({ key:"mode", value: "create"}))
+        dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
+        dispatch(setCms({ key: 'collection', value: 'posts' }))
+        dispatch(setCms({ key: 'mode', value: 'create' }))
         return true
     }
 
     const onHomeClick = () => {
-        dispatch( navigateTo({ pathname: "/" }))
+        dispatch(navigateTo({ pathname: '/' }))
         return true
     }
 
     let title = `404. ${thisSlug}`
-    let excerpt = "Not found"
-    let avatar = "https://listingslab.com/svg/avatars/chix.svg"
+    let excerpt = 'Not found'
+    let avatar = 'https://listingslab.com/svg/avatars/chix.svg'
 
-    if (post){
+    if (post) {
         title = post.title
         excerpt = post.excerpt
         avatar = post.avatar
@@ -102,23 +100,34 @@ export default function RouteEngine() {
     return (
         <Box sx={{ mt: 2 }}>
             <Card>
-                <CardHeader 
+                <CardHeader
                     title={title}
                     subheader={excerpt}
-                    avatar={<Avatar src={avatar}/>}
-                    action={ signedIn ? <React.Fragment>
-                                { !post ? <IconButton onClick={onCreateClick}>
-                                    <Icon icon="create" />
-                                </IconButton> : <IconButton onClick={onUpdateClick}>
-                                    <Icon icon="edit" />
-                                </IconButton>  }    
-                            </React.Fragment> : <React.Fragment>
-                                { !post ? <IconButton onClick={onHomeClick}>
-                                    <Icon icon="home" />
-                                </IconButton> : null }
-                                
-                            </React.Fragment> }
-                />       
+                    avatar={<Avatar src={avatar} />}
+                    action={
+                        signedIn ? (
+                            <React.Fragment>
+                                {!post ? (
+                                    <IconButton onClick={onCreateClick}>
+                                        <Icon icon="create" />
+                                    </IconButton>
+                                ) : (
+                                    <IconButton onClick={onUpdateClick}>
+                                        <Icon icon="edit" />
+                                    </IconButton>
+                                )}
+                            </React.Fragment>
+                        ) : (
+                            <React.Fragment>
+                                {!post ? (
+                                    <IconButton onClick={onHomeClick}>
+                                        <Icon icon="home" />
+                                    </IconButton>
+                                ) : null}
+                            </React.Fragment>
+                        )
+                    }
+                />
             </Card>
         </Box>
     )

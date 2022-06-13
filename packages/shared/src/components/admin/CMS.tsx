@@ -37,23 +37,25 @@ export default function CMS() {
         rightCol = true
         leftCol = false
     }
-    if (posts){
-        for(let i=0; i < posts.length; i++){
-            if ( posts[i].id === "_shape"){
+    if (posts) {
+        for (let i = 0; i < posts.length; i++) {
+            if (posts[i].id === '_shape') {
                 // dispatch(setCms({ key:"shape", value: posts[i].data}))
             }
         }
     }
-    let cmsTitle = "Manage collections"
+    let cmsTitle = 'Manage collections'
     if (collection) {
         cmsTitle = `Managing ${collection}`
-        if (mode === "create"){
+        if (mode === 'create') {
             cmsTitle = `New ${collection}`
         }
     }
 
-    const closeDialog = () => dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
-    const onBackClick = () => dispatch(setCms({ key: 'collection', value: null }))
+    const closeDialog = () =>
+        dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
+    const onBackClick = () =>
+        dispatch(setCms({ key: 'collection', value: null }))
 
     return (
         <Dialog
@@ -61,56 +63,59 @@ export default function CMS() {
             maxWidth="md"
             open={cmsDialogOpen && uid}
             fullScreen={fullScreen}
-            onClose={ closeDialog }>
-
+            onClose={closeDialog}
+        >
             <DialogContent>
-                
                 <Grid container>
                     <Grid item sx={{ flexGrow: 1 }} />
                     <Grid item>
                         <Box sx={{ mt: 1, mr: 1 }}>
-                            <FullScreenToggle /> 
+                            <FullScreenToggle />
                             <IconButton onClick={closeDialog}>
                                 <Icon icon="close" />
                             </IconButton>
                         </Box>
                     </Grid>
                 </Grid>
-                
-                <Grid container>
 
-                    <Grid item xs={ 12 }>
-                        <Box sx={{ display: "flex" }}>
-                            { collection ? <Box sx={{  }}>
-                                <IconButton onClick={ onBackClick }>
-                                    <Icon icon="arrowl" />
-                                </IconButton>
-                            </Box> : null }
-                            
+                <Grid container>
+                    <Grid item xs={12}>
+                        <Box sx={{ display: 'flex' }}>
+                            {collection ? (
+                                <Box sx={{}}>
+                                    <IconButton onClick={onBackClick}>
+                                        <Icon icon="arrowl" />
+                                    </IconButton>
+                                </Box>
+                            ) : null}
+
                             <Box sx={{}}>
-                                <Typography variant="h6" color="primary" 
-                                    sx={{ fontWeight: "lighter", ml: 2 }}>
-                                    { cmsTitle }
+                                <Typography
+                                    variant="h6"
+                                    color="primary"
+                                    sx={{ fontWeight: 'lighter', ml: 2 }}
+                                >
+                                    {cmsTitle}
                                 </Typography>
                             </Box>
                         </Box>
                     </Grid>
 
-                    { leftCol ? <Grid item xs={12} md={rightCol ? 3 : 12}>
-                        <Nav />
-                    </Grid> : null }
-                    
-                    { rightCol ? (
-                        <Grid item xs={ 12 } md={ leftCol ? 9 : 12 }>
+                    {leftCol ? (
+                        <Grid item xs={12} md={rightCol ? 3 : 12}>
+                            <Nav />
+                        </Grid>
+                    ) : null}
+
+                    {rightCol ? (
+                        <Grid item xs={12} md={leftCol ? 9 : 12}>
                             <Collection />
                         </Grid>
                     ) : null}
                 </Grid>
             </DialogContent>
-            
-            <DialogActions>
-                
-            </DialogActions>
+
+            <DialogActions></DialogActions>
         </Dialog>
     )
 }

@@ -6,12 +6,9 @@ import {
     setCore,
     Icon,
 } from '../listingslab-shared'
-import { 
-    IconButton,
-} from '@mui/material'
+import { IconButton } from '@mui/material'
 
 export default function FullScreenToggle() {
-
     const dispatch = useAppDispatch()
     const core = useAppSelector(selectCore)
     const { fullScreen } = core.data

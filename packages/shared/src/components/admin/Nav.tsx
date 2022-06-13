@@ -6,7 +6,7 @@ import {
     selectCms,
     Icon,
 } from '../../listingslab-shared'
-import { 
+import {
     useTheme,
     useMediaQuery,
     Accordion,
@@ -27,46 +27,51 @@ export default function Nav() {
     const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down('md'))
     let defaultExpanded = false
-    if( !isMobile ) defaultExpanded = true
+    if (!isMobile) defaultExpanded = true
 
     const onCollectionClick = (collection: string) => {
-        dispatch(setCms({ key: "collection", value: collection }))
+        dispatch(setCms({ key: 'collection', value: collection }))
         return true
     }
-    
-    return (<Box sx={{ m:2 }}>
-                
-                        <MenuItem onClick={() => {
-                            onCollectionClick("posts")
-                        }}>
-                            <ListItemIcon>                            
-                                <Icon icon="post" />
-                            </ListItemIcon>
-                            <ListItemText>posts</ListItemText>
-                            <Typography variant="body2"></Typography>
-                        </MenuItem>
 
-                        <MenuItem onClick={() => {
-                            onCollectionClick("links")
-                        }}>
-                            <ListItemIcon>                            
-                                <Icon icon="link" />
-                            </ListItemIcon>
-                            <ListItemText>links</ListItemText>
-                            <Typography variant="body2"></Typography>
-                        </MenuItem>
+    return (
+        <Box sx={{ m: 2 }}>
+            <MenuItem
+                onClick={() => {
+                    onCollectionClick('posts')
+                }}
+            >
+                <ListItemIcon>
+                    <Icon icon="post" />
+                </ListItemIcon>
+                <ListItemText>posts</ListItemText>
+                <Typography variant="body2"></Typography>
+            </MenuItem>
 
-                        <MenuItem onClick={() => {
-                            onCollectionClick("siteinfo")
-                        }}>
-                            <ListItemIcon>                            
-                                <Icon icon="admin" />
-                            </ListItemIcon>
-                            <ListItemText>sites</ListItemText>
-                            <Typography variant="body2"></Typography>
-                        </MenuItem>
+            <MenuItem
+                onClick={() => {
+                    onCollectionClick('links')
+                }}
+            >
+                <ListItemIcon>
+                    <Icon icon="link" />
+                </ListItemIcon>
+                <ListItemText>links</ListItemText>
+                <Typography variant="body2"></Typography>
+            </MenuItem>
 
-            </Box>
+            <MenuItem
+                onClick={() => {
+                    onCollectionClick('siteinfo')
+                }}
+            >
+                <ListItemIcon>
+                    <Icon icon="admin" />
+                </ListItemIcon>
+                <ListItemText>sites</ListItemText>
+                <Typography variant="body2"></Typography>
+            </MenuItem>
+        </Box>
     )
 }
 

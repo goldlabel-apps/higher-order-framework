@@ -1,24 +1,15 @@
 import * as React from 'react'
+import { useAppSelector, selectCms, Icon } from '../../listingslab-shared'
 import {
-    useAppSelector,
-    selectCms,
-    Icon,
-} from '../../listingslab-shared'
-import { 
     Box,
     Accordion,
     AccordionDetails,
     AccordionSummary,
     Typography,
 } from '@mui/material'
-import { 
-    DataGrid, 
-    GridColDef, 
-    GridValueGetterParams, 
-} from '@mui/x-data-grid'
+import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid'
 
 export default function Data() {
-
     const cms = useAppSelector(selectCms)
     const { collection } = cms.data
     const { bus } = cms
@@ -27,41 +18,41 @@ export default function Data() {
     const { shape, list } = data
     let defaultExpanded = true
     defaultExpanded = false
-    
+
     let fields: GridColDef[] = []
     for (const property in shape) {
-      console.warn(`${property}: ${shape[property]}`)
-      fields.push({
-        field: property,
-        headerName: property,
-      })
+        console.warn(`${property}: ${shape[property]}`)
+        fields.push({
+            field: property,
+            headerName: property,
+        })
     }
 
     // let dataList = []
 
     return (
-        <Accordion defaultExpanded={ defaultExpanded }>
+        <Accordion defaultExpanded={defaultExpanded}>
             <AccordionSummary
                 id="formAccordion"
-                expandIcon={<Icon icon="acc" />}>
+                expandIcon={<Icon icon="acc" />}
+            >
                 <Typography variant="body2" color="secondary" sx={{}}>
                     Data
                 </Typography>
             </AccordionSummary>
 
             <AccordionDetails>
-              <Box sx={{ height: 380, width: '100%' }}>
-                <DataGrid
-                    // sx={{ border: "none" }}
-                    columns={fields}
-                    rows={ list }
-                    pageSize={ 5 }
-                    rowsPerPageOptions={[5]}
-                    disableSelectionOnClick
-                />
-              </Box>
+                <Box sx={{ height: 380, width: '100%' }}>
+                    <DataGrid
+                        // sx={{ border: "none" }}
+                        columns={fields}
+                        rows={list}
+                        pageSize={5}
+                        rowsPerPageOptions={[5]}
+                        disableSelectionOnClick
+                    />
+                </Box>
             </AccordionDetails>
-
         </Accordion>
     )
 }
