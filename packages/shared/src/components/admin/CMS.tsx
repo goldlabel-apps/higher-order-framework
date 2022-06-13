@@ -11,6 +11,8 @@ import {
     FullScreenToggle,
 } from '../../listingslab-shared'
 import {
+    useTheme,
+    useMediaQuery,
     Dialog,
     Grid,
     Box,
@@ -20,13 +22,15 @@ import {
 export default function CMS() {
     const dispatch = useAppDispatch()
     const core = useAppSelector(selectCore)
+    const theme = useTheme()
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
     const { cmsDialogOpen, fullScreen, uid } = core.data
     const cms = useAppSelector(selectCms)
     const { collection } = cms.data
     let rightCol = false
     if (collection) rightCol = true
     const closeDialog = () => dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
-    
+
     return (
         <Dialog
             fullWidth
@@ -46,12 +50,17 @@ export default function CMS() {
                     </Grid>
                 </Grid>
                 <Grid container>
+                    { !isMobile ? null : null }
+                   
                     <Grid item xs={12} md={rightCol ? 3 : 12}>
                         <Nav />
                     </Grid>
+
                     {rightCol ? (
                         <Grid item xs={12} md={9}>
-                            <Collection />
+                            <Box sx={{ border: "1px solid red" }}>
+                                <Collection />
+                            </Box>
                         </Grid>
                     ) : null}
                 </Grid>

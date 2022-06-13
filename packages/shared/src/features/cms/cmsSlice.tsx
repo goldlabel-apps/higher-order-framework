@@ -1,15 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-export interface Cms {
+export interface CmsShape {
     data: any
     bus: any
 }
 
-const initialState: Cms = {
+const initialState: CmsShape = {
+    bus: {},
     data: {
         collection: "posts",
     },
-    bus: {},
 }
 
 export const cmsSlice = createSlice({

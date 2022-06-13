@@ -13,7 +13,7 @@ import {
     Typography,
 } from '@mui/material'
 
-export default function Shape() {
+export default function Form() {
 
     const cms = useAppSelector(selectCms)
     const { collection } = cms.data
@@ -25,17 +25,17 @@ export default function Shape() {
     return (
         <Accordion defaultExpanded>
             <AccordionSummary
-                id="socialAccordion"
-                expandIcon={<Icon icon="acc" />}
-            >
+                id="formAccordion"
+                expandIcon={<Icon icon="acc" />}>
                 <Typography variant="body2" color="secondary" sx={{}}>
-                    {collection } shape
+                    {collection } form
                 </Typography>
-                
             </AccordionSummary>
+
             <AccordionDetails>
-                <pre>shape { JSON.stringify( shape, null, 2 ) }</pre>
+                A Form. Dynamically made from the shape
             </AccordionDetails>
+
         </Accordion>
     )
 }

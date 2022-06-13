@@ -5,11 +5,14 @@ import {
     selectCms,
     newCollectionBus,
     Shape,
+    Form,
 } from '../../listingslab-shared'
-import { Card, LinearProgress } from '@mui/material'
+import { useTheme, useMediaQuery, Card, LinearProgress } from '@mui/material'
 
 export default function Collection() {
     const dispatch = useAppDispatch()
+    const theme = useTheme()
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
     const cms = useAppSelector(selectCms)
     const { collection } = cms.data
     const { bus } = cms
@@ -37,7 +40,7 @@ export default function Collection() {
             { loading ? <LinearProgress sx={{m:1}} color="secondary" /> : null }
             { !loading && loaded ? <React.Fragment>
                 <Shape />
-
+                <Form />
             </React.Fragment> : null}
         </Card>
     )

@@ -1,30 +1,46 @@
-import * as React from 'react'
+import * as React from "react"
 import {
     useAppSelector,
     useAppDispatch,
     selectCms,
     setCms,
     Icon,
-} from '../../listingslab-shared'
-import { List, ListItem, ListItemText, Card, ListItemIcon } from '@mui/material'
+} from "../../listingslab-shared"
+import { 
+    List, 
+    ListItem, 
+    ListItemText, 
+    Card, 
+    ListItemIcon,
+    Typography,
+} from "@mui/material"
 
 export default function Nav() {
     const dispatch = useAppDispatch()
+    const cms = useAppSelector(selectCms)
+    const { collection } = cms.data
+    
 
     const onCollectionClick = (collection: string) => {
-        dispatch(setCms({ key: 'collection', value: collection }))
+        dispatch(setCms({ key: "collection", value: collection }))
         return true
     }
 
     return (
         <Card sx={{ m: 2, p: 1 }}>
+
+            <Typography variant="body2" color="secondary" sx={{ mb: 2 }}>
+                Firestore collections
+            </Typography>
+
+
             <List dense>
                 <ListItem
+                    disabled={ collection === "posts" }
                     button
                     onClick={() => {
-                        onCollectionClick('posts')
-                    }}
-                >
+                        onCollectionClick("posts")
+                    }}>
                     <ListItemIcon color="secondary">
                         <Icon icon="doc" />
                     </ListItemIcon>
@@ -33,10 +49,10 @@ export default function Nav() {
                 
                 <ListItem
                     button
+                    disabled={ collection === "cms" }
                     onClick={() => {
-                        onCollectionClick('cms')
-                    }}
-                >
+                        onCollectionClick("cms")
+                    }}>
                     <ListItemIcon color="secondary">
                         <Icon icon="firestore" />
                     </ListItemIcon>
@@ -45,10 +61,10 @@ export default function Nav() {
                 
                 <ListItem
                     button
+                    disabled={ collection === "links" }
                     onClick={() => {
-                        onCollectionClick('links')
-                    }}
-                >
+                        onCollectionClick("links")
+                    }}>
                     <ListItemIcon color="secondary">
                         <Icon icon="link" />
                     </ListItemIcon>
@@ -57,10 +73,10 @@ export default function Nav() {
                 
                 <ListItem
                     button
+                    disabled={ collection === "siteinfo" }
                     onClick={() => {
-                        onCollectionClick('siteinfo')
-                    }}
-                >
+                        onCollectionClick("siteinfo")
+                    }}>
                     <ListItemIcon color="secondary">
                         <Icon icon="admin" />
                     </ListItemIcon>
@@ -70,11 +86,3 @@ export default function Nav() {
         </Card>
     )
 }
-
-/*
-
-let navTitle = "Firestore collections"
-<Typography variant="body2" sx={{ mb: 2 }}>
-                    { navTitle }
-                </Typography>
-*/

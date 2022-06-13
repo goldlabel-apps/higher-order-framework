@@ -44,9 +44,9 @@ export default function RouteEngine() {
     // let content = getContentBySlug(thisSlug, posts)
     // const { title, image, body } = content
 
-    const title = "Time Machine"
+    const title = ""
     const image = "https://listingslab.com/svg/featured/timemachine.svg"
-    const body = "lorem ipsum"
+    const body = ""
 
     return (
         <Box sx={{ mt: 2 }}>
