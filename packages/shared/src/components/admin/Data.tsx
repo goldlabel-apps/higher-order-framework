@@ -28,7 +28,6 @@ export default function Data() {
     let defaultExpanded = true
     defaultExpanded = false
     
-
     let fields: GridColDef[] = []
     for (const property in shape) {
       console.warn(`${property}: ${shape[property]}`)

@@ -8,7 +8,7 @@ export interface CmsShape {
 const initialState: CmsShape = {
     bus: {},
     data: {
-        collection: "posts",
+        // collection: "posts",
     },
 }
 
