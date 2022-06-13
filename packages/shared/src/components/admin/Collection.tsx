@@ -40,8 +40,8 @@ export default function Collection() {
         <Card sx={{ m: 1, p: 1, boxShadow: 'none' }}>
             { loading ? <LinearProgress sx={{m:1}} color="secondary" /> : null }
             { !loading && loaded ? <React.Fragment>
-                <Data />
                 <Shape />
+                <Data />
                 <Form />
             </React.Fragment> : null}
         </Card>

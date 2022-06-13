@@ -1,12 +1,11 @@
 import * as React from 'react'
 import {
     useAppSelector,
-    useAppDispatch,
-    selectCore,
     selectCms,
     Icon,
 } from '../../listingslab-shared'
 import { 
+    Box,
     Accordion,
     AccordionDetails,
     AccordionSummary,
@@ -18,9 +17,58 @@ import {
     GridValueGetterParams, 
 } from '@mui/x-data-grid'
 
-const columns: GridColDef[] = [
-    { field: 'id', headerName: 'ID', width: 90 },
-    {
+export default function Data() {
+
+    const cms = useAppSelector(selectCms)
+    const { collection } = cms.data
+    const { bus } = cms
+    const data = bus[collection]
+    if (!data) return null
+    const { shape, list } = data
+    let defaultExpanded = true
+    defaultExpanded = false
+    
+
+    let fields: GridColDef[] = []
+    for (const property in shape) {
+      console.warn(`${property}: ${shape[property]}`)
+      fields.push({
+        field: property,
+        headerName: property,
+      })
+    }
+
+    // let dataList = []
+
+    return (
+        <Accordion defaultExpanded={ defaultExpanded }>
+            <AccordionSummary
+                id="formAccordion"
+                expandIcon={<Icon icon="acc" />}>
+                <Typography variant="body2" color="secondary" sx={{}}>
+                    Data
+                </Typography>
+            </AccordionSummary>
+
+            <AccordionDetails>
+              <Box sx={{ height: 380, width: '100%' }}>
+                <DataGrid
+                    // sx={{ border: "none" }}
+                    columns={fields}
+                    rows={ list }
+                    pageSize={ 5 }
+                    rowsPerPageOptions={[5]}
+                    disableSelectionOnClick
+                />
+              </Box>
+            </AccordionDetails>
+
+        </Accordion>
+    )
+}
+
+/*
+{
       field: 'firstName',
       headerName: 'First name',
       width: 150,
@@ -48,57 +96,4 @@ const columns: GridColDef[] = [
       valueGetter: (params: GridValueGetterParams) =>
         `${params.row.firstName || ''} ${params.row.lastName || ''}`,
     },
-  ]
-
-  const rows = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-    { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-  ]
-
-export default function Data() {
-
-    const cms = useAppSelector(selectCms)
-    const { collection } = cms.data
-    const { bus } = cms
-    const data = bus[collection]
-    if (!data) return null
-    const { shape } = data
-    let defaultExpanded = true
-    defaultExpanded = true
-
-
-    
-
-    return (
-        <Accordion defaultExpanded={ defaultExpanded }>
-            <AccordionSummary
-                id="formAccordion"
-                expandIcon={<Icon icon="acc" />}>
-                <Typography variant="body2" color="secondary" sx={{}}>
-                    Data
-                </Typography>
-            </AccordionSummary>
-
-            <AccordionDetails>
-            <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-        disableSelectionOnClick
-      />
-    </div>
-            </AccordionDetails>
-
-        </Accordion>
-    )
-}
+*/
