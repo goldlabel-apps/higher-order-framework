@@ -13,7 +13,7 @@ import {
     Typography,
 } from '@mui/material'
 
-export default function Form() {
+export default function Data() {
 
     const cms = useAppSelector(selectCms)
     const { collection } = cms.data
@@ -22,7 +22,7 @@ export default function Form() {
     if (!data) return null
     const { shape } = data
     let defaultExpanded = true
-    defaultExpanded = false
+    defaultExpanded = true
 
 
     
@@ -33,12 +33,12 @@ export default function Form() {
                 id="formAccordion"
                 expandIcon={<Icon icon="acc" />}>
                 <Typography variant="body2" color="secondary" sx={{}}>
-                    Form
+                    Data
                 </Typography>
             </AccordionSummary>
 
             <AccordionDetails>
-                A Form. Dynamically made from the shape
+                MUI datagrid component
             </AccordionDetails>
 
         </Accordion>

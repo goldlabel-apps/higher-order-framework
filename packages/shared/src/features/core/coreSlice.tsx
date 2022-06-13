@@ -16,8 +16,8 @@ const initialState: CoreShape = {
     data: {
         ssr,
         navigator,
-        fullScreen: true,
-        cmsDialogOpen: true,
+        fullScreen: false,
+        cmsDialogOpen: false,
         uid: null,
     },
 }

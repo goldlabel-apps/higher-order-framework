@@ -65,7 +65,7 @@ export default function SigninDialog() {
     }
     const dispatch = useAppDispatch()
     const theme = useTheme()
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'))
     const [passwordHelper, setPasswordHelper] = React.useState(null)
     const [passwordValid, setPasswordValid] = React.useState(true)
     const [emailHelper, setEmailHelper] = React.useState(null)

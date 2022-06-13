@@ -26,6 +26,7 @@ import Form from './components/admin/Form'
 import Nav from './components/admin/Nav'
 import Collection from './components/admin/Collection'
 import Shape from './components/admin/Shape'
+import Data from './components/admin/Data'
 
 import { getById, sortByAttribute } from './app/utils'
 
@@ -104,6 +105,7 @@ export {
     Nav,
     Collection,
     Shape,
+    Data,
     // Cms
     cmsRead,
     newCollectionBus,

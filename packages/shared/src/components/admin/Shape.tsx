@@ -21,15 +21,16 @@ export default function Shape() {
     const data = bus[collection]
     if (!data) return null
     const { shape } = data
-    
+    let defaultExpanded = true
+    defaultExpanded = false
     return (
-        <Accordion defaultExpanded>
+        <Accordion defaultExpanded={ defaultExpanded }>
             <AccordionSummary
                 id="socialAccordion"
                 expandIcon={<Icon icon="acc" />}
             >
                 <Typography variant="body2" color="secondary" sx={{}}>
-                    {collection } shape
+                    Shape
                 </Typography>
                 
             </AccordionSummary>

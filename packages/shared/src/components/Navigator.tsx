@@ -18,7 +18,7 @@ const NavButton = (item) => {
 export default function Navigator() {
     let mode = 'mini'
     const theme = useTheme()
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'))
     if (!isMobile) mode = 'maxi'
     if (mode === 'hidden') return null
     const core = useAppSelector(selectCore)
