@@ -1,29 +1,47 @@
 import * as React from 'react'
-import { Typography, CardMedia } from '@mui/material'
+import {
+    useAppSelector,
+    useAppDispatch,
+    selectCore,
+    setCore,
+    Icon,
+} from '../listingslab-shared'
+import { IconButton } from '@mui/material'
 
 export default function FullScreenToggle() {
-    const title = 'Listingslab Software'
-    const imageSrc = 'https://listingslab.com/svg/featured/work.svg'
+    const dispatch = useAppDispatch()
+    const core = useAppSelector(selectCore)
+    const { fullScreen } = core.data
 
     return (
         <React.Fragment>
-            <Typography
-                gutterBottom
-                variant="h6"
-                sx={{ fontWeight: 'lighter', textAlign: 'center' }}
-            >
-                {title}
-            </Typography>
+            {fullScreen ? (
+                <IconButton
+                    onClick={() => {
+                        dispatch(
+                            setCore({
+                                key: 'fullScreen',
+                                value: false,
+                            })
+                        )
+                    }}
+                >
+                    <Icon icon="exitfullscreen" />
+                </IconButton>
+            ) : (
+                <IconButton
+                    onClick={() => {
+                        dispatch(
+                            setCore({
+                                key: 'fullScreen',
+                                value: true,
+                            })
+                        )
+                    }}
+                >
+                    <Icon icon="fullscreen" />
+                </IconButton>
+            )}
         </React.Fragment>
     )
 }
-
-/*
-<CardMedia
-                sx={{ mt: 4 }}
-                component="img"
-                height="175"
-                image={imageSrc}
-                alt={title}
-            />
-*/

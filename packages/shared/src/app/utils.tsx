@@ -1,3 +1,13 @@
+export const getPostBySlug = (slug: string, posts: any) => {
+    for (let i = 0; i < posts.length; i++) {
+        // console.warn(slug, posts[i].data.slug)
+        if (posts[i].data.slug === slug) {
+            return posts[i].data
+        }
+    }
+    return false
+}
+
 export const getById = (id: string, list: any) => {
     /* 
         If you have a list of objects which have id 
@@ -19,4 +29,3 @@ export const sortByAttribute = (list: any, attribute: string) => {
     // console.warn("sortByAttribute", attribute)
     return false
 }
-

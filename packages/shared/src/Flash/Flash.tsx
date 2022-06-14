@@ -9,27 +9,33 @@ import {
 import { onWindowResize, initFlash, selectFlash } from './'
 
 export default function Flash(props) {
+    window.addEventListener('resize', debounce(onWindowResize, 2000))
+
     const { children } = props
     const dispatch = useAppDispatch()
     const flash = useAppSelector(selectFlash)
 
-    window.addEventListener('resize', debounce(onWindowResize, 333))
-
     React.useEffect(() => {
-        const { started, display, refresh } = flash.data
+        const { started, display, refresh, windowResized } = flash.data
         // console.warn('refresh', refresh)
         if (!display) {
             dispatch(setFlash({ key: 'display', value: getDisplay() }))
         }
+
         if (!started) {
             dispatch(setFlash({ key: 'started', value: true }))
             setTimeout(() => {
                 initFlash()
             }, 333)
         }
-
         if (refresh) {
             dispatch(setFlash({ key: 'refresh', value: false }))
+            setTimeout(() => {
+                initFlash()
+            }, 333)
+        }
+        if (windowResized) {
+            dispatch(setFlash({ key: 'windowResized', value: false }))
             setTimeout(() => {
                 initFlash()
             }, 333)
@@ -41,7 +47,7 @@ export default function Flash(props) {
     const { displayW, displayH } = display
     const stageStyle = {
         // border: "1px solid rgba(0,0,0,0.5)",
-        // background: "rgba(0,0,0,0.023)",
+        background: 'rgba(0,0,0,0.015)',
         width: displayW - 4,
         height: displayH - 4,
         overflow: 'hidden',
