@@ -16,6 +16,7 @@ import {
     selectSSR,
     selectRefresh,
     selectCms,
+    selectFlash,
     cmsRead,
     selectCore,
     getPostBySlug,
@@ -28,12 +29,18 @@ export default function RouteEngine() {
     const route = useAppSelector(selectRoute)
     const ssr = useAppSelector(selectSSR)
     const core = useAppSelector(selectCore)
+    const flash = useAppSelector(selectFlash)
     const refresh = useAppSelector(selectRefresh)
     const cms = useAppSelector(selectCms)
 
+    // console.warn ("flash", flash)
+
     React.useEffect(() => {
         dispatch(setCore({ key: 'refresh', value: false }))
-        // console.warn('signedIn', signedIn)
+
+        const { windowResized } = flash.data
+        // console.warn('resize flash', windowResized)
+
         const windowLocation = window.location
         const url = windowLocation.href
         let thatSlug = `${url.replace(ssr[0].data.baseURL, '')}`
@@ -49,7 +56,7 @@ export default function RouteEngine() {
                 )
             }
         }
-    }, [refresh, route, ssr, dispatch])
+    }, [flash, refresh, route, ssr, dispatch])
 
     const { posts } = cms.data
     if (!posts) {

@@ -40,12 +40,14 @@ export default function CMS() {
         rightCol = true
         leftCol = false
     }
-
-    let cmsTitle = 'Manage collections'
+    let cmsTitle = 'Collections'
     if (collection) {
-        cmsTitle = `Managing ${collection}`
+        cmsTitle = `Reading ${collection}`
         if (mode === 'create') {
-            cmsTitle = `New ${collection}`
+            cmsTitle = `Create`
+        }
+        if (mode === 'update') {
+            cmsTitle = `Update`
         }
     }
     const closeDialog = () =>
