@@ -5,7 +5,7 @@ import { db } from '../../../Shared'
 
 export const cmsRead = (): AppThunk => async (dispatch: any) => {
     try {
-        const q = query(collection(db, 'cms'))
+        const q = query(collection(db, 'posts'))
         let postsArr = []
         const snap = await getDocs(q)
         snap.forEach((document) => {

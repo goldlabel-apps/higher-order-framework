@@ -65,7 +65,7 @@ export default function SigninDialog() {
     }
     const dispatch = useAppDispatch()
     const theme = useTheme()
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'))
     const [passwordHelper, setPasswordHelper] = React.useState(null)
     const [passwordValid, setPasswordValid] = React.useState(true)
     const [emailHelper, setEmailHelper] = React.useState(null)
@@ -163,12 +163,7 @@ export default function SigninDialog() {
             </DialogContent>
 
             <DialogActions>
-                <Button
-                    sx={{ mb: 1, mr: 2 }}
-                    variant="contained"
-                    onClick={handleSignin}
-                    color="secondary"
-                >
+                <Button sx={{ mb: 1, mr: 2 }} onClick={handleSignin}>
                     <span style={{ marginRight: 4, marginLeft: 4 }}>
                         Sign in
                     </span>
