@@ -5,7 +5,13 @@ import {
     selectCms,
     newCollectionBus,
 } from '../../listingslab-shared'
-import { useTheme, useMediaQuery, Box, Card, LinearProgress } from '@mui/material'
+import {
+    useTheme,
+    useMediaQuery,
+    Box,
+    Card,
+    LinearProgress,
+} from '@mui/material'
 
 export default function Collection() {
     const dispatch = useAppDispatch()
@@ -39,14 +45,9 @@ export default function Collection() {
             ) : null}
             {!loading && loaded ? (
                 <React.Fragment>
+                    {mode === 'create' ? <Box>Crud CREATE</Box> : null}
 
-                    { mode === "create" ? <Box>
-                                Crud CREATE
-                            </Box> : null }
-
-                    { mode === "update" ? <Box>
-                        Crud UPDATE
-                    </Box> : null }
+                    {mode === 'update' ? <Box>Crud UPDATE</Box> : null}
 
                     <pre>mode {JSON.stringify(mode, null, 2)}</pre>
                 </React.Fragment>

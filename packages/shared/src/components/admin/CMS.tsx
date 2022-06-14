@@ -30,8 +30,8 @@ export default function CMS() {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'))
     const { cmsDialogOpen, fullScreen, uid } = core.data
     let isFullScreen = false
-    if ( fullScreen ) isFullScreen = true
-    if ( isMobile ) isFullScreen = true
+    if (fullScreen) isFullScreen = true
+    if (isMobile) isFullScreen = true
     const cms = useAppSelector(selectCms)
     const { collection, mode, posts } = cms.data
     let leftCol = true
@@ -40,7 +40,7 @@ export default function CMS() {
         rightCol = true
         leftCol = false
     }
-    
+
     let cmsTitle = 'Manage collections'
     if (collection) {
         cmsTitle = `Managing ${collection}`

@@ -33,6 +33,7 @@ export default function RouteEngine() {
 
     React.useEffect(() => {
         dispatch(setCore({ key: 'refresh', value: false }))
+        // console.warn('signedIn', signedIn)
         const windowLocation = window.location
         const url = windowLocation.href
         let thatSlug = `${url.replace(ssr[0].data.baseURL, '')}`
@@ -64,8 +65,6 @@ export default function RouteEngine() {
 
     let signedIn = false
     if (core.data.uid) signedIn = true
-
-    // console.warn('signedIn', signedIn)
 
     const onUpdateClick = () => {
         dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
@@ -120,7 +119,7 @@ export default function RouteEngine() {
                             </React.Fragment>
                         ) : (
                             <React.Fragment>
-                                { thisSlug !== "/" ? (
+                                {thisSlug !== '/' ? (
                                     <IconButton onClick={onHomeClick}>
                                         <Icon icon="home" />
                                     </IconButton>
@@ -133,8 +132,8 @@ export default function RouteEngine() {
                 <CardMedia
                     component="img"
                     height="194"
-                    image={image} 
-                    alt={title} 
+                    image={image}
+                    alt={title}
                 />
             </Card>
         </Box>

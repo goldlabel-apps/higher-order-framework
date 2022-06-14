@@ -1,6 +1,6 @@
 { 
   "name": "@listingslab/firebase-ts",
-  "version": "23.0.2",
+  "version": "24.0.0",
   "scripts": {
     "test": "clear && echo \"Status: No wuckin furries\" && exit 0",
     "start": "clear && cd ./functions && npm run serve",
