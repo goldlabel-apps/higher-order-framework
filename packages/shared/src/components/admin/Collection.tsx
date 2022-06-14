@@ -46,9 +46,7 @@ export default function Collection() {
             {!loading && loaded ? (
                 <React.Fragment>
                     {mode === 'create' ? <Box>Crud CREATE</Box> : null}
-
                     {mode === 'update' ? <Box>Crud UPDATE</Box> : null}
-
                     <pre>mode {JSON.stringify(mode, null, 2)}</pre>
                 </React.Fragment>
             ) : null}

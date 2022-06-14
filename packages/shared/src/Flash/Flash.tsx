@@ -6,10 +6,10 @@ import {
     setFlash,
     getDisplay,
 } from '../listingslab-shared'
-import { onWindowResize, initFlash, selectFlash } from './'
+import { onWindowResize, initFlash, selectFlash, resize } from './'
 
 export default function Flash(props) {
-    window.addEventListener('resize', debounce(onWindowResize, 2000))
+    window.addEventListener('resize', debounce(onWindowResize, 333))
 
     const { children } = props
     const dispatch = useAppDispatch()
@@ -36,8 +36,9 @@ export default function Flash(props) {
         }
         if (windowResized) {
             dispatch(setFlash({ key: 'windowResized', value: false }))
+            dispatch(setFlash({ key: 'display', value: getDisplay() }))
             setTimeout(() => {
-                initFlash()
+                resize()
             }, 333)
         }
     }, [flash, dispatch])
@@ -47,7 +48,7 @@ export default function Flash(props) {
     const { displayW, displayH } = display
     const stageStyle = {
         // border: "1px solid rgba(0,0,0,0.5)",
-        background: 'rgba(0,0,0,0.015)',
+        // background: 'rgba(0,0,0,0.015)',
         width: displayW - 4,
         height: displayH - 4,
         overflow: 'hidden',
