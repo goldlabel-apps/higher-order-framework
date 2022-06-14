@@ -3,7 +3,7 @@ import { store, setFlash } from '../../listingslab-shared'
 
 export const onWindowResize = () => {
     try {
-        // console.warn('onWindowResize', Date.now())
+        console.warn('onWindowResize', Date.now())
         store.dispatch(setFlash({ key: 'windowResized', value: true }))
     } catch (error) {
         console.warn('onWindowResize error', error)
