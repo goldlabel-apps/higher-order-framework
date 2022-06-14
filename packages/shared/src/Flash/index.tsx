@@ -22,6 +22,7 @@ import {
     remove,
     getDisplay,
     getNextHighestDepth,
+    resize,
 } from './ActionScript'
 
 export {
@@ -47,4 +48,5 @@ export {
     remove,
     getNextHighestDepth,
     movieClips,
+    resize,
 }

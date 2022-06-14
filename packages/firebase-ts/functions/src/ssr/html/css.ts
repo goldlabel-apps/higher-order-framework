@@ -3,7 +3,7 @@ export const css = () => {
   return `<style>
         html { height: 100%; }
         body {
-            background: rgba(0,0,0,0.015);
+            background: rgba(255,255,255,1);
             border: 0; margin: 0; padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", sans-serif;
         }
