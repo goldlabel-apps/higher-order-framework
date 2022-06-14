@@ -1,10 +1,9 @@
 import * as React from 'react'
 import {
-    Alert,
-    Button,
     Box,
     Card,
     CardHeader,
+    CardMedia,
     Avatar,
     IconButton,
 } from '@mui/material'
@@ -89,22 +88,24 @@ export default function RouteEngine() {
 
     let title = `404. ${thisSlug}`
     let excerpt = 'Not found'
-    let avatar = 'https://listingslab.com/svg/avatars/chix.svg'
+    // let avatar = 'https://listingslab.com/svg/avatars/chix.svg'
+    let image = 'https://listingslab.com/svg/featured/macromedia.svg'
 
     if (post) {
         title = post.title
         excerpt = post.excerpt
-        avatar = post.avatar
+        // avatar = post.avatar
+        image = post.image
     }
 
     return (
-        <Box sx={{ mt: 2 }}>
+        <Box sx={{}}>
             <Card>
                 <CardHeader
                     title={title}
                     subheader={excerpt}
-                    avatar={<Avatar src={avatar} />}
-                    action={
+                    // avatar={<Avatar src={avatar} />}
+                    avatar={
                         signedIn ? (
                             <React.Fragment>
                                 {!post ? (
@@ -119,7 +120,7 @@ export default function RouteEngine() {
                             </React.Fragment>
                         ) : (
                             <React.Fragment>
-                                {!post ? (
+                                { thisSlug !== "/" ? (
                                     <IconButton onClick={onHomeClick}>
                                         <Icon icon="home" />
                                     </IconButton>
@@ -128,13 +129,14 @@ export default function RouteEngine() {
                         )
                     }
                 />
+
+                <CardMedia
+                    component="img"
+                    height="194"
+                    image={image} 
+                    alt={title} 
+                />
             </Card>
         </Box>
     )
 }
-
-/*
-{ post ? <React.Fragment>
-    <pre>{ JSON.stringify( post, null, 2) }</pre>
-</React.Fragment>  : null }
-*/

@@ -24,7 +24,7 @@ export const movieClips = [
             scale: 1,
         },
         width: 300,
-        height: 300,
+        height: 450,
         zIndex: 1000,
     },
 
