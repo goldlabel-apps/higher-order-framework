@@ -41,7 +41,7 @@ export default function Flash(props) {
     const { displayW, displayH } = display
     const stageStyle = {
         // border: "1px solid rgba(0,0,0,0.5)",
-        // background: "rgba(0,0,0,0.023)",
+        background: "rgba(0,0,0,0.015)",
         width: displayW - 4,
         height: displayH - 4,
         overflow: 'hidden',
