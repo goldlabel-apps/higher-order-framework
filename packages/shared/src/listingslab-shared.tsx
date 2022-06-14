@@ -39,6 +39,7 @@ import {
     selectMovieClips,
     getDisplay,
     getNextHighestDepth,
+    resize,
 } from './Flash'
 
 import {
@@ -129,6 +130,7 @@ export {
     Flash,
     MovieClip,
     getNextHighestDepth,
+    resize,
     // Utils
     getById,
     sortByAttribute,
