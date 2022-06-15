@@ -21,6 +21,7 @@ import {
     getPostBySlug,
     navigateTo,
     Icon,
+    newCollectionBus,
 } from './listingslab-shared'
 
 export default function RouteEngine() {
@@ -49,10 +50,12 @@ export default function RouteEngine() {
             }
         }
     }, [refresh, route, ssr, dispatch])
-
-    const { posts } = cms.data
-    if (!posts) {
-        dispatch(cmsRead())
+    
+    const { posts, sites, links, keywords, categories  } = cms.data
+    if (!posts && sites && !links && !keywords && !categories) {
+        console.warn("readCollections")
+        // dispatch(newCollectionBus("posts"))
+        // dispatch(cmsRead())
         return null
     }
 
@@ -60,21 +63,21 @@ export default function RouteEngine() {
     let thisSlug = `${thisUrl.replace(ssr[0].data.baseURL, '')}`
     if (thisSlug === '') thisSlug = '/'
 
-    const post = getPostBySlug(thisSlug, posts)
+    let post = null
+    if (posts)post = getPostBySlug(thisSlug, posts)
+
 
     let signedIn = false
     if (core.data.uid) signedIn = true
 
     const onUpdateClick = () => {
         dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
-        dispatch(setCms({ key: 'collection', value: 'posts' }))
         dispatch(setCms({ key: 'mode', value: 'update' }))
         return true
     }
 
     const onCreateClick = () => {
         dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
-        dispatch(setCms({ key: 'collection', value: 'posts' }))
         dispatch(setCms({ key: 'mode', value: 'create' }))
         return true
     }
@@ -101,7 +104,9 @@ export default function RouteEngine() {
             <CardHeader
                 title={title}
                 subheader={excerpt}
-                avatar={avatar ? <Avatar src={avatar} /> : null}
+                avatar={<React.Fragment>
+                    { avatar ? <Avatar src={avatar} /> : null }
+                </React.Fragment>}
                 action={
                     signedIn ? (
                         <React.Fragment>

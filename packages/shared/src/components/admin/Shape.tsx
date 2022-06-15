@@ -16,12 +16,15 @@ import {
 export default function Shape() {
     const cms = useAppSelector(selectCms)
     const { collection } = cms.data
+
+    // console.warn("cms.data", cms.data)
+
     const { bus } = cms
     const data = bus[collection]
     if (!data) return null
     const { shape } = data
     let defaultExpanded = true
-    defaultExpanded = false
+    defaultExpanded = true
     return (
         <Accordion defaultExpanded={defaultExpanded}>
             <AccordionSummary

@@ -7,6 +7,7 @@ export const newCollectionBus =
     (collectionName: string): AppThunk =>
     async (dispatch: any) => {
         try {
+            console.warn("newCollectionBus", collectionName)
             dispatch(
                 setDataBus({
                     key: collectionName,
@@ -17,7 +18,16 @@ export const newCollectionBus =
                     },
                 })
             )
-            const q = query(collection(db, collectionName))
+
+            
+        } catch (error) {
+            console.warn('newCollectionBus error', error)
+        }
+    }
+
+
+    /*
+const q = query(collection(db, collectionName))
             let list = []
             const snap = await getDocs(q)
             snap.forEach((document) => {
@@ -41,7 +51,4 @@ export const newCollectionBus =
             dispatch(
                 updateDataBus({ collectionName, key: 'loaded', value: true })
             )
-        } catch (error) {
-            console.warn('newCollectionBus error', error)
-        }
-    }
+    */

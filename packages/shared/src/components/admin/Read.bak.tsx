@@ -29,24 +29,8 @@ export default function Read() {
 
     return (
         <Grid container>
-            <Grid item xs={12}>
-                { collection }
-            </Grid>
-        </Grid>
-    )
-}
-
-/*
-
-<Grid item xs={12} md={4}>
-                <Shape />
-            </Grid>
-<pre>posts {JSON.stringify(posts, null, 2)}</pre>
-<Typography variant="button" color="secondary" sx={{}}>
-                    { collection }
-                </Typography>
-
-{posts.map((item, i) => {
+            <Grid item xs={12} md={8}>
+                {posts.map((item, i) => {
                     const { id } = item
                     const { avatar, title, excerpt } = item.data
                     if (id === '_shape') return null
@@ -71,6 +55,18 @@ export default function Read() {
                         </React.Fragment>
                     )
                 })}
+            </Grid>
+            <Grid item xs={12} md={4}>
+                <Shape />
+            </Grid>
+        </Grid>
+    )
+}
 
+/*
+<pre>posts {JSON.stringify(posts, null, 2)}</pre>
+<Typography variant="button" color="secondary" sx={{}}>
+                    { collection }
+                </Typography>
 
-                */
+*/

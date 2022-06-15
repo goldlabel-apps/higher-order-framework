@@ -3,7 +3,6 @@ import {
     useAppSelector,
     useAppDispatch,
     selectCms,
-    newCollectionBus,
     Form,
     Read,
     Selected,
@@ -28,10 +27,6 @@ export default function Collection() {
         shape = data.shape
         type = data.type
     }
-
-    React.useEffect(() => {
-        if (!bus[collection]) dispatch(newCollectionBus(collection))
-    }, [bus, collection, dispatch])
 
     return (
         <Card sx={{ m: 1, p: 1, boxShadow: 'none' }}>

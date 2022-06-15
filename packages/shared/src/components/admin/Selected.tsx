@@ -5,7 +5,7 @@ import {
     selectCms,
     setCms,
     Icon,
-    Shape,
+    // Shape,
 } from '../../listingslab-shared'
 import { Box, Grid, Typography, IconButton } from '@mui/material'
 
@@ -23,7 +23,7 @@ export default function Selected() {
 
     return (
         <Grid container>
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12}>
                 <Box>
                     <IconButton color="secondary" onClick={onDeSelect}>
                         <Icon icon="arrowl" />
@@ -36,13 +36,16 @@ export default function Selected() {
                 </Box>
             </Grid>
 
-            <Grid item xs={12} md={4}>
-                <Shape />
-            </Grid>
+            
         </Grid>
     )
 }
 
 /*
+
+<Grid item xs={12} md={4}>
+                <Shape />
+            </Grid>
+
 <pre>posts {JSON.stringify(posts, null, 2)}</pre>
 */
