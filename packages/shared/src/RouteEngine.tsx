@@ -1,9 +1,5 @@
 import * as React from 'react'
-import {
-    Box,
-    CardHeader,
-    IconButton,
-} from '@mui/material'
+import { Box, CardHeader, IconButton } from '@mui/material'
 import {
     useAppSelector,
     useAppDispatch,
@@ -85,7 +81,7 @@ export default function RouteEngine() {
 
     let title = '404, brah.'
     let excerpt = `route ${thisSlug} not found.`
-    
+
     let icon = 'error'
 
     if (post) {
@@ -102,24 +98,32 @@ export default function RouteEngine() {
                 avatar={
                     <React.Fragment>
                         {thisSlug !== '/' ? (
-                                <IconButton onClick={onHomeClick} color="primary">
-                                    <Icon icon="arrowl" />
-                                </IconButton>
-                            ) : null}
-                        {icon ? <IconButton color="primary">
-                                    <Icon icon={icon} />
-                                </IconButton> : null}
+                            <IconButton onClick={onHomeClick} color="primary">
+                                <Icon icon="arrowl" />
+                            </IconButton>
+                        ) : null}
+                        {icon ? (
+                            <IconButton color="primary">
+                                <Icon icon={icon} />
+                            </IconButton>
+                        ) : null}
                     </React.Fragment>
                 }
                 action={
                     signedIn ? (
                         <React.Fragment>
                             {!post ? (
-                                <IconButton  color="primary" onClick={onCreateClick}>
+                                <IconButton
+                                    color="primary"
+                                    onClick={onCreateClick}
+                                >
                                     <Icon icon="create" />
                                 </IconButton>
                             ) : (
-                                <IconButton  color="primary" onClick={onUpdateClick}>
+                                <IconButton
+                                    color="primary"
+                                    onClick={onUpdateClick}
+                                >
                                     <Icon icon="edit" />
                                 </IconButton>
                             )}
@@ -130,7 +134,6 @@ export default function RouteEngine() {
         </Box>
     )
 }
-
 
 /*
     <CardMedia component="img" height="200" image={image} alt={title} />

@@ -36,8 +36,6 @@ export default function MaxiButton(props: any) {
             ) : (
                 <span style={{}}>{label}</span>
             )}
-
-            
         </Button>
     )
 }

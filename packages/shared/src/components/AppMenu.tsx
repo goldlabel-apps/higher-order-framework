@@ -180,10 +180,7 @@ export default function AppMenu() {
                                 }}
                             >
                                 <ListItemIcon>
-                                    <IconButton
-                                        sx={{ mr: 1 }}
-                                        color="primary"
-                                    >
+                                    <IconButton sx={{ mr: 1 }} color="primary">
                                         <Icon icon="exit" />
                                     </IconButton>
                                 </ListItemIcon>
