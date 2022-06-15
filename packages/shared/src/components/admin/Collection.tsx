@@ -4,10 +4,11 @@ import {
     useAppDispatch,
     selectCms,
     newCollectionBus,
+    Form,
+    Read,
+    Selected,
 } from '../../listingslab-shared'
 import {
-    useTheme,
-    useMediaQuery,
     Box,
     Card,
     LinearProgress,
@@ -15,10 +16,8 @@ import {
 
 export default function Collection() {
     const dispatch = useAppDispatch()
-    const theme = useTheme()
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'))
     const cms = useAppSelector(selectCms)
-    const { collection, mode } = cms.data
+    const { collection, mode, selected } = cms.data
     const { bus } = cms
     const data = bus[collection]
     let loading = false
@@ -45,9 +44,21 @@ export default function Collection() {
             ) : null}
             {!loading && loaded ? (
                 <React.Fragment>
-                    {mode === 'create' ? <Box>Crud CREATE</Box> : null}
-                    {mode === 'update' ? <Box>Crud UPDATE</Box> : null}
-                    <pre>mode {JSON.stringify(mode, null, 2)}</pre>
+
+                    { mode === 'read' ? <Box>
+
+                        { !selected ? <Read /> : <Selected /> }
+                        
+                    </Box> : null}
+
+                    {mode === 'create' ? <Box>Crud CREATE
+                        <Form />
+                    </Box> : null}
+
+                    {mode === 'update' ? <Box>
+                        <Form />
+                    </Box> : null}
+                    
                 </React.Fragment>
             ) : null}
         </Card>
@@ -59,10 +70,13 @@ export default function Collection() {
 <Shape />
 <Data />
 <Form />
-
+<pre>mode {JSON.stringify(mode, null, 2)}</pre>
 <React.Fragment>
 <pre>shape { JSON.stringify( shape, null, 2 ) }</pre>
 <pre>list { JSON.stringify( list, null, 2 ) }</pre>
 </React.Fragment>
+
+    // const theme = useTheme()
+    // const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
 */

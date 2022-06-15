@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Backdrop, Box, CircularProgress, Typography } from '@mui/material'
-import { useAppSelector, selectCore } from '../../listingslab-shared'
+import { useAppSelector, selectCore } from '../listingslab-shared'
 
 export default function ErrorAlert() {
     const core = useAppSelector(selectCore)

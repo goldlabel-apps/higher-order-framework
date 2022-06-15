@@ -16,7 +16,6 @@ import {
     selectSSR,
     selectRefresh,
     selectCms,
-    selectFlash,
     cmsRead,
     selectCore,
     getPostBySlug,
@@ -29,18 +28,11 @@ export default function RouteEngine() {
     const route = useAppSelector(selectRoute)
     const ssr = useAppSelector(selectSSR)
     const core = useAppSelector(selectCore)
-    const flash = useAppSelector(selectFlash)
     const refresh = useAppSelector(selectRefresh)
     const cms = useAppSelector(selectCms)
 
-    // console.warn ("flash", flash)
-
     React.useEffect(() => {
         dispatch(setCore({ key: 'refresh', value: false }))
-
-        const { windowResized } = flash.data
-        // console.warn('resize flash', windowResized)
-
         const windowLocation = window.location
         const url = windowLocation.href
         let thatSlug = `${url.replace(ssr[0].data.baseURL, '')}`
@@ -56,7 +48,7 @@ export default function RouteEngine() {
                 )
             }
         }
-    }, [flash, refresh, route, ssr, dispatch])
+    }, [refresh, route, ssr, dispatch])
 
     const { posts } = cms.data
     if (!posts) {
@@ -94,19 +86,17 @@ export default function RouteEngine() {
 
     let title = `404. ${thisSlug}`
     let excerpt = 'Not found'
-    // let avatar = 'https://listingslab.com/svg/avatars/chix.svg'
     let image = 'https://listingslab.com/svg/featured/macromedia.svg'
 
     if (post) {
         title = post.title
         excerpt = post.excerpt
-        // avatar = post.avatar
         image = post.image
     }
 
     return (
-        <Box sx={{}}>
-            <Card>
+        <Box sx={{border: "1px solid white"}}>
+            
                 <CardHeader
                     title={title}
                     subheader={excerpt}
@@ -142,7 +132,7 @@ export default function RouteEngine() {
                     image={image}
                     alt={title}
                 />
-            </Card>
+            
         </Box>
     )
 }

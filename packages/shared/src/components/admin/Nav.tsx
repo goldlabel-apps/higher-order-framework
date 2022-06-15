@@ -31,6 +31,7 @@ export default function Nav() {
 
     const onCollectionClick = (collection: string) => {
         dispatch(setCms({ key: 'collection', value: collection }))
+        dispatch(setCms({ key: 'mode', value: "read" }))
         return true
     }
 
@@ -48,7 +49,17 @@ export default function Nav() {
                 <Typography variant="body2"></Typography>
             </MenuItem>
 
-            <MenuItem
+            
+        </Box>
+    )
+}
+
+/*
+<Typography variant="body2" color="primary">
+    Manage collections on Firebase Cloud
+</Typography>
+
+<MenuItem
                 onClick={() => {
                     onCollectionClick('links')
                 }}
@@ -71,12 +82,5 @@ export default function Nav() {
                 <ListItemText>sites</ListItemText>
                 <Typography variant="body2"></Typography>
             </MenuItem>
-        </Box>
-    )
-}
 
-/*
-<Typography variant="body2" color="primary">
-    Manage collections on Firebase Cloud
-</Typography>
 */
