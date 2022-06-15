@@ -24,7 +24,7 @@ import FullScreenToggle from './components/FullScreenToggle'
 
 import CMS from './components/admin/CMS'
 import Form from './components/admin/Form'
-import Nav from './components/admin/Nav'
+import Collections from './components/admin/Collections'
 import Collection from './components/admin/Collection'
 import Shape from './components/admin/Shape'
 import Data from './components/admin/Data'
@@ -114,7 +114,7 @@ export {
     CMS,
     Read,
     Form,
-    Nav,
+    Collections,
     Collection,
     Shape,
     Data,

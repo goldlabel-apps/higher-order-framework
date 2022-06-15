@@ -10,30 +10,20 @@ import {
 import { Box, Card, LinearProgress } from '@mui/material'
 
 export default function Collection() {
-    const dispatch = useAppDispatch()
     const cms = useAppSelector(selectCms)
     const { collection, mode, selected } = cms.data
     const { bus } = cms
     const data = bus[collection]
     let loading = false
-    let loaded = false
-    let list = []
-    let shape = {}
-    let type = ''
     if (data) {
         loading = data.loading
-        loaded = data.loaded
-        list = data.list
-        shape = data.shape
-        type = data.type
     }
-
     return (
         <Card sx={{ m: 1, p: 1, boxShadow: 'none' }}>
             {loading ? (
                 <LinearProgress sx={{ m: 1 }} color="secondary" />
             ) : null}
-            {!loading && loaded ? (
+            
                 <React.Fragment>
                     {mode === 'read' ? (
                         <Box>{!selected ? <Read /> : <Selected />}</Box>
@@ -52,7 +42,6 @@ export default function Collection() {
                         </Box>
                     ) : null}
                 </React.Fragment>
-            ) : null}
         </Card>
     )
 }

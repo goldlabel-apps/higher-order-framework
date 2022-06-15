@@ -1,6 +1,6 @@
 import { collection, query, getDocs } from 'firebase/firestore'
 import { AppThunk } from '../../../app/store'
-import { setCms, updateDataBus } from '../'
+import { updateDataBus } from '../'
 import { db } from '../../../Shared'
 
 export const cmsRead =
@@ -11,11 +11,10 @@ export const cmsRead =
             let itemArr = []
             const snap = await getDocs(q)
             snap.forEach((document) => {
-                const doc = { id: document.id, data: document.data() }
+                const item = { id: document.id, data: document.data() }
                 // @ts-ignore
-                itemArr = [...itemArr, doc]
+                itemArr = [...itemArr, item]
             })
-            dispatch(setCms({ key: 'loaded', value: true }))
             dispatch(
                 updateDataBus({ collectionName, key: 'list', value: itemArr })
             )

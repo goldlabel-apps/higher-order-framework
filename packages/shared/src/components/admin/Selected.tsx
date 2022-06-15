@@ -5,9 +5,9 @@ import {
     selectCms,
     setCms,
     Icon,
-    // Shape,
+    Shape,
 } from '../../listingslab-shared'
-import { Box, Grid, Typography, IconButton } from '@mui/material'
+import { Box, Grid, IconButton, Typography } from '@mui/material'
 
 export default function Selected() {
     const dispatch = useAppDispatch()
@@ -20,26 +20,34 @@ export default function Selected() {
         dispatch(setCms({ key: 'selected', value: null }))
         return true
     }
+    const { id } = selected
+    const { title, } = selected.data
 
     return (
         <Grid container>
-            <Grid item xs={12}>
+            <Grid item xs={12} md={8}>
                 <Box>
                     <IconButton color="secondary" onClick={onDeSelect}>
                         <Icon icon="arrowl" />
                     </IconButton>
-                    <Typography variant="button" color="secondary" sx={{}}>
-                        Selected
+                    <Typography variant="h2" sx={{ fontWeight: "lighter" }}>
+                        { title }
                     </Typography>
-
-                    <pre>posts {JSON.stringify(selected, null, 2)}</pre>
+                    <pre>Selected post {JSON.stringify(selected, null, 2)}</pre>
                 </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+                <Shape />
             </Grid>
         </Grid>
     )
 }
 
 /*
+
+<Typography variant="button" color="secondary" sx={{}}>
+                        
+                    </Typography>
 
 <Grid item xs={12} md={4}>
                 <Shape />

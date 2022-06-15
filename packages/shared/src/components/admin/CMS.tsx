@@ -6,7 +6,7 @@ import {
     selectCms,
     setCore,
     Icon,
-    Nav,
+    Collections,
     Collection,
     FullScreenToggle,
     setCms,
@@ -16,11 +16,9 @@ import {
     useMediaQuery,
     Dialog,
     DialogContent,
-    DialogActions,
     Grid,
     Box,
     IconButton,
-    Typography,
 } from '@mui/material'
 
 export default function CMS() {
@@ -59,7 +57,7 @@ export default function CMS() {
                     {collection ? (
                         <Grid item>
                             <Box sx={{}}>
-                                <IconButton onClick={onBackClick}>
+                                <IconButton onClick={onBackClick} color="secondary">
                                     <Icon icon="arrowl" />
                                 </IconButton>
                             </Box>
@@ -79,7 +77,7 @@ export default function CMS() {
                 <Grid container>
                     {leftCol ? (
                         <Grid item xs={12} md={rightCol ? 3 : 12}>
-                            <Nav />
+                            <Collections />
                         </Grid>
                     ) : null}
                     {rightCol ? (
