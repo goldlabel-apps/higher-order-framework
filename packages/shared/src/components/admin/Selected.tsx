@@ -21,37 +21,34 @@ export default function Selected() {
         return true
     }
     const { id } = selected
-    const { title, } = selected.data
+    const { title } = selected.data
 
     return (
-        <Grid container>
-            <Grid item xs={12} md={8}>
-                <Box>
-                    <IconButton color="secondary" onClick={onDeSelect}>
-                        <Icon icon="arrowl" />
-                    </IconButton>
-                    <Typography variant="h2" sx={{ fontWeight: "lighter" }}>
-                        { title }
-                    </Typography>
-                    <pre>Selected post {JSON.stringify(selected, null, 2)}</pre>
-                </Box>
+        <React.Fragment>
+            <Grid container>
+                <Grid item xs={12} md={8}>
+                    <Box>
+                        <Typography
+                            variant="body2"
+                            sx={{ fontWeight: 'lighter' }}
+                        >
+                            id {id}
+                        </Typography>
+
+                        <Typography variant="h6" sx={{ fontWeight: 'lighter' }}>
+                            {title}
+                        </Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Shape />
+                </Grid>
             </Grid>
-            <Grid item xs={12} md={4}>
-                <Shape />
-            </Grid>
-        </Grid>
+        </React.Fragment>
     )
 }
 
 /*
-
-<Typography variant="button" color="secondary" sx={{}}>
-                        
-                    </Typography>
-
-<Grid item xs={12} md={4}>
-                <Shape />
-            </Grid>
-
+<pre>Selected post {JSON.stringify(selected, null, 2)}</pre>
 <pre>posts {JSON.stringify(posts, null, 2)}</pre>
 */

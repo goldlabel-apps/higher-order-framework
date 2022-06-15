@@ -5,13 +5,15 @@ import {
     selectCms,
     setCms,
     Shape,
+    Icon,
 } from '../../listingslab-shared'
 import {
     Grid,
     LinearProgress,
     ListItem,
+    Button,
     ListItemAvatar,
-    Avatar,
+    DialogActions,
     ListItemText,
 } from '@mui/material'
 
@@ -21,21 +23,21 @@ export default function Read() {
     const { collection } = cms.data
     const { bus } = cms
     const data = bus[collection]
-    if (!data.list) return <LinearProgress />
+    if (!data.list) return <LinearProgress color="secondary" />
     const items = data.list
-    
+
     const onItemEdit = (item: any) => {
         dispatch(setCms({ key: 'selected', value: item }))
         return true
     }
 
     return (
-        <Grid container>
-            
-            <Grid item xs={12} md={8}>
-                {items.map((item, i) => {
+        <React.Fragment>
+            <Grid container>
+                <Grid item xs={12} md={8}>
+                    {items.map((item, i) => {
                         const { id } = item
-                        const { avatar, title, label, excerpt } = item.data
+                        const { title, label, icon } = item.data
                         let displayTxt = title
                         if (!title) displayTxt = label
                         if (id === '_shape') return null
@@ -45,11 +47,12 @@ export default function Read() {
                                     button
                                     onClick={() => {
                                         onItemEdit(item)
-                                    }}>
-                                    
-                                    <ListItemText
-                                        primary={ displayTxt }
-                                    />
+                                    }}
+                                >
+                                    <ListItemAvatar>
+                                        <Icon icon={icon ? icon : 'post'} />
+                                    </ListItemAvatar>
+                                    <ListItemText primary={displayTxt} />
                                 </ListItem>
                             </React.Fragment>
                         )
@@ -59,17 +62,13 @@ export default function Read() {
                     <Shape />
                 </Grid>
             </Grid>
+        </React.Fragment>
     )
 }
 
-
 /*
 
-{avatar ? (
-                                        <ListItemAvatar>
-                                            <Avatar src={avatar} />
-                                        </ListItemAvatar>
-                                    ) : null}
+
 
                                     
 <Grid item xs={12}>

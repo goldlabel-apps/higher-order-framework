@@ -3,8 +3,7 @@ export interface NavigatorShape {
 }
 export const collections: NavigatorShape = {
     menuItems: [
-        {
-        },
+        {},
         {
             label: 'Life',
         },

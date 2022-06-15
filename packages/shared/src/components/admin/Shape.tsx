@@ -23,29 +23,24 @@ export default function Shape() {
     const data = bus[collection]
     if (!data) return null
 
-    
-
-
     const { list } = data
-    
+
     let shape = null
-    if (list.length){
-        for (let i=0; i < list.length; i++){
-            if (list[i].id === "_shape") shape = list[i] 
+    if (list.length) {
+        for (let i = 0; i < list.length; i++) {
+            if (list[i].id === '_shape') shape = list[i]
         }
     }
     if (!shape) return null
     let defaultExpanded = true
     defaultExpanded = false
     return (
-        <Accordion defaultExpanded={defaultExpanded} sx={{ boxShadow: "none"}}>
+        <Accordion defaultExpanded={defaultExpanded} sx={{ boxShadow: 'none' }}>
             <AccordionSummary
                 id="socialAccordion"
                 expandIcon={<Icon icon="acc" />}
             >
-                <Typography variant="body2">
-                    Shape
-                </Typography>
+                <Typography variant="body2">Shape</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <pre>{JSON.stringify(shape.data, null, 2)}</pre>

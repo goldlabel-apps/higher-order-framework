@@ -109,7 +109,17 @@ export default function RouteEngine() {
                         ) : null}
                     </React.Fragment>
                 }
-                action={
+            />
+        </Box>
+    )
+}
+
+/*
+    <CardMedia component="img" height="200" image={image} alt={title} />
+    <pre>cms {JSON.stringify(cms, null, 2)}</pre>
+
+
+action={
                     signedIn ? (
                         <React.Fragment>
                             {!post ? (
@@ -130,12 +140,5 @@ export default function RouteEngine() {
                         </React.Fragment>
                     ) : null
                 }
-            />
-        </Box>
-    )
-}
 
-/*
-    <CardMedia component="img" height="200" image={image} alt={title} />
-    <pre>cms {JSON.stringify(cms, null, 2)}</pre>
-*/
+    */

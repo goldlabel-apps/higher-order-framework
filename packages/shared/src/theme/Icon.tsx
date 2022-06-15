@@ -36,6 +36,7 @@ import PersonaIcon from '@mui/icons-material/AccessibilityNew'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import WalkthroughIcon from '@mui/icons-material/Accessibility'
 import DocIcon from '@mui/icons-material/Tag'
+import SaveIcon from '@mui/icons-material/Save'
 import SharedIcon from '@mui/icons-material/ShareOutlined'
 import ErrorIcon from '@mui/icons-material/NewReleases'
 import GestureIcon from '@mui/icons-material/Gesture'
@@ -95,6 +96,10 @@ export default function Icon(props: any) {
 
         case 'keywords':
             iconFragment = <KeywordsIcon color={color} />
+            break
+
+        case 'save':
+            iconFragment = <SaveIcon color={color} />
             break
 
         case 'categories':

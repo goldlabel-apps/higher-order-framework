@@ -22,7 +22,6 @@ export default function MaxiButton(props: any) {
             variant={variant}
             onClick={onClick}
         >
-            {icon ? <Icon icon={icon} /> : null}
             {label ? (
                 <span
                     style={{
@@ -36,6 +35,7 @@ export default function MaxiButton(props: any) {
             ) : (
                 <span style={{}}>{label}</span>
             )}
+            {icon ? <Icon icon={icon} /> : null}
         </Button>
     )
 }

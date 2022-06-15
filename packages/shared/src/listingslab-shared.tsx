@@ -27,7 +27,6 @@ import Form from './components/admin/Form'
 import Collections from './components/admin/Collections'
 import Collection from './components/admin/Collection'
 import Shape from './components/admin/Shape'
-import Data from './components/admin/Data'
 import Selected from './components/admin/Selected'
 
 import { getById, sortByAttribute, getPostBySlug } from './app/utils'
@@ -117,7 +116,6 @@ export {
     Collections,
     Collection,
     Shape,
-    Data,
     Selected,
     // Cms
     cmsRead,

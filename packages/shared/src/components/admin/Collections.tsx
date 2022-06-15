@@ -9,9 +9,6 @@ import {
 import {
     useTheme,
     useMediaQuery,
-    Accordion,
-    AccordionDetails,
-    AccordionSummary,
     Box,
     ListItem,
     IconButton,
@@ -37,8 +34,6 @@ export default function Collections() {
 
     return (
         <Box sx={{ m: 2 }}>
-            
-
             <ListItem
                 button
                 onClick={() => {
@@ -46,7 +41,9 @@ export default function Collections() {
                 }}
             >
                 <ListItemIcon>
-                    <Icon icon="post" />
+                    <IconButton color="secondary">
+                        <Icon icon="post" />
+                    </IconButton>
                 </ListItemIcon>
                 <ListItemText primary="Posts" secondary="Manage content" />
                 <Typography variant="body2"></Typography>
@@ -59,13 +56,13 @@ export default function Collections() {
                 }}
             >
                 <ListItemIcon>
-                    <Icon icon="link" />
+                    <IconButton color="secondary">
+                        <Icon icon="link" />
+                    </IconButton>
                 </ListItemIcon>
                 <ListItemText primary="Links" secondary="Manage links" />
                 <Typography variant="body2"></Typography>
             </ListItem>
-
-            
         </Box>
     )
 }

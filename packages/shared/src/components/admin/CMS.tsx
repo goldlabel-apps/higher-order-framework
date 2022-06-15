@@ -18,6 +18,7 @@ import {
     DialogContent,
     Grid,
     Box,
+    Button,
     IconButton,
 } from '@mui/material'
 
@@ -31,7 +32,7 @@ export default function CMS() {
     if (fullScreen) isFullScreen = true
     if (isMobile) isFullScreen = true
     const cms = useAppSelector(selectCms)
-    const { collection } = cms.data
+    const { collection, selected } = cms.data
     let leftCol = true
     let rightCol = false
     if (collection) {
@@ -41,8 +42,24 @@ export default function CMS() {
 
     const closeDialog = () =>
         dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
-    const onBackClick = () =>
+
+    const onCollectionClick = () => {
+        dispatch(setCms({ key: 'mode', value: 'read' }))
         dispatch(setCms({ key: 'collection', value: null }))
+        dispatch(setCms({ key: 'selected', value: null }))
+        return true
+    }
+
+    const onReadClick = () => {
+        dispatch(setCms({ key: 'mode', value: 'read' }))
+        dispatch(setCms({ key: 'selected', value: null }))
+        return true
+    }
+
+    const onCreateClick = () => {
+        dispatch(setCms({ key: 'mode', value: 'create' }))
+        return true
+    }
 
     return (
         <Dialog
@@ -57,9 +74,52 @@ export default function CMS() {
                     {collection ? (
                         <Grid item>
                             <Box sx={{}}>
-                                <IconButton onClick={onBackClick} color="secondary">
-                                    <Icon icon="arrowl" />
-                                </IconButton>
+                                {collection && selected ? (
+                                    <Button
+                                        color="secondary"
+                                        onClick={onReadClick}
+                                    >
+                                        <Icon icon={'arrowl'} />
+                                        <span
+                                            style={{
+                                                marginRight: 4,
+                                                marginLeft: 4,
+                                            }}
+                                        >
+                                            {collection}
+                                        </span>
+                                    </Button>
+                                ) : null}
+
+                                <Button
+                                    color="secondary"
+                                    onClick={onCollectionClick}
+                                >
+                                    <Icon icon={'arrowl'} />
+                                    <span
+                                        style={{
+                                            marginRight: 4,
+                                            marginLeft: 4,
+                                        }}
+                                    >
+                                        Collections
+                                    </span>
+                                </Button>
+
+                                <Button
+                                    color="secondary"
+                                    onClick={onCreateClick}
+                                >
+                                    <Icon icon={'new'} />
+                                    <span
+                                        style={{
+                                            marginRight: 4,
+                                            marginLeft: 4,
+                                        }}
+                                    >
+                                        New {collection.slice(0, -1)}
+                                    </span>
+                                </Button>
                             </Box>
                         </Grid>
                     ) : null}
