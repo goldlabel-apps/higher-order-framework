@@ -13,7 +13,7 @@ import {
     AccordionDetails,
     AccordionSummary,
     Box,
-    MenuItem,
+    ListItem,
     IconButton,
     ListItemIcon,
     ListItemText,
@@ -31,13 +31,43 @@ export default function Nav() {
 
     const onCollectionClick = (collection: string) => {
         dispatch(setCms({ key: 'collection', value: collection }))
-        dispatch(setCms({ key: 'mode', value: "read" }))
+        dispatch(setCms({ key: 'mode', value: 'read' }))
         return true
     }
 
     return (
         <Box sx={{ m: 2 }}>
-            <MenuItem
+            <ListItem
+                button
+                onClick={() => {
+                    onCollectionClick('sites')
+                }}
+            >
+                <ListItemIcon>
+                    <Icon icon="sites" />
+                </ListItemIcon>
+                <ListItemText
+                    primary="Sites"
+                    secondary="Manage Higher Order Frameworks"
+                />
+                <Typography variant="body2"></Typography>
+            </ListItem>
+
+            <ListItem
+                button
+                onClick={() => {
+                    onCollectionClick('links')
+                }}
+            >
+                <ListItemIcon>
+                    <Icon icon="link" />
+                </ListItemIcon>
+                <ListItemText primary="Links" secondary="Manage links" />
+                <Typography variant="body2"></Typography>
+            </ListItem>
+
+            <ListItem
+                button
                 onClick={() => {
                     onCollectionClick('posts')
                 }}
@@ -45,11 +75,35 @@ export default function Nav() {
                 <ListItemIcon>
                     <Icon icon="post" />
                 </ListItemIcon>
-                <ListItemText>posts</ListItemText>
+                <ListItemText primary="Posts" secondary="Manage content" />
                 <Typography variant="body2"></Typography>
-            </MenuItem>
+            </ListItem>
 
-            
+            <ListItem
+                button
+                onClick={() => {
+                    onCollectionClick('keywords')
+                }}
+            >
+                <ListItemIcon>
+                    <Icon icon="keywords" />
+                </ListItemIcon>
+                <ListItemText primary="Keywords" secondary="tags" />
+                <Typography variant="body2"></Typography>
+            </ListItem>
+
+            <ListItem
+                button
+                onClick={() => {
+                    onCollectionClick('categories')
+                }}
+            >
+                <ListItemIcon>
+                    <Icon icon="categories" />
+                </ListItemIcon>
+                <ListItemText primary="Categories" secondary="sections" />
+                <Typography variant="body2"></Typography>
+            </ListItem>
         </Box>
     )
 }
@@ -59,7 +113,7 @@ export default function Nav() {
     Manage collections on Firebase Cloud
 </Typography>
 
-<MenuItem
+<ListItem
                 onClick={() => {
                     onCollectionClick('links')
                 }}
@@ -69,18 +123,8 @@ export default function Nav() {
                 </ListItemIcon>
                 <ListItemText>links</ListItemText>
                 <Typography variant="body2"></Typography>
-            </MenuItem>
+            </ListItem>
 
-            <MenuItem
-                onClick={() => {
-                    onCollectionClick('siteinfo')
-                }}
-            >
-                <ListItemIcon>
-                    <Icon icon="admin" />
-                </ListItemIcon>
-                <ListItemText>sites</ListItemText>
-                <Typography variant="body2"></Typography>
-            </MenuItem>
+
 
 */

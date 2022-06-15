@@ -8,11 +8,7 @@ import {
     Read,
     Selected,
 } from '../../listingslab-shared'
-import {
-    Box,
-    Card,
-    LinearProgress,
-} from '@mui/material'
+import { Box, Card, LinearProgress } from '@mui/material'
 
 export default function Collection() {
     const dispatch = useAppDispatch()
@@ -44,21 +40,22 @@ export default function Collection() {
             ) : null}
             {!loading && loaded ? (
                 <React.Fragment>
+                    {mode === 'read' ? (
+                        <Box>{!selected ? <Read /> : <Selected />}</Box>
+                    ) : null}
 
-                    { mode === 'read' ? <Box>
+                    {mode === 'create' ? (
+                        <Box>
+                            Crud CREATE
+                            <Form />
+                        </Box>
+                    ) : null}
 
-                        { !selected ? <Read /> : <Selected /> }
-                        
-                    </Box> : null}
-
-                    {mode === 'create' ? <Box>Crud CREATE
-                        <Form />
-                    </Box> : null}
-
-                    {mode === 'update' ? <Box>
-                        <Form />
-                    </Box> : null}
-                    
+                    {mode === 'update' ? (
+                        <Box>
+                            <Form />
+                        </Box>
+                    ) : null}
                 </React.Fragment>
             ) : null}
         </Card>

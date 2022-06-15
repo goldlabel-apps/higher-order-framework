@@ -14,6 +14,8 @@ import {
 } from '../theme'
 import DefaultIcon from '@mui/icons-material/DisabledByDefault'
 import AddToHomeScreenIcon from '@mui/icons-material/AddToHomeScreen'
+import CategoriesIcon from '@mui/icons-material/Category'
+import KeywordsIcon from '@mui/icons-material/Key'
 import HomeIcon from '@mui/icons-material/Home'
 import CMSIcon from '@mui/icons-material/DocumentScanner'
 import CreateIcon from '@mui/icons-material/Add'
@@ -33,7 +35,7 @@ import LocaleIcon from '@mui/icons-material/Language'
 import PersonaIcon from '@mui/icons-material/AccessibilityNew'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import WalkthroughIcon from '@mui/icons-material/Accessibility'
-import DocIcon from '@mui/icons-material/FileCopy'
+import DocIcon from '@mui/icons-material/Tag'
 import SharedIcon from '@mui/icons-material/ShareOutlined'
 import ErrorIcon from '@mui/icons-material/NewReleases'
 import GestureIcon from '@mui/icons-material/Gesture'
@@ -90,9 +92,23 @@ export default function Icon(props: any) {
         case 'home':
             iconFragment = <HomeIcon color={color} />
             break
+
+        case 'keywords':
+            iconFragment = <KeywordsIcon color={color} />
+            break
+
+        case 'categories':
+            iconFragment = <CategoriesIcon color={color} />
+            break
+
         case 'persona':
             iconFragment = <PersonaIcon color={color} />
             break
+
+        case 'sites':
+            iconFragment = <AddToHomeScreenIcon color={color} />
+            break
+
         case 'filter':
             iconFragment = <FilterIcon color={color} />
             break

@@ -99,6 +99,50 @@ export default function AppMenu() {
                             <Typography variant="body2">⌘H</Typography>
                         </MenuItem>
 
+                        <MenuItem
+                            onClick={() => {
+                                onItemClick('work')
+                            }}
+                        >
+                            <ListItemIcon>
+                                <IconButton sx={{ mr: 1 }} color="secondary">
+                                    <Icon icon="work" />
+                                </IconButton>
+                            </ListItemIcon>
+                            <ListItemText>Work</ListItemText>
+                            <Typography variant="body2">⌘W</Typography>
+                        </MenuItem>
+
+                        <MenuItem
+                            onClick={() => {
+                                onItemClick('work')
+                            }}
+                        >
+                            <ListItemIcon>
+                                <IconButton sx={{ mr: 1 }} color="secondary">
+                                    <Icon icon="life" />
+                                </IconButton>
+                            </ListItemIcon>
+                            <ListItemText>Life</ListItemText>
+                            <Typography variant="body2">⌘L</Typography>
+                        </MenuItem>
+
+                        <MenuItem
+                            onClick={() => {
+                                onItemClick('balance')
+                            }}
+                        >
+                            <ListItemIcon>
+                                <IconButton sx={{ mr: 1 }} color="secondary">
+                                    <Icon icon="balance" />
+                                </IconButton>
+                            </ListItemIcon>
+                            <ListItemText>Balance</ListItemText>
+                            <Typography variant="body2">⌘B</Typography>
+                        </MenuItem>
+
+                        <Divider />
+
                         {signedIn ? (
                             <React.Fragment>
                                 <MenuItem
@@ -119,8 +163,6 @@ export default function AppMenu() {
                                 </MenuItem>
                             </React.Fragment>
                         ) : null}
-
-                        <Divider />
 
                         {signedIn ? (
                             <MenuItem

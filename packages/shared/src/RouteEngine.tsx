@@ -87,52 +87,47 @@ export default function RouteEngine() {
     let title = `404. ${thisSlug}`
     let excerpt = 'Not found'
     let image = 'https://listingslab.com/svg/featured/macromedia.svg'
+    let avatar = 'https://listingslab.com/svg/icons/PWA.svg'
 
     if (post) {
         title = post.title
         excerpt = post.excerpt
         image = post.image
+        avatar = post.avatar
     }
 
     return (
-        <Box sx={{border: "1px solid white"}}>
-            
-                <CardHeader
-                    title={title}
-                    subheader={excerpt}
-                    // avatar={<Avatar src={avatar} />}
-                    avatar={
-                        signedIn ? (
-                            <React.Fragment>
-                                {!post ? (
-                                    <IconButton onClick={onCreateClick}>
-                                        <Icon icon="create" />
-                                    </IconButton>
-                                ) : (
-                                    <IconButton onClick={onUpdateClick}>
-                                        <Icon icon="edit" />
-                                    </IconButton>
-                                )}
-                            </React.Fragment>
-                        ) : (
-                            <React.Fragment>
-                                {thisSlug !== '/' ? (
-                                    <IconButton onClick={onHomeClick}>
-                                        <Icon icon="home" />
-                                    </IconButton>
-                                ) : null}
-                            </React.Fragment>
-                        )
-                    }
-                />
+        <Box sx={{ border: '1px solid white' }}>
+            <CardHeader
+                title={title}
+                subheader={excerpt}
+                avatar={avatar ? <Avatar src={avatar} /> : null}
+                action={
+                    signedIn ? (
+                        <React.Fragment>
+                            {!post ? (
+                                <IconButton onClick={onCreateClick}>
+                                    <Icon icon="create" />
+                                </IconButton>
+                            ) : (
+                                <IconButton onClick={onUpdateClick}>
+                                    <Icon icon="edit" />
+                                </IconButton>
+                            )}
+                        </React.Fragment>
+                    ) : (
+                        <React.Fragment>
+                            {thisSlug !== '/' ? (
+                                <IconButton onClick={onHomeClick}>
+                                    <Icon icon="home" />
+                                </IconButton>
+                            ) : null}
+                        </React.Fragment>
+                    )
+                }
+            />
 
-                <CardMedia
-                    component="img"
-                    height="194"
-                    image={image}
-                    alt={title}
-                />
-            
+            <CardMedia component="img" height="194" image={image} alt={title} />
         </Box>
     )
 }

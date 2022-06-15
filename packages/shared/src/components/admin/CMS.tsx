@@ -40,7 +40,7 @@ export default function CMS() {
         rightCol = true
         leftCol = false
     }
-    
+
     const closeDialog = () =>
         dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
     const onBackClick = () =>
@@ -55,16 +55,17 @@ export default function CMS() {
             onClose={closeDialog}
         >
             <DialogContent>
-                <Grid container>   
-                    {collection ? ( <Grid item>
-                                        <Box sx={{}}>
-                                            <IconButton onClick={onBackClick}>
-                                                <Icon icon="arrowl" />
-                                            </IconButton>
-                                        </Box>
-                                    </Grid>
-                            ) : null}
-                    
+                <Grid container>
+                    {collection ? (
+                        <Grid item>
+                            <Box sx={{}}>
+                                <IconButton onClick={onBackClick}>
+                                    <Icon icon="arrowl" />
+                                </IconButton>
+                            </Box>
+                        </Grid>
+                    ) : null}
+
                     <Grid item sx={{ flexGrow: 1 }} />
                     <Grid item>
                         <Box sx={{ mt: 1, mr: 1 }}>
@@ -114,6 +115,7 @@ export default function CMS() {
                                 </Typography>
                             </Box>
 
+                            
 
 // if (posts) {
     //     for (let i = 0; i < posts.length; i++) {
