@@ -30,7 +30,7 @@ export default function Read() {
     return (
         <Grid container>
             <Grid item xs={12}>
-                { collection }
+                {collection}
             </Grid>
         </Grid>
     )

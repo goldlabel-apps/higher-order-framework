@@ -111,16 +111,6 @@ export default function SigninDialog() {
         >
             <DialogTitle>
                 <Grid container>
-                    <Grid item>
-                        <Box sx={{ mt: 1, mr: 2 }}>
-                            <Icon icon="cms" />
-                        </Box>
-                    </Grid>
-                    <Grid item>
-                        <Typography variant="body2" sx={{ mt: 1.25 }}>
-                            Content Management System
-                        </Typography>
-                    </Grid>
                     <Grid item sx={{ flexGrow: 1 }} />
                     <Grid item>
                         <IconButton onClick={handleClose}>

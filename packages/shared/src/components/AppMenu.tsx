@@ -36,6 +36,15 @@ export default function AppMenu() {
             case 'home':
                 dispatch(navigateTo({ pathname: '/' }))
                 break
+            case 'work':
+                dispatch(navigateTo({ pathname: '/work' }))
+                break
+            case 'life':
+                dispatch(navigateTo({ pathname: '/life' }))
+                break
+            case 'balance':
+                dispatch(navigateTo({ pathname: '/balance' }))
+                break
             case 'signout':
                 dispatch(unsignIn())
                 break
@@ -91,7 +100,7 @@ export default function AppMenu() {
                             }}
                         >
                             <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="secondary">
+                                <IconButton sx={{ mr: 1 }} color="primary">
                                     <Icon icon="home" />
                                 </IconButton>
                             </ListItemIcon>
@@ -105,7 +114,7 @@ export default function AppMenu() {
                             }}
                         >
                             <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="secondary">
+                                <IconButton sx={{ mr: 1 }} color="primary">
                                     <Icon icon="work" />
                                 </IconButton>
                             </ListItemIcon>
@@ -115,11 +124,11 @@ export default function AppMenu() {
 
                         <MenuItem
                             onClick={() => {
-                                onItemClick('work')
+                                onItemClick('life')
                             }}
                         >
                             <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="secondary">
+                                <IconButton sx={{ mr: 1 }} color="primary">
                                     <Icon icon="life" />
                                 </IconButton>
                             </ListItemIcon>
@@ -133,7 +142,7 @@ export default function AppMenu() {
                             }}
                         >
                             <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="secondary">
+                                <IconButton sx={{ mr: 1 }} color="primary">
                                     <Icon icon="balance" />
                                 </IconButton>
                             </ListItemIcon>
@@ -153,7 +162,7 @@ export default function AppMenu() {
                                     <ListItemIcon>
                                         <IconButton
                                             sx={{ mr: 1 }}
-                                            color="secondary"
+                                            color="primary"
                                         >
                                             <Icon icon="cms" />
                                         </IconButton>
@@ -173,7 +182,7 @@ export default function AppMenu() {
                                 <ListItemIcon>
                                     <IconButton
                                         sx={{ mr: 1 }}
-                                        color="secondary"
+                                        color="primary"
                                     >
                                         <Icon icon="exit" />
                                     </IconButton>
@@ -191,7 +200,7 @@ export default function AppMenu() {
                                     <ListItemIcon>
                                         <IconButton
                                             sx={{ mr: 1 }}
-                                            color="secondary"
+                                            color="primary"
                                         >
                                             <Icon icon="exit" />
                                         </IconButton>

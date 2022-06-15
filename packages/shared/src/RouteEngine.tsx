@@ -1,10 +1,7 @@
 import * as React from 'react'
 import {
     Box,
-    Card,
     CardHeader,
-    CardMedia,
-    Avatar,
     IconButton,
 } from '@mui/material'
 import {
@@ -52,15 +49,14 @@ export default function RouteEngine() {
             }
         }
     }, [refresh, route, ssr, dispatch])
-    
 
     let post = null
-    const { posts, sites, links, keywords, categories  } = cms.bus
+    const { posts, sites, links, keywords, categories } = cms.bus
     if (!posts && !sites && !links && !keywords && !categories) {
         dispatch(cmsInit())
     }
-    if (posts){
-        // 
+    if (posts) {
+        if (!posts.list) return null
         const postList = posts.list
         if (postList) {
             post = getPostBySlug(thisSlug, postList)
@@ -87,63 +83,56 @@ export default function RouteEngine() {
         return true
     }
 
-    let title = `404. ${thisSlug}`
-    let excerpt = 'Not found'
-    let image = 'https://listingslab.com/svg/featured/macromedia.svg'
-    let avatar = 'https://listingslab.com/svg/icons/PWA.svg'
+    let title = '404, brah.'
+    let excerpt = `route ${thisSlug} not found.`
+    
+    let icon = 'error'
 
     if (post) {
         title = post.title
         excerpt = post.excerpt
-        image = post.image
-        avatar = post.avatar
+        icon = post.icon
     }
 
     return (
         <Box sx={{}}>
-            
-            <CardMedia 
-                component="img" 
-                height="200" 
-                image={image} 
-                alt={title} 
-            />
             <CardHeader
                 title={title}
                 subheader={excerpt}
-                avatar={<React.Fragment>
-                    { avatar ? <Avatar src={avatar} /> : null }
-                </React.Fragment>}
+                avatar={
+                    <React.Fragment>
+                        {thisSlug !== '/' ? (
+                                <IconButton onClick={onHomeClick} color="primary">
+                                    <Icon icon="arrowl" />
+                                </IconButton>
+                            ) : null}
+                        {icon ? <IconButton color="primary">
+                                    <Icon icon={icon} />
+                                </IconButton> : null}
+                    </React.Fragment>
+                }
                 action={
                     signedIn ? (
                         <React.Fragment>
                             {!post ? (
-                                <IconButton onClick={onCreateClick}>
+                                <IconButton  color="primary" onClick={onCreateClick}>
                                     <Icon icon="create" />
                                 </IconButton>
                             ) : (
-                                <IconButton onClick={onUpdateClick}>
+                                <IconButton  color="primary" onClick={onUpdateClick}>
                                     <Icon icon="edit" />
                                 </IconButton>
                             )}
                         </React.Fragment>
-                    ) : (
-                        <React.Fragment>
-                            {thisSlug !== '/' ? (
-                                <IconButton onClick={onHomeClick}>
-                                    <Icon icon="home" />
-                                </IconButton>
-                            ) : null}
-                        </React.Fragment>
-                    )
+                    ) : null
                 }
             />
-
-            
         </Box>
     )
 }
 
+
 /*
-<pre>cms {JSON.stringify(cms, null, 2)}</pre>
+    <CardMedia component="img" height="200" image={image} alt={title} />
+    <pre>cms {JSON.stringify(cms, null, 2)}</pre>
 */

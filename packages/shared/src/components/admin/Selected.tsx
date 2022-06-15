@@ -35,8 +35,6 @@ export default function Selected() {
                     <pre>posts {JSON.stringify(selected, null, 2)}</pre>
                 </Box>
             </Grid>
-
-            
         </Grid>
     )
 }
