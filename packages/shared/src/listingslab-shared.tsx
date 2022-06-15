@@ -50,6 +50,7 @@ import {
     setDataBus,
     cmsRead,
     newCollectionBus,
+    cmsInit,
     updateDataBus,
 } from './features/cms'
 
@@ -121,6 +122,7 @@ export {
     // Cms
     cmsRead,
     newCollectionBus,
+    cmsInit,
     selectCms,
     setCms,
     setDataBus,

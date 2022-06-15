@@ -16,12 +16,11 @@ import {
     selectSSR,
     selectRefresh,
     selectCms,
-    cmsRead,
+    cmsInit,
     selectCore,
     getPostBySlug,
     navigateTo,
     Icon,
-    newCollectionBus,
 } from './listingslab-shared'
 
 export default function RouteEngine() {
@@ -31,6 +30,9 @@ export default function RouteEngine() {
     const core = useAppSelector(selectCore)
     const refresh = useAppSelector(selectRefresh)
     const cms = useAppSelector(selectCms)
+    const thisUrl = window.location.href
+    let thisSlug = `${thisUrl.replace(ssr[0].data.baseURL, '')}`
+    if (thisSlug === '') thisSlug = '/'
 
     React.useEffect(() => {
         dispatch(setCore({ key: 'refresh', value: false }))
@@ -51,21 +53,19 @@ export default function RouteEngine() {
         }
     }, [refresh, route, ssr, dispatch])
     
-    const { posts, sites, links, keywords, categories  } = cms.data
-    if (!posts && sites && !links && !keywords && !categories) {
-        console.warn("readCollections")
-        // dispatch(newCollectionBus("posts"))
-        // dispatch(cmsRead())
-        return null
-    }
-
-    const thisUrl = window.location.href
-    let thisSlug = `${thisUrl.replace(ssr[0].data.baseURL, '')}`
-    if (thisSlug === '') thisSlug = '/'
 
     let post = null
-    if (posts)post = getPostBySlug(thisSlug, posts)
-
+    const { posts, sites, links, keywords, categories  } = cms.bus
+    if (!posts && !sites && !links && !keywords && !categories) {
+        dispatch(cmsInit())
+    }
+    if (posts){
+        // 
+        const postList = posts.list
+        if (postList) {
+            post = getPostBySlug(thisSlug, postList)
+        }
+    }
 
     let signedIn = false
     if (core.data.uid) signedIn = true
@@ -100,7 +100,14 @@ export default function RouteEngine() {
     }
 
     return (
-        <Box sx={{ border: '1px solid white' }}>
+        <Box sx={{}}>
+            
+            <CardMedia 
+                component="img" 
+                height="200" 
+                image={image} 
+                alt={title} 
+            />
             <CardHeader
                 title={title}
                 subheader={excerpt}
@@ -132,7 +139,11 @@ export default function RouteEngine() {
                 }
             />
 
-            <CardMedia component="img" height="194" image={image} alt={title} />
+            
         </Box>
     )
 }
+
+/*
+<pre>cms {JSON.stringify(cms, null, 2)}</pre>
+*/

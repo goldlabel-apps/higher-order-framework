@@ -1,6 +1,6 @@
 export const getPostBySlug = (slug: string, posts: any) => {
+    // console.warn("getPostBySlug", slug, posts)
     for (let i = 0; i < posts.length; i++) {
-        // console.warn(slug, posts[i].data.slug)
         if (posts[i].data.slug === slug) {
             return posts[i].data
         }

@@ -1,6 +1,6 @@
 import { collection, query, getDocs } from 'firebase/firestore'
 import { AppThunk } from '../../../app/store'
-import { setCms } from '../'
+import { setCms, updateDataBus } from '../'
 import { db } from '../../../Shared'
 
 export const cmsRead = (collectionName:string): AppThunk => async (dispatch: any) => {
@@ -14,7 +14,7 @@ export const cmsRead = (collectionName:string): AppThunk => async (dispatch: any
             itemArr = [...itemArr, doc]
         })
         dispatch(setCms({ key: 'loaded', value: true }))
-        dispatch(setCms({ key: 'list', value: itemArr }))
+        dispatch(updateDataBus({ collectionName, key: "list", value: itemArr }))
     } catch (error) {
         console.warn('cmsRead error', error)
     }
