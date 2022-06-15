@@ -4,7 +4,7 @@ export const meta = (siteinfo: any) => {
     location,
     keywords,
     tagline,
-    avatar,
+    // avatar,
     manifest,
     // icon,
     // baseURL,
@@ -12,6 +12,7 @@ export const meta = (siteinfo: any) => {
     // author,
   } = siteinfo[0].data;
 
+  const appleTouchIcon = "https://listingslab.com/apple-touch-icon.png";
   const {placename, region, position, ICBM} = location;
 
   return `<meta charset="UTF-8">
@@ -28,7 +29,7 @@ export const meta = (siteinfo: any) => {
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="theme-color" content="#FFFFFF" />
-    <link rel="apple-touch-icon" href="${avatar}" />
+    <link rel="apple-touch-icon" href="${appleTouchIcon}" />
 
     <meta name="geo.region" content="${region}" />
     <meta name="geo.placename" content="${placename}" />

@@ -23,7 +23,7 @@
             "sizes": "192x192"
         },
         {
-            "src": "https://listingslab.com/logo512.png",
+            "src": "https://listingslab.com/apple-touch-icon.png",
             "type": "image/png",
             "sizes": "512x512",
             "purpose": "any maskable"
