@@ -15,6 +15,7 @@ import MiniButton from './components/MiniButton'
 import OnTheMap from './components/OnTheMap'
 import AppMenu from './components/AppMenu'
 import SigninDialog from './components/admin/SigninDialog'
+import Read from './components/admin/Read'
 import Social from './components/Social'
 import Blocked from './components/Blocked'
 import Map from './components/Map'
@@ -27,6 +28,7 @@ import Nav from './components/admin/Nav'
 import Collection from './components/admin/Collection'
 import Shape from './components/admin/Shape'
 import Data from './components/admin/Data'
+import Selected from './components/admin/Selected'
 
 import { getById, sortByAttribute, getPostBySlug } from './app/utils'
 
@@ -109,11 +111,13 @@ export {
     // Admin
     SigninDialog,
     CMS,
+    Read,
     Form,
     Nav,
     Collection,
     Shape,
     Data,
+    Selected,
     // Cms
     cmsRead,
     newCollectionBus,

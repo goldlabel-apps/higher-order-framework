@@ -181,6 +181,10 @@ export default function Icon(props: any) {
             iconFragment = <ExitIcon color={color} />
             break
 
+        case 'delete':
+            iconFragment = <TrashIcon color={color} />
+            break
+
         case 'clear':
             iconFragment = <TrashIcon color={color} />
             break

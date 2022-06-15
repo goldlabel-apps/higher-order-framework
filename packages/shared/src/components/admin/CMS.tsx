@@ -33,23 +33,14 @@ export default function CMS() {
     if (fullScreen) isFullScreen = true
     if (isMobile) isFullScreen = true
     const cms = useAppSelector(selectCms)
-    const { collection, mode, posts } = cms.data
+    const { collection } = cms.data
     let leftCol = true
     let rightCol = false
     if (collection) {
         rightCol = true
         leftCol = false
     }
-    let cmsTitle = 'Collections'
-    if (collection) {
-        cmsTitle = `Reading ${collection}`
-        if (mode === 'create') {
-            cmsTitle = `Create`
-        }
-        if (mode === 'update') {
-            cmsTitle = `Update`
-        }
-    }
+    
     const closeDialog = () =>
         dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
     const onBackClick = () =>
@@ -64,7 +55,16 @@ export default function CMS() {
             onClose={closeDialog}
         >
             <DialogContent>
-                <Grid container>
+                <Grid container>   
+                    {collection ? ( <Grid item>
+                                        <Box sx={{}}>
+                                            <IconButton onClick={onBackClick}>
+                                                <Icon icon="arrowl" />
+                                            </IconButton>
+                                        </Box>
+                                    </Grid>
+                            ) : null}
+                    
                     <Grid item sx={{ flexGrow: 1 }} />
                     <Grid item>
                         <Box sx={{ mt: 1, mr: 1 }}>
@@ -75,36 +75,12 @@ export default function CMS() {
                         </Box>
                     </Grid>
                 </Grid>
-
                 <Grid container>
-                    <Grid item xs={12}>
-                        <Box sx={{ display: 'flex' }}>
-                            {collection ? (
-                                <Box sx={{}}>
-                                    <IconButton onClick={onBackClick}>
-                                        <Icon icon="arrowl" />
-                                    </IconButton>
-                                </Box>
-                            ) : null}
-
-                            <Box sx={{}}>
-                                <Typography
-                                    variant="h6"
-                                    color="primary"
-                                    sx={{ fontWeight: 'lighter', ml: 2 }}
-                                >
-                                    {cmsTitle}
-                                </Typography>
-                            </Box>
-                        </Box>
-                    </Grid>
-
                     {leftCol ? (
                         <Grid item xs={12} md={rightCol ? 3 : 12}>
                             <Nav />
                         </Grid>
                     ) : null}
-
                     {rightCol ? (
                         <Grid item xs={12} md={leftCol ? 9 : 12}>
                             <Collection />
@@ -112,13 +88,12 @@ export default function CMS() {
                     ) : null}
                 </Grid>
             </DialogContent>
-
-            <DialogActions></DialogActions>
         </Dialog>
     )
 }
 
 /*
+<DialogActions></DialogActions>
 <Button
                     variant="contained"
                     color="secondary"
@@ -128,10 +103,24 @@ export default function CMS() {
                 </Button>
 
 
+
+                <Box sx={{}}>
+                                <Typography
+                                    variant="h6"
+                                    color="primary"
+                                    sx={{ fontWeight: 'lighter', ml: 2 }}
+                                >
+                                    {cmsTitle}
+                                </Typography>
+                            </Box>
+
+
 // if (posts) {
     //     for (let i = 0; i < posts.length; i++) {
     //         if (posts[i].id === '_shape') {
     //             // dispatch(setCms({ key:"shape", value: posts[i].data}))
     //         }
     //     }
-    // }                */
+    // }                
+    
+*/
