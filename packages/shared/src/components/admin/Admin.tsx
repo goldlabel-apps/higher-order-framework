@@ -10,6 +10,7 @@ import {
     Collection,
     FullScreenToggle,
     setCms,
+    PingpongAdmin,
 } from '../../listingslab-shared'
 import {
     useTheme,
@@ -22,7 +23,7 @@ import {
     IconButton,
 } from '@mui/material'
 
-export default function CMS() {
+export default function Admin() {
     const dispatch = useAppDispatch()
     const core = useAppSelector(selectCore)
     const theme = useTheme()
@@ -110,6 +111,10 @@ export default function CMS() {
                     </Grid>
                 </Grid>
                 <Grid container>
+                    <Grid item xs={12}>
+                        <PingpongAdmin />
+                    </Grid>
+                    
                     {leftCol ? (
                         <Grid item xs={12} md={rightCol ? 3 : 12}>
                             <Collections />

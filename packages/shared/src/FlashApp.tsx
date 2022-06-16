@@ -5,7 +5,7 @@ import {
     useAppSelector,
     selectMovieClips,
     SigninDialog,
-    CMS,
+    Admin,
 } from './listingslab-shared'
 
 export default function FlashApp() {
@@ -13,7 +13,7 @@ export default function FlashApp() {
     return (
         <React.Fragment>
             <SigninDialog />
-            <CMS />
+            <Admin />
             <Flash>
                 {movieClips.map((item, i) => {
                     return <MovieClip key={`mc_${i}`} data={item} />

@@ -22,7 +22,7 @@ import Map from './components/Map'
 import FindUs from './components/FindUs'
 import FullScreenToggle from './components/FullScreenToggle'
 
-import CMS from './components/admin/CMS'
+import Admin from './components/admin/Admin'
 import Form from './components/admin/Form'
 import Collections from './components/admin/Collections'
 import Collection from './components/admin/Collection'
@@ -42,6 +42,13 @@ import {
     getNextHighestDepth,
     resize,
 } from './Flash'
+
+import {
+    Pingpong,
+    PingpongAdmin,
+    selectPingpong,
+    setPingpong,
+} from './Pingpong'
 
 import {
     selectCms,
@@ -112,7 +119,7 @@ export {
     FullScreenToggle,
     // Admin
     SigninDialog,
-    CMS,
+    Admin,
     Read,
     Form,
     Collections,
@@ -141,4 +148,9 @@ export {
     getById,
     sortByAttribute,
     getPostBySlug,
+    // Pingpong
+    Pingpong,
+    PingpongAdmin,
+    selectPingpong,
+    setPingpong,
 }
