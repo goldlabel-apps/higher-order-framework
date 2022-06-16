@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Mumma, Pingpongball, Macromedia } from './'
-import { Navigator, RouteEngine, AppMenu, Social } from '../listingslab-shared'
+import { Navigator, RouteEngine, AppMenu, Social, Pingpong } from '../listingslab-shared'
 import { Box } from '@mui/material'
 
 const getComponent = (component) => {
@@ -8,6 +8,9 @@ const getComponent = (component) => {
         case 'AppMenu':
             return <AppMenu />
 
+        case 'Pingpong':
+            return <Pingpong />
+            
         case 'Social':
             return <Social />
 

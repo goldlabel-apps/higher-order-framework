@@ -13,7 +13,7 @@ export default function Pingpong() {
     console.warn("pingpong", pingpong)
     
     return (
-        <Box sx={{}}>
+        <Box sx={{ border: "1px solid red"}}>
             <Typography variant="h6" sx={{ fontWeight: "lighter" }}>
                 Pingpong 
             </Typography>

@@ -1,4 +1,20 @@
 export const movieClips = [
+
+    {
+        id: 'pingpong',
+        component: 'Pingpong',
+        initialPosition: 'topleft',
+        options: {
+            top: 0,
+            left: 0,
+            rotation: 0,
+            scale: 1,
+        },
+        width: 300,
+        height: 300,
+        zIndex: 1200,
+    },
+
     {
         id: 'appMenu',
         component: 'AppMenu',
@@ -13,6 +29,7 @@ export const movieClips = [
         height: 50,
         zIndex: 8000,
     },
+
     {
         id: 'routeEngine',
         component: 'RouteEngine',
@@ -40,7 +57,7 @@ export const movieClips = [
         },
         width: 290,
         height: 275,
-        zIndex: 1000,
+        zIndex: 1300,
     },
 
     // {
