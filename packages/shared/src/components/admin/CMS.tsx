@@ -74,7 +74,7 @@ export default function CMS() {
                     {collection ? (
                         <Grid item>
                             <Box sx={{}}>
-                                {collection && selected ? (
+                                {collection && !selected ? (
                                     <Button
                                         color="secondary"
                                         onClick={onReadClick}
