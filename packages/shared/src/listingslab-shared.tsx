@@ -63,6 +63,7 @@ import {
     navigateTo,
     signIn,
     unsignIn,
+    openLink,
 } from './features/core'
 
 console.warn('hof', PJSON.version)
@@ -92,6 +93,7 @@ export {
     unsignIn,
     navClick,
     navigateTo,
+    openLink,
     selectCore,
     setCore,
     // Theme

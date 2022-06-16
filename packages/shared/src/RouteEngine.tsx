@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, CardHeader, IconButton } from '@mui/material'
+import { Box, CardHeader, CardMedia, IconButton } from '@mui/material'
 import {
     useAppSelector,
     useAppDispatch,
@@ -81,17 +81,19 @@ export default function RouteEngine() {
 
     let title = '404, brah.'
     let excerpt = `route ${thisSlug} not found.`
-
+    let image = ''
     let icon = 'error'
 
     if (post) {
         title = post.title
         excerpt = post.excerpt
         icon = post.icon
+        image = post.image
     }
 
     return (
         <Box sx={{}}>
+            <CardMedia component="img" height="200" image={image} alt={title} />
             <CardHeader
                 title={title}
                 subheader={excerpt}
@@ -115,7 +117,7 @@ export default function RouteEngine() {
 }
 
 /*
-    <CardMedia component="img" height="200" image={image} alt={title} />
+    
     <pre>cms {JSON.stringify(cms, null, 2)}</pre>
 
 

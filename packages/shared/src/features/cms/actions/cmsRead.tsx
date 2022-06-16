@@ -1,4 +1,4 @@
-import { collection, query, getDocs } from 'firebase/firestore'
+import { collection, query, orderBy, getDocs } from 'firebase/firestore'
 import { AppThunk } from '../../../app/store'
 import { updateDataBus } from '../'
 import { db } from '../../../Shared'
@@ -7,7 +7,7 @@ export const cmsRead =
     (collectionName: string): AppThunk =>
     async (dispatch: any) => {
         try {
-            const q = query(collection(db, collectionName))
+            const q = query(collection(db, collectionName), orderBy('order'))
             let itemArr = []
             const snap = await getDocs(q)
             snap.forEach((document) => {

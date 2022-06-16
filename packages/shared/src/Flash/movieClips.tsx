@@ -16,32 +16,47 @@ export const movieClips = [
     {
         id: 'routeEngine',
         component: 'RouteEngine',
-        initialPosition: 'centered',
+        initialPosition: 'topmiddle',
         options: {
-            top: 0,
+            top: 25,
             left: 0,
             rotation: 0,
             scale: 1,
         },
         width: 290,
-        height: 120,
+        height: 275,
         zIndex: 1000,
     },
 
     {
-        id: 'navigator',
-        component: 'Navigator',
-        initialPosition: 'bottommiddle',
-        width: 300,
-        height: 40,
+        id: 'social',
+        component: 'Social',
+        initialPosition: 'topmiddle',
         options: {
-            top: 0,
+            top: 300,
             left: 0,
             rotation: 0,
             scale: 1,
         },
-        zIndex: 5000,
+        width: 290,
+        height: 275,
+        zIndex: 1000,
     },
+
+    // {
+    //     id: 'navigator',
+    //     component: 'Navigator',
+    //     initialPosition: 'bottomright',
+    //     width: 300,
+    //     height: 40,
+    //     options: {
+    //         top: 0,
+    //         left: 0,
+    //         rotation: 0,
+    //         scale: 1,
+    //     },
+    //     zIndex: 5000,
+    // },
 ]
 
 /*

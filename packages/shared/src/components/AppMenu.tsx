@@ -108,8 +108,6 @@ export default function AppMenu() {
                             <Typography variant="body2">⌘H</Typography>
                         </MenuItem>
 
-                        
-
                         <Divider />
 
                         {signedIn ? (
