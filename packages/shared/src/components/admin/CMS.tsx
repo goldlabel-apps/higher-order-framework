@@ -74,16 +74,12 @@ export default function CMS() {
                     {collection ? (
                         <Grid item>
                             <Box sx={{}}>
-
                                 <IconButton
                                     color="secondary"
-                                    onClick={onCollectionClick}>
-                                    <Icon icon={'cms'} />  
+                                    onClick={onCollectionClick}
+                                >
+                                    <Icon icon={'cms'} />
                                 </IconButton>
-
-                                
-
-                                
 
                                 <Button
                                     color="secondary"

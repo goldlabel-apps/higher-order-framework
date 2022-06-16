@@ -34,7 +34,6 @@ export default function Collections() {
 
     return (
         <Box sx={{}}>
-
             <ListItem
                 button
                 onClick={() => {

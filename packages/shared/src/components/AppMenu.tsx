@@ -93,28 +93,24 @@ export default function AppMenu() {
                         'aria-labelledby': 'app-button',
                     }}
                 >
-
-                        {signedIn ? (
-                            <React.Fragment>
-                                <MenuItem
-                                    onClick={() => {
-                                        onItemClick('cms')
-                                    }}
-                                >
-                                    <ListItemIcon>
-                                        <IconButton
-                                            sx={{ mr: 1 }}
-                                            color="primary"
-                                        >
-                                            <Icon icon="cms" />
-                                        </IconButton>
-                                    </ListItemIcon>
-                                    <ListItemText primary="Admin" />
-                                    <Typography variant="body2">⌘A</Typography>
-                                </MenuItem>
-                                <Divider />
-                            </React.Fragment>
-                        ) : null}
+                    {signedIn ? (
+                        <React.Fragment>
+                            <MenuItem
+                                onClick={() => {
+                                    onItemClick('cms')
+                                }}
+                            >
+                                <ListItemIcon>
+                                    <IconButton sx={{ mr: 1 }} color="primary">
+                                        <Icon icon="cms" />
+                                    </IconButton>
+                                </ListItemIcon>
+                                <ListItemText primary="Admin" />
+                                <Typography variant="body2">⌘A</Typography>
+                            </MenuItem>
+                            <Divider />
+                        </React.Fragment>
+                    ) : null}
 
                     <MenuList sx={{ width: 250 }} dense>
                         <MenuItem
@@ -173,10 +169,9 @@ export default function AppMenu() {
                             <ListItemText>Balance</ListItemText>
                             <Typography variant="body2">⌘B</Typography>
                         </MenuItem>
-                        
+
                         <Divider />
-                        
-                        
+
                         {signedIn ? (
                             <MenuItem
                                 onClick={() => {
