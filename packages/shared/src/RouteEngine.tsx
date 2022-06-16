@@ -104,11 +104,7 @@ export default function RouteEngine() {
                                 <Icon icon="arrowl" />
                             </IconButton>
                         ) : null}
-                        {icon ? (
-                            <IconButton color="primary">
-                                <Icon icon={icon} />
-                            </IconButton>
-                        ) : null}
+                        
                     </React.Fragment>
                 }
             />
@@ -117,7 +113,11 @@ export default function RouteEngine() {
 }
 
 /*
-    
+    {icon ? (
+                            <IconButton color="primary">
+                                <Icon icon={icon} />
+                            </IconButton>
+                        ) : null}
     <pre>cms {JSON.stringify(cms, null, 2)}</pre>
 
 

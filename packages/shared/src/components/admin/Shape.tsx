@@ -33,7 +33,7 @@ export default function Shape() {
     }
     if (!shape) return null
     let defaultExpanded = true
-    defaultExpanded = false
+    defaultExpanded = true
     return (
         <Accordion defaultExpanded={defaultExpanded} sx={{ boxShadow: 'none' }}>
             <AccordionSummary

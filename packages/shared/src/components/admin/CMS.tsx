@@ -74,37 +74,16 @@ export default function CMS() {
                     {collection ? (
                         <Grid item>
                             <Box sx={{}}>
-                                {collection && !selected ? (
-                                    <Button
-                                        color="secondary"
-                                        onClick={onReadClick}
-                                    >
-                                        <Icon icon={'arrowl'} />
-                                        <span
-                                            style={{
-                                                marginRight: 4,
-                                                marginLeft: 4,
-                                            }}
-                                        >
-                                            {collection}
-                                        </span>
-                                    </Button>
-                                ) : null}
 
-                                <Button
+                                <IconButton
                                     color="secondary"
-                                    onClick={onCollectionClick}
-                                >
-                                    <Icon icon={'arrowl'} />
-                                    <span
-                                        style={{
-                                            marginRight: 4,
-                                            marginLeft: 4,
-                                        }}
-                                    >
-                                        Collections
-                                    </span>
-                                </Button>
+                                    onClick={onCollectionClick}>
+                                    <Icon icon={'cms'} />  
+                                </IconButton>
+
+                                
+
+                                
 
                                 <Button
                                     color="secondary"
@@ -183,4 +162,20 @@ export default function CMS() {
     //     }
     // }                
     
-*/
+
+<Button
+                                    color="secondary"
+                                    onClick={onReadClick}
+                                >
+                                    <Icon icon={'arrowl'} />
+                                    <span
+                                        style={{
+                                            marginRight: 4,
+                                            marginLeft: 4,
+                                        }}
+                                    >
+                                        {collection}
+                                    </span>
+                                </Button>
+
+    */

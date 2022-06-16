@@ -33,7 +33,26 @@ export default function Collections() {
     }
 
     return (
-        <Box sx={{ m: 2 }}>
+        <Box sx={{}}>
+
+            <ListItem
+                button
+                onClick={() => {
+                    onCollectionClick('sites')
+                }}
+            >
+                <ListItemIcon>
+                    <IconButton color="secondary">
+                        <Icon icon="sites" />
+                    </IconButton>
+                </ListItemIcon>
+                <ListItemText
+                    primary="Sites"
+                    secondary="Manage Higher Order Frameworks"
+                />
+                <Typography variant="body2"></Typography>
+            </ListItem>
+
             <ListItem
                 button
                 onClick={() => {
@@ -72,21 +91,7 @@ export default function Collections() {
     Manage collections on Firebase Cloud
 </Typography>
 
-<ListItem
-    button
-    onClick={() => {
-        onCollectionClick('sites')
-    }}
->
-    <ListItemIcon>
-        <Icon icon="sites" />
-    </ListItemIcon>
-    <ListItemText
-        primary="Sites"
-        secondary="Manage Higher Order Frameworks"
-    />
-    <Typography variant="body2"></Typography>
-</ListItem>
+
 
 <ListItem
     button
