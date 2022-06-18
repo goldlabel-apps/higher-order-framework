@@ -34,7 +34,7 @@ export default function Collections() {
 
     return (
         <Box sx={{}}>
-            <Typography variant="h6" sx={{ fontWeight: "lighter" }}>
+            <Typography variant="h6" sx={{ fontWeight: 'lighter' }}>
                 Collections
             </Typography>
             <ListItem

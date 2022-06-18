@@ -48,6 +48,7 @@ import {
     PingpongAdmin,
     selectPingpong,
     setPingpong,
+    pingpongInit,
 } from './Pingpong'
 
 import {
@@ -153,4 +154,5 @@ export {
     PingpongAdmin,
     selectPingpong,
     setPingpong,
+    pingpongInit,
 }

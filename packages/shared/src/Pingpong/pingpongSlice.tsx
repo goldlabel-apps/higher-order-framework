@@ -2,13 +2,23 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../app/store'
 
 export interface PingpongShape {
-    data: any
+    status: string
+    fingerprint: string
+    hostname: string
+    device: string
+    browser: string
+    os: string
+    ip: string
 }
 
 const initialState: PingpongShape = {
-    data: {
-        stuff:123,
-    },
+    status: 'notstarted',
+    fingerprint: '',
+    hostname: '',
+    device: '',
+    browser: '',
+    os: '',
+    ip: '',
 }
 
 export const pingpongSlice = createSlice({
@@ -17,7 +27,7 @@ export const pingpongSlice = createSlice({
     reducers: {
         setPingpong: (state, action: PayloadAction<any>) => {
             const { key, value } = action.payload
-            state.data = { ...state.data, [key]: value }
+            state[key] = value
         },
     },
 })
