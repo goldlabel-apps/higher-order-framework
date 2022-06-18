@@ -4,11 +4,21 @@ import { RootState } from '../app/store'
 export interface PingpongShape {
     status: string
     fingerprint: string
+    hostname: string
+    device: string
+    browser: string
+    os: string
+    ip: string
 }
 
 const initialState: PingpongShape = {
-    status: "notstarted",
-    fingerprint: "",
+    status: 'notstarted',
+    fingerprint: '',
+    hostname: '',
+    device: '',
+    browser: '',
+    os: '',
+    ip: '',
 }
 
 export const pingpongSlice = createSlice({

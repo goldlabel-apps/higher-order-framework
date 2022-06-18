@@ -4,11 +4,9 @@ import {
     useAppDispatch,
     selectPingpong,
     setPingpong,
+    pingpongInit,
 } from '../listingslab-shared'
-import {
-    Box,
-    Typography,
-} from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
 export default function Pingpong() {
     const dispatch = useAppDispatch()
@@ -17,15 +15,16 @@ export default function Pingpong() {
 
     React.useEffect(() => {
         const { status } = pingpong
-        if (status === "notstarted"){
-            dispatch(setPingpong({ key:"status", value: "innitting" }))
+        if (status === 'notstarted') {
+            dispatch(pingpongInit())
+            dispatch(setPingpong({ key: 'status', value: 'innitting' }))
         }
     }, [pingpong, dispatch])
-    // border: "1px solid rgba(0,0,0,0.25)", 
+    // border: "1px solid rgba(0,0,0,0.25)",
     return (
-        <Box sx={{ p:1 }}>
-            <Typography variant="h6" sx={{ fontWeight: "lighter" }}>
-                Pingpong 
+        <Box sx={{ p: 1 }}>
+            <Typography variant="h6" sx={{ fontWeight: 'lighter' }}>
+                Pingpong
             </Typography>
             <pre>pingpong: {JSON.stringify(pingpong, null, 2)}</pre>
         </Box>

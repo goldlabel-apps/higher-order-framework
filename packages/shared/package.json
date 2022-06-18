@@ -52,7 +52,7 @@
     "dependencies": {
         "@emotion/react": "^11.8.1",
         "@emotion/styled": "^11.8.1",
-        "@fingerprintjs/fingerprintjs-pro": "^3.6.2",
+        "@fingerprintjs/fingerprintjs-pro-react": "^1.0.1",
         "@mui/icons-material": "^5.5.0",
         "@mui/material": "^5.5.0",
         "@mui/x-data-grid": "^5.12.1",
