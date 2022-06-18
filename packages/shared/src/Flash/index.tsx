@@ -3,12 +3,22 @@ import { selectFlash, selectMovieClips, setFlash } from './flashSlice'
 import { movieClips } from './movieClips'
 import Flash from './Flash'
 import MovieClip from './MovieClip'
-import Mumma from './MovieClips/Mumma'
-import Pingpongball from './MovieClips/Pingpongball'
-import Macromedia from './MovieClips/Macromedia'
+
+
+
 import Sounds from "./Sounds"
-import Timemachine from './MovieClips/Timemachine'
+
 import Work from './MovieClips/Work'
+import Life from './MovieClips/Life'
+import Balance from './MovieClips/Balance'
+
+import Punk from './MovieClips/svgTsx/Punk'
+import Biker from './MovieClips/svgTsx/Biker'
+import Mumma from './MovieClips/svgTsx/Mumma'
+import Chix from './MovieClips/svgTsx/Chix'
+import Timemachine from './MovieClips/svgTsx/Timemachine'
+import Pingpongball from './MovieClips/svgTsx/Pingpongball'
+import Macromedia from './MovieClips/svgTsx/Macromedia'
 
 import {
     initFlash,
@@ -30,6 +40,7 @@ export {
     Flash,
     MovieClip,
     Mumma,
+    Chix,
     Pingpongball,
     Timemachine,
     Macromedia,
@@ -52,4 +63,8 @@ export {
     resize,
     Sounds,
     Work,
+    Life,
+    Balance,
+    Punk,
+    Biker,
 }

@@ -1,24 +1,70 @@
 export const movieClips = [
-
     {
-        id: 'routeEngine',
-        border: "1px solid gold",
+        id: 'content',
+        // border: "1px solid limegreen",
         component: 'RouteEngine',
-        initialPosition: 'centered',
+        initialPosition: 'topmiddle',
         options: {
-            top: 0,
-            left: 0,
+            top: 20,
+            left: -50,
             rotation: 0,
-            scale: 1.2,
+            scale: 1,
         },
         width: 290,
-        height: 290,
+        height: 100,
         zIndex: 1000,
     },
+    {
+        id: 'work',
+        component: 'Work',
+        initialPosition: 'topmiddle',
+        options: {
+            top: 130,
+            left:0,
+            rotation: 0,
+            scale: 1,
+        },
+        // border: "1px solid red",
+        width: 300,
+        // height: 100,
+        zIndex: 1200,
+    },
+    {
+        id: 'life',
+        component: 'Life',
+        initialPosition: 'topmiddle',
+        options: {
+            top: 245,
+            left:0,
+            rotation: 0,
+            scale: 1,
+        },
+        // border: "1px solid blue",
+        width: 300,
+        // height: 300,
+        zIndex: 1300,
+    },
+
+    {
+        id: 'balance',
+        component: 'Balance',
+        initialPosition: 'topmiddle',
+        options: {
+            top: 360,
+            left:0,
+            rotation: 0,
+            scale: 1,
+        },
+        width: 300,
+        // border: "1px solid orange",
+        
+        zIndex: 1400,
+    },
+
     {  
         id: 'appMenu',
         component: 'AppMenu',
-        initialPosition: 'topright',
+        initialPosition: 'bottomright',
         options: {
             top: 8,
             left: 0,
@@ -29,37 +75,4 @@ export const movieClips = [
         height: 50,
         zIndex: 8000,
     },
-
-    {
-        id: 'work',
-        component: 'Work',
-        initialPosition: 'topleft',
-        options: {
-            top: 0,
-            left:0,
-            rotation: 0,
-            scale: 1,
-        },
-        width: 300,
-        height: 300,
-        zIndex: 1200,
-        border: "1px solid ",
-    },
-
-
-
-    // {
-    //     id: 'social',
-    //     component: 'Social',
-    //     initialPosition: 'topmiddle',
-    //     options: {
-    //         top: 300,
-    //         left: -150,
-    //         rotation: 0,
-    //         scale: 1,
-    //     },
-    //     width: 290,
-    //     height: 275,
-    //     zIndex: 1300,
-    // },
 ]

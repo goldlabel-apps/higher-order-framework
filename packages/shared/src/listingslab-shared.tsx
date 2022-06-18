@@ -32,21 +32,6 @@ import Selected from './components/admin/Selected'
 import { getById, sortByAttribute, getPostBySlug } from './app/utils'
 
 import {
-    Flash,
-    MovieClip,
-    Work,
-    Mumma,
-    initFlash,
-    setFlash,
-    selectFlash,
-    selectMovieClips,
-    getDisplay,
-    getNextHighestDepth,
-    resize,
-    
-} from './Flash'
-
-import {
     Pingpong,
     PingpongAdmin,
     selectPingpong,
@@ -77,6 +62,25 @@ import {
     openLink,
 } from './features/core'
 
+import {
+    Flash,
+    MovieClip,
+    Work,
+    Life,
+    Balance,
+    Mumma,
+    Chix,
+    Punk,
+    Biker,
+    initFlash,
+    setFlash,
+    selectFlash,
+    selectMovieClips,
+    getDisplay,
+    getNextHighestDepth,
+    resize,
+} from './Flash'
+
 console.warn('hof', PJSON.version)
 
 const lifecycles = singleSpaReact({
@@ -92,6 +96,23 @@ const lifecycles = singleSpaReact({
 export const { bootstrap, mount, unmount } = lifecycles
 
 export {
+    // Flash
+    Flash,
+    MovieClip,
+    Work,
+    Life,
+    Balance,
+    Mumma,
+    Chix,
+    Punk,
+    Biker,
+    selectFlash,
+    selectMovieClips,
+    setFlash,
+    initFlash,
+    getDisplay,
+    getNextHighestDepth,
+    resize,
     // Core
     store,
     useAppDispatch,
@@ -138,18 +159,7 @@ export {
     setCms,
     setDataBus,
     updateDataBus,
-    // Flash
-    Flash,
-    MovieClip,
-    Work,
-    Mumma,
-    selectFlash,
-    selectMovieClips,
-    setFlash,
-    initFlash,
-    getDisplay,
-    getNextHighestDepth,
-    resize,
+    
     // Utils
     getById,
     sortByAttribute,
