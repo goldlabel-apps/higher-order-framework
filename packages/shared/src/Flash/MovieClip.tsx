@@ -70,9 +70,7 @@ export default function MovieClip(props: any) {
     }
 
     const { component } = data
-    if (component === "Work"){
-        console.warn("component", getComponent(component))
-    }
+    
     return (
         <Box id={mcId} sx={movieclipStyle}>
             <Box sx={{ border }}>

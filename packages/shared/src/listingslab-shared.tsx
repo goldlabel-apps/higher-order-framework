@@ -35,7 +35,7 @@ import {
     Flash,
     MovieClip,
     Work,
-
+    Mumma,
     initFlash,
     setFlash,
     selectFlash,
@@ -142,6 +142,7 @@ export {
     Flash,
     MovieClip,
     Work,
+    Mumma,
     selectFlash,
     selectMovieClips,
     setFlash,
