@@ -8,6 +8,7 @@ import Pingpongball from './MovieClips/Pingpongball'
 import Macromedia from './MovieClips/Macromedia'
 import Sounds from "./Sounds"
 import Timemachine from './MovieClips/Timemachine'
+import Work from './MovieClips/Work'
 
 import {
     initFlash,
@@ -50,4 +51,5 @@ export {
     movieClips,
     resize,
     Sounds,
+    Work,
 }

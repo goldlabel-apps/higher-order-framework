@@ -15,8 +15,8 @@ export default function FlashApp() {
             <SigninDialog />
             <Admin />
             <Flash>
-                FlashApp
                 {movieClips.map((item, i) => {
+                    // console.warn(item)
                     return <MovieClip key={`mc_${i}`} data={item} />
                 })}
             </Flash>

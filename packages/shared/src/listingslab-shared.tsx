@@ -34,6 +34,8 @@ import { getById, sortByAttribute, getPostBySlug } from './app/utils'
 import {
     Flash,
     MovieClip,
+    Work,
+    Mumma,
     initFlash,
     setFlash,
     selectFlash,
@@ -41,6 +43,7 @@ import {
     getDisplay,
     getNextHighestDepth,
     resize,
+    
 } from './Flash'
 
 import {
@@ -136,13 +139,15 @@ export {
     setDataBus,
     updateDataBus,
     // Flash
+    Flash,
+    MovieClip,
+    Work,
+    Mumma,
     selectFlash,
     selectMovieClips,
     setFlash,
     initFlash,
     getDisplay,
-    Flash,
-    MovieClip,
     getNextHighestDepth,
     resize,
     // Utils
