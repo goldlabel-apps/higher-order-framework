@@ -9,6 +9,8 @@ import Macromedia from './MovieClips/Macromedia'
 import Sounds from "./Sounds"
 import Timemachine from './MovieClips/Timemachine'
 import Work from './MovieClips/Work'
+import Life from './MovieClips/Life'
+import Balance from './MovieClips/Balance'
 
 import {
     initFlash,
@@ -52,4 +54,6 @@ export {
     resize,
     Sounds,
     Work,
+    Life,
+    Balance,
 }
