@@ -6,6 +6,7 @@ import {
     AppMenu,
     Social,
     Pingpong,
+    Work,
 } from '../listingslab-shared'
 import { Box } from '@mui/material'
 
@@ -13,6 +14,9 @@ const getComponent = (component) => {
     switch (component) {
         case 'AppMenu':
             return <AppMenu />
+
+        case 'Work':
+            return <Work />
 
         case 'Pingpong':
             return <Pingpong />
@@ -66,7 +70,9 @@ export default function MovieClip(props: any) {
     }
 
     const { component } = data
-
+    if (component === "Work"){
+        console.warn("component", getComponent(component))
+    }
     return (
         <Box id={mcId} sx={movieclipStyle}>
             <Box sx={{ border }}>

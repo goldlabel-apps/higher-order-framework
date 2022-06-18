@@ -1,7 +1,23 @@
 export const movieClips = [
+
+    {
+        id: 'workClip',
+        border: "1px solid green",
+        component: 'Work',
+        initialPosition: 'topleft',
+        options: {
+            top: 0,
+            left: 0,
+            rotation: 0,
+            scale: 0,
+        },
+        width: 290,
+        height: 290,
+        zIndex: 1120,
+    },
     {
         id: 'routeEngine',
-        border: "1px solid red",
+        border: "1px solid gold",
         component: 'RouteEngine',
         initialPosition: 'centered',
         options: {
