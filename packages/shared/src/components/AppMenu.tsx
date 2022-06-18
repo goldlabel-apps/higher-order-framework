@@ -93,8 +93,6 @@ export default function AppMenu() {
                         'aria-labelledby': 'app-button',
                     }}
                 >
-                   
-
                     <MenuList sx={{ width: 250 }} dense>
                         <MenuItem
                             onClick={() => {
@@ -163,7 +161,10 @@ export default function AppMenu() {
                                     }}
                                 >
                                     <ListItemIcon>
-                                        <IconButton sx={{ mr: 1 }} color="primary">
+                                        <IconButton
+                                            sx={{ mr: 1 }}
+                                            color="primary"
+                                        >
                                             <Icon icon="cms" />
                                         </IconButton>
                                     </ListItemIcon>
@@ -173,7 +174,6 @@ export default function AppMenu() {
                                 <Divider />
                             </React.Fragment>
                         ) : null}
-
 
                         {signedIn ? (
                             <MenuItem

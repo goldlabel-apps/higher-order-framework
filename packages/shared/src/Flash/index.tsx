@@ -4,9 +4,7 @@ import { movieClips } from './movieClips'
 import Flash from './Flash'
 import MovieClip from './MovieClip'
 
-
-
-import Sounds from "./Sounds"
+import Sounds from './Sounds'
 
 import Work from './MovieClips/Work'
 import Life from './MovieClips/Life'

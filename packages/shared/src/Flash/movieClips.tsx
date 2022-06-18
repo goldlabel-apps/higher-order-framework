@@ -20,7 +20,7 @@ export const movieClips = [
         initialPosition: 'topmiddle',
         options: {
             top: 130,
-            left:0,
+            left: 0,
             rotation: 0,
             scale: 1,
         },
@@ -35,7 +35,7 @@ export const movieClips = [
         initialPosition: 'topmiddle',
         options: {
             top: 245,
-            left:0,
+            left: 0,
             rotation: 0,
             scale: 1,
         },
@@ -51,17 +51,17 @@ export const movieClips = [
         initialPosition: 'topmiddle',
         options: {
             top: 360,
-            left:0,
+            left: 0,
             rotation: 0,
             scale: 1,
         },
         width: 300,
         // border: "1px solid orange",
-        
+
         zIndex: 1400,
     },
 
-    {  
+    {
         id: 'appMenu',
         component: 'AppMenu',
         initialPosition: 'bottomright',

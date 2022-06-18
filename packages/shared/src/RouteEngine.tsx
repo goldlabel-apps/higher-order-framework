@@ -83,7 +83,6 @@ export default function RouteEngine() {
     let excerpt = `route ${thisSlug} not found.`
     let image = ''
     let icon = 'error'
-    
 
     if (post) {
         title = post.title
@@ -92,11 +91,18 @@ export default function RouteEngine() {
         image = post.image
     }
 
-    image = ""
+    image = ''
 
     return (
-        <Box sx={{ m:1, minHeight: 90 }}>
-            {image !== "" ? <CardMedia component="img" height="200" image={image} alt={title} /> : null }
+        <Box sx={{ m: 1, minHeight: 90 }}>
+            {image !== '' ? (
+                <CardMedia
+                    component="img"
+                    height="200"
+                    image={image}
+                    alt={title}
+                />
+            ) : null}
             <CardHeader
                 title={title}
                 subheader={excerpt}

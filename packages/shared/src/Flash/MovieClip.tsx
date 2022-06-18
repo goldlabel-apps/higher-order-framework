@@ -78,12 +78,10 @@ export default function MovieClip(props: any) {
     }
 
     const { component } = data
-    
+
     return (
         <Box id={mcId} sx={movieclipStyle}>
-            <Box sx={{ border }}>
-            {getComponent(component)}
-            </Box>
+            <Box sx={{ border }}>{getComponent(component)}</Box>
         </Box>
     )
 }

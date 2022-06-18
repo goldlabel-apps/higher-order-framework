@@ -159,7 +159,6 @@ export {
     setCms,
     setDataBus,
     updateDataBus,
-    
     // Utils
     getById,
     sortByAttribute,
