@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useAppDispatch, navClick, Biker } from "../../listingslab-shared"
-import { ButtonBase, Typography, CardMedia } from '@mui/material'
+import { Box, ButtonBase, Typography, CardMedia } from '@mui/material'
 
 export default function Work() {
     const dispatch = useAppDispatch()
@@ -12,18 +12,22 @@ export default function Work() {
     return (
             <ButtonBase 
                 onClick={ onClick }
-                sx={{ display: "flex", width: 290 }}>
+                sx={{ 
+                    margin: "left",
+                    display: "flex", width: 200 }}
+                >
                 <CardMedia
                     component={Biker}
-                    height="120"        
+                    height="100"        
                 />
                 <Typography
                     variant="h6"
                     color="primary"
-                    sx={{ fontWeight: 'lighter', ml: 2 }}
+                    sx={{ fontWeight: 'lighter', ml: 4 }}
                 >
                     Work
                 </Typography>
+                <Box sx={{flexGrow:1}} />
             </ButtonBase>
     )
 }

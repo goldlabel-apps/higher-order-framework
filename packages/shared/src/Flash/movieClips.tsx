@@ -1,56 +1,12 @@
 export const movieClips = [
     {
-        id: 'work',
-        component: 'Work',
-        initialPosition: 'topleft',
-        options: {
-            top: 0,
-            left:0,
-            rotation: 0,
-            scale: 1,
-        },
-        width: 300,
-        height: 300,
-        zIndex: 1200,
-    },
-
-    {
-        id: 'life',
-        component: 'Life',
-        initialPosition: 'topmiddle',
-        options: {
-            top: 0,
-            left:0,
-            rotation: 0,
-            scale: 1,
-        },
-        width: 300,
-        height: 300,
-        zIndex: 1300,
-    },
-
-    {
-        id: 'balance',
-        component: 'Balance',
-        initialPosition: 'topright',
-        options: {
-            top: 0,
-            left:0,
-            rotation: 0,
-            scale: 1,
-        },
-        width: 300,
-        height: 300,
-        zIndex: 1400,
-    },
-    {
-        id: 'routeEngine',
+        id: 'content',
         // border: "1px solid limegreen",
         component: 'RouteEngine',
-        initialPosition: 'centered',
+        initialPosition: 'topmiddle',
         options: {
-            top: 0,
-            left: 0,
+            top: 20,
+            left: -50,
             rotation: 0,
             scale: 1,
         },
@@ -58,6 +14,53 @@ export const movieClips = [
         height: 100,
         zIndex: 1000,
     },
+    {
+        id: 'work',
+        component: 'Work',
+        initialPosition: 'topmiddle',
+        options: {
+            top: 130,
+            left:0,
+            rotation: 0,
+            scale: 1,
+        },
+        // border: "1px solid red",
+        width: 300,
+        // height: 100,
+        zIndex: 1200,
+    },
+    {
+        id: 'life',
+        component: 'Life',
+        initialPosition: 'topmiddle',
+        options: {
+            top: 245,
+            left:0,
+            rotation: 0,
+            scale: 1,
+        },
+        // border: "1px solid blue",
+        width: 300,
+        // height: 300,
+        zIndex: 1300,
+    },
+
+    {
+        id: 'balance',
+        component: 'Balance',
+        initialPosition: 'topmiddle',
+        options: {
+            top: 360,
+            left:0,
+            rotation: 0,
+            scale: 1,
+        },
+        width: 300,
+        // border: "1px solid orange",
+        
+        zIndex: 1400,
+    },
+
     {  
         id: 'appMenu',
         component: 'AppMenu',

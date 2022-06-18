@@ -95,7 +95,7 @@ export default function RouteEngine() {
     image = ""
 
     return (
-        <Box sx={{  }}>
+        <Box sx={{ m:1, minHeight: 90 }}>
             {image !== "" ? <CardMedia component="img" height="200" image={image} alt={title} /> : null }
             <CardHeader
                 title={title}
