@@ -1,13 +1,20 @@
 import * as React from 'react'
-import { Mumma } from "../../listingslab-shared"
+import { useAppDispatch, navClick, Biker } from "../../listingslab-shared"
 import { ButtonBase, Typography, CardMedia } from '@mui/material'
 
 export default function Work() {
+    const dispatch = useAppDispatch()
+
+    let onClick = () => {
+        dispatch(navClick({action: "onWorkClick"}))
+    }
 
     return (
-            <ButtonBase sx={{ display: "flex", width: 290 }}>
+            <ButtonBase 
+                onClick={ onClick }
+                sx={{ display: "flex", width: 290 }}>
                 <CardMedia
-                    component={Mumma}
+                    component={Biker}
                     height="120"        
                 />
                 <Typography

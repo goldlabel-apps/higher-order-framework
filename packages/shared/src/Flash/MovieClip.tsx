@@ -7,6 +7,8 @@ import {
     Social,
     Pingpong,
     Work,
+    Life,
+    Balance,
 } from '../listingslab-shared'
 import { Box } from '@mui/material'
 
@@ -17,6 +19,12 @@ const getComponent = (component) => {
 
         case 'Work':
             return <Work />
+
+        case 'Life':
+            return <Life />
+
+        case 'Balance':
+            return <Balance />
 
         case 'Pingpong':
             return <Pingpong />

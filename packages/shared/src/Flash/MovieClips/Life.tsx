@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Mumma } from "../../listingslab-shared"
+import { Chix } from "../../listingslab-shared"
 import { ButtonBase, Typography, CardMedia } from '@mui/material'
 
 export default function Life() {
@@ -7,7 +7,7 @@ export default function Life() {
     return (
             <ButtonBase sx={{ display: "flex", width: 290 }}>
                 <CardMedia
-                    component={Mumma}
+                    component={Chix}
                     height="120"        
                 />
                 <Typography

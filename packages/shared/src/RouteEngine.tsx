@@ -62,17 +62,17 @@ export default function RouteEngine() {
     let signedIn = false
     if (core.data.uid) signedIn = true
 
-    const onUpdateClick = () => {
-        dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
-        dispatch(setCms({ key: 'mode', value: 'update' }))
-        return true
-    }
+    // const onUpdateClick = () => {
+    //     dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
+    //     dispatch(setCms({ key: 'mode', value: 'update' }))
+    //     return true
+    // }
 
-    const onCreateClick = () => {
-        dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
-        dispatch(setCms({ key: 'mode', value: 'create' }))
-        return true
-    }
+    // const onCreateClick = () => {
+    //     dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
+    //     dispatch(setCms({ key: 'mode', value: 'create' }))
+    //     return true
+    // }
 
     const onHomeClick = () => {
         dispatch(navigateTo({ pathname: '/' }))
@@ -83,6 +83,7 @@ export default function RouteEngine() {
     let excerpt = `route ${thisSlug} not found.`
     let image = ''
     let icon = 'error'
+    
 
     if (post) {
         title = post.title
@@ -91,9 +92,11 @@ export default function RouteEngine() {
         image = post.image
     }
 
+    image = ""
+
     return (
         <Box sx={{  }}>
-            <CardMedia component="img" height="200" image={image} alt={title} />
+            {image !== "" ? <CardMedia component="img" height="200" image={image} alt={title} /> : null }
             <CardHeader
                 title={title}
                 subheader={excerpt}
@@ -110,36 +113,3 @@ export default function RouteEngine() {
         </Box>
     )
 }
-
-/*
-    {icon ? (
-                            <IconButton color="primary">
-                                <Icon icon={icon} />
-                            </IconButton>
-                        ) : null}
-    <pre>cms {JSON.stringify(cms, null, 2)}</pre>
-
-
-action={
-                    signedIn ? (
-                        <React.Fragment>
-                            {!post ? (
-                                <IconButton
-                                    color="primary"
-                                    onClick={onCreateClick}
-                                >
-                                    <Icon icon="create" />
-                                </IconButton>
-                            ) : (
-                                <IconButton
-                                    color="primary"
-                                    onClick={onUpdateClick}
-                                >
-                                    <Icon icon="edit" />
-                                </IconButton>
-                            )}
-                        </React.Fragment>
-                    ) : null
-                }
-
-    */
