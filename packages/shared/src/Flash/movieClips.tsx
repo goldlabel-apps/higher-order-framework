@@ -1,5 +1,20 @@
 export const movieClips = [
     {
+        id: 'routeEngine',
+        border: "1px solid red",
+        component: 'RouteEngine',
+        initialPosition: 'centered',
+        options: {
+            top: 0,
+            left: 0,
+            rotation: 0,
+            scale: 1.2,
+        },
+        width: 290,
+        height: 290,
+        zIndex: 1000,
+    },
+    {  
         id: 'appMenu',
         component: 'AppMenu',
         initialPosition: 'topright',
@@ -29,20 +44,7 @@ export const movieClips = [
     //     zIndex: 1200,
     // },
 
-    {
-        id: 'routeEngine',
-        component: 'RouteEngine',
-        initialPosition: 'topmiddle',
-        options: {
-            top: 25,
-            left: 0,
-            rotation: 0,
-            scale: 1,
-        },
-        width: 290,
-        height: 275,
-        zIndex: 1000,
-    },
+
 
     // {
     //     id: 'social',

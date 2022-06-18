@@ -1,27 +1,26 @@
 // @ts-nocheck
 import * as React from 'react'
-import { useAppSelector } from '../app/hooks'
-import { getById } from '../app/utils'
-import { selectClips, selectSSR } from '../features/system'
+// import { useAppSelector } from '../app/hooks'
+// import { getById } from '../app/utils'
+// import { selectClips, selectSSR } from '../features/system'
 import { IconButton, CardHeader } from '@mui/material'
 import { Icon } from '../theme'
 import Sound from 'react-sound'
 
-export interface SoundShape {
+export interface SoundsShape {
     id: string
 }
 
-export default function SoundPlayer(props: SoundShape) {
-    const { id } = props
-    const clips = useAppSelector(selectClips)
-
-    const ssr = useAppSelector(selectSSR)
+export default function Sounds(props: SoundsShape) {
+    // const { id } = props
+    // const clips = useAppSelector(selectClips)
+    // const ssr = useAppSelector(selectSSR)
 
     const { assetsURL } = ssr
     // console.warn("assetsURL", assetsURL);
-    const clip = getById(id, clips)
-    const { title, subheader, icon } = clip
-    const [playing, setPlaying] = React.useState(false)
+    // const clip = getById(id, clips)
+    // const { title, subheader, icon } = clip
+    // const [playing, setPlaying] = React.useState(false)
 
     return (
         <React.Fragment>
@@ -33,7 +32,7 @@ export default function SoundPlayer(props: SoundShape) {
                     onLoading={() => {}}
                     onPlaying={() => {}}
                     onFinishedPlaying={() => {
-                        setPlaying(false)
+                        // setPlaying(false)
                     }}
                 />
             ) : null}
@@ -44,7 +43,7 @@ export default function SoundPlayer(props: SoundShape) {
                     <IconButton
                         color="primary"
                         onClick={() => {
-                            setPlaying(true)
+                            // setPlaying(true)
                         }}
                     >
                         <Icon icon={icon} />
@@ -54,7 +53,7 @@ export default function SoundPlayer(props: SoundShape) {
                     <IconButton
                         color="primary"
                         onClick={() => {
-                            setPlaying(true)
+                            // setPlaying(true)
                         }}
                     >
                         <Icon icon="fullscreen" />

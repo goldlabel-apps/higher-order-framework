@@ -46,10 +46,12 @@ export default function MovieClip(props: any) {
     let mcWidth = 0
     let mcHeight = 0
     let mcDepth = null
+    let border = null
     if (data.id) mcId = data.id
     if (data.width) mcWidth = data.width
     if (data.height) mcHeight = data.height
     if (data.depth) mcDepth = data.depth
+    if (data.border) border = data.border
     if (!mcDepth) mcDepth = 1234
 
     const movieclipStyle = {
@@ -67,7 +69,9 @@ export default function MovieClip(props: any) {
 
     return (
         <Box id={mcId} sx={movieclipStyle}>
+            <Box sx={{ border }}>
             {getComponent(component)}
+            </Box>
         </Box>
     )
 }

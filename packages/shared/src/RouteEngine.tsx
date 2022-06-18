@@ -92,7 +92,7 @@ export default function RouteEngine() {
     }
 
     return (
-        <Box sx={{}}>
+        <Box sx={{  }}>
             <CardMedia component="img" height="200" image={image} alt={title} />
             <CardHeader
                 title={title}

@@ -9,7 +9,7 @@ export const pingpongInit = (): AppThunk => async (dispatch: any) => {
     try {
         console.warn('pingpongInit')
         // const value = { updated: Date.now() }
-        dispatch(setPingpong({ key: 'fingerprint', value: '12h12fh3h123k' }))
+        dispatch(setPingpong({ key: 'fingerprint', value: 'do something good with hooks' }))
         // dispatch(cmsRead('sites'))
     } catch (error) {
         console.warn('pingpongInit error', error)

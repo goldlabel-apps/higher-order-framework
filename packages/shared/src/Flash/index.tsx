@@ -6,7 +6,7 @@ import MovieClip from './MovieClip'
 import Mumma from './MovieClips/Mumma'
 import Pingpongball from './MovieClips/Pingpongball'
 import Macromedia from './MovieClips/Macromedia'
-
+import Sounds from "./Sounds"
 import Timemachine from './MovieClips/Timemachine'
 
 import {
@@ -49,4 +49,5 @@ export {
     getNextHighestDepth,
     movieClips,
     resize,
+    Sounds,
 }
