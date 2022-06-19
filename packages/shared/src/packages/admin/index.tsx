@@ -7,11 +7,11 @@ import { adminInit } from './actions/adminInit'
 export const selectAdmin = (state: RootState) => state.admin
 export const selectBus = (state: RootState) => state.admin.bus
 
-export { 
+export {
     adminInit,
-    setAdmin, 
-    setDataBus, 
-    adminRead, 
-    newCollectionBus, 
-    updateDataBus 
+    setAdmin,
+    setDataBus,
+    adminRead,
+    newCollectionBus,
+    updateDataBus,
 }

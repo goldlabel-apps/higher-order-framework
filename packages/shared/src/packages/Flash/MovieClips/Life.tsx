@@ -19,10 +19,7 @@ export default function Life() {
             }}
         >
             <CardMedia component={Chix} height="80" />
-            <Typography
-                variant="h6"
-                sx={{ fontWeight: 'lighter', ml: 4 }}
-            >
+            <Typography variant="h6" sx={{ fontWeight: 'lighter', ml: 4 }}>
                 Life
             </Typography>
             <Box sx={{ flexGrow: 1 }} />

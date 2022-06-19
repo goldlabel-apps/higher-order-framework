@@ -50,7 +50,7 @@ export default function FindUs() {
                                         )
                                     }}
                                 >
-                                    <ListItemIcon sx={{ml:0}}>
+                                    <ListItemIcon sx={{ ml: 0 }}>
                                         <Tooltip color="primary" title={label}>
                                             <IconButton
                                                 color="primary"

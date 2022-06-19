@@ -18,7 +18,7 @@ const getComponent = (component) => {
 
         case 'Search':
             return <Search />
-            
+
         case 'Work':
             return <Work />
 

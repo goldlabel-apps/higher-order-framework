@@ -31,9 +31,7 @@ import Selected from './components/admin/Selected'
 
 import { getById, sortByAttribute, getPostBySlug } from './app/utils'
 
-
 import { Search } from './packages/search'
-
 
 import {
     Pingpong,

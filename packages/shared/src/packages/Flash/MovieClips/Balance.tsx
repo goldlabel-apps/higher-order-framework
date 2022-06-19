@@ -19,10 +19,7 @@ export default function Balance() {
             }}
         >
             <CardMedia component={Punk} height="80" />
-            <Typography
-                variant="h6"
-                sx={{ fontWeight: 'lighter', ml: 4 }}
-            >
+            <Typography variant="h6" sx={{ fontWeight: 'lighter', ml: 4 }}>
                 Balance
             </Typography>
             <Box sx={{ flexGrow: 1 }} />

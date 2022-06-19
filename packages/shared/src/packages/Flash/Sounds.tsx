@@ -5,9 +5,7 @@ import * as React from 'react'
 // import { selectClips, selectSSR } from '../features/system'
 import Sound from 'react-sound'
 import { IconButton, CardHeader } from '@mui/material'
-import {
-    Icon,
-} from '../../listingslab-shared'
+import { Icon } from '../../listingslab-shared'
 
 export interface SoundsShape {
     id: string

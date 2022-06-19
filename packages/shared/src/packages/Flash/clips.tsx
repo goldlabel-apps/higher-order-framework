@@ -1,5 +1,4 @@
 export const clips = [
-
     {
         id: 'search',
         // border: "1px solid green",
@@ -84,8 +83,4 @@ export const clips = [
         width: 300,
         zIndex: 1400,
     },
-
-
-
-
 ]
