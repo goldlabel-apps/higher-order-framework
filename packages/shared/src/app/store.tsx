@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
-import coreReducer from '../features/core/coreSlice'
+import coreReducer from '../packages/core/coreSlice'
 import adminReducer from '../packages/admin/adminSlice'
 import flashReducer from '../packages/flash/flashSlice'
 import pingpongReducer from '../packages/pingpong/pingpongSlice'

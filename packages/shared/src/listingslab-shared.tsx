@@ -35,7 +35,6 @@ import { getById, sortByAttribute, getPostBySlug } from './app/utils'
 import { SearchFiles } from './packages/search-files'
 
 
-
 import {
     Pingpong,
     PingpongAdmin,
@@ -65,7 +64,7 @@ import {
     signIn,
     unsignIn,
     openLink,
-} from './features/core'
+} from './packages/core'
 
 import {
     Stage,
