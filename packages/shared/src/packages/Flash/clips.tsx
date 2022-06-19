@@ -1,4 +1,4 @@
-export const movieClips = [
+export const clips = [
     {
         id: 'content',
         // border: "1px solid limegreen",
@@ -58,6 +58,21 @@ export const movieClips = [
         width: 300,
         // border: "1px solid orange",
 
+        zIndex: 1400,
+    },
+
+    {
+        id: 'social',
+        component: 'Social',
+        initialPosition: 'topmiddle',
+        options: {
+            top: 560,
+            left: 0,
+            rotation: 0,
+            scale: 1,
+        },
+        width: 300,
+        border: "1px solid orange",
         zIndex: 1400,
     },
 

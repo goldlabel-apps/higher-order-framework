@@ -1,6 +1,6 @@
 // Flash.
 import { selectFlash, selectMovieClips, setFlash } from './flashSlice'
-import { movieClips } from './movieClips'
+import { clips } from './clips'
 import Stage from './Stage'
 import MovieClip from './MovieClip'
 
@@ -58,7 +58,7 @@ export {
     fadeOut,
     remove,
     getNextHighestDepth,
-    movieClips,
+    clips,
     resize,
     Sounds,
     Work,
