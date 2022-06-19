@@ -13,12 +13,12 @@ import {
     useAppDispatch,
     Icon,
     openLink,
-    selectCms,
+    selectAdmin,
 } from '../listingslab-shared'
 
 export default function FindUs() {
     const dispatch = useAppDispatch()
-    const cms = useAppSelector(selectCms)
+    const cms = useAppSelector(selectAdmin)
     const { list } = cms.bus.links
     // console.warn( "list", list )
 

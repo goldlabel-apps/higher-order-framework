@@ -5,10 +5,10 @@ import {
     useAppSelector,
     setFlash,
     getDisplay,
-} from '../listingslab-shared'
+} from '../../listingslab-shared'
 import { onWindowResize, initFlash, selectFlash, resize } from './'
 
-export default function Flash(props) {
+export default function Stage(props) {
     window.addEventListener('resize', debounce(onWindowResize, 333))
 
     const { children } = props

@@ -1,6 +1,6 @@
 // @ts-nocheck
 import * as React from 'react'
-import { useAppDispatch, setCms, Icon } from '../../listingslab-shared'
+import { useAppDispatch, setAdmin, Icon } from '../../listingslab-shared'
 import { Card, Box, Grid, Button, TextField, Typography } from '@mui/material'
 
 export default function Form(props: any) {
@@ -39,7 +39,7 @@ export default function Form(props: any) {
     }
 
     const onCancelClick = () => {
-        dispatch(setCms({ key: 'mode', value: 'read' }))
+        dispatch(setAdmin({ key: 'mode', value: 'read' }))
         return true
     }
 

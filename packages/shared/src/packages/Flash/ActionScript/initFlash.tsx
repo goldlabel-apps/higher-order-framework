@@ -1,4 +1,4 @@
-import { store } from '../../listingslab-shared'
+import { store } from '../../../listingslab-shared'
 import { setPosition, fadeIn } from './'
 
 export const initFlash = () => {

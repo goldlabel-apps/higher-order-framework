@@ -31,23 +31,28 @@ import Selected from './components/admin/Selected'
 
 import { getById, sortByAttribute, getPostBySlug } from './app/utils'
 
+
+import { SearchFiles } from './packages/search-files'
+
+
+
 import {
     Pingpong,
     PingpongAdmin,
     selectPingpong,
     setPingpong,
     pingpongInit,
-} from './Pingpong'
+} from './packages/pingpong'
 
 import {
-    selectCms,
-    setCms,
+    selectAdmin,
+    setAdmin,
     setDataBus,
-    cmsRead,
+    adminRead,
     newCollectionBus,
-    cmsInit,
+    adminInit,
     updateDataBus,
-} from './features/cms'
+} from './packages/admin'
 
 import {
     selectRoute,
@@ -63,7 +68,7 @@ import {
 } from './features/core'
 
 import {
-    Flash,
+    Stage,
     MovieClip,
     Work,
     Life,
@@ -79,7 +84,7 @@ import {
     getDisplay,
     getNextHighestDepth,
     resize,
-} from './Flash'
+} from './packages/flash'
 
 console.warn('hof', PJSON.version)
 
@@ -96,8 +101,10 @@ const lifecycles = singleSpaReact({
 export const { bootstrap, mount, unmount } = lifecycles
 
 export {
+    // SearchFiles
+    SearchFiles,
     // Flash
-    Flash,
+    Stage,
     MovieClip,
     Work,
     Life,
@@ -151,12 +158,12 @@ export {
     Collection,
     Shape,
     Selected,
-    // Cms
-    cmsRead,
+    // Admin
+    adminRead,
     newCollectionBus,
-    cmsInit,
-    selectCms,
-    setCms,
+    adminInit,
+    selectAdmin,
+    setAdmin,
     setDataBus,
     updateDataBus,
     // Utils

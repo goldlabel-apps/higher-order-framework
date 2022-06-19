@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-export interface CmsShape {
+export interface AdminShape {
     data: any
     bus: any
 }
 
-const initialState: CmsShape = {
+const initialState: AdminShape = {
     bus: {},
     data: {
         // collection: 'posts',
@@ -13,11 +13,11 @@ const initialState: CmsShape = {
     },
 }
 
-export const cmsSlice = createSlice({
-    name: 'cms',
+export const adminSlice = createSlice({
+    name: 'admin',
     initialState,
     reducers: {
-        setCms: (state, action: PayloadAction<any>) => {
+        setAdmin: (state, action: PayloadAction<any>) => {
             const { key, value } = action.payload
             state.data = { ...state.data, [key]: value }
         },
@@ -35,5 +35,5 @@ export const cmsSlice = createSlice({
     },
 })
 
-export const { setCms, setDataBus, updateDataBus } = cmsSlice.actions
-export default cmsSlice.reducer
+export const { setAdmin, setDataBus, updateDataBus } = adminSlice.actions
+export default adminSlice.reducer

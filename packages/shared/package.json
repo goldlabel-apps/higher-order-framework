@@ -1,6 +1,6 @@
 {
     "name": "@listingslab/shared",
-    "version": "26.0.1",
+    "version": "28.0.0",
     "scripts": {
         "start": "webpack serve --port 1945",
         "start:standalone": "webpack serve --env standalone --port 1945",

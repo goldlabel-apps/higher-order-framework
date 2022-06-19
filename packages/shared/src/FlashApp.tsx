@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    Flash,
+    Stage,
     MovieClip,
     useAppSelector,
     selectMovieClips,
@@ -14,12 +14,12 @@ export default function FlashApp() {
         <React.Fragment>
             <SigninDialog />
             <Admin />
-            <Flash>
+            <Stage>
                 {movieClips.map((item, i) => {
                     // console.warn(item)
                     return <MovieClip key={`mc_${i}`} data={item} />
                 })}
-            </Flash>
+            </Stage>
         </React.Fragment>
     )
 }

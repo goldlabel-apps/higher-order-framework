@@ -1,13 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import coreReducer from '../features/core/coreSlice'
-import cmsReducer from '../features/cms/cmsSlice'
-import flashReducer from '../Flash/flashSlice'
-import pingpongReducer from '../Pingpong/pingpongSlice'
+import adminReducer from '../packages/admin/adminSlice'
+import flashReducer from '../packages/flash/flashSlice'
+import pingpongReducer from '../packages/pingpong/pingpongSlice'
 
 export const store = configureStore({
     reducer: {
         core: coreReducer,
-        cms: cmsReducer,
+        admin: adminReducer,
         flash: flashReducer,
         pingpong: pingpongReducer,
     },

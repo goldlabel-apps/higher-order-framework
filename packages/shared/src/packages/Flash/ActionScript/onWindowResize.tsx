@@ -1,4 +1,4 @@
-import { store, setFlash } from '../../listingslab-shared'
+import { store, setFlash } from '../../../listingslab-shared'
 // import { initFlash } from './'
 
 export const onWindowResize = () => {
