@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {
     useAppSelector,
-    selectCms,
+    selectAdmin,
     Form,
     Read,
     Selected,
@@ -9,7 +9,7 @@ import {
 import { Box, Card } from '@mui/material'
 
 export default function Collection() {
-    const cms = useAppSelector(selectCms)
+    const cms = useAppSelector(selectAdmin)
     const { collection, mode, selected } = cms.data
     const { bus } = cms
     const collectionData = bus[collection]

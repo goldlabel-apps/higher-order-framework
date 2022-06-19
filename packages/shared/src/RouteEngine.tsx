@@ -5,11 +5,11 @@ import {
     useAppDispatch,
     selectRoute,
     setCore,
-    setCms,
+    setAdmin,
     selectSSR,
     selectRefresh,
-    selectCms,
-    cmsInit,
+    selectAdmin,
+    adminInit,
     selectCore,
     getPostBySlug,
     navigateTo,
@@ -22,7 +22,7 @@ export default function RouteEngine() {
     const ssr = useAppSelector(selectSSR)
     const core = useAppSelector(selectCore)
     const refresh = useAppSelector(selectRefresh)
-    const cms = useAppSelector(selectCms)
+    const cms = useAppSelector(selectAdmin)
     const thisUrl = window.location.href
     let thisSlug = `${thisUrl.replace(ssr[0].data.baseURL, '')}`
     if (thisSlug === '') thisSlug = '/'
@@ -49,7 +49,7 @@ export default function RouteEngine() {
     let post = null
     const { posts, sites, links, keywords, categories } = cms.bus
     if (!posts && !sites && !links && !keywords && !categories) {
-        dispatch(cmsInit())
+        dispatch(adminInit())
     }
     if (posts) {
         if (!posts.list) return null
@@ -61,18 +61,6 @@ export default function RouteEngine() {
 
     let signedIn = false
     if (core.data.uid) signedIn = true
-
-    // const onUpdateClick = () => {
-    //     dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
-    //     dispatch(setCms({ key: 'mode', value: 'update' }))
-    //     return true
-    // }
-
-    // const onCreateClick = () => {
-    //     dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
-    //     dispatch(setCms({ key: 'mode', value: 'create' }))
-    //     return true
-    // }
 
     const onHomeClick = () => {
         dispatch(navigateTo({ pathname: '/' }))

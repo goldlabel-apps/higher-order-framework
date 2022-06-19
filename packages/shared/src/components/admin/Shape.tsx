@@ -3,7 +3,7 @@ import {
     useAppSelector,
     useAppDispatch,
     selectCore,
-    selectCms,
+    selectAdmin,
     Icon,
 } from '../../listingslab-shared'
 import {
@@ -14,7 +14,7 @@ import {
 } from '@mui/material'
 
 export default function Shape() {
-    const cms = useAppSelector(selectCms)
+    const cms = useAppSelector(selectAdmin)
     const { collection } = cms.data
 
     // console.warn("cms.data", cms.data)

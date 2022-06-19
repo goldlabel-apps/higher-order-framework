@@ -2,8 +2,8 @@ import * as React from 'react'
 import {
     useAppSelector,
     useAppDispatch,
-    setCms,
-    selectCms,
+    setAdmin,
+    selectAdmin,
     Icon,
 } from '../../listingslab-shared'
 import {
@@ -19,7 +19,7 @@ import {
 
 export default function Collections() {
     const dispatch = useAppDispatch()
-    const cms = useAppSelector(selectCms)
+    const cms = useAppSelector(selectAdmin)
     const { collection } = cms.data
     const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down('md'))
@@ -27,8 +27,8 @@ export default function Collections() {
     if (!isMobile) defaultExpanded = true
 
     const onCollectionClick = (collection: string) => {
-        dispatch(setCms({ key: 'collection', value: collection }))
-        dispatch(setCms({ key: 'mode', value: 'read' }))
+        dispatch(setAdmin({ key: 'collection', value: collection }))
+        dispatch(setAdmin({ key: 'mode', value: 'read' }))
         return true
     }
 

@@ -45,14 +45,14 @@ import {
 } from './packages/pingpong'
 
 import {
-    selectCms,
-    setCms,
+    selectAdmin,
+    setAdmin,
     setDataBus,
-    cmsRead,
+    adminRead,
     newCollectionBus,
-    cmsInit,
+    adminInit,
     updateDataBus,
-} from './features/cms'
+} from './packages/admin'
 
 import {
     selectRoute,
@@ -158,12 +158,12 @@ export {
     Collection,
     Shape,
     Selected,
-    // Cms
-    cmsRead,
+    // Admin
+    adminRead,
     newCollectionBus,
-    cmsInit,
-    selectCms,
-    setCms,
+    adminInit,
+    selectAdmin,
+    setAdmin,
     setDataBus,
     updateDataBus,
     // Utils

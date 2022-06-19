@@ -2,8 +2,8 @@ import * as React from 'react'
 import {
     useAppSelector,
     useAppDispatch,
-    selectCms,
-    setCms,
+    selectAdmin,
+    setAdmin,
     Shape,
     Icon,
 } from '../../listingslab-shared'
@@ -19,7 +19,7 @@ import {
 
 export default function Read() {
     const dispatch = useAppDispatch()
-    const cms = useAppSelector(selectCms)
+    const cms = useAppSelector(selectAdmin)
     const { collection } = cms.data
     const { bus } = cms
     const data = bus[collection]
@@ -27,7 +27,7 @@ export default function Read() {
     const items = data.list
 
     const onItemEdit = (item: any) => {
-        dispatch(setCms({ key: 'selected', value: item }))
+        dispatch(setAdmin({ key: 'selected', value: item }))
         return true
     }
 

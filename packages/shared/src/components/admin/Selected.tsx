@@ -2,8 +2,8 @@ import * as React from 'react'
 import {
     useAppSelector,
     useAppDispatch,
-    selectCms,
-    setCms,
+    selectAdmin,
+    setAdmin,
     Icon,
     Shape,
 } from '../../listingslab-shared'
@@ -11,13 +11,13 @@ import { Box, Grid, IconButton, Typography } from '@mui/material'
 
 export default function Selected() {
     const dispatch = useAppDispatch()
-    const cms = useAppSelector(selectCms)
+    const cms = useAppSelector(selectAdmin)
     const { selected } = cms.data
     if (!selected) return null
     // console.warn("selected", selected)
 
     const onDeSelect = () => {
-        dispatch(setCms({ key: 'selected', value: null }))
+        dispatch(setAdmin({ key: 'selected', value: null }))
         return true
     }
     const { id } = selected

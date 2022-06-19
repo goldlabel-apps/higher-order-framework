@@ -3,13 +3,13 @@ import {
     useAppSelector,
     useAppDispatch,
     selectCore,
-    selectCms,
+    selectAdmin,
     setCore,
     Icon,
     Collections,
     Collection,
     FullScreenToggle,
-    setCms,
+    setAdmin,
     PingpongAdmin,
 } from '../../listingslab-shared'
 import {
@@ -32,7 +32,7 @@ export default function Admin() {
     let isFullScreen = false
     if (fullScreen) isFullScreen = true
     if (isMobile) isFullScreen = true
-    const cms = useAppSelector(selectCms)
+    const cms = useAppSelector(selectAdmin)
     const { collection, selected } = cms.data
     let leftCol = true
     let rightCol = false
@@ -45,20 +45,20 @@ export default function Admin() {
         dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
 
     const onCollectionClick = () => {
-        dispatch(setCms({ key: 'mode', value: 'read' }))
-        dispatch(setCms({ key: 'collection', value: null }))
-        dispatch(setCms({ key: 'selected', value: null }))
+        dispatch(setAdmin({ key: 'mode', value: 'read' }))
+        dispatch(setAdmin({ key: 'collection', value: null }))
+        dispatch(setAdmin({ key: 'selected', value: null }))
         return true
     }
 
     const onReadClick = () => {
-        dispatch(setCms({ key: 'mode', value: 'read' }))
-        dispatch(setCms({ key: 'selected', value: null }))
+        dispatch(setAdmin({ key: 'mode', value: 'read' }))
+        dispatch(setAdmin({ key: 'selected', value: null }))
         return true
     }
 
     const onCreateClick = () => {
-        dispatch(setCms({ key: 'mode', value: 'create' }))
+        dispatch(setAdmin({ key: 'mode', value: 'create' }))
         return true
     }
 
@@ -158,7 +158,7 @@ export default function Admin() {
 // if (posts) {
     //     for (let i = 0; i < posts.length; i++) {
     //         if (posts[i].id === '_shape') {
-    //             // dispatch(setCms({ key:"shape", value: posts[i].data}))
+    //             // dispatch(setAdmin({ key:"shape", value: posts[i].data}))
     //         }
     //     }
     // }                
