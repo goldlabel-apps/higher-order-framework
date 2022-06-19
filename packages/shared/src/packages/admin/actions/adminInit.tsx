@@ -1,9 +1,9 @@
 // import { collection, query, getDocs } from 'firebase/firestore'
 import { AppThunk } from '../../../app/store'
-import { setDataBus, cmsRead } from '../'
+import { setDataBus, adminRead } from '../'
 // import { db } from '../../../Shared'
 
-export const cmsInit = (): AppThunk => async (dispatch: any) => {
+export const adminInit = (): AppThunk => async (dispatch: any) => {
     try {
         const value = { updated: Date.now() }
         dispatch(setDataBus({ key: 'sites', value }))
@@ -11,12 +11,12 @@ export const cmsInit = (): AppThunk => async (dispatch: any) => {
         dispatch(setDataBus({ key: 'links', value }))
         dispatch(setDataBus({ key: 'keywords', value }))
         dispatch(setDataBus({ key: 'categories', value }))
-        dispatch(cmsRead('sites'))
-        dispatch(cmsRead('posts'))
-        dispatch(cmsRead('links'))
-        dispatch(cmsRead('keywords'))
-        dispatch(cmsRead('categories'))
+        dispatch(adminRead('sites'))
+        dispatch(adminRead('posts'))
+        dispatch(adminRead('links'))
+        dispatch(adminRead('keywords'))
+        dispatch(adminRead('categories'))
     } catch (error) {
-        console.warn('cmsRead error', error)
+        console.warn('adminRead error', error)
     }
 }

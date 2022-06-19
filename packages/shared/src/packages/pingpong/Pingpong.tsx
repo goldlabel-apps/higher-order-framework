@@ -5,7 +5,7 @@ import {
     selectPingpong,
     setPingpong,
     pingpongInit,
-} from '../listingslab-shared'
+} from '../../listingslab-shared'
 import { Box, Typography } from '@mui/material'
 
 export default function Pingpong() {

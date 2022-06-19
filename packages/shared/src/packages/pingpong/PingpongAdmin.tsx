@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useAppSelector, selectPingpong } from '../listingslab-shared'
+import { useAppSelector, selectPingpong } from '../../listingslab-shared'
 import { Box, Typography } from '@mui/material'
 
 export default function PingpongAdmin() {

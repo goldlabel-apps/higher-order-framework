@@ -1,7 +1,7 @@
 // Flash.
 import { selectFlash, selectMovieClips, setFlash } from './flashSlice'
 import { movieClips } from './movieClips'
-import Flash from './Flash'
+import Stage from './Stage'
 import MovieClip from './MovieClip'
 
 import Sounds from './Sounds'
@@ -14,6 +14,7 @@ import Punk from './MovieClips/svgTsx/Punk'
 import Biker from './MovieClips/svgTsx/Biker'
 import Mumma from './MovieClips/svgTsx/Mumma'
 import Chix from './MovieClips/svgTsx/Chix'
+
 import Timemachine from './MovieClips/svgTsx/Timemachine'
 import Pingpongball from './MovieClips/svgTsx/Pingpongball'
 import Macromedia from './MovieClips/svgTsx/Macromedia'
@@ -32,10 +33,10 @@ import {
     getDisplay,
     getNextHighestDepth,
     resize,
-} from './ActionScript'
+} from '../flash/ActionScript'
 
 export {
-    Flash,
+    Stage,
     MovieClip,
     Mumma,
     Chix,

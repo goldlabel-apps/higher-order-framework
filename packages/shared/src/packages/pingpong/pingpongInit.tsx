@@ -1,6 +1,6 @@
-import { AppThunk } from '../app/store'
+import { AppThunk } from '../../app/store'
 // import { collection, query, getDocs } from 'firebase/firestore'
-import { setPingpong } from '../listingslab-shared'
+import { setPingpong } from '../../listingslab-shared'
 
 // import { setDataBus, cmsRead } from '../'
 // import { db } from '../../../Shared'

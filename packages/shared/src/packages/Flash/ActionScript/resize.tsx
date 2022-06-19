@@ -1,4 +1,4 @@
-import { store } from '../../listingslab-shared'
+import { store } from '../../../listingslab-shared'
 import { animateTo } from './'
 
 export const resize = () => {

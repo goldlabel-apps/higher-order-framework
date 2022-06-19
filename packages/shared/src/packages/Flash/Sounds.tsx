@@ -3,9 +3,11 @@ import * as React from 'react'
 // import { useAppSelector } from '../app/hooks'
 // import { getById } from '../app/utils'
 // import { selectClips, selectSSR } from '../features/system'
-import { IconButton, CardHeader } from '@mui/material'
-import { Icon } from '../theme'
 import Sound from 'react-sound'
+import { IconButton, CardHeader } from '@mui/material'
+import {
+    Icon,
+} from '../../listingslab-shared'
 
 export interface SoundsShape {
     id: string

@@ -3,7 +3,7 @@ import { AppThunk } from '../../../app/store'
 import { updateDataBus } from '../'
 import { db } from '../../../Shared'
 
-export const cmsRead =
+export const adminRead =
     (collectionName: string): AppThunk =>
     async (dispatch: any) => {
         try {
@@ -19,6 +19,6 @@ export const cmsRead =
                 updateDataBus({ collectionName, key: 'list', value: itemArr })
             )
         } catch (error) {
-            console.warn('cmsRead error', error)
+            console.warn('adminRead error', error)
         }
     }
