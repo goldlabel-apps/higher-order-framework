@@ -1,5 +1,11 @@
 import * as React from 'react'
-import { Box, CardHeader, CardMedia, IconButton, Typography } from '@mui/material'
+import {
+    Box,
+    CardHeader,
+    CardMedia,
+    IconButton,
+    Typography,
+} from '@mui/material'
 import {
     useAppSelector,
     useAppDispatch,
@@ -92,12 +98,12 @@ export default function RouteEngine() {
                 />
             ) : null}
             <CardHeader
-                title={<Typography variant='h5' sx={{ fontWeight: "lighter" }} >
-                            {title}
-                        </Typography>}
-                subheader={<Typography variant='body2' >
-                            {excerpt}
-                            </Typography>}
+                title={
+                    <Typography variant="h5" sx={{ fontWeight: 'lighter' }}>
+                        {title}
+                    </Typography>
+                }
+                subheader={<Typography variant="body2">{excerpt}</Typography>}
                 avatar={
                     <React.Fragment>
                         {thisSlug !== '/' ? (

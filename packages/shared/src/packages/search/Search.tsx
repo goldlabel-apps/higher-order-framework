@@ -11,7 +11,7 @@ export default function Search() {
                 display: 'flex',
                 alignItems: 'center',
                 width: '100%',
-                background: "rgba(255,255,255,0.2)"
+                background: 'rgba(255,255,255,0.2)',
             }}
         >
             <AppMenu />

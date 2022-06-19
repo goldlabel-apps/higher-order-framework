@@ -16,7 +16,7 @@ const getComponent = (component) => {
     switch (component) {
         case 'AppMenu':
             return <AppMenu />
-        
+
         case 'Sky':
             return <Sky />
 
