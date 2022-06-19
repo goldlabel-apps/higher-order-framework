@@ -18,8 +18,8 @@ import {
 
 export default function FindUs() {
     const dispatch = useAppDispatch()
-    const cms = useAppSelector(selectAdmin)
-    const { list } = cms.bus.links
+    const admin = useAppSelector(selectAdmin)
+    const { list } = admin.bus.links
     // console.warn( "list", list )
 
     let social = []
@@ -50,7 +50,7 @@ export default function FindUs() {
                                         )
                                     }}
                                 >
-                                    <ListItemIcon>
+                                    <ListItemIcon sx={{ml:-1.5}}>
                                         <Tooltip color="primary" title={label}>
                                             <IconButton
                                                 color="primary"

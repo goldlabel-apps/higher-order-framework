@@ -1,12 +1,11 @@
 export const clips = [
     {
         id: 'content',
-        // border: "1px solid limegreen",
         component: 'RouteEngine',
         initialPosition: 'topmiddle',
         options: {
             top: 20,
-            left: -50,
+            left: -25,
             rotation: 0,
             scale: 1,
         },
@@ -56,23 +55,21 @@ export const clips = [
             scale: 1,
         },
         width: 300,
-        // border: "1px solid orange",
-
         zIndex: 1400,
     },
 
     {
         id: 'social',
+        // border: "1px solid limegreen",
         component: 'Social',
         initialPosition: 'topmiddle',
         options: {
-            top: 560,
+            top: 480,
             left: 0,
             rotation: 0,
             scale: 1,
         },
         width: 300,
-        border: "1px solid orange",
         zIndex: 1400,
     },
 
