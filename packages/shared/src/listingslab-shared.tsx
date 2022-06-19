@@ -32,7 +32,7 @@ import Selected from './components/admin/Selected'
 import { getById, sortByAttribute, getPostBySlug } from './app/utils'
 
 
-import { SearchFiles } from './packages/search-files'
+import { Search } from './packages/search'
 
 
 import {
@@ -100,8 +100,8 @@ const lifecycles = singleSpaReact({
 export const { bootstrap, mount, unmount } = lifecycles
 
 export {
-    // SearchFiles
-    SearchFiles,
+    // Search
+    Search,
     // Flash
     Stage,
     MovieClip,

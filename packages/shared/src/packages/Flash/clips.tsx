@@ -1,9 +1,9 @@
 export const clips = [
 
     {
-        id: 'search-files',
+        id: 'search',
         // border: "1px solid green",
-        component: 'SearchFiles',
+        component: 'Search',
         initialPosition: 'topmiddle',
         options: {
             top: 16,
@@ -13,6 +13,20 @@ export const clips = [
         },
         width: 580,
         zIndex: 9000,
+    },
+
+    {
+        id: 'social',
+        component: 'Social',
+        initialPosition: 'topmiddle',
+        options: {
+            top: 95,
+            left: 220,
+            rotation: 0,
+            scale: 1,
+        },
+        width: 150,
+        zIndex: 1400,
     },
 
     {
@@ -71,32 +85,7 @@ export const clips = [
         zIndex: 1400,
     },
 
-    {
-        id: 'social',
-        component: 'Social',
-        initialPosition: 'topmiddle',
-        options: {
-            top: 95,
-            left: 220,
-            rotation: 0,
-            scale: 1,
-        },
-        width: 150,
-        zIndex: 1400,
-    },
 
-    {
-        id: 'appMenu',
-        component: 'AppMenu',
-        initialPosition: 'bottomright',
-        options: {
-            top: 8,
-            left: 0,
-            rotation: 0,
-            scale: 1,
-        },
-        width: 100,
-        height: 50,
-        zIndex: 8000,
-    },
+
+
 ]

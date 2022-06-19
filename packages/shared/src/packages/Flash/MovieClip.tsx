@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {
-    SearchFiles,
+    Search,
     Navigator,
     RouteEngine,
     AppMenu,
@@ -16,8 +16,8 @@ const getComponent = (component) => {
         case 'AppMenu':
             return <AppMenu />
 
-        case 'SearchFiles':
-            return <SearchFiles />
+        case 'Search':
+            return <Search />
             
         case 'Work':
             return <Work />
