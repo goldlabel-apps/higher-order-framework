@@ -20,6 +20,7 @@ export default function MiniButton(props: any) {
     let onClick = () => {
         dispatch(navClick(data))
     }
+    if (data.onClick) onClick = data.onClick
 
     return (
         <Tooltip title={tooltip} color={color}>

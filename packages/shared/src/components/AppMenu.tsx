@@ -8,7 +8,6 @@ import {
     ListItemText,
     ListItemIcon,
     Typography,
-    Tooltip,
     Divider,
 } from '@mui/material'
 import {
@@ -20,6 +19,7 @@ import {
     unsignIn,
     setCore,
     MaxiButton,
+    MiniButton,
 } from '../listingslab-shared'
 
 export default function AppMenu() {
@@ -30,6 +30,10 @@ export default function AppMenu() {
 
     let signedIn = false
     if (core.data.uid) signedIn = true
+
+    const appMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setAnchorEl(event.currentTarget)
+    }
 
     const onItemClick = (item: string) => {
         switch (item) {
@@ -59,22 +63,19 @@ export default function AppMenu() {
         appMenuClose()
     }
 
-    const appMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setAnchorEl(event.currentTarget)
-    }
-
     const appMenuClose = () => {
         setAnchorEl(null)
     }
 
     return (
         <React.Fragment>
-            <MaxiButton
+            <MiniButton
                 data={{
                     label: 'Menu',
-                    type: 'maxi',
+                    tooltip: 'Menu',
+                    type: 'mini',
                     icon: 'menu',
-                    color: 'secondary',
+                    color: 'primary',
                     onClick: appMenuOpen,
                 }}
             />

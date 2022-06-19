@@ -14,8 +14,10 @@ export const navigateTo =
             const { ssr } = getState().core.data
             const { baseURL } = ssr[0].data
             history.push(`${baseURL}${pathname}`)
-
             dispatch(setCore({ key: 'refresh', value: true }))
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+            
             return true
         } catch (error) {
             console.warn('navigateTo error', error)

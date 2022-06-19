@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {
-    Mumma, 
+    Search,
     Navigator,
     RouteEngine,
     AppMenu,
@@ -16,6 +16,9 @@ const getComponent = (component) => {
         case 'AppMenu':
             return <AppMenu />
 
+        case 'Search':
+            return <Search />
+            
         case 'Work':
             return <Work />
 

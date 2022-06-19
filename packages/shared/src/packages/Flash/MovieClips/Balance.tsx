@@ -18,10 +18,9 @@ export default function Balance() {
                 width: 200,
             }}
         >
-            <CardMedia component={Punk} height="100" />
+            <CardMedia component={Punk} height="80" />
             <Typography
                 variant="h6"
-                color="primary"
                 sx={{ fontWeight: 'lighter', ml: 4 }}
             >
                 Balance

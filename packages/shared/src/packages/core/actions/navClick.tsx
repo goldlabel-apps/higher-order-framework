@@ -8,8 +8,8 @@ export const navClick =
             let gotoPathname = '/'
             const { action, pathname } = item
             if (pathname) gotoPathname = pathname
-
-            // console.warn ("item", item)
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' })
 
             switch (action) {
                 case 'onHomeClick':

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
-import { movieClips } from './'
+import { clips } from './'
 
 export interface FlashShape {
     data: any
@@ -8,7 +8,7 @@ export interface FlashShape {
 
 const initialState: FlashShape = {
     data: {
-        movieClips,
+        movieClips: clips,
     },
 }
 
