@@ -4,9 +4,9 @@ export const clips = [
         id: 'search',
         // border: "1px solid green",
         component: 'Search',
-        initialPosition: 'topmiddle',
+        initialPosition: 'bottommiddle',
         options: {
-            top: 16,
+            top: -50,
             left: 0,
             rotation: 0,
             scale: 1,

@@ -19,9 +19,9 @@ import {
 export default function FindUs() {
     const dispatch = useAppDispatch()
     const admin = useAppSelector(selectAdmin)
-    const { list } = admin.bus.links
-    // console.warn( "list", list )
-
+    const { links } = admin.bus
+    if (!links) return null
+    const { list } = links
     let social = []
     if (list) {
         social = list

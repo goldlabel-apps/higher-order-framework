@@ -32,7 +32,6 @@ export default function AppMenu() {
     if (core.data.uid) signedIn = true
 
     const appMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
-        console.warn("appMenuOpen")
         setAnchorEl(event.currentTarget)
     }
 
