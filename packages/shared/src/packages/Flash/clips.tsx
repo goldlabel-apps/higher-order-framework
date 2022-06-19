@@ -1,11 +1,27 @@
 export const clips = [
+
+    {
+        id: 'search-files',
+        // border: "1px solid green",
+        component: 'SearchFiles',
+        initialPosition: 'topmiddle',
+        options: {
+            top: 16,
+            left: 0,
+            rotation: 0,
+            scale: 1,
+        },
+        width: 580,
+        zIndex: 9000,
+    },
+
     {
         id: 'content',
         component: 'RouteEngine',
         initialPosition: 'topmiddle',
         options: {
-            top: 20,
-            left: -25,
+            top: 80,
+            left: -175,
             rotation: 0,
             scale: 1,
         },
@@ -13,19 +29,18 @@ export const clips = [
         height: 100,
         zIndex: 1000,
     },
+
     {
         id: 'work',
         component: 'Work',
         initialPosition: 'topmiddle',
         options: {
-            top: 130,
-            left: 20,
+            top: 200,
+            left: -125,
             rotation: 0,
             scale: 1,
         },
-        // border: "1px solid red",
         width: 300,
-        // height: 100,
         zIndex: 1200,
     },
     {
@@ -33,14 +48,12 @@ export const clips = [
         component: 'Life',
         initialPosition: 'topmiddle',
         options: {
-            top: 245,
-            left: 20,
+            top: 290,
+            left: -125,
             rotation: 0,
             scale: 1,
         },
-        // border: "1px solid blue",
         width: 300,
-        // height: 300,
         zIndex: 1300,
     },
 
@@ -49,8 +62,8 @@ export const clips = [
         component: 'Balance',
         initialPosition: 'topmiddle',
         options: {
-            top: 360,
-            left: 20,
+            top: 380,
+            left: -125,
             rotation: 0,
             scale: 1,
         },
@@ -60,16 +73,15 @@ export const clips = [
 
     {
         id: 'social',
-        // border: "1px solid limegreen",
         component: 'Social',
         initialPosition: 'topmiddle',
         options: {
-            top: 480,
-            left: 0,
+            top: 95,
+            left: 220,
             rotation: 0,
             scale: 1,
         },
-        width: 300,
+        width: 150,
         zIndex: 1400,
     },
 
