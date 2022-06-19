@@ -10,6 +10,8 @@ import Work from './MovieClips/Work'
 import Life from './MovieClips/Life'
 import Balance from './MovieClips/Balance'
 
+import Sky from './MovieClips/svgTsx/Sky'
+
 import Punk from './MovieClips/svgTsx/Punk'
 import Biker from './MovieClips/svgTsx/Biker'
 import Mumma from './MovieClips/svgTsx/Mumma'
@@ -40,6 +42,7 @@ export {
     MovieClip,
     Mumma,
     Chix,
+    Sky,
     Pingpongball,
     Timemachine,
     Macromedia,

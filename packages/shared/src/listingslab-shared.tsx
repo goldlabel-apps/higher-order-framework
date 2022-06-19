@@ -67,6 +67,7 @@ import {
 import {
     Stage,
     MovieClip,
+    Sky,
     Work,
     Life,
     Balance,
@@ -110,6 +111,7 @@ export {
     Chix,
     Punk,
     Biker,
+    Sky,
     selectFlash,
     selectMovieClips,
     setFlash,

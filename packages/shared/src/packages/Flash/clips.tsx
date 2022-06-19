@@ -1,11 +1,27 @@
 export const clips = [
+
+    {
+        id: 'sky',
+        // border: "1px solid green",
+        component: 'Sky',
+        initialPosition: 'topleft',
+        options: {
+            top: 0,
+            left: 0,
+            rotation: 0,
+            scale: 1,
+        },
+        width: "100%",
+        height: "100vh",
+    },
+
     {
         id: 'search',
         // border: "1px solid green",
         component: 'Search',
-        initialPosition: 'bottommiddle',
+        initialPosition: 'topmiddle',
         options: {
-            top: -50,
+            top: 16,
             left: 0,
             rotation: 0,
             scale: 1,
@@ -19,8 +35,8 @@ export const clips = [
         component: 'Social',
         initialPosition: 'topmiddle',
         options: {
-            top: 95,
-            left: 220,
+            top: 195,
+            left: 210,
             rotation: 0,
             scale: 1,
         },
@@ -33,12 +49,12 @@ export const clips = [
         component: 'RouteEngine',
         initialPosition: 'topmiddle',
         options: {
-            top: 80,
-            left: -175,
+            top: 180,
+            left: -60,
             rotation: 0,
             scale: 1,
         },
-        width: 290,
+        width: 500,
         height: 100,
         zIndex: 1000,
     },
@@ -48,12 +64,12 @@ export const clips = [
         component: 'Work',
         initialPosition: 'topmiddle',
         options: {
-            top: 200,
-            left: -125,
+            top: 100,
+            left: -160,
             rotation: 0,
             scale: 1,
         },
-        width: 300,
+        width: 200,
         zIndex: 1200,
     },
     {
@@ -61,12 +77,12 @@ export const clips = [
         component: 'Life',
         initialPosition: 'topmiddle',
         options: {
-            top: 290,
-            left: -125,
+            top: 100,
+            left: 50,
             rotation: 0,
             scale: 1,
         },
-        width: 300,
+        width: 200,
         zIndex: 1300,
     },
 
@@ -75,12 +91,12 @@ export const clips = [
         component: 'Balance',
         initialPosition: 'topmiddle',
         options: {
-            top: 380,
-            left: -125,
+            top: 100,
+            left: 225,
             rotation: 0,
             scale: 1,
         },
-        width: 300,
+        width: 200,
         zIndex: 1400,
     },
 ]
