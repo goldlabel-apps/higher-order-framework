@@ -19,7 +19,7 @@ export const clips = [
         initialPosition: 'topmiddle',
         options: {
             top: 130,
-            left: 0,
+            left: 20,
             rotation: 0,
             scale: 1,
         },
@@ -34,7 +34,7 @@ export const clips = [
         initialPosition: 'topmiddle',
         options: {
             top: 245,
-            left: 0,
+            left: 20,
             rotation: 0,
             scale: 1,
         },
@@ -50,7 +50,7 @@ export const clips = [
         initialPosition: 'topmiddle',
         options: {
             top: 360,
-            left: 0,
+            left: 20,
             rotation: 0,
             scale: 1,
         },
