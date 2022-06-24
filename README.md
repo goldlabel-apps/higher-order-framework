@@ -4,8 +4,8 @@
 
 ![featured](https://listingslab.com/svg/featured/team.svg)
 
-Use the --legacy-peer-deps flag when installing deps
-
 ```bash
-npi i --legacy-peer-deps
+npm run npm-i
 ```
+
+> *important* Use --legacy-peer-deps flag when installing deps
