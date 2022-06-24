@@ -1,6 +1,6 @@
 {
     "name": "@listingslab/shared",
-    "version": "28.0.0",
+    "version": "28.0.1",
     "scripts": {
         "start": "webpack serve --port 1945",
         "start:standalone": "webpack serve --env standalone --port 1945",
@@ -14,6 +14,9 @@
         "watch-tests": "cross-env BABEL_ENV=test jest --watch",
         "coverage": "cross-env BABEL_ENV=test jest --coverage",
         "build:types": "tsc"
+    },
+    "engines": {
+        "node": "16"
     },
     "devDependencies": {
         "@babel/core": "^7.15.0",
