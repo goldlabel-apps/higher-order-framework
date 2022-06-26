@@ -9,11 +9,16 @@ import {
     Life,
     Balance,
     Sky,
+    LayoutHome,
 } from '../../listingslab-shared'
 import { Box } from '@mui/material'
 
 const getComponent = (component) => {
     switch (component) {
+        case 'LayoutHome':
+            return <LayoutHome />
+
+
         case 'AppMenu':
             return <AppMenu />
 

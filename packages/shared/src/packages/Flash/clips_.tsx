@@ -72,4 +72,19 @@ export const clips = [
         width: 200,
         zIndex: 1400,
     },
+
+    {
+        id: 'search',
+        // border: "1px solid green",
+        component: 'Search',
+        initialPosition: 'bottommiddle',
+        options: {
+            top: -50,
+            left: 0,
+            rotation: 0,
+            scale: 1,
+        },
+        width: 300,
+        zIndex: 9000,
+    },
 ]

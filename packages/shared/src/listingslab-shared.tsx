@@ -82,6 +82,7 @@ import {
     getDisplay,
     getNextHighestDepth,
     resize,
+    LayoutHome,
 } from './packages/flash'
 
 console.warn('hof', PJSON.version)
@@ -175,4 +176,5 @@ export {
     selectPingpong,
     setPingpong,
     pingpongInit,
+    LayoutHome,
 }

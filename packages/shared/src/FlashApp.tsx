@@ -16,7 +16,6 @@ export default function FlashApp() {
             <Admin />
             <Stage>
                 {movieClips.map((item, i) => {
-                    // console.warn(item)
                     return <MovieClip key={`mc_${i}`} data={item} />
                 })}
             </Stage>
