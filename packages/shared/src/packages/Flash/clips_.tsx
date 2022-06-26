@@ -14,20 +14,7 @@ export const clips = [
         height: '100vh',
     },
 
-    {
-        id: 'search',
-        // border: "1px solid green",
-        component: 'Search',
-        initialPosition: 'topmiddle',
-        options: {
-            top: 16,
-            left: 0,
-            rotation: 0,
-            scale: 1,
-        },
-        width: 580,
-        zIndex: 9000,
-    },
+
 
     {
         id: 'social',
@@ -43,20 +30,7 @@ export const clips = [
         zIndex: 1400,
     },
 
-    {
-        id: 'content',
-        component: 'RouteEngine',
-        initialPosition: 'topmiddle',
-        options: {
-            top: 180,
-            left: -60,
-            rotation: 0,
-            scale: 1,
-        },
-        width: 500,
-        height: 100,
-        zIndex: 1000,
-    },
+
 
     {
         id: 'work',
