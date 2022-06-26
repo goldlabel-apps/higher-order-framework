@@ -11,16 +11,16 @@ https://expressjs.com/en/api.html#res
 https://www.npmjs.com/package/finalhandler
 
 ```javascript
-var finalhandler = require("finalhandler");
-var http = require("http");
-var serveStatic = require("serve-static");
+var finalhandler = require('finalhandler')
+var http = require('http')
+var serveStatic = require('serve-static')
 
-var serve = serveStatic("public");
+var serve = serveStatic('public')
 
 var server = http.createServer(function (req, res) {
-  var done = finalhandler(req, res);
-  serve(req, res, done);
-});
+    var done = finalhandler(req, res)
+    serve(req, res, done)
+})
 
-server.listen(3000);
+server.listen(3000)
 ```

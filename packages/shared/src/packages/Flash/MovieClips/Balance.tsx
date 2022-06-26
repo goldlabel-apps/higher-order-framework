@@ -19,7 +19,6 @@ export default function Balance() {
             }}
         >
             <CardMedia component={Punk} height="50" />
-            
         </ButtonBase>
     )
 }

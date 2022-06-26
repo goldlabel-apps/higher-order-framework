@@ -14,8 +14,6 @@ export const clips = [
         height: '100vh',
     },
 
-
-
     {
         id: 'social',
         component: 'Social',
@@ -29,8 +27,6 @@ export const clips = [
         width: 150,
         zIndex: 1400,
     },
-
-
 
     {
         id: 'work',

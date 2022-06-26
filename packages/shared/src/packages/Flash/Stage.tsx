@@ -48,21 +48,21 @@ export default function Stage(props) {
     const { displayW, displayH } = display
 
     let appDimensions = {
-        margin: "auto",
+        margin: 'auto',
         width: 300,
         height: displayH - 10,
     }
-    if (displayW > 650){
+    if (displayW > 650) {
         appDimensions = {
             ...appDimensions,
             width: 700,
         }
     }
-    
+
     const stageStyle = {
         ...appDimensions,
-        border: "1px solid rgba(0,0,0,0.5)",
-        background: 'rgba(0,0,0,0.095)',
+        // border: "1px solid rgba(0,0,0,0.5)",
+        // background: 'rgba(0,0,0,0.095)',
         overflow: 'hidden',
         zIndex: 1,
         postition: 'relative',

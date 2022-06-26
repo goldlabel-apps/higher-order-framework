@@ -14,15 +14,15 @@ export default function FlashApp() {
     const movieClips = useAppSelector(selectMovieClips)
     const flash = useAppSelector(selectFlash)
     const { display } = flash.data
-    if (display){
+    if (display) {
         const { displayW, displayH } = display
-        if (displayW > 650){
+        if (displayW > 650) {
             realWidth = 600
         }
     }
     // if (!display) return null
     // const { displayW, displayH } = display
-    
+
     return (
         <React.Fragment>
             <SigninDialog />

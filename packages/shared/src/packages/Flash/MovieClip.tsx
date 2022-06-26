@@ -18,7 +18,6 @@ const getComponent = (component) => {
         case 'LayoutHome':
             return <LayoutHome />
 
-
         case 'AppMenu':
             return <AppMenu />
 

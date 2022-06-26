@@ -1,7 +1,7 @@
 ## Duplicator
 
-- [snapcreek.com duplicator_free](https://snapcreek.com/duplicator/?utm_source=duplicator_free&utm_medium=wp_org&utm_content=desc_details&utm_campaign=duplicator_free)
-- [Quick Start](https://snapcreek.com/duplicator/docs/quick-start/)
+-   [snapcreek.com duplicator_free](https://snapcreek.com/duplicator/?utm_source=duplicator_free&utm_medium=wp_org&utm_content=desc_details&utm_campaign=duplicator_free)
+-   [Quick Start](https://snapcreek.com/duplicator/docs/quick-start/)
 
 === Duplicator - WordPress Migration Plugin ===
 
@@ -27,13 +27,13 @@ http://www.youtube.com/watch?v=oc73jtvHWYQ
 = Overview =
 Duplicator is the most powerful migrator available. It enables you to:
 
-- Move, migrate or clone a WordPress site between domains or hosts with **zero downtime**
-- Pull down a live site to localhost for development
-- Transfer a WordPress site from one host to another
-- Manually backup a WordPress site or parts of a site
-- Duplicate a live site to a staging area or vice versa
-- Bundle up an entire WordPress site for easy reuse or distribution
-- Perform a full WordPress migration without struggling with messy import/export sql scripts
+-   Move, migrate or clone a WordPress site between domains or hosts with **zero downtime**
+-   Pull down a live site to localhost for development
+-   Transfer a WordPress site from one host to another
+-   Manually backup a WordPress site or parts of a site
+-   Duplicate a live site to a staging area or vice versa
+-   Bundle up an entire WordPress site for easy reuse or distribution
+-   Perform a full WordPress migration without struggling with messy import/export sql scripts
 
 = Migrate WordPress and Run WordPress Backups =
 Duplicator creates a package that bundles all the site's plugins, themes, content, database and WordPress files into a simple zip file called a package. This package can then be used to easily migrate a WordPress site to any location you wish. Move on the same server, across servers and pretty much any location a WordPress site can be hosted. _WordPress is not required for installation_ since the package contains all site files.
@@ -44,20 +44,20 @@ Duplicator lets you make your own preconfigured sites to eliminate rework. Inste
 = Duplicator Pro =
 Duplicator Pro takes Duplicator to the next level with features you'll really appreciate, such as:
 
-- Drag and Drop installs - just drag an archive to the destination site!
-- Scheduled backups
-- Cloud Storage to Dropbox, Google Drive, Microsoft OneDrive, Amazon S3 and FTP/SFTP
-- A special 2-step streamlined installer mode for mega-fast installs
-- Recovery Points added for very fast emergency site restores
-- Support for Managed hosts such as WordPress.com, WPEngine, GoDaddy Managed, and more
-- Multi-threaded to support larger web sites &amp; databases
-- Migrate an entire multisite WordPress network in one shot
-- Install a multisite subsite as a new standalone website
-- Database and user creation _in the installer_ with cPanel API
-- Connect to cPanel directly from installer
-- Email notifications
-- Professional support
-- ... and much more!
+-   Drag and Drop installs - just drag an archive to the destination site!
+-   Scheduled backups
+-   Cloud Storage to Dropbox, Google Drive, Microsoft OneDrive, Amazon S3 and FTP/SFTP
+-   A special 2-step streamlined installer mode for mega-fast installs
+-   Recovery Points added for very fast emergency site restores
+-   Support for Managed hosts such as WordPress.com, WPEngine, GoDaddy Managed, and more
+-   Multi-threaded to support larger web sites &amp; databases
+-   Migrate an entire multisite WordPress network in one shot
+-   Install a multisite subsite as a new standalone website
+-   Database and user creation _in the installer_ with cPanel API
+-   Connect to cPanel directly from installer
+-   Email notifications
+-   Professional support
+-   ... and much more!
 
 Check out [Duplicator Pro](https://snapcreek.com/duplicator/?utm_source=duplicator_free&utm_medium=wp_org&utm_content=wpo_premium&utm_campaign=duplicator_pro) today!
 

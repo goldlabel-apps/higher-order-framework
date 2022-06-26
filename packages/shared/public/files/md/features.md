@@ -12,18 +12,18 @@ The cra react/redux template uses a concept of features. This is to say that fil
 
 let's say we have a feature we're calling **bollix**, the bollix folder would contain some or all of these...
 
-- reducer
-- actions
-- pages
-- components
+-   reducer
+-   actions
+-   pages
+-   components
 
 ## Create Inpatients Feature
 
 The inpatient feature has the following ACs;
 
-- A redux slice to manage inpatients
-- Route showing list of inpatients `/inpatients`
-- Route showing a single inpatient `/inpatients/{id}`
+-   A redux slice to manage inpatients
+-   Route showing list of inpatients `/inpatients`
+-   Route showing a single inpatient `/inpatients/{id}`
 
 1. Open `/packages/demo-client/src/routes/routesData.tsx` and add the new routes
 2. Create the Patients & Patient React Functional components to be rederered at that route
