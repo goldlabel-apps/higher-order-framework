@@ -3,8 +3,8 @@ import { Grid } from '@mui/material'
 import { Work, Life, Balance } from '../../../listingslab-shared'
 export default function MonsterNav() {
     return (
-        <Grid container>
-            <Grid item xs={12} sx={{ display: 'flex', mt: 2 }}>
+        <Grid container sx={{}}>
+            <Grid item xs={12} sx={{ display: 'flex' }}>
                 <Work />
                 <Life />
                 <Balance />

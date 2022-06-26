@@ -10,20 +10,18 @@ export const clips = [
             scale: 1,
         },
         width: 300,
-        zIndex: 1000,
     },
     {
         id: 'monsterNav',
         component: 'MonsterNav',
         initialPosition: 'bottommiddle',
         options: {
-            top: 0,
+            top: 82,
             left: 0,
             rotation: 0,
             scale: 1,
         },
         width: 300,
-        height: 100,
-        zIndex: 1000,
+        height: 150,
     },
 ]
