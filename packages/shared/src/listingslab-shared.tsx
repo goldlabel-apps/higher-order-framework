@@ -83,6 +83,7 @@ import {
     getNextHighestDepth,
     resize,
     LayoutHome,
+    MonsterNav,
 } from './packages/flash'
 
 console.warn('hof', PJSON.version)
@@ -113,6 +114,8 @@ export {
     Punk,
     Biker,
     Sky,
+    LayoutHome,
+    MonsterNav,
     selectFlash,
     selectMovieClips,
     setFlash,
@@ -176,5 +179,4 @@ export {
     selectPingpong,
     setPingpong,
     pingpongInit,
-    LayoutHome,
 }

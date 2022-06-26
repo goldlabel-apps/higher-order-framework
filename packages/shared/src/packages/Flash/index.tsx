@@ -5,6 +5,7 @@ import Stage from './Stage'
 import MovieClip from './MovieClip'
 
 import LayoutHome from './Layouts/LayoutHome'
+import MonsterNav from './Layouts/MonsterNav'
 
 import Sounds from './Sounds'
 
@@ -72,4 +73,5 @@ export {
     Punk,
     Biker,
     LayoutHome,
+    MonsterNav,
 }

@@ -10,12 +10,6 @@ import {
 export default function LayoutHome() {
     return (
         <Grid container>
-            <Grid item xs={12} sx={{ display: 'flex', mt: 2 }}>
-                <Work />
-                <Life />
-                <Balance />
-            </Grid>
-            <Grid item sx={{ flexGrow: 1 }} />
             <Grid item xs={12} md={8}>
                 <RouteEngine />
             </Grid>
@@ -25,3 +19,12 @@ export default function LayoutHome() {
         </Grid>
     )
 }
+/*
+
+<Grid item sx={{ flexGrow: 1 }} />
+<Grid item xs={12} sx={{ display: 'flex', mt: 2 }}>
+                <Work />
+                <Life />
+                <Balance />
+            </Grid>
+*/

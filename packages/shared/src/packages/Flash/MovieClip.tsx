@@ -10,11 +10,15 @@ import {
     Balance,
     Sky,
     LayoutHome,
+    MonsterNav,
 } from '../../listingslab-shared'
 import { Box } from '@mui/material'
 
 const getComponent = (component) => {
     switch (component) {
+        case 'MonsterNav':
+            return <MonsterNav />
+
         case 'LayoutHome':
             return <LayoutHome />
 
