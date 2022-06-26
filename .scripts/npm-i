@@ -1,0 +1,6 @@
+#!/bin/bash
+# If you get permissions error, run this
+# chmod ug+x npm-i
+clear
+
+echo 'Installing dependency libraries'

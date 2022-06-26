@@ -47,8 +47,8 @@ export default function Stage(props) {
     if (!display) return null
     const { displayW, displayH } = display
     const stageStyle = {
-        // border: "1px solid rgba(0,0,0,0.5)",
-        // background: 'rgba(0,0,0,0.015)',
+        border: "1px solid rgba(0,0,0,0.5)",
+        background: 'rgba(0,0,0,0.015)',
         width: displayW - 16,
         height: displayH - 16,
         overflow: 'hidden',

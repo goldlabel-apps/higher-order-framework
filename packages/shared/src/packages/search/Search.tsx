@@ -1,18 +1,17 @@
 import * as React from 'react'
-
 import { Icon, AppMenu } from '../../listingslab-shared'
-
-import { Paper, InputBase, Box, IconButton } from '@mui/material'
+import { InputBase, Paper, IconButton } from '@mui/material'
 
 export default function Search() {
     return (
-        <Box
+        <Paper
             component="form"
             sx={{
                 p: '2px 4px',
                 display: 'flex',
                 alignItems: 'center',
                 width: '100%',
+                background: 'rgba(255,255,255,0.2)',
             }}
         >
             <AppMenu />
@@ -38,7 +37,7 @@ export default function Search() {
             >
                 <Icon icon="search" />
             </IconButton>
-        </Box>
+        </Paper>
     )
 }
 

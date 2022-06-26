@@ -1,8 +1,36 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
+    match /posts/{document=**} {
       allow read: if true;
+      allow write: if request.auth.uid == request.resource.data.author_uid
     }
+
+    match /links/{document=**} {
+      allow read: if true;
+      allow write: if request.auth.uid == request.resource.data.author_uid
+    }
+
+    match /categories/{document=**} {
+      allow read: if true;
+      allow write: if request.auth.uid == request.resource.data.author_uid
+    }
+
+    match /keywords/{document=**} {
+      allow read: if true;
+      allow write: if request.auth.uid == request.resource.data.author_uid
+    }
+
+    match /siteinfo/{document=**} {
+      allow read: if true;
+      allow write: if request.auth.uid == request.resource.data.author_uid
+    }
+
+    match /sites/{document=**} {
+      allow read: if true;
+      allow write: if request.auth.uid == request.resource.data.author_uid
+    }
+
   }
+
 }
