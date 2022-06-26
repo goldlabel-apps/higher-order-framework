@@ -52,10 +52,10 @@ export default function Stage(props) {
         width: 300,
         height: displayH - 10,
     }
-    if (displayW > 850){
+    if (displayW > 650){
         appDimensions = {
             ...appDimensions,
-            width: 800,
+            width: 700,
         }
     }
     
