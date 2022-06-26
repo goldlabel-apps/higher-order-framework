@@ -1,16 +1,29 @@
 export const clips = [
     {
-        id: 'sky',
-        // border: "1px solid green",
-        component: 'Sky',
-        initialPosition: 'topleft',
+        id: 'content',
+        component: 'LayoutHome',
+        initialPosition: 'topmiddle',
         options: {
             top: 0,
             left: 0,
             rotation: 0,
             scale: 1,
         },
-        width: '100%',
+        width: 300,
+        zIndex: 1000,
     },
-
+    {
+        id: 'monsterNav',
+        component: 'MonsterNav',
+        initialPosition: 'bottommiddle',
+        options: {
+            top: 0,
+            left: 0,
+            rotation: 0,
+            scale: 1,
+        },
+        width: 300,
+        height: 100,
+        zIndex: 1000,
+    },
 ]

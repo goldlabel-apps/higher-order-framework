@@ -46,11 +46,23 @@ export default function Stage(props) {
     const { display } = flash.data
     if (!display) return null
     const { displayW, displayH } = display
+
+    let appDimensions = {
+        margin: 'auto',
+        width: 300,
+        height: displayH - 10,
+    }
+    if (displayW > 650) {
+        appDimensions = {
+            ...appDimensions,
+            width: 700,
+        }
+    }
+
     const stageStyle = {
-        border: "1px solid rgba(0,0,0,0.5)",
-        background: 'rgba(0,0,0,0.015)',
-        width: displayW - 16,
-        height: displayH - 16,
+        ...appDimensions,
+        // border: "1px solid rgba(0,0,0,0.5)",
+        // background: 'rgba(0,0,0,0.095)',
         overflow: 'hidden',
         zIndex: 1,
         postition: 'relative',

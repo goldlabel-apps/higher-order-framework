@@ -1,6 +1,6 @@
 # Higher Order Framework
 
-[listingslab.com](https://listingslab.com) Version 28.0.2
+[listingslab.com](https://listingslab.com) Version 28.0.3
 
 ![featured](https://listingslab.com/svg/featured/team.svg)
 
