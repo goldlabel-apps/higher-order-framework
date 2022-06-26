@@ -129,11 +129,16 @@ export default function RouteEngine() {
                     </React.Fragment>
                 }
             />
-            <CardContent>
+            
+        </Box>
+        
+    )
+}
+
+/*
+<CardContent>
                 <Typography variant="body2" sx={{ m: 2 }}>
                     <div dangerouslySetInnerHTML={{ __html: body }} />
                 </Typography>
             </CardContent>
-        </Box>
-    )
-}
+*/

@@ -16,12 +16,12 @@ export const clips = [
         component: 'MonsterNav',
         initialPosition: 'bottommiddle',
         options: {
-            top: 82,
+            top: -8,
             left: 0,
             rotation: 0,
             scale: 1,
         },
         width: 300,
-        height: 150,
+        height: 50,
     },
 ]
