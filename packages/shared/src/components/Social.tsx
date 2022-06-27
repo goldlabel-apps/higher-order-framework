@@ -28,7 +28,7 @@ export default function FindUs() {
     }
 
     return (
-        <List dense>
+        <List dense sx={{ m: 0 }}>
             {social.length ? (
                 <React.Fragment>
                     {social.map((item, i) => {

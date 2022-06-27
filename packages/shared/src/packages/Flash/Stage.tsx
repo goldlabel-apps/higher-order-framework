@@ -10,14 +10,13 @@ import { onWindowResize, initFlash, selectFlash, resize } from './'
 
 export default function Stage(props) {
     window.addEventListener('resize', debounce(onWindowResize, 333))
-
+    window.addEventListener('scroll', debounce(onWindowResize, 333))
     const { children } = props
     const dispatch = useAppDispatch()
     const flash = useAppSelector(selectFlash)
 
     React.useEffect(() => {
         const { started, display, refresh, windowResized } = flash.data
-        // console.warn('refresh', refresh)
         if (!display) {
             dispatch(setFlash({ key: 'display', value: getDisplay() }))
         }
@@ -46,11 +45,23 @@ export default function Stage(props) {
     const { display } = flash.data
     if (!display) return null
     const { displayW, displayH } = display
+
+    let appDimensions = {
+        margin: 'auto',
+        width: 320,
+        height: displayH - 10,
+    }
+    if (displayW > 650) {
+        appDimensions = {
+            ...appDimensions,
+            width: 640,
+        }
+    }
+
     const stageStyle = {
-        border: "1px solid rgba(0,0,0,0.5)",
-        background: 'rgba(0,0,0,0.015)',
-        width: displayW - 16,
-        height: displayH - 16,
+        ...appDimensions,
+        border: '1px solid rgba(0,0,0,0.01)',
+        background: 'rgba(0,0,0,0.005)',
         overflow: 'hidden',
         zIndex: 1,
         postition: 'relative',

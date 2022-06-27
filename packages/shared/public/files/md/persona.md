@@ -12,7 +12,7 @@ License URI: https://listingslab.com/license
 
 ### Description
 
-- [listingslab/packages/persona](https://listingslab.com/packages/persona)
+-   [listingslab/packages/persona](https://listingslab.com/packages/persona)
 
 ### Frequently Had Conversations
 
@@ -56,12 +56,12 @@ Better still raise a Pull Request with a solution :)
 
 #### Features
 
-- Progressive Web App
-- Firebase
-  - Hosting
-  - Authenication
-- Integration with other listingslab software
-- Continuous Integration & Deployment
+-   Progressive Web App
+-   Firebase
+    -   Hosting
+    -   Authenication
+-   Integration with other listingslab software
+-   Continuous Integration & Deployment
 
 ```
  | |           | (_)   | | (_)               | |     | |

@@ -41,7 +41,7 @@ When your free user considers the option of upgrading and purchasing a license t
 Offer A Moneyback Guarantee / Refund Policy
 Offer a paid version of your WordPress product, but let people know that you have a Refund Policy available, if they’re not completely satisfied with the product. Just be sure to provide clear instructions about how they may request a refund.
 
-- Make Sure The Upgrade from Free to Premium Is Seamless
+-   Make Sure The Upgrade from Free to Premium Is Seamless
 
 WordPress users have come to expect an easy (seamless) WordPress products installation routine inside their admin dashboard, and you’d be smart to provide them with a similar experience when they come to upgrade your product. Here’s an example of how a seamless (in-dashboard) upgrade from free → Pro is done using the Freemius monetization system:
 

@@ -18,11 +18,7 @@ export default function Work() {
                 width: 200,
             }}
         >
-            <CardMedia component={Biker} height="80" />
-            <Typography variant="h6" sx={{ fontWeight: 'lighter', ml: 4 }}>
-                Work
-            </Typography>
-            <Box sx={{ flexGrow: 1 }} />
+            <CardMedia component={Biker} height="50" />
         </ButtonBase>
     )
 }

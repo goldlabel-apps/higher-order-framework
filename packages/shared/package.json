@@ -1,6 +1,6 @@
 {
     "name": "@listingslab/shared",
-    "version": "28.0.1",
+    "version": "28.0.3",
     "scripts": {
         "start": "webpack serve --port 1945",
         "start:standalone": "webpack serve --env standalone --port 1945",
@@ -75,6 +75,7 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-draggable": "^4.4.4",
+        "react-markdown": "^8.0.3",
         "react-redux": "^7.2.6",
         "react-router-dom": "^6.3.0",
         "react-sound": "^1.2.0",

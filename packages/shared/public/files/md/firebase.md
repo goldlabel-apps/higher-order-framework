@@ -19,12 +19,12 @@ const app = initializeApp(firebaseConfig);
 
 #### Firestore NoSQL Database
 
-- [Migrate MongoDB Collections to Cloud Firestore](https://medium.com/@dev.prasenjitsaha/migrate-mongodb-data-to-cloud-firestore-79a68ee18aa3)
+-   [Migrate MongoDB Collections to Cloud Firestore](https://medium.com/@dev.prasenjitsaha/migrate-mongodb-data-to-cloud-firestore-79a68ee18aa3)
 
 Though the MongoDB and Firestore both support NoSQL data, we can’t import MongoDB exported data into Firestore directly but we can import it indirectly by 4 steps only.
 Steps to import MongoDB collections into Firestore indirectly —
 
-- STEP-1: Export MongoDB collections
+-   STEP-1: Export MongoDB collections
 
 To Migrate the MongoDB data first we need to export our MongoDB collection data (one by one) into a JSON file as JSON Array by using the below command
 
@@ -35,9 +35,9 @@ clear && mongoexport --uri=mongodb://localhost:27017/ll --collection=Events --ou
 
 ```
 
-- Convert the Exported JSON file.
-- Import the converted JSON file into Firestore.
-- Create a sh file.
+-   Convert the Exported JSON file.
+-   Import the converted JSON file into Firestore.
+-   Create a sh file.
 
 #### Credentials
 
@@ -62,11 +62,11 @@ Any Google user account can be added to a Firebase project, so if you have a gma
 
 #### Benefits
 
-- It's free & easy to use; until an app gets real
-- It gives us a single, live sandbox env
-- It doesn't need docker yet :)
-- Using the cloud based NoSQL database means no need a local Mongo
-- Data doesn't have to be synched or seeded
+-   It's free & easy to use; until an app gets real
+-   It gives us a single, live sandbox env
+-   It doesn't need docker yet :)
+-   Using the cloud based NoSQL database means no need a local Mongo
+-   Data doesn't have to be synched or seeded
 
 #### Wrappers
 
@@ -85,38 +85,38 @@ It gives us the chance to change things up a little. Let's all create logins fro
 Set up a listenter for auth state change
 
 ```javascript
-const dispatch = useAppDispatch();
-const authInitted = useAppSelector(selectAuthInitted);
-const auth = getAuth();
+const dispatch = useAppDispatch()
+const authInitted = useAppSelector(selectAuthInitted)
+const auth = getAuth()
 onAuthStateChanged(auth, (user) => {
-  dispatch(onStateChange(user));
-});
+    dispatch(onStateChange(user))
+})
 ```
 
 and then select it like so...
 
 ```javascript
-import { useAppSelector } from "./app/hooks";
-import { selectUser } from "./features/auth";
+import { useAppSelector } from './app/hooks'
+import { selectUser } from './features/auth'
 
-const user = useAppSelector(selectUser);
+const user = useAppSelector(selectUser)
 ```
 
 #### props
 
-- [displayName](https://firebase.google.com/docs/reference/js/v8/firebase.User#displayname)
-- [email](https://firebase.google.com/docs/reference/js/v8/firebase.User#email)
-- [emailVerified](https://firebase.google.com/docs/reference/js/v8/firebase.User#emailverified)
-- [isAnonymous](https://firebase.google.com/docs/reference/js/v8/firebase.User#isanonymous)
-- [metadata](https://firebase.google.com/docs/reference/js/v8/firebase.User#metadata)
-- [multiFactor](https://firebase.google.com/docs/reference/js/v8/firebase.User#multifactor)
-- [phoneNumber](https://firebase.google.com/docs/reference/js/v8/firebase.User#phonenumber)
-- [photoURL](https://firebase.google.com/docs/reference/js/v8/firebase.User#photourl)
-- [providerData](https://firebase.google.com/docs/reference/js/v8/firebase.User#providerdata)
-- [providerId](https://firebase.google.com/docs/reference/js/v8/firebase.User#providerid)
-- [refreshToken](https://firebase.google.com/docs/reference/js/v8/firebase.User#refreshtoken)
-- [tenantId](https://firebase.google.com/docs/reference/js/v8/firebase.User#tenantid)
-- [uid](https://firebase.google.com/docs/reference/js/v8/firebase.User#uid)
+-   [displayName](https://firebase.google.com/docs/reference/js/v8/firebase.User#displayname)
+-   [email](https://firebase.google.com/docs/reference/js/v8/firebase.User#email)
+-   [emailVerified](https://firebase.google.com/docs/reference/js/v8/firebase.User#emailverified)
+-   [isAnonymous](https://firebase.google.com/docs/reference/js/v8/firebase.User#isanonymous)
+-   [metadata](https://firebase.google.com/docs/reference/js/v8/firebase.User#metadata)
+-   [multiFactor](https://firebase.google.com/docs/reference/js/v8/firebase.User#multifactor)
+-   [phoneNumber](https://firebase.google.com/docs/reference/js/v8/firebase.User#phonenumber)
+-   [photoURL](https://firebase.google.com/docs/reference/js/v8/firebase.User#photourl)
+-   [providerData](https://firebase.google.com/docs/reference/js/v8/firebase.User#providerdata)
+-   [providerId](https://firebase.google.com/docs/reference/js/v8/firebase.User#providerid)
+-   [refreshToken](https://firebase.google.com/docs/reference/js/v8/firebase.User#refreshtoken)
+-   [tenantId](https://firebase.google.com/docs/reference/js/v8/firebase.User#tenantid)
+-   [uid](https://firebase.google.com/docs/reference/js/v8/firebase.User#uid)
 
 ## env
 
