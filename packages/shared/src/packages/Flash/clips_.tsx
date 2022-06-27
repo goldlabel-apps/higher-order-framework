@@ -15,21 +15,6 @@ export const clips = [
     },
 
     {
-        id: 'search',
-        // border: "1px solid green",
-        component: 'Search',
-        initialPosition: 'topmiddle',
-        options: {
-            top: 16,
-            left: 0,
-            rotation: 0,
-            scale: 1,
-        },
-        width: 580,
-        zIndex: 9000,
-    },
-
-    {
         id: 'social',
         component: 'Social',
         initialPosition: 'topmiddle',
@@ -41,21 +26,6 @@ export const clips = [
         },
         width: 150,
         zIndex: 1400,
-    },
-
-    {
-        id: 'content',
-        component: 'RouteEngine',
-        initialPosition: 'topmiddle',
-        options: {
-            top: 180,
-            left: -60,
-            rotation: 0,
-            scale: 1,
-        },
-        width: 500,
-        height: 100,
-        zIndex: 1000,
     },
 
     {
@@ -97,5 +67,34 @@ export const clips = [
         },
         width: 200,
         zIndex: 1400,
+    },
+
+    {
+        id: 'search',
+        // border: "1px solid green",
+        component: 'Search',
+        initialPosition: 'bottommiddle',
+        options: {
+            top: -50,
+            left: 0,
+            rotation: 0,
+            scale: 1,
+        },
+        width: 300,
+        zIndex: 9000,
+    },
+
+    {
+        id: 'appMenu',
+        component: 'AppMenu',
+        initialPosition: 'topright',
+        options: {
+            top: 0,
+            left: 0,
+            rotation: 0,
+            scale: 1,
+        },
+        width: 50,
+        height: 50,
     },
 ]

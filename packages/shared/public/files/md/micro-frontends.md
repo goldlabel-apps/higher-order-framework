@@ -13,5 +13,5 @@ Implementing a Micro Frontends approach might as simple as extending that concep
 
 Resources
 
-- https://micro-frontends.org Understand more about the concept
-- https://single-spa.js.org/docs/getting-started-overview Promising existing framework
+-   https://micro-frontends.org Understand more about the concept
+-   https://single-spa.js.org/docs/getting-started-overview Promising existing framework

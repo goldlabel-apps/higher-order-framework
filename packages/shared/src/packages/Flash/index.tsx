@@ -4,6 +4,9 @@ import { clips } from './clips'
 import Stage from './Stage'
 import MovieClip from './MovieClip'
 
+import LayoutHome from './Layouts/LayoutHome'
+import MonsterNav from './Layouts/MonsterNav'
+
 import Sounds from './Sounds'
 
 import Work from './MovieClips/Work'
@@ -69,4 +72,6 @@ export {
     Balance,
     Punk,
     Biker,
+    LayoutHome,
+    MonsterNav,
 }

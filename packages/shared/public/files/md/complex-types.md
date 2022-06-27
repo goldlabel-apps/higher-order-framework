@@ -6,13 +6,13 @@ List validation now has experimental support via `handleList` method of the `Con
 
 Validate:
 
-- Number of items in list
-- Particular items allowed in list
-- ...
+-   Number of items in list
+-   Particular items allowed in list
+-   ...
 
-- `includes` each list value must exactly match one of the `includes` items
-- `excludes` none of list values may match any of the `excludes` items
-- `matches` each list value must pass one of the matches constraints (such as `minLength: 3`)
+-   `includes` each list value must exactly match one of the `includes` items
+-   `excludes` none of list values may match any of the `excludes` items
+-   `matches` each list value must pass one of the matches constraints (such as `minLength: 3`)
 
 Lists are defined as modifiers on other types. We should be able to at least validate lists of `String`, `Int` and `Float` for starters.
 
@@ -24,24 +24,24 @@ A scalar has a `parseValue` function which returns a `ValueNode` from a `Source`
 
 ```ts
 export type ValueNode =
-  | VariableNode
-  | IntValueNode
-  | FloatValueNode
-  | StringValueNode
-  | BooleanValueNode
-  | NullValueNode
-  | EnumValueNode
-  | ListValueNode
-  | ObjectValueNode;
+    | VariableNode
+    | IntValueNode
+    | FloatValueNode
+    | StringValueNode
+    | BooleanValueNode
+    | NullValueNode
+    | EnumValueNode
+    | ListValueNode
+    | ObjectValueNode
 ```
 
 As we can see, such a value can be a `ListValueNode`:
 
 ```ts
 export interface ListValueNode {
-  readonly kind: "ListValue";
-  readonly loc?: Location;
-  readonly values: ReadonlyArray<ValueNode>;
+    readonly kind: 'ListValue'
+    readonly loc?: Location
+    readonly values: ReadonlyArray<ValueNode>
 }
 ```
 
@@ -49,9 +49,9 @@ For an object return value
 
 ```ts
 export interface ObjectValueNode {
-  readonly kind: "ObjectValue";
-  readonly loc?: Location;
-  readonly fields: ReadonlyArray<ObjectFieldNode>;
+    readonly kind: 'ObjectValue'
+    readonly loc?: Location
+    readonly fields: ReadonlyArray<ObjectFieldNode>
 }
 ```
 
@@ -59,10 +59,10 @@ with fields:
 
 ```ts
 export interface ObjectFieldNode {
-  readonly kind: "ObjectField";
-  readonly loc?: Location;
-  readonly name: NameNode;
-  readonly value: ValueNode;
+    readonly kind: 'ObjectField'
+    readonly loc?: Location
+    readonly name: NameNode
+    readonly value: ValueNode
 }
 ```
 
@@ -70,8 +70,8 @@ export interface ObjectFieldNode {
 
 Validate:
 
-- Two fields must have same value (password, confirmedPassword) ie. `same`
-- When one field is set to sth, another field can only have specific set of values (ie. `when`)
+-   Two fields must have same value (password, confirmedPassword) ie. `same`
+-   When one field is set to sth, another field can only have specific set of values (ie. `when`)
 
 We could use `yup` or `class-validator` for full object validation
 

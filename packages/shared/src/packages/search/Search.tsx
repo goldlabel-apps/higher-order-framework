@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Icon, AppMenu } from '../../listingslab-shared'
+import { Icon } from '../../listingslab-shared'
 import { InputBase, Paper, IconButton } from '@mui/material'
 
 export default function Search() {
@@ -14,19 +14,6 @@ export default function Search() {
                 background: 'rgba(255,255,255,0.2)',
             }}
         >
-            <AppMenu />
-
-            <InputBase
-                autoFocus
-                onChange={(e) => {
-                    e.preventDefault()
-                    // console.warn("search", e.target.value)
-                }}
-                sx={{ ml: 1, flex: 1 }}
-                placeholder="Search"
-                inputProps={{ 'aria-label': 'search files' }}
-            />
-
             <IconButton
                 type="submit"
                 onClick={(e) => {
@@ -37,6 +24,16 @@ export default function Search() {
             >
                 <Icon icon="search" />
             </IconButton>
+            <InputBase
+                autoFocus
+                onChange={(e) => {
+                    e.preventDefault()
+                    // console.warn("search", e.target.value)
+                }}
+                sx={{ ml: 0, flex: 1 }}
+                placeholder="Search"
+                inputProps={{ 'aria-label': 'search files' }}
+            />
         </Paper>
     )
 }

@@ -10,13 +10,13 @@ It needs to meet all of these requirements and more
 
 A good process needs to be accessible to all stakeholders in
 
-- Project Managers
-- Business Owners
-- Client Managers
-- Developers
+-   Project Managers
+-   Business Owners
+-   Client Managers
+-   Developers
 
 #### Key Features
 
-- Code & Asset management. Git.
-- Issues/Tasks which can be easily creates, updated and followed through the development process
-- A Kanban board. Which is what Trello is.
+-   Code & Asset management. Git.
+-   Issues/Tasks which can be easily creates, updated and followed through the development process
+-   A Kanban board. Which is what Trello is.
