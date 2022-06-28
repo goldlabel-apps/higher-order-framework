@@ -1,33 +1,26 @@
 import * as React from 'react'
 import { Box, Grid } from '@mui/material'
-import { 
+import {
     getDisplay,
-    RouteEngine, 
-    AppMenu, 
-    Search,
+    RouteEngine,
+    AppMenu,
+    Social,
 } from '../../../listingslab-shared'
 export default function LayoutHome() {
-
     let pushLeftDown = 0
     const display = getDisplay()
     if (!display) return null
     const { isMobile } = display
-    if(!isMobile){
+    if (!isMobile) {
         pushLeftDown = 65
     }
     return (
         <Grid container>
-            <Grid item xs={12}>
-                <Box sx={{ display: 'flex' }}>
-                    <Box sx={{ flexGrow: 1 }} />
-                    <AppMenu />
-                </Box>
+            <Grid item xs={12} md={4} sx={{ mt: 2 }}>
+                <Social />
             </Grid>
-            <Grid item xs={12} md={4}>
-                <div style={{ height: pushLeftDown }} />
-                <Search />
-            </Grid>
-            <Grid item xs={12} md={8} sx={{}}>
+
+            <Grid item xs={12} md={8}>
                 <RouteEngine />
             </Grid>
         </Grid>
