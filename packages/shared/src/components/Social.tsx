@@ -28,7 +28,7 @@ export default function FindUs() {
     }
 
     return (
-        <List dense sx={{ m: 2 }}>
+        <List dense sx={{ m: 1, mb: 6 }}>
             {social.length ? (
                 <React.Fragment>
                     {social.map((item, i) => {
@@ -50,6 +50,15 @@ export default function FindUs() {
                                         )
                                     }}
                                 >
+                                   
+                                    <ListItemText
+                                        primary={
+                                            <Typography variant="body2">
+                                                {label}
+                                            </Typography>
+                                        }
+                                    />
+
                                     <ListItemIcon sx={{ ml: 0 }}>
                                         <Tooltip color="primary" title={label}>
                                             <IconButton
@@ -60,13 +69,8 @@ export default function FindUs() {
                                             </IconButton>
                                         </Tooltip>
                                     </ListItemIcon>
-                                    <ListItemText
-                                        primary={
-                                            <Typography variant="body2">
-                                                {label}
-                                            </Typography>
-                                        }
-                                    />
+
+
                                 </ListItem>
                             </React.Fragment>
                         )

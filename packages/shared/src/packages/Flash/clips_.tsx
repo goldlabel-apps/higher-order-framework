@@ -83,4 +83,18 @@ export const clips = [
         width: 300,
         zIndex: 9000,
     },
+
+    {
+        id: 'appMenu',
+        component: 'AppMenu',
+        initialPosition: 'topright',
+        options: {
+            top: 0,
+            left: 0,
+            rotation: 0,
+            scale: 1,
+        },
+        width: 50,
+        height: 50,
+    },
 ]

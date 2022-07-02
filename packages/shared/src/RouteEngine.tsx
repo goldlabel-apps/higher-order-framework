@@ -1,17 +1,18 @@
 import * as React from 'react'
 import {
     Box,
+    CardContent,
     CardHeader,
     CardMedia,
     IconButton,
     Typography,
 } from '@mui/material'
+import ReactMarkdown from 'react-markdown'
 import {
     useAppSelector,
     useAppDispatch,
     selectRoute,
     setCore,
-    setAdmin,
     selectSSR,
     selectRefresh,
     selectAdmin,
@@ -73,19 +74,24 @@ export default function RouteEngine() {
         return true
     }
 
+    const onNextClick = () => {
+        dispatch(navigateTo({ pathname: '/work' }))
+        return true
+    }
+
     let title = '404, brah.'
     let excerpt = `route ${thisSlug} not found.`
     let image = ''
     let icon = 'error'
+    let body = 'dsadsad'
 
     if (post) {
         title = post.title
         excerpt = post.excerpt
         icon = post.icon
         image = post.image
+        body = post.body
     }
-
-    image = ''
 
     return (
         <Box sx={{ m: 1, minHeight: 90 }}>
@@ -113,7 +119,24 @@ export default function RouteEngine() {
                         ) : null}
                     </React.Fragment>
                 }
+                action={
+                    <React.Fragment>
+                        {thisSlug === '/' ? (
+                            <IconButton onClick={onNextClick} color="primary">
+                                <Icon icon="arrowr" />
+                            </IconButton>
+                        ) : null}
+                    </React.Fragment>
+                }
             />
         </Box>
     )
 }
+
+/*
+<CardContent>
+                <Typography variant="body2" sx={{ m: 2 }}>
+                    <div dangerouslySetInnerHTML={{ __html: body }} />
+                </Typography>
+            </CardContent>
+*/
