@@ -9,7 +9,6 @@ export const clips = [
             rotation: 0,
             scale: 1,
         },
-        width: 300,
     },
     {
         id: 'monsterNav',
