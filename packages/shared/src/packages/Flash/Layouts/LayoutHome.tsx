@@ -21,42 +21,44 @@ export default function LayoutHome() {
             </Grid>
 
             <Grid item xs={12} md={4} sx={{ mt: 2 }}>
-                <SVGImageBtn
-                    buttonAttributes={{
-                        slug: '',
-                        type: 'route',
-                        route: '/',
-                        label: 'Home',
-                    }}
-                />
-
-                <SVGImageBtn
-                    buttonAttributes={{
-                        slug: 'work',
-                        type: 'route',
-                        route: '/work',
-                        label: 'Work',
-                    }}
-                />
-
-                <SVGImageBtn
-                    buttonAttributes={{
-                        slug: 'life',
-                        type: 'route',
-                        route: '/life',
-                        label: 'Life',
-                    }}
-                />
-
-                <SVGImageBtn
-                    buttonAttributes={{
-                        slug: 'balance',
-                        type: 'route',
-                        route: '/balance',
-                        label: 'Balance',
-                    }}
-                />
                 <Social />
+                <Box sx={{ m: 1 }}>
+                    <SVGImageBtn
+                        buttonAttributes={{
+                            slug: '',
+                            type: 'route',
+                            route: '/',
+                            label: 'Home',
+                        }}
+                    />
+
+                    <SVGImageBtn
+                        buttonAttributes={{
+                            slug: 'work',
+                            type: 'route',
+                            route: '/work',
+                            label: 'Work',
+                        }}
+                    />
+
+                    <SVGImageBtn
+                        buttonAttributes={{
+                            slug: 'life',
+                            type: 'route',
+                            route: '/life',
+                            label: 'Life',
+                        }}
+                    />
+
+                    <SVGImageBtn
+                        buttonAttributes={{
+                            slug: 'balance',
+                            type: 'route',
+                            route: '/balance',
+                            label: 'Balance',
+                        }}
+                    />
+                </Box>
             </Grid>
         </Grid>
     )

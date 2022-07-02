@@ -13,7 +13,7 @@ import {
     Tooltip,
     Typography,
 } from '@mui/material'
-import { Icon, selectAdmin } from '../listingslab-shared'
+import { Icon, selectAdmin, navigateTo, openLink } from '../listingslab-shared'
 
 export default function Social(props) {
     const title = 'On the social'
@@ -30,7 +30,7 @@ export default function Social(props) {
     }
 
     return (
-        <Accordion sx={{ boxShadow: 'none' }} defaultExpanded={defaultExpanded}>
+        <Accordion sx={{}} defaultExpanded={defaultExpanded}>
             <AccordionSummary
                 id="socialAccordion"
                 expandIcon={<Icon icon="acc" />}
@@ -55,12 +55,12 @@ export default function Social(props) {
                                             button
                                             onClick={(e) => {
                                                 e.preventDefault()
-                                                // dispatch(
-                                                //     openLink({
-                                                //         url,
-                                                //         target: '_blank',
-                                                //     })
-                                                // )
+                                                dispatch(
+                                                    openLink({
+                                                        url,
+                                                        target: '_blank',
+                                                    })
+                                                )
                                             }}
                                         >
                                             <ListItemIcon sx={{ ml: 0 }}>
