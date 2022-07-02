@@ -21,14 +21,42 @@ export default function LayoutHome() {
             </Grid>
 
             <Grid item xs={12} md={4} sx={{ mt: 2 }}>
-                
-                <SVGImageBtn buttonAttributes={{
-                    label: "diosahodihos9", 
-                    onClick: (payload: any) => {
-                        console.warn("onclick", payload)
-                    },
+                <SVGImageBtn
+                    buttonAttributes={{
+                        slug: "work",
+                        type: "route",
+                        route: "/work",
+                        label: 'Work',
+                        onClick: (payload: any) => {
+                            console.warn('onclick', payload)
+                        },
+                    }}
+                />
 
-                }}/>
+                <SVGImageBtn
+                    buttonAttributes={{
+                        slug: "life",
+                        type: "route",
+                        route: "/life",
+                        label: 'Life',
+                        onClick: (payload: any) => {
+                            console.warn('onclick', payload)
+                        },
+                    }}
+                />
+
+                <SVGImageBtn
+                    buttonAttributes={{
+                        slug: "balance",
+                        type: "route",
+                        route: "/balance",
+                        label: "Balance",
+                        onClick: (payload: any) => {
+                            console.warn('onclick', payload)
+                        },
+                    }}
+                />
+
 
                 <Social />
             </Grid>
@@ -42,4 +70,7 @@ export default function LayoutHome() {
                 
 
             </Grid>
-*/
+
+imageSrc:
+                            'https://listingslab.com/svg/featured/work.svg',
+            */

@@ -1,6 +1,7 @@
 import { RootState } from '../../app/store'
 import { setCore } from './coreSlice'
 
+import { svgImageBtnClick } from './actions/svgImageBtnClick'
 import { navClick } from './actions/navClick'
 import { navigateTo } from './actions/navigateTo'
 import { signIn } from './actions/signIn'
@@ -13,4 +14,4 @@ export const selectRefresh = (state: RootState) => state.core.data.refresh
 
 export const selectSSR = (state: RootState) => state.core.data.ssr
 
-export { setCore, navClick, navigateTo, signIn, unsignIn, openLink }
+export { setCore, navClick, svgImageBtnClick, navigateTo, signIn, unsignIn, openLink }

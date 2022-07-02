@@ -81,7 +81,7 @@ export default function RouteEngine() {
 
     let title = '404, brah.'
     let excerpt = `route ${thisSlug} not found.`
-    let image = ''
+    let image = 'https://listingslab.com/svg/default.svg'
     let icon = 'error'
     let body = 'dsadsad'
 

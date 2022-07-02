@@ -7,11 +7,11 @@ import {
     Sky,
     LayoutHome,
     SVGImageBtn,
+    Punk,
 } from '../../listingslab-shared'
 
 export const getComponent = (componentName: string) => {
     switch (componentName) {
-
         case 'LayoutHome':
             return <LayoutHome />
 
@@ -20,6 +20,9 @@ export const getComponent = (componentName: string) => {
 
         case 'Sky':
             return <Sky />
+
+        case 'Punk':
+            return <Punk />
 
         case 'Search':
             return <Search />
@@ -39,5 +42,4 @@ export const getComponent = (componentName: string) => {
         default:
             return null
     }
-
 }
