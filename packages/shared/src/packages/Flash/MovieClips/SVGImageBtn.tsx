@@ -4,7 +4,12 @@ import {
     svgImageBtnClick,
     getComponent,
 } from '../../../listingslab-shared'
-import { Box, ButtonBase, Typography, CardMedia } from '@mui/material'
+import { 
+    Box, 
+    ButtonBase, 
+    Typography, 
+    CardMedia,
+} from '@mui/material'
 
 export interface ButtonAttributesShape {
     type: string
@@ -12,38 +17,38 @@ export interface ButtonAttributesShape {
     route: string
     target: string
     label: string
-    imageSrc: string
+    imageSrc: string    
 }
 
 export default function SVGImageBtn(props: any) {
     const dispatch = useAppDispatch()
     const { buttonAttributes } = props
-
     if (!buttonAttributes) return null
+
     // console.warn ("buttonAttributes", buttonAttributes )
 
-    let theLabel = 'Label'
+    let theRoute = "/"
+    let theLabel = 'The Label'
     let theComponentName = 'Punk'
+    let theSlug = "the-slug"
     let theImageSrc = null
-    let theSlug = "theSlug"
-
-    const { label, componentName, imageSrc, slug } = buttonAttributes
+    
+    const { label, componentName, imageSrc, slug, route } = buttonAttributes
     if (label) theLabel = label
     if (componentName) theComponentName = componentName
     if (imageSrc) theImageSrc = imageSrc
     if (slug) theSlug = slug
 
-    let onClick = () => {
-        dispatch(svgImageBtnClick( '' ))
-    }
+    let onClick = () => { dispatch(svgImageBtnClick( slug )) }
 
-    const imageComponent = getComponent(theComponentName)
-
+    // const imageComponent = getComponent(theComponentName)
     // console.warn("imageComponent", imageComponent)
+
     return (
         <ButtonBase
             onClick={onClick}
             sx={{
+                borderBottom: "",
                 background: 'rgba(0,0,0,0.1)',
                 // margin: 'left',
                 mb: 1,
@@ -69,10 +74,14 @@ export default function SVGImageBtn(props: any) {
                 />
             </Box> : null }
 
-            <pre>
-                {JSON.stringify(slug, null, 2)}
-            </pre>
+            
             
         </ButtonBase>
     )
 }
+
+/*
+<pre>
+                {JSON.stringify(buttonAttributes, null, 2)}
+            </pre>
+*/

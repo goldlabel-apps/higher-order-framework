@@ -2,27 +2,27 @@ import { AppThunk } from '../../../app/store'
 import { navigateTo } from '../../../listingslab-shared'
 
 export const svgImageBtnClick =
-    (id: string): AppThunk =>
+    (slug: string): AppThunk =>
     async (dispatch: any, getState: any) => {
         try {
 
-            console.warn("svgImageBtnClick", id)
+            console.warn("svgImageBtnClick", slug)
             window.scrollTo({ top: 0, behavior: 'smooth' })
 
-            switch (id) {
-                case 'onHomeClick':
+            switch (slug) {
+                case '':
                     dispatch(navigateTo({ pathname: '/' }))
                     break
 
-                case 'onWorkClick':
+                case 'work':
                     dispatch(navigateTo({ pathname: '/work' }))
                     break
 
-                case 'onLifeClick':
+                case 'life':
                     dispatch(navigateTo({ pathname: '/life' }))
                     break
 
-                case 'onBalanceClick':
+                case 'balance':
                     dispatch(navigateTo({ pathname: '/balance' }))
                     break
 
