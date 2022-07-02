@@ -50,7 +50,6 @@ export default function FindUs() {
                                         )
                                     }}
                                 >
-                                   
                                     <ListItemText
                                         primary={
                                             <Typography variant="body2">
@@ -69,8 +68,6 @@ export default function FindUs() {
                                             </IconButton>
                                         </Tooltip>
                                     </ListItemIcon>
-
-
                                 </ListItem>
                             </React.Fragment>
                         )

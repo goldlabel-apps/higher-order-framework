@@ -68,9 +68,6 @@ import {
     Stage,
     MovieClip,
     Sky,
-    Work,
-    Life,
-    Balance,
     Mumma,
     Chix,
     Punk,
@@ -83,7 +80,8 @@ import {
     getNextHighestDepth,
     resize,
     LayoutHome,
-    MonsterNav,
+    SVGImageBtn,
+    getComponent,
 } from './packages/flash'
 
 console.warn('hof', PJSON.version)
@@ -106,16 +104,12 @@ export {
     // Flash
     Stage,
     MovieClip,
-    Work,
-    Life,
-    Balance,
     Mumma,
     Chix,
     Punk,
     Biker,
     Sky,
     LayoutHome,
-    MonsterNav,
     selectFlash,
     selectMovieClips,
     setFlash,
@@ -123,6 +117,8 @@ export {
     getDisplay,
     getNextHighestDepth,
     resize,
+    SVGImageBtn,
+    getComponent,
     // Core
     store,
     useAppDispatch,

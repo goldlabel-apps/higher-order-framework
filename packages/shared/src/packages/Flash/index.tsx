@@ -3,15 +3,12 @@ import { selectFlash, selectMovieClips, setFlash } from './flashSlice'
 import { clips } from './clips'
 import Stage from './Stage'
 import MovieClip from './MovieClip'
+import { getComponent } from './getComponent'
 
 import LayoutHome from './Layouts/LayoutHome'
-import MonsterNav from './Layouts/MonsterNav'
 
 import Sounds from './Sounds'
-
-import Work from './MovieClips/Work'
-import Life from './MovieClips/Life'
-import Balance from './MovieClips/Balance'
+import SVGImageBtn from './MovieClips/SVGImageBtn'
 
 import Sky from './MovieClips/svgTsx/Sky'
 
@@ -67,11 +64,9 @@ export {
     clips,
     resize,
     Sounds,
-    Work,
-    Life,
-    Balance,
+    SVGImageBtn,
     Punk,
     Biker,
     LayoutHome,
-    MonsterNav,
+    getComponent,
 }
