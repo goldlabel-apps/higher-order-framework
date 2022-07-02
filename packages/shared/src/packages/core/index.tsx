@@ -14,4 +14,12 @@ export const selectRefresh = (state: RootState) => state.core.data.refresh
 
 export const selectSSR = (state: RootState) => state.core.data.ssr
 
-export { setCore, navClick, svgImageBtnClick, navigateTo, signIn, unsignIn, openLink }
+export {
+    setCore,
+    navClick,
+    svgImageBtnClick,
+    navigateTo,
+    signIn,
+    unsignIn,
+    openLink,
+}

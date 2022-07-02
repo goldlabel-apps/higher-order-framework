@@ -5,12 +5,15 @@ export const svgImageBtnClick =
     (slug: string): AppThunk =>
     async (dispatch: any, getState: any) => {
         try {
-
-            console.warn("svgImageBtnClick", slug)
+            //console.warn("svgImageBtnClick", slug)
             window.scrollTo({ top: 0, behavior: 'smooth' })
 
             switch (slug) {
                 case '':
+                    dispatch(navigateTo({ pathname: '/' }))
+                    break
+
+                case 'home':
                     dispatch(navigateTo({ pathname: '/' }))
                     break
 
