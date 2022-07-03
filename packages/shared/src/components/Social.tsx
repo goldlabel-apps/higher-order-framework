@@ -30,7 +30,7 @@ export default function Social(props) {
     }
 
     return (
-        <Accordion sx={{}} defaultExpanded={defaultExpanded}>
+        <Accordion sx={{ boxShadow: 'none' }} defaultExpanded={defaultExpanded}>
             <AccordionSummary
                 id="socialAccordion"
                 expandIcon={<Icon icon="acc" />}
@@ -47,8 +47,8 @@ export default function Social(props) {
                             {social.map((item, i) => {
                                 const { id } = item
                                 if (id === '_shape') return null
-                                const { label, icon, url } = item.data
-
+                                const { label, icon, url, hidden } = item.data
+                                if (hidden) return null
                                 return (
                                     <React.Fragment key={`social_${i}`}>
                                         <ListItem

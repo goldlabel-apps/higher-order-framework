@@ -55,6 +55,7 @@ export default function RouteEngine() {
 
     let post = null
     const { posts, sites, links, keywords, categories } = cms.bus
+
     if (!posts && !sites && !links && !keywords && !categories) {
         dispatch(adminInit())
     }
@@ -69,7 +70,7 @@ export default function RouteEngine() {
     let signedIn = false
     if (core.data.uid) signedIn = true
 
-    const onHomeClick = () => {
+    const onPreviousClick = () => {
         dispatch(navigateTo({ pathname: '/' }))
         return true
     }
@@ -83,7 +84,9 @@ export default function RouteEngine() {
     let excerpt = `route ${thisSlug} not found.`
     let image = 'https://listingslab.com/svg/default.svg'
     let icon = 'error'
-    let body = 'dsadsad'
+    let body = ''
+    let previous = null
+    let next = null
 
     if (post) {
         title = post.title
@@ -91,7 +94,11 @@ export default function RouteEngine() {
         icon = post.icon
         image = post.image
         body = post.body
+        previous = post.previous
+        next = post.next
     }
+
+    // console.warn("post", post)
 
     return (
         <Box sx={{ m: 1, minHeight: 90 }}>
@@ -112,8 +119,13 @@ export default function RouteEngine() {
                 subheader={<Typography variant="body2">{excerpt}</Typography>}
                 avatar={
                     <React.Fragment>
-                        {thisSlug !== '/' ? (
-                            <IconButton onClick={onHomeClick} color="primary">
+                        {previous ? (
+                            <IconButton
+                                onClick={() =>
+                                    dispatch(navigateTo({ pathname: previous }))
+                                }
+                                color="primary"
+                            >
                                 <Icon icon="arrowl" />
                             </IconButton>
                         ) : null}
@@ -121,22 +133,28 @@ export default function RouteEngine() {
                 }
                 action={
                     <React.Fragment>
-                        {thisSlug === '/' ? (
-                            <IconButton onClick={onNextClick} color="primary">
+                        {next === '/' ? (
+                            <IconButton
+                                onClick={() =>
+                                    dispatch(navigateTo({ pathname: next }))
+                                }
+                                color="primary"
+                            >
                                 <Icon icon="arrowr" />
                             </IconButton>
                         ) : null}
                     </React.Fragment>
                 }
             />
+            <CardContent>
+                <Typography variant="body2" sx={{ m: 2 }}>
+                    <div dangerouslySetInnerHTML={{ __html: body }} />
+                </Typography>
+            </CardContent>
         </Box>
     )
 }
 
 /*
-<CardContent>
-                <Typography variant="body2" sx={{ m: 2 }}>
-                    <div dangerouslySetInnerHTML={{ __html: body }} />
-                </Typography>
-            </CardContent>
+
 */

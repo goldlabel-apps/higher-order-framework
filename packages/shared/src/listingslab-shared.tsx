@@ -12,7 +12,6 @@ import RouteEngine from './RouteEngine'
 import MaxiButton from './components/MaxiButton'
 import Navigator from './components/Navigator'
 import MiniButton from './components/MiniButton'
-import OnTheMap from './components/OnTheMap'
 import AppMenu from './components/AppMenu'
 import SigninDialog from './components/admin/SigninDialog'
 import Read from './components/admin/Read'
@@ -145,7 +144,6 @@ export {
     MaxiButton,
     AppMenu,
     FindUs,
-    OnTheMap,
     Blocked,
     Map,
     Social,

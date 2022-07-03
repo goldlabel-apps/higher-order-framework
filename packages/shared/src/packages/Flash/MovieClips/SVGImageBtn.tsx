@@ -44,7 +44,7 @@ export default function SVGImageBtn(props: any) {
         <ButtonBase
             onClick={onClick}
             sx={{
-                borderBottom: `1px solid ${theme.palette.primary.light}`,
+                // borderTop: `1px solid ${theme.palette.primary.light}`,
                 // background: 'rgba(0,0,0,0.1)',
                 // margin: 'left',
                 mb: 1,

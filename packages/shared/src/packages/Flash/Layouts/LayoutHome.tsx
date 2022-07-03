@@ -5,6 +5,7 @@ import {
     RouteEngine,
     Social,
     SVGImageBtn,
+    Map,
 } from '../../../listingslab-shared'
 export default function LayoutHome() {
     let pushLeftDown = 0
@@ -21,8 +22,7 @@ export default function LayoutHome() {
             </Grid>
 
             <Grid item xs={12} md={4} sx={{ mt: 2 }}>
-                <Social />
-                <Box sx={{ m: 1 }}>
+                <Box sx={{ m: 1.5 }}>
                     <SVGImageBtn
                         buttonAttributes={{
                             slug: '',
@@ -59,6 +59,10 @@ export default function LayoutHome() {
                         }}
                     />
                 </Box>
+
+                <Social />
+
+                <Map />
             </Grid>
         </Grid>
     )

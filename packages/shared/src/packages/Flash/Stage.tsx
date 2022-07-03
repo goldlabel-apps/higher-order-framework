@@ -51,17 +51,17 @@ export default function Stage(props) {
         width: 320,
         height: displayH - 10,
     }
-    if (displayW > 650) {
+    if (displayW > 850) {
         appDimensions = {
             ...appDimensions,
-            width: 640,
+            width: 840,
         }
     }
 
     const stageStyle = {
         ...appDimensions,
-        border: '1px solid rgba(0,0,0,0.01)',
-        background: 'rgba(0,0,0,0.005)',
+        // border: '1px solid rgba(0,0,0,0.05)',
+        // background: 'rgba(0,0,0,0.005)',
         overflow: 'hidden',
         zIndex: 1,
         postition: 'relative',
