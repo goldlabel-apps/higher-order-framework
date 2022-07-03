@@ -5,7 +5,7 @@ import {
     setAdmin,
     selectAdmin,
     Icon,
-} from '../../listingslab-shared'
+} from '../../../listingslab-shared'
 import {
     useTheme,
     useMediaQuery,

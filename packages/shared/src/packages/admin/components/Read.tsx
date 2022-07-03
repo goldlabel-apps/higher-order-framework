@@ -6,7 +6,7 @@ import {
     setAdmin,
     Shape,
     Icon,
-} from '../../listingslab-shared'
+} from '../../../listingslab-shared'
 import {
     Grid,
     LinearProgress,
@@ -34,10 +34,11 @@ export default function Read() {
     return (
         <React.Fragment>
             <Grid container>
-                <Grid item xs={12} md={8}>
+                <Grid item xs={12}>
+
                     {items.map((item, i) => {
                         const { id } = item
-                        const { title, label, icon } = item.data
+                        const { title, label, excerpt } = item.data
                         let displayTxt = title
                         if (!title) displayTxt = label
                         if (id === '_shape') return null
@@ -49,18 +50,16 @@ export default function Read() {
                                         onItemEdit(item)
                                     }}
                                 >
-                                    <ListItemAvatar>
-                                        <Icon icon={icon ? icon : 'post'} />
-                                    </ListItemAvatar>
-                                    <ListItemText primary={displayTxt} />
+                                    <ListItemText 
+                                        primary={displayTxt} 
+                                        secondary={ excerpt }
+                                    />
                                 </ListItem>
                             </React.Fragment>
                         )
                     })}
                 </Grid>
-                <Grid item xs={12} md={4}>
-                    <Shape />
-                </Grid>
+                
             </Grid>
         </React.Fragment>
     )
@@ -69,7 +68,9 @@ export default function Read() {
 /*
 
 
-
+<Grid item xs={12} md={4}>
+                    <Shape />
+                </Grid>
                                     
 <Grid item xs={12}>
                     <pre>items {JSON.stringify(items, null, 2)}</pre>
@@ -82,6 +83,8 @@ export default function Read() {
 
 
 
-                
+<ListItemAvatar>
+                                        <Icon icon={icon ? icon : 'post'} />
+                                    </ListItemAvatar>                
             
                 */

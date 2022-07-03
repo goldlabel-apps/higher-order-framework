@@ -5,7 +5,7 @@ import {
     Form,
     Read,
     Selected,
-} from '../../listingslab-shared'
+} from '../../../listingslab-shared'
 import { Box, Card } from '@mui/material'
 
 export default function Collection() {
@@ -25,14 +25,20 @@ export default function Collection() {
 
     return (
         <Card sx={{ m: 1, p: 1, boxShadow: 'none' }}>
-            <React.Fragment>
-                {mode === 'read' ? (
+            
+            {mode === 'read' ? (
                     <Box>{!selected ? <Read /> : <Selected />}</Box>
                 ) : null}
+        </Card>
+    )
+}
+
+
+/*
+<React.Fragment>
+                
                 {mode === 'create' || mode === 'update' ? (
                     <Form shape={shape} />
                 ) : null}
             </React.Fragment>
-        </Card>
-    )
-}
+*/

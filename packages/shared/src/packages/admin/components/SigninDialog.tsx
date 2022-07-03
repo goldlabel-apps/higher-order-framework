@@ -25,7 +25,7 @@ import {
     Icon,
     setCore,
     signIn,
-} from '../../listingslab-shared'
+} from '../../../listingslab-shared'
 
 const NiceText = styled((props: TextFieldProps) => (
     <TextField
