@@ -5,13 +5,13 @@ import Stage from './Stage'
 import MovieClip from './MovieClip'
 import { getComponent } from './getComponent'
 
+// Timeines
+import { Cannatown } from './Timelines/Cannatown'
+
 import LayoutHome from './Layouts/LayoutHome'
 
-import Sounds from './Sounds'
 import SVGImageBtn from './MovieClips/SVGImageBtn'
-
 import Sky from './MovieClips/svgTsx/Sky'
-
 import Punk from './MovieClips/svgTsx/Punk'
 import Biker from './MovieClips/svgTsx/Biker'
 import Mumma from './MovieClips/svgTsx/Mumma'
@@ -39,6 +39,7 @@ import {
 
 export {
     Stage,
+    Cannatown,
     MovieClip,
     Mumma,
     Chix,
@@ -63,7 +64,7 @@ export {
     getNextHighestDepth,
     clips,
     resize,
-    Sounds,
+
     SVGImageBtn,
     Punk,
     Biker,

@@ -66,6 +66,7 @@ import {
 
 import {
     Stage,
+    Cannatown,
     MovieClip,
     Sky,
     Mumma,
@@ -104,6 +105,7 @@ export {
     // Flash
     Stage,
     MovieClip,
+    Cannatown,
     Mumma,
     Chix,
     Punk,

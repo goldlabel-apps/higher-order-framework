@@ -7,7 +7,7 @@ import {
     selectFlash,
 } from '../../../../listingslab-shared'
 
-export default function Home(props) {
+export default function Cannatown(props) {
     const { children } = props
     const dispatch = useAppDispatch()
     const flash = useAppSelector(selectFlash)
@@ -35,17 +35,17 @@ export default function Home(props) {
         }
     }
 
-    const stageStyle = {
+    const cannatownStyle = {
         ...appDimensions,
-        // border: '1px solid rgba(0,0,0,0.01)',
-        // background: 'rgba(0,0,0,0.005)',
+        border: '1px solid rgba(0,0,0,1)',
+        background: 'rgba(0,0,0,1)',
         overflow: 'hidden',
         zIndex: 1,
         postition: 'relative',
     }
 
     return (
-        <div id="stage" style={stageStyle}>
+        <div id="cannatown-stage" style={cannatownStyle}>
             {children}
         </div>
     )

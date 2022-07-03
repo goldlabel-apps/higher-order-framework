@@ -111,10 +111,6 @@ export default function Admin() {
                     </Grid>
                 </Grid>
                 <Grid container>
-                    <Grid item xs={12}>
-                        <PingpongAdmin />
-                    </Grid>
-
                     {leftCol ? (
                         <Grid item xs={12} md={rightCol ? 3 : 12}>
                             <Collections />

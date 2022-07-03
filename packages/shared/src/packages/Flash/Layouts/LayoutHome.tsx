@@ -6,6 +6,7 @@ import {
     Social,
     SVGImageBtn,
     Map,
+    Cannatown,
 } from '../../../listingslab-shared'
 export default function LayoutHome() {
     let pushLeftDown = 0

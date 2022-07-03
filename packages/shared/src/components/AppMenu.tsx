@@ -69,103 +69,113 @@ export default function AppMenu() {
 
     return (
         <React.Fragment>
-            <MiniButton
-                data={{
-                    label: 'Menu',
-                    tooltip: 'Menu',
-                    type: 'mini',
-                    icon: 'menu',
-                    color: 'primary',
-                    onClick: appMenuOpen,
-                }}
-            />
-
-            <Box sx={{ ml: 3 }}>
-                <Menu
-                    id="app-menu"
-                    anchorEl={anchorEl}
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'center',
+            <Box sx={{ m: 0 }}>
+                <MiniButton
+                    data={{
+                        label: 'Menu',
+                        tooltip: 'Click me',
+                        type: 'mini',
+                        icon: 'menu',
+                        color: 'secondary',
+                        onClick: appMenuOpen,
                     }}
-                    open={open}
-                    onClose={appMenuClose}
-                    MenuListProps={{
-                        'aria-labelledby': 'app-button',
-                    }}
-                >
-                    <MenuList sx={{ width: 250 }} dense>
-                        <MenuItem
-                            onClick={() => {
-                                onItemClick('home')
-                            }}
-                        >
-                            <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="primary">
-                                    <Icon icon="home" />
-                                </IconButton>
-                            </ListItemIcon>
-                            <ListItemText>Home</ListItemText>
-                            <Typography variant="body2">⌘H</Typography>
-                        </MenuItem>
+                />
 
-                        {signedIn ? (
-                            <React.Fragment>
-                                <MenuItem
-                                    onClick={() => {
-                                        onItemClick('cms')
-                                    }}
-                                >
-                                    <ListItemIcon>
-                                        <IconButton
-                                            sx={{ mr: 1 }}
-                                            color="primary"
-                                        >
-                                            <Icon icon="cms" />
-                                        </IconButton>
-                                    </ListItemIcon>
-                                    <ListItemText primary="Admin" />
-                                    <Typography variant="body2">⌘A</Typography>
-                                </MenuItem>
-                            </React.Fragment>
-                        ) : null}
-
-                        {signedIn ? (
+                <Box sx={{ ml: 3 }}>
+                    <Menu
+                        id="app-menu"
+                        anchorEl={anchorEl}
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center',
+                        }}
+                        open={open}
+                        onClose={appMenuClose}
+                        MenuListProps={{
+                            'aria-labelledby': 'app-button',
+                        }}
+                    >
+                        <MenuList sx={{ width: 250 }} dense>
                             <MenuItem
                                 onClick={() => {
-                                    onItemClick('signout')
+                                    onItemClick('home')
                                 }}
                             >
                                 <ListItemIcon>
-                                    <IconButton sx={{ mr: 1 }} color="primary">
-                                        <Icon icon="exit" />
+                                    <IconButton
+                                        sx={{ mr: 1 }}
+                                        color="secondary"
+                                    >
+                                        <Icon icon="home" />
                                     </IconButton>
                                 </ListItemIcon>
-                                <ListItemText>Sign out</ListItemText>
-                                <Typography variant="body2"></Typography>
+                                <ListItemText>Home</ListItemText>
+                                <Typography variant="body2">⌘H</Typography>
                             </MenuItem>
-                        ) : (
-                            <React.Fragment>
+
+                            {signedIn ? (
+                                <React.Fragment>
+                                    <MenuItem
+                                        onClick={() => {
+                                            onItemClick('cms')
+                                        }}
+                                    >
+                                        <ListItemIcon>
+                                            <IconButton
+                                                sx={{ mr: 1 }}
+                                                color="secondary"
+                                            >
+                                                <Icon icon="cms" />
+                                            </IconButton>
+                                        </ListItemIcon>
+                                        <ListItemText primary="Admin" />
+                                        <Typography variant="body2">
+                                            ⌘A
+                                        </Typography>
+                                    </MenuItem>
+                                </React.Fragment>
+                            ) : null}
+
+                            {signedIn ? (
                                 <MenuItem
                                     onClick={() => {
-                                        onItemClick('signin')
+                                        onItemClick('signout')
                                     }}
                                 >
                                     <ListItemIcon>
                                         <IconButton
                                             sx={{ mr: 1 }}
-                                            color="primary"
+                                            color="secondary"
                                         >
                                             <Icon icon="exit" />
                                         </IconButton>
                                     </ListItemIcon>
-                                    <ListItemText>Sign in</ListItemText>
+                                    <ListItemText>Sign out</ListItemText>
                                     <Typography variant="body2"></Typography>
                                 </MenuItem>
-                            </React.Fragment>
-                        )}
-                    </MenuList>
-                </Menu>
+                            ) : (
+                                <React.Fragment>
+                                    <MenuItem
+                                        onClick={() => {
+                                            onItemClick('signin')
+                                        }}
+                                    >
+                                        <ListItemIcon>
+                                            <IconButton
+                                                sx={{ mr: 1 }}
+                                                color="secondary"
+                                            >
+                                                <Icon icon="exit" />
+                                            </IconButton>
+                                        </ListItemIcon>
+                                        <ListItemText>Sign in</ListItemText>
+                                        <Typography variant="body2"></Typography>
+                                    </MenuItem>
+                                </React.Fragment>
+                            )}
+                        </MenuList>
+                    </Menu>
+                </Box>
             </Box>
         </React.Fragment>
     )

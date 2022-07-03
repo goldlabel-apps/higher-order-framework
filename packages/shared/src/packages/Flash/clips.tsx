@@ -10,7 +10,6 @@ export const clips = [
             scale: 1,
         },
     },
-
     {
         id: 'appMenu',
         component: 'AppMenu',

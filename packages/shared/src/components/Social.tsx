@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useAppSelector, useAppDispatch } from '../app/hooks'
 import {
-    useTheme,
     Accordion,
     AccordionSummary,
     AccordionDetails,
@@ -10,33 +9,29 @@ import {
     ListItemIcon,
     ListItemText,
     IconButton,
-    Tooltip,
     Typography,
 } from '@mui/material'
-import { Icon, selectAdmin, navigateTo, openLink } from '../listingslab-shared'
+import { Icon, selectAdmin, openLink } from '../listingslab-shared'
 
-export default function Social(props) {
+export default function Social(props: any) {
+
     const title = 'On the social'
     const { defaultExpanded } = props
-
     const dispatch = useAppDispatch()
     const admin = useAppSelector(selectAdmin)
     const { links } = admin.bus
     if (!links) return null
     const { list } = links
     let social = []
-    if (list) {
-        social = list
-    }
+    if (list) social = list
 
     return (
         <Accordion sx={{ boxShadow: 'none' }} defaultExpanded={defaultExpanded}>
             <AccordionSummary
                 id="socialAccordion"
-                expandIcon={<Icon icon="acc" />}
-            >
+                expandIcon={<Icon icon="acc" />} >
                 <Typography variant="body1" sx={{}}>
-                    {title}
+                    { title }
                 </Typography>
             </AccordionSummary>
 
@@ -64,17 +59,13 @@ export default function Social(props) {
                                             }}
                                         >
                                             <ListItemIcon sx={{ ml: 0 }}>
-                                                <Tooltip
-                                                    color="primary"
-                                                    title={label}
-                                                >
+                                                
                                                     <IconButton
                                                         color="primary"
                                                         sx={{ mr: 1 }}
                                                     >
                                                         <Icon icon={icon} />
                                                     </IconButton>
-                                                </Tooltip>
                                             </ListItemIcon>
 
                                             <ListItemText
