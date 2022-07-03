@@ -109,51 +109,6 @@ export default function AppMenu() {
                             <Typography variant="body2">⌘H</Typography>
                         </MenuItem>
 
-                        <Divider />
-                        <MenuItem
-                            onClick={() => {
-                                onItemClick('work')
-                            }}
-                        >
-                            <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="primary">
-                                    <Icon icon="work" />
-                                </IconButton>
-                            </ListItemIcon>
-                            <ListItemText>Work</ListItemText>
-                            <Typography variant="body2">⌘W</Typography>
-                        </MenuItem>
-
-                        <MenuItem
-                            onClick={() => {
-                                onItemClick('life')
-                            }}
-                        >
-                            <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="primary">
-                                    <Icon icon="life" />
-                                </IconButton>
-                            </ListItemIcon>
-                            <ListItemText>Life</ListItemText>
-                            <Typography variant="body2">⌘L</Typography>
-                        </MenuItem>
-
-                        <MenuItem
-                            onClick={() => {
-                                onItemClick('balance')
-                            }}
-                        >
-                            <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="primary">
-                                    <Icon icon="balance" />
-                                </IconButton>
-                            </ListItemIcon>
-                            <ListItemText>Balance</ListItemText>
-                            <Typography variant="body2">⌘B</Typography>
-                        </MenuItem>
-
-                        <Divider />
-
                         {signedIn ? (
                             <React.Fragment>
                                 <MenuItem
@@ -172,7 +127,6 @@ export default function AppMenu() {
                                     <ListItemText primary="Admin" />
                                     <Typography variant="body2">⌘A</Typography>
                                 </MenuItem>
-                                <Divider />
                             </React.Fragment>
                         ) : null}
 
@@ -218,5 +172,45 @@ export default function AppMenu() {
 }
 
 /*
+<MenuItem
+                            onClick={() => {
+                                onItemClick('work')
+                            }}
+                        >
+                            <ListItemIcon>
+                                <IconButton sx={{ mr: 1 }} color="primary">
+                                    <Icon icon="work" />
+                                </IconButton>
+                            </ListItemIcon>
+                            <ListItemText>Work</ListItemText>
+                            <Typography variant="body2">⌘W</Typography>
+                        </MenuItem>
 
+                        <MenuItem
+                            onClick={() => {
+                                onItemClick('life')
+                            }}
+                        >
+                            <ListItemIcon>
+                                <IconButton sx={{ mr: 1 }} color="primary">
+                                    <Icon icon="life" />
+                                </IconButton>
+                            </ListItemIcon>
+                            <ListItemText>Life</ListItemText>
+                            <Typography variant="body2">⌘L</Typography>
+                        </MenuItem>
+
+                        <MenuItem
+                            onClick={() => {
+                                onItemClick('balance')
+                            }}
+                        >
+                            <ListItemIcon>
+                                <IconButton sx={{ mr: 1 }} color="primary">
+                                    <Icon icon="balance" />
+                                </IconButton>
+                            </ListItemIcon>
+                            <ListItemText>Balance</ListItemText>
+                            <Typography variant="body2">⌘B</Typography>
+                        </MenuItem>
 */
