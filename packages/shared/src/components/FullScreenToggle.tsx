@@ -25,7 +25,8 @@ export default function FullScreenToggle() {
                                 value: false,
                             })
                         )
-                    }}>
+                    }}
+                >
                     <Icon icon="exitfullscreen" />
                 </IconButton>
             ) : (

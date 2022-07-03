@@ -25,7 +25,6 @@ import {
 } from '@mui/material'
 
 export default function Admin() {
-
     const dispatch = useAppDispatch()
     const core = useAppSelector(selectCore)
     const theme = useTheme()
@@ -42,7 +41,7 @@ export default function Admin() {
         rightCol = true
         leftCol = false
     }
-    
+
     const closeDialog = () =>
         dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
 
@@ -77,16 +76,15 @@ export default function Admin() {
                     {collection ? (
                         <Grid item>
                             <Box sx={{}}>
-                            
                                 <IconButton
                                     color="secondary"
                                     onClick={onCollectionClick}
                                 >
                                     <Icon icon={'arrowl'} />
                                 </IconButton>
-                                
+
                                 <Typography variant="button">
-                                    { collection }
+                                    {collection}
                                 </Typography>
 
                                 <IconButton
@@ -94,7 +92,6 @@ export default function Admin() {
                                     onClick={onCreateClick}
                                 >
                                     <Icon icon={'new'} />
-                                    
                                 </IconButton>
                                 <Typography variant="button">
                                     New {collection.slice(0, -1)}

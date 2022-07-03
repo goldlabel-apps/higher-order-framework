@@ -3,11 +3,11 @@ import { selectFlash, selectMovieClips, setFlash } from './flashSlice'
 import { clips } from './clips'
 import Stage from './Stage'
 import MovieClip from './MovieClip'
-import { getComponent } from './getComponent'
+import { getComponent } from './ActionScript/getComponent'
 
 // Timeines
 import { Cannatown } from './Timelines/Cannatown'
-
+import { startCannatown } from './Timelines/Cannatown/startCannatown'
 import LayoutHome from './Layouts/LayoutHome'
 
 import SVGImageBtn from './MovieClips/SVGImageBtn'
@@ -47,6 +47,7 @@ export {
     Pingpongball,
     Timemachine,
     Macromedia,
+    startCannatown,
     getDisplay,
     initFlash,
     selectFlash,

@@ -25,14 +25,12 @@ export default function Collection() {
 
     return (
         <Card sx={{ m: 1, p: 1, boxShadow: 'none' }}>
-            
             {mode === 'read' ? (
-                    <Box>{!selected ? <Read /> : <Selected />}</Box>
-                ) : null}
+                <Box>{!selected ? <Read /> : <Selected />}</Box>
+            ) : null}
         </Card>
     )
 }
-
 
 /*
 <React.Fragment>

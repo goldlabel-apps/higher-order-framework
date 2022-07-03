@@ -8,7 +8,7 @@ import {
     LayoutHome,
     SVGImageBtn,
     Punk,
-} from '../../listingslab-shared'
+} from '../../../listingslab-shared'
 
 export const getComponent = (componentName: string) => {
     switch (componentName) {
