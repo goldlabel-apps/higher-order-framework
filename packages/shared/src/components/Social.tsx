@@ -14,7 +14,6 @@ import {
 import { Icon, selectAdmin, openLink } from '../listingslab-shared'
 
 export default function Social(props: any) {
-
     const title = 'On the social'
     const { defaultExpanded } = props
     const dispatch = useAppDispatch()
@@ -29,9 +28,10 @@ export default function Social(props: any) {
         <Accordion sx={{ boxShadow: 'none' }} defaultExpanded={defaultExpanded}>
             <AccordionSummary
                 id="socialAccordion"
-                expandIcon={<Icon icon="acc" />} >
+                expandIcon={<Icon icon="acc" />}
+            >
                 <Typography variant="body1" sx={{}}>
-                    { title }
+                    {title}
                 </Typography>
             </AccordionSummary>
 
@@ -59,13 +59,12 @@ export default function Social(props: any) {
                                             }}
                                         >
                                             <ListItemIcon sx={{ ml: 0 }}>
-                                                
-                                                    <IconButton
-                                                        color="primary"
-                                                        sx={{ mr: 1 }}
-                                                    >
-                                                        <Icon icon={icon} />
-                                                    </IconButton>
+                                                <IconButton
+                                                    color="primary"
+                                                    sx={{ mr: 1 }}
+                                                >
+                                                    <Icon icon={icon} />
+                                                </IconButton>
                                             </ListItemIcon>
 
                                             <ListItemText

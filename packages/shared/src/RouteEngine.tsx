@@ -21,6 +21,7 @@ import {
     getPostBySlug,
     navigateTo,
     Icon,
+    Cannatown,
 } from './listingslab-shared'
 
 export default function RouteEngine() {
@@ -99,10 +100,11 @@ export default function RouteEngine() {
     }
 
     // console.warn("post", post)
+    image = null
 
     return (
         <Box sx={{ m: 1, minHeight: 90 }}>
-            {image !== '' ? (
+            {image !== '' && image ? (
                 <CardMedia
                     component="img"
                     height="200"
@@ -110,6 +112,9 @@ export default function RouteEngine() {
                     alt={title}
                 />
             ) : null}
+
+            <CardMedia component={Cannatown} height="200" alt={'title'} />
+
             <CardHeader
                 title={
                     <Typography variant="h5" sx={{ fontWeight: 'lighter' }}>

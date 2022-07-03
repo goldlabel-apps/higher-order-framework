@@ -7,6 +7,7 @@ import {
     SVGImageBtn,
     Map,
     Cannatown,
+    AppMenu,
 } from '../../../listingslab-shared'
 export default function LayoutHome() {
     let pushLeftDown = 0
@@ -23,6 +24,8 @@ export default function LayoutHome() {
             </Grid>
 
             <Grid item xs={12} md={4} sx={{ mt: 2 }}>
+                <AppMenu />
+
                 <Box sx={{ m: 1.5 }}>
                     <SVGImageBtn
                         buttonAttributes={{

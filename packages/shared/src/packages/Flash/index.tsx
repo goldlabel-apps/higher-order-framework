@@ -64,7 +64,6 @@ export {
     getNextHighestDepth,
     clips,
     resize,
-
     SVGImageBtn,
     Punk,
     Biker,
