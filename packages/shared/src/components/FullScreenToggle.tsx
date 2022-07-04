@@ -17,6 +17,7 @@ export default function FullScreenToggle() {
         <React.Fragment>
             {fullScreen ? (
                 <IconButton
+                    color="secondary"
                     onClick={() => {
                         dispatch(
                             setCore({
@@ -24,12 +25,12 @@ export default function FullScreenToggle() {
                                 value: false,
                             })
                         )
-                    }}
-                >
+                    }}>
                     <Icon icon="exitfullscreen" />
                 </IconButton>
             ) : (
                 <IconButton
+                    color="secondary"
                     onClick={() => {
                         dispatch(
                             setCore({

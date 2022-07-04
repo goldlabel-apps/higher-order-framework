@@ -5,7 +5,7 @@ import {
     selectCore,
     selectAdmin,
     Icon,
-} from '../../listingslab-shared'
+} from '../../../listingslab-shared'
 import {
     Accordion,
     AccordionDetails,

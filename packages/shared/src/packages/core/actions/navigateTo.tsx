@@ -4,10 +4,12 @@ import { setCore } from '../'
 
 export interface RouteShape {
     pathname: string
+    url?: string
+    target?: string
 }
 
 export const navigateTo =
-    (route: RouteShape): AppThunk =>
+    (route: any): AppThunk =>
     async (dispatch: any, getState: any) => {
         try {
             const { pathname } = route

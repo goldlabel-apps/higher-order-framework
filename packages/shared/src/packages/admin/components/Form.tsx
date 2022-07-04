@@ -1,6 +1,6 @@
 // @ts-nocheck
 import * as React from 'react'
-import { useAppDispatch, setAdmin, Icon } from '../../listingslab-shared'
+import { useAppDispatch, setAdmin, Icon } from '../../../listingslab-shared'
 import { Card, Box, Grid, Button, TextField, Typography } from '@mui/material'
 
 export default function Form(props: any) {
