@@ -1,8 +1,20 @@
-// import { store } from '../../../../listingslab-shared'
-// import { setPosition, fadeIn } from './'
+import { animateTo, fadeIn } from '../../../../listingslab-shared'
 
 export const startCannatown = () => {
-    console.warn('startCannatown')
+    // console.warn('startCannatown')
+
+    animateTo(
+        'mumma',
+        'centered',
+        {
+            top: 123,
+        },
+        () => {}
+    )
+
+    fadeIn('mumma', () => {
+        // console.warn('finish Cannatown')
+    })
 
     //
     // const { movieClips } = store.getState().flash.data

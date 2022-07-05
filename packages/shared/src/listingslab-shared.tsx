@@ -85,6 +85,9 @@ import {
     LayoutHome,
     SVGImageBtn,
     getComponent,
+    setPosition,
+    fadeIn,
+    animateTo,
 } from './packages/flash'
 
 console.warn('hof', PJSON.version)
@@ -124,6 +127,9 @@ export {
     resize,
     SVGImageBtn,
     getComponent,
+    setPosition,
+    fadeIn,
+    animateTo,
     // Core
     store,
     useAppDispatch,
