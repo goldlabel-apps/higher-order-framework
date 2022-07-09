@@ -100,7 +100,7 @@ export default function RouteEngine() {
     }
 
     return (
-        <Box sx={{ m: 1, minHeight: 90 }}>
+        <Box sx={{ m: 0, minHeight: 90 }}>
             {image ? (
                 <CardMedia
                     component="img"
@@ -109,8 +109,6 @@ export default function RouteEngine() {
                     alt={title}
                 />
             ) : null}
-
-            
 
             <CardHeader
                 title={
@@ -149,7 +147,7 @@ export default function RouteEngine() {
                 }
             />
             <CardContent>
-                <Typography variant="body2" sx={{ m: 2 }}>
+                <Typography variant="body2" sx={{ m: 0 }}>
                     <div dangerouslySetInnerHTML={{ __html: body }} />
                 </Typography>
             </CardContent>

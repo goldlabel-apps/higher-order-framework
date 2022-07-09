@@ -14,4 +14,3 @@ npm i --legacy-peer-deps
 
 cd ./fuctions
 npm i --legacy-peer-deps
-

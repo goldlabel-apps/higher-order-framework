@@ -17,9 +17,8 @@ const { accessToken, styleLight } = mapboxConfig
 mapboxgl.accessToken = accessToken
 
 export default function Map(props: any) {
-
     const id = 'mapContainer'
-    const zoom = 10
+    const zoom = 11
     const mapContainer = useRef(null)
     const map = useRef(null)
     const { defaultExpanded } = props
@@ -29,9 +28,9 @@ export default function Map(props: any) {
         map.current = new mapboxgl.Map({
             container: mapContainer.current,
             style: styleLight,
-            center: [14.443941, 35.891377],
+            center: [14.488984603587012, 35.92337373655872],
             zoom: zoom,
-            interactive: false,
+            interactive: true,
         })
     })
 
