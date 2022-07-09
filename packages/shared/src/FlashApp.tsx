@@ -16,8 +16,8 @@ export default function FlashApp() {
     const { display } = flash.data
     if (display) {
         const { displayW, displayH } = display
-        if (displayW > 650) {
-            realWidth = 640
+        if (displayW > 850) {
+            realWidth = 840
         }
     }
     // if (!display) return null

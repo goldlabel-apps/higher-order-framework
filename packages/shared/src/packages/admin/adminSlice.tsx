@@ -8,8 +8,8 @@ export interface AdminShape {
 const initialState: AdminShape = {
     bus: {},
     data: {
-        // collection: 'posts',
-        // mode: 'read',
+        collection: 'posts',
+        mode: 'read',
     },
 }
 

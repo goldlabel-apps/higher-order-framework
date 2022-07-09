@@ -21,6 +21,7 @@ import {
     getPostBySlug,
     navigateTo,
     Icon,
+    Cannatown,
 } from './listingslab-shared'
 
 export default function RouteEngine() {
@@ -55,6 +56,7 @@ export default function RouteEngine() {
 
     let post = null
     const { posts, sites, links, keywords, categories } = cms.bus
+
     if (!posts && !sites && !links && !keywords && !categories) {
         dispatch(adminInit())
     }
@@ -69,21 +71,23 @@ export default function RouteEngine() {
     let signedIn = false
     if (core.data.uid) signedIn = true
 
-    const onHomeClick = () => {
-        dispatch(navigateTo({ pathname: '/' }))
-        return true
-    }
+    // const onPreviousClick = () => {
+    //     dispatch(navigateTo({ pathname: '/' }))
+    //     return true
+    // }
 
-    const onNextClick = () => {
-        dispatch(navigateTo({ pathname: '/work' }))
-        return true
-    }
+    // const onNextClick = () => {
+    //     dispatch(navigateTo({ pathname: '/work' }))
+    //     return true
+    // }
 
     let title = '404, brah.'
     let excerpt = `route ${thisSlug} not found.`
-    let image = ''
+    let image = 'https://listingslab.com/svg/default.svg'
     let icon = 'error'
-    let body = 'dsadsad'
+    let body = ''
+    let previous = null
+    let next = null
 
     if (post) {
         title = post.title
@@ -91,11 +95,13 @@ export default function RouteEngine() {
         icon = post.icon
         image = post.image
         body = post.body
+        previous = post.previous
+        next = post.next
     }
 
     return (
         <Box sx={{ m: 1, minHeight: 90 }}>
-            {image !== '' ? (
+            {image ? (
                 <CardMedia
                     component="img"
                     height="200"
@@ -103,6 +109,9 @@ export default function RouteEngine() {
                     alt={title}
                 />
             ) : null}
+
+            
+
             <CardHeader
                 title={
                     <Typography variant="h5" sx={{ fontWeight: 'lighter' }}>
@@ -112,8 +121,13 @@ export default function RouteEngine() {
                 subheader={<Typography variant="body2">{excerpt}</Typography>}
                 avatar={
                     <React.Fragment>
-                        {thisSlug !== '/' ? (
-                            <IconButton onClick={onHomeClick} color="primary">
+                        {previous ? (
+                            <IconButton
+                                onClick={() =>
+                                    dispatch(navigateTo({ pathname: previous }))
+                                }
+                                color="primary"
+                            >
                                 <Icon icon="arrowl" />
                             </IconButton>
                         ) : null}
@@ -121,22 +135,28 @@ export default function RouteEngine() {
                 }
                 action={
                     <React.Fragment>
-                        {thisSlug === '/' ? (
-                            <IconButton onClick={onNextClick} color="primary">
+                        {next === '/' ? (
+                            <IconButton
+                                onClick={() =>
+                                    dispatch(navigateTo({ pathname: next }))
+                                }
+                                color="primary"
+                            >
                                 <Icon icon="arrowr" />
                             </IconButton>
                         ) : null}
                     </React.Fragment>
                 }
             />
+            <CardContent>
+                <Typography variant="body2" sx={{ m: 2 }}>
+                    <div dangerouslySetInnerHTML={{ __html: body }} />
+                </Typography>
+            </CardContent>
         </Box>
     )
 }
 
 /*
-<CardContent>
-                <Typography variant="body2" sx={{ m: 2 }}>
-                    <div dangerouslySetInnerHTML={{ __html: body }} />
-                </Typography>
-            </CardContent>
+<CardMedia component={Cannatown} height="200" alt={'title'} />
 */

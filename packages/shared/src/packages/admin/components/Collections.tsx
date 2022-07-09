@@ -5,7 +5,7 @@ import {
     setAdmin,
     selectAdmin,
     Icon,
-} from '../../listingslab-shared'
+} from '../../../listingslab-shared'
 import {
     useTheme,
     useMediaQuery,
@@ -34,27 +34,6 @@ export default function Collections() {
 
     return (
         <Box sx={{}}>
-            <Typography variant="h6" sx={{ fontWeight: 'lighter' }}>
-                Collections
-            </Typography>
-            <ListItem
-                button
-                onClick={() => {
-                    onCollectionClick('sites')
-                }}
-            >
-                <ListItemIcon>
-                    <IconButton color="secondary">
-                        <Icon icon="sites" />
-                    </IconButton>
-                </ListItemIcon>
-                <ListItemText
-                    primary="Sites"
-                    secondary="Manage Higher Order Frameworks"
-                />
-                <Typography variant="body2"></Typography>
-            </ListItem>
-
             <ListItem
                 button
                 onClick={() => {
@@ -82,6 +61,24 @@ export default function Collections() {
                     </IconButton>
                 </ListItemIcon>
                 <ListItemText primary="Links" secondary="Manage links" />
+                <Typography variant="body2"></Typography>
+            </ListItem>
+
+            <ListItem
+                button
+                onClick={() => {
+                    onCollectionClick('sites')
+                }}
+            >
+                <ListItemIcon>
+                    <IconButton color="secondary">
+                        <Icon icon="sites" />
+                    </IconButton>
+                </ListItemIcon>
+                <ListItemText
+                    primary="Sites"
+                    secondary="Manage Higher Order Frameworks"
+                />
                 <Typography variant="body2"></Typography>
             </ListItem>
         </Box>

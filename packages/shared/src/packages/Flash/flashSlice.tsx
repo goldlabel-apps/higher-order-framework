@@ -9,6 +9,10 @@ export interface FlashShape {
 const initialState: FlashShape = {
     data: {
         movieClips: clips,
+        cannatown: {
+            started: false,
+            finished: false,
+        },
     },
 }
 

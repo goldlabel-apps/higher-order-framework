@@ -17,7 +17,7 @@ const initialState: CoreShape = {
         ssr,
         navigator,
         uid: null,
-        // fullScreen: true,
+        fullScreen: true,
         // cmsDialogOpen: true,
     },
 }

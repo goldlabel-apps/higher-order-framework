@@ -4,10 +4,8 @@ import {
     useAppDispatch,
     selectAdmin,
     setAdmin,
-    Icon,
-    Shape,
-} from '../../listingslab-shared'
-import { Box, Grid, IconButton, Typography } from '@mui/material'
+} from '../../../listingslab-shared'
+import { Box, Button, Grid } from '@mui/material'
 
 export default function Selected() {
     const dispatch = useAppDispatch()
@@ -16,32 +14,25 @@ export default function Selected() {
     if (!selected) return null
     // console.warn("selected", selected)
 
-    const onDeSelect = () => {
+    const deSelect = () => {
         dispatch(setAdmin({ key: 'selected', value: null }))
         return true
     }
-    const { id } = selected
-    const { title } = selected.data
 
     return (
         <React.Fragment>
             <Grid container>
-                <Grid item xs={12} md={8}>
+                <Grid item xs={12}>
                     <Box>
-                        <Typography
-                            variant="body2"
-                            sx={{ fontWeight: 'lighter' }}
-                        >
-                            id {id}
-                        </Typography>
-
-                        <Typography variant="h6" sx={{ fontWeight: 'lighter' }}>
-                            {title}
-                        </Typography>
+                        <pre>
+                            Selected post {JSON.stringify(selected, null, 2)}
+                        </pre>
                     </Box>
                 </Grid>
-                <Grid item xs={12} md={4}>
-                    <Shape />
+                <Grid item xs={12}>
+                    <Button onClick={deSelect} variant={'contained'}>
+                        Back
+                    </Button>
                 </Grid>
             </Grid>
         </React.Fragment>
@@ -49,6 +40,19 @@ export default function Selected() {
 }
 
 /*
+
+ <Grid item xs={12} md={4}>
+                    <Shape />
+                </Grid>
+
 <pre>Selected post {JSON.stringify(selected, null, 2)}</pre>
 <pre>posts {JSON.stringify(posts, null, 2)}</pre>
+
+<Typography
+                            variant="body2"
+                            sx={{ fontWeight: 'lighter' }}
+                        >
+                            id {id}
+                        </Typography>
+
 */

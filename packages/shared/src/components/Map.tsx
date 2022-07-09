@@ -4,15 +4,25 @@
 import React, { useRef, useEffect, useState } from 'react'
 import mapboxgl from 'mapbox-gl'
 import { mapboxConfig } from '../env'
-import { Box, Button, Typography } from '@mui/material'
+import {
+    Box,
+    Typography,
+    Accordion,
+    AccordionSummary,
+    AccordionDetails,
+} from '@mui/material'
+
+import { Icon } from '../listingslab-shared'
 const { accessToken, styleLight } = mapboxConfig
 mapboxgl.accessToken = accessToken
 
-export default function Map() {
+export default function Map(props: any) {
+
     const id = 'mapContainer'
-    const zoom = 8.75
+    const zoom = 10
     const mapContainer = useRef(null)
     const map = useRef(null)
+    const { defaultExpanded } = props
 
     React.useEffect(() => {
         if (map.current) return
@@ -26,18 +36,30 @@ export default function Map() {
     })
 
     return (
-        <Box
-            id={`map_${id}`}
-            sx={{
-                opacity: 1,
-                width: '100%',
-            }}
-        >
-            <Box
-                sx={{ height: 550, m: 1 }}
-                ref={mapContainer}
-                className="map-container"
-            />
-        </Box>
+        <Accordion sx={{ boxShadow: 'none' }} defaultExpanded={defaultExpanded}>
+            <AccordionSummary
+                id="socialAccordion"
+                expandIcon={<Icon icon="acc" />}
+            >
+                <Typography variant="body1" sx={{}}>
+                    On the map
+                </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                <Box
+                    id={`map_${id}`}
+                    sx={{
+                        opacity: 1,
+                        width: '100%',
+                    }}
+                >
+                    <Box
+                        sx={{ height: 250, m: 1 }}
+                        ref={mapContainer}
+                        className="map-container"
+                    />
+                </Box>
+            </AccordionDetails>
+        </Accordion>
     )
 }

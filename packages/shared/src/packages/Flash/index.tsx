@@ -3,18 +3,15 @@ import { selectFlash, selectMovieClips, setFlash } from './flashSlice'
 import { clips } from './clips'
 import Stage from './Stage'
 import MovieClip from './MovieClip'
+import { getComponent } from './ActionScript/getComponent'
 
+// Timeines
+import { Cannatown } from './Timelines/Cannatown'
+import { startCannatown } from './Timelines/Cannatown/startCannatown'
 import LayoutHome from './Layouts/LayoutHome'
-import MonsterNav from './Layouts/MonsterNav'
 
-import Sounds from './Sounds'
-
-import Work from './MovieClips/Work'
-import Life from './MovieClips/Life'
-import Balance from './MovieClips/Balance'
-
+import SVGImageBtn from './MovieClips/SVGImageBtn'
 import Sky from './MovieClips/svgTsx/Sky'
-
 import Punk from './MovieClips/svgTsx/Punk'
 import Biker from './MovieClips/svgTsx/Biker'
 import Mumma from './MovieClips/svgTsx/Mumma'
@@ -42,6 +39,7 @@ import {
 
 export {
     Stage,
+    Cannatown,
     MovieClip,
     Mumma,
     Chix,
@@ -49,6 +47,7 @@ export {
     Pingpongball,
     Timemachine,
     Macromedia,
+    startCannatown,
     getDisplay,
     initFlash,
     selectFlash,
@@ -66,12 +65,9 @@ export {
     getNextHighestDepth,
     clips,
     resize,
-    Sounds,
-    Work,
-    Life,
-    Balance,
+    SVGImageBtn,
     Punk,
     Biker,
     LayoutHome,
-    MonsterNav,
+    getComponent,
 }

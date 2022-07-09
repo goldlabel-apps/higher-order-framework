@@ -3,8 +3,11 @@ import { Box, Grid } from '@mui/material'
 import {
     getDisplay,
     RouteEngine,
-    AppMenu,
     Social,
+    SVGImageBtn,
+    Map,
+    Cannatown,
+    AppMenu,
 } from '../../../listingslab-shared'
 export default function LayoutHome() {
     let pushLeftDown = 0
@@ -16,12 +19,49 @@ export default function LayoutHome() {
     }
     return (
         <Grid container>
+
             <Grid item xs={12} md={8}>
                 <RouteEngine />
+                <Map defaultExpanded={true} />
             </Grid>
+
             <Grid item xs={12} md={4} sx={{ mt: 2 }}>
-                <Social />
+                <AppMenu />
+
+                <Box sx={{ m: 1.5 }}>
+                    <SVGImageBtn
+                        buttonAttributes={{
+                            slug: 'work',
+                            type: 'route',
+                            route: '/work',
+                            label: 'Work',
+                        }}
+                    />
+
+                    <SVGImageBtn
+                        buttonAttributes={{
+                            slug: 'life',
+                            type: 'route',
+                            route: '/life',
+                            label: 'Life',
+                        }}
+                    />
+
+                    <SVGImageBtn
+                        buttonAttributes={{
+                            slug: 'balance',
+                            type: 'route',
+                            route: '/balance',
+                            label: 'Balance',
+                        }}
+                    />
+                </Box>
+
+                <Social defaultExpanded={true} />
+                
             </Grid>
+
+            
         </Grid>
     )
 }
@@ -29,8 +69,10 @@ export default function LayoutHome() {
 
 <Grid item sx={{ flexGrow: 1 }} />
 <Grid item xs={12} sx={{ display: 'flex', mt: 2 }}>
-                <Work />
-                <Life />
-                <Balance />
+                
+
             </Grid>
-*/
+
+imageSrc:
+                            'https://listingslab.com/svg/featured/work.svg',
+            */

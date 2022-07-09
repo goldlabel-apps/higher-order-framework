@@ -11,7 +11,7 @@ import {
     FullScreenToggle,
     setAdmin,
     PingpongAdmin,
-} from '../../listingslab-shared'
+} from '../../../listingslab-shared'
 import {
     useTheme,
     useMediaQuery,
@@ -21,6 +21,7 @@ import {
     Box,
     Button,
     IconButton,
+    Typography,
 } from '@mui/material'
 
 export default function Admin() {
@@ -33,7 +34,7 @@ export default function Admin() {
     if (fullScreen) isFullScreen = true
     if (isMobile) isFullScreen = true
     const cms = useAppSelector(selectAdmin)
-    const { collection, selected } = cms.data
+    const { collection } = cms.data
     let leftCol = true
     let rightCol = false
     if (collection) {
@@ -51,11 +52,11 @@ export default function Admin() {
         return true
     }
 
-    const onReadClick = () => {
-        dispatch(setAdmin({ key: 'mode', value: 'read' }))
-        dispatch(setAdmin({ key: 'selected', value: null }))
-        return true
-    }
+    // const onReadClick = () => {
+    //     dispatch(setAdmin({ key: 'mode', value: 'read' }))
+    //     dispatch(setAdmin({ key: 'selected', value: null }))
+    //     return true
+    // }
 
     const onCreateClick = () => {
         dispatch(setAdmin({ key: 'mode', value: 'create' }))
@@ -79,23 +80,22 @@ export default function Admin() {
                                     color="secondary"
                                     onClick={onCollectionClick}
                                 >
-                                    <Icon icon={'cms'} />
+                                    <Icon icon={'arrowl'} />
                                 </IconButton>
 
-                                <Button
+                                <Typography variant="button">
+                                    {collection}
+                                </Typography>
+
+                                <IconButton
                                     color="secondary"
                                     onClick={onCreateClick}
                                 >
                                     <Icon icon={'new'} />
-                                    <span
-                                        style={{
-                                            marginRight: 4,
-                                            marginLeft: 4,
-                                        }}
-                                    >
-                                        New {collection.slice(0, -1)}
-                                    </span>
-                                </Button>
+                                </IconButton>
+                                <Typography variant="button">
+                                    New {collection.slice(0, -1)}
+                                </Typography>
                             </Box>
                         </Grid>
                     ) : null}
@@ -104,17 +104,13 @@ export default function Admin() {
                     <Grid item>
                         <Box sx={{ mt: 1, mr: 1 }}>
                             <FullScreenToggle />
-                            <IconButton onClick={closeDialog}>
+                            <IconButton color="secondary" onClick={closeDialog}>
                                 <Icon icon="close" />
                             </IconButton>
                         </Box>
                     </Grid>
                 </Grid>
                 <Grid container>
-                    <Grid item xs={12}>
-                        <PingpongAdmin />
-                    </Grid>
-
                     {leftCol ? (
                         <Grid item xs={12} md={rightCol ? 3 : 12}>
                             <Collections />
