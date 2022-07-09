@@ -71,15 +71,15 @@ export default function RouteEngine() {
     let signedIn = false
     if (core.data.uid) signedIn = true
 
-    const onPreviousClick = () => {
-        dispatch(navigateTo({ pathname: '/' }))
-        return true
-    }
+    // const onPreviousClick = () => {
+    //     dispatch(navigateTo({ pathname: '/' }))
+    //     return true
+    // }
 
-    const onNextClick = () => {
-        dispatch(navigateTo({ pathname: '/work' }))
-        return true
-    }
+    // const onNextClick = () => {
+    //     dispatch(navigateTo({ pathname: '/work' }))
+    //     return true
+    // }
 
     let title = '404, brah.'
     let excerpt = `route ${thisSlug} not found.`
@@ -99,12 +99,9 @@ export default function RouteEngine() {
         next = post.next
     }
 
-    // console.warn("post", post)
-    image = null
-
     return (
         <Box sx={{ m: 1, minHeight: 90 }}>
-            {image !== '' && image ? (
+            {image ? (
                 <CardMedia
                     component="img"
                     height="200"
@@ -113,7 +110,7 @@ export default function RouteEngine() {
                 />
             ) : null}
 
-            <CardMedia component={Cannatown} height="200" alt={'title'} />
+            
 
             <CardHeader
                 title={
@@ -161,5 +158,5 @@ export default function RouteEngine() {
 }
 
 /*
-
+<CardMedia component={Cannatown} height="200" alt={'title'} />
 */

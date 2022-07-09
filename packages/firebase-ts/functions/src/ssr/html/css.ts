@@ -7,6 +7,10 @@ export const css = () => {
             border: 0; margin: 0; padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", sans-serif;
         }
+        fieldset{
+          border: none !important;
+          outline: none !important;
+        }
         .ssr {
           max-width: 800px;
           margin: auto;

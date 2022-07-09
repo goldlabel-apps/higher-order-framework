@@ -16,12 +16,13 @@ import { Icon } from '../listingslab-shared'
 const { accessToken, styleLight } = mapboxConfig
 mapboxgl.accessToken = accessToken
 
-export default function Map() {
+export default function Map(props: any) {
+
     const id = 'mapContainer'
-    const zoom = 8.75
+    const zoom = 10
     const mapContainer = useRef(null)
     const map = useRef(null)
-    const defaultExpanded = false
+    const { defaultExpanded } = props
 
     React.useEffect(() => {
         if (map.current) return
@@ -53,7 +54,7 @@ export default function Map() {
                     }}
                 >
                     <Box
-                        sx={{ height: 200, m: 1 }}
+                        sx={{ height: 250, m: 1 }}
                         ref={mapContainer}
                         className="map-container"
                     />

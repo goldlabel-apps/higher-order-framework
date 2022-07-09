@@ -2,7 +2,7 @@ import * as React from 'react'
 import {
     useAppDispatch,
     useAppSelector,
-    setFlash,
+    // setFlash,
     startCannatown,
     selectFlash,
     Mumma,
@@ -16,8 +16,7 @@ export default function Cannatown(props) {
     React.useEffect(() => {
         const { cannatown } = flash.data
         const { started, finished } = cannatown
-        console.warn('cannatown', started, finished)
-        // if (!started) dispatch(startCannatown())
+        if (!started && !finished) startCannatown()
     }, [flash, dispatch])
 
     let dimensions = {
@@ -27,7 +26,7 @@ export default function Cannatown(props) {
 
     const cannatownStyle = {
         ...dimensions,
-        border: '1px solid rgba(0,0,0,1)',
+        // border: '1px solid rgba(0,0,0,1)',
         // background: 'rgba(0,0,0,0.1)',
         overflow: 'hidden',
         postition: 'relative',
@@ -38,7 +37,9 @@ export default function Cannatown(props) {
             <Box
                 id="mumma"
                 sx={{
-                    width: 100,
+                    position: 'relative',
+                    opacity: 0,
+                    width: 60,
                 }}
             >
                 <Mumma />

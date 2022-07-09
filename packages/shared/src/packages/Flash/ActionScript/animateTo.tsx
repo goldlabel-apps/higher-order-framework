@@ -2,14 +2,13 @@
 import { gsap, Power1 } from 'gsap'
 import { getElement, getSizes } from './'
 
-const duration = 0.66
+const duration = 2.66
 
 export const animateTo = (divId, position, options, onComplete) => {
     try {
-        // console.warn('animateTo', divId, position, options)
         const el = getElement(divId)
         if (!el) {
-            console.error('No element named ', divId)
+            console.warn('No element named ', divId)
             return false
         }
         const sizes = getSizes(divId)
