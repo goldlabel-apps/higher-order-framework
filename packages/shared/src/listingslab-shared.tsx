@@ -76,6 +76,7 @@ import {
     Biker,
     initFlash,
     setFlash,
+    startCannatown,
     selectFlash,
     selectMovieClips,
     getDisplay,
@@ -84,6 +85,9 @@ import {
     LayoutHome,
     SVGImageBtn,
     getComponent,
+    setPosition,
+    fadeIn,
+    animateTo,
 } from './packages/flash'
 
 console.warn('hof', PJSON.version)
@@ -115,6 +119,7 @@ export {
     LayoutHome,
     selectFlash,
     selectMovieClips,
+    startCannatown,
     setFlash,
     initFlash,
     getDisplay,
@@ -122,6 +127,9 @@ export {
     resize,
     SVGImageBtn,
     getComponent,
+    setPosition,
+    fadeIn,
+    animateTo,
     // Core
     store,
     useAppDispatch,

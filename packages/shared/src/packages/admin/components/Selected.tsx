@@ -5,11 +5,7 @@ import {
     selectAdmin,
     setAdmin,
 } from '../../../listingslab-shared'
-import { 
-    Box,
-    Button,
-    Grid, 
-} from '@mui/material'
+import { Box, Button, Grid } from '@mui/material'
 
 export default function Selected() {
     const dispatch = useAppDispatch()
@@ -28,20 +24,16 @@ export default function Selected() {
             <Grid container>
                 <Grid item xs={12}>
                     <Box>
-                        
-
-                        <pre>Selected post {JSON.stringify(selected, null, 2)}</pre>
+                        <pre>
+                            Selected post {JSON.stringify(selected, null, 2)}
+                        </pre>
                     </Box>
                 </Grid>
                 <Grid item xs={12}>
-                    <Button 
-                        onClick={deSelect}
-                        variant={"contained"}
-                    >
+                    <Button onClick={deSelect} variant={'contained'}>
                         Back
                     </Button>
                 </Grid>
-               
             </Grid>
         </React.Fragment>
     )

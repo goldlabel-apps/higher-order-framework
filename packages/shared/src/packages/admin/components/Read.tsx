@@ -35,7 +35,6 @@ export default function Read() {
         <React.Fragment>
             <Grid container>
                 <Grid item xs={12}>
-
                     {items.map((item, i) => {
                         const { id } = item
                         const { title, label, excerpt } = item.data
@@ -50,16 +49,15 @@ export default function Read() {
                                         onItemEdit(item)
                                     }}
                                 >
-                                    <ListItemText 
-                                        primary={displayTxt} 
-                                        secondary={ excerpt }
+                                    <ListItemText
+                                        primary={displayTxt}
+                                        secondary={excerpt}
                                     />
                                 </ListItem>
                             </React.Fragment>
                         )
                     })}
                 </Grid>
-                
             </Grid>
         </React.Fragment>
     )

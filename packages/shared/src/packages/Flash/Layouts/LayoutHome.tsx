@@ -19,13 +19,15 @@ export default function LayoutHome() {
     }
     return (
         <Grid container>
-            
+            <Grid item xs={12} md={8}>
+                <RouteEngine />
+                <Map defaultExpanded={true} />
+            </Grid>
 
             <Grid item xs={12} md={4} sx={{ mt: 2 }}>
                 <AppMenu />
 
                 <Box sx={{ m: 1.5 }}>
-                    
                     <SVGImageBtn
                         buttonAttributes={{
                             slug: 'work',
@@ -54,15 +56,8 @@ export default function LayoutHome() {
                     />
                 </Box>
 
-                <Social />
-
-                <Map />
+                <Social defaultExpanded={true} />
             </Grid>
-
-            <Grid item xs={12} md={8}>
-                <RouteEngine />
-            </Grid>
-
         </Grid>
     )
 }
