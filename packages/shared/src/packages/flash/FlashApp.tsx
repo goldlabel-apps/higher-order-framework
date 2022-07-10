@@ -7,7 +7,7 @@ import {
     SigninDialog,
     Admin,
     selectFlash,
-} from './listingslab-shared'
+} from '../../listingslab-shared'
 
 export default function FlashApp() {
     let realWidth = 300
