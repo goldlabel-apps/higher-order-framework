@@ -9,7 +9,7 @@ import {
 } from '../../../../listingslab-shared'
 import { Box } from '@mui/material'
 
-export default function Cannatown(props:any) {
+export default function Cannatown(props: any) {
     const dispatch = useAppDispatch()
     const flash = useAppSelector(selectFlash)
 
