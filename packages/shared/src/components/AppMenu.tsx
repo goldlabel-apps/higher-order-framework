@@ -40,23 +40,14 @@ export default function AppMenu() {
             case 'home':
                 dispatch(navigateTo({ pathname: '/' }))
                 break
-            case 'work':
-                dispatch(navigateTo({ pathname: '/work' }))
-                break
-            case 'life':
-                dispatch(navigateTo({ pathname: '/life' }))
-                break
-            case 'balance':
-                dispatch(navigateTo({ pathname: '/balance' }))
-                break
             case 'signout':
                 dispatch(unsignIn())
                 break
             case 'signin':
                 dispatch(setCore({ key: 'dialogSigninOpen', value: true }))
                 break
-            case 'cms':
-                dispatch(setCore({ key: 'cmsDialogOpen', value: true }))
+            case 'admin':
+                dispatch(setCore({ key: 'adminOpen', value: true }))
                 break
             default:
         }
@@ -117,7 +108,7 @@ export default function AppMenu() {
                                 <React.Fragment>
                                     <MenuItem
                                         onClick={() => {
-                                            onItemClick('cms')
+                                            onItemClick('admin')
                                         }}
                                     >
                                         <ListItemIcon>
@@ -180,47 +171,3 @@ export default function AppMenu() {
         </React.Fragment>
     )
 }
-
-/*
-<MenuItem
-                            onClick={() => {
-                                onItemClick('work')
-                            }}
-                        >
-                            <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="primary">
-                                    <Icon icon="work" />
-                                </IconButton>
-                            </ListItemIcon>
-                            <ListItemText>Work</ListItemText>
-                            <Typography variant="body2">⌘W</Typography>
-                        </MenuItem>
-
-                        <MenuItem
-                            onClick={() => {
-                                onItemClick('life')
-                            }}
-                        >
-                            <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="primary">
-                                    <Icon icon="life" />
-                                </IconButton>
-                            </ListItemIcon>
-                            <ListItemText>Life</ListItemText>
-                            <Typography variant="body2">⌘L</Typography>
-                        </MenuItem>
-
-                        <MenuItem
-                            onClick={() => {
-                                onItemClick('balance')
-                            }}
-                        >
-                            <ListItemIcon>
-                                <IconButton sx={{ mr: 1 }} color="primary">
-                                    <Icon icon="balance" />
-                                </IconButton>
-                            </ListItemIcon>
-                            <ListItemText>Balance</ListItemText>
-                            <Typography variant="body2">⌘B</Typography>
-                        </MenuItem>
-*/

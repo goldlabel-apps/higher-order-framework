@@ -29,7 +29,8 @@ export default function Admin() {
     const core = useAppSelector(selectCore)
     const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down('md'))
-    const { cmsDialogOpen, fullScreen, uid } = core.data
+    const { adminOpen, fullScreen, uid } = core.data
+    
     let isFullScreen = false
     if (fullScreen) isFullScreen = true
     if (isMobile) isFullScreen = true
@@ -43,7 +44,10 @@ export default function Admin() {
     }
 
     const closeDialog = () =>
-        dispatch(setCore({ key: 'cmsDialogOpen', value: false }))
+        dispatch(setCore({ key: 'adminOpen', value: false }))
+
+    const openDialog = () =>
+        dispatch(setCore({ key: 'adminOpen', value: true }))
 
     const onCollectionClick = () => {
         dispatch(setAdmin({ key: 'mode', value: 'read' }))
@@ -64,115 +68,74 @@ export default function Admin() {
     }
 
     return (
-        <Dialog
-            fullWidth
-            maxWidth="md"
-            open={cmsDialogOpen && uid}
-            fullScreen={isFullScreen}
-            onClose={closeDialog}
-        >
-            <DialogContent>
-                <Grid container>
-                    {collection ? (
+        <React.Fragment>
+    
+            <IconButton
+                color="secondary"
+                onClick={ openDialog }>
+                <Icon icon={'admin'} />
+            </IconButton>
+
+            <Dialog
+                fullWidth
+                maxWidth="md"
+                open={adminOpen}
+                fullScreen={ isFullScreen }
+                onClose={ closeDialog }
+            >
+                <DialogContent>
+                    <Grid container>
+                        {collection ? (
+                            <Grid item>
+                                <Box sx={{}}>
+                                    <IconButton
+                                        color="secondary"
+                                        onClick={onCollectionClick}
+                                    >
+                                        <Icon icon={'arrowl'} />
+                                    </IconButton>
+
+                                    <Typography variant="button">
+                                        {collection}
+                                    </Typography>
+
+                                    <IconButton
+                                        color="secondary"
+                                        onClick={onCreateClick}
+                                    >
+                                        <Icon icon={'new'} />
+                                    </IconButton>
+                                    <Typography variant="button">
+                                        New {collection.slice(0, -1)}
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                        ) : null}
+
+                        <Grid item sx={{ flexGrow: 1 }} />
                         <Grid item>
-                            <Box sx={{}}>
-                                <IconButton
-                                    color="secondary"
-                                    onClick={onCollectionClick}
-                                >
-                                    <Icon icon={'arrowl'} />
+                            <Box sx={{ mt: 1, mr: 1 }}>
+                                <FullScreenToggle />
+                                <IconButton color="secondary" onClick={closeDialog}>
+                                    <Icon icon="close" />
                                 </IconButton>
-
-                                <Typography variant="button">
-                                    {collection}
-                                </Typography>
-
-                                <IconButton
-                                    color="secondary"
-                                    onClick={onCreateClick}
-                                >
-                                    <Icon icon={'new'} />
-                                </IconButton>
-                                <Typography variant="button">
-                                    New {collection.slice(0, -1)}
-                                </Typography>
                             </Box>
                         </Grid>
-                    ) : null}
-
-                    <Grid item sx={{ flexGrow: 1 }} />
-                    <Grid item>
-                        <Box sx={{ mt: 1, mr: 1 }}>
-                            <FullScreenToggle />
-                            <IconButton color="secondary" onClick={closeDialog}>
-                                <Icon icon="close" />
-                            </IconButton>
-                        </Box>
                     </Grid>
-                </Grid>
-                <Grid container>
-                    {leftCol ? (
-                        <Grid item xs={12} md={rightCol ? 3 : 12}>
-                            <Collections />
-                        </Grid>
-                    ) : null}
-                    {rightCol ? (
-                        <Grid item xs={12} md={leftCol ? 9 : 12}>
-                            <Collection />
-                        </Grid>
-                    ) : null}
-                </Grid>
-            </DialogContent>
-        </Dialog>
+                    <Grid container>
+                        {leftCol ? (
+                            <Grid item xs={12} md={rightCol ? 3 : 12}>
+                                <Collections />
+                            </Grid>
+                        ) : null}
+                        {rightCol ? (
+                            <Grid item xs={12} md={leftCol ? 9 : 12}>
+                                <Collection />
+                            </Grid>
+                        ) : null}
+                    </Grid>
+                </DialogContent>
+            </Dialog>
+        </React.Fragment>
     )
 }
-
-/*
-<DialogActions></DialogActions>
-<Button
-                    variant="contained"
-                    color="secondary"
-                    
-                >
-                    Back
-                </Button>
-
-
-
-                <Box sx={{}}>
-                                <Typography
-                                    variant="h6"
-                                    color="primary"
-                                    sx={{ fontWeight: 'lighter', ml: 2 }}
-                                >
-                                    {cmsTitle}
-                                </Typography>
-                            </Box>
-
-                            
-
-// if (posts) {
-    //     for (let i = 0; i < posts.length; i++) {
-    //         if (posts[i].id === '_shape') {
-    //             // dispatch(setAdmin({ key:"shape", value: posts[i].data}))
-    //         }
-    //     }
-    // }                
-    
-
-<Button
-                                    color="secondary"
-                                    onClick={onReadClick}
-                                >
-                                    <Icon icon={'arrowl'} />
-                                    <span
-                                        style={{
-                                            marginRight: 4,
-                                            marginLeft: 4,
-                                        }}
-                                    >
-                                        {collection}
-                                    </span>
-                                </Button>
-
-    */
