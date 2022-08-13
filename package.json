@@ -14,7 +14,7 @@
     "single-spa": "clear && npx create-single-spa"
   },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^5.4.1"
   },
   "dependencies": {
     "ttab": "^0.7.2",
