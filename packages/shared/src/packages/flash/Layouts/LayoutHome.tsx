@@ -19,7 +19,6 @@ export default function LayoutHome() {
     }
     return (
         <Grid container>
-
             <Grid item xs={12} md={8}>
                 <RouteEngine />
                 <Map defaultExpanded={true} />
@@ -58,10 +57,7 @@ export default function LayoutHome() {
                 </Box>
 
                 <Social defaultExpanded={true} />
-                
             </Grid>
-
-            
         </Grid>
     )
 }
